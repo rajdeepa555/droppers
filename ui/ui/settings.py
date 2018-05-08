@@ -147,7 +147,7 @@ DATABASES = {
         'NAME': 'amazonebay2',
         'ENGINE': 'django.db.backends.mysql',
         'USER': 'root',
-        'PASSWORD': 'kumar',
+        'PASSWORD': 'Winter12',
         'HOST':'localhost',
         'PORT':'3306',
         
