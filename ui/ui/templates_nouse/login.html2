@@ -1,0 +1,76 @@
+<html lang="en">
+<head>
+  <title>Ebay Login</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<style>
+.login_div{
+    margin-top: 10%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+}
+body{
+    background-color: black;
+}
+.Welcome_text{
+    font-weight: bold;
+}
+/* input[type="email"]
+{
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 1px solid black;
+}
+input[type="password"]
+{
+    border: 0;
+    border-bottom: 1px solid blue;
+    outline: 0;
+} */
+
+.glyphicon-user{
+    font-size: 40px;
+    color:black;
+}
+.btn-success{
+    display: block;
+    width: 100%;
+
+}
+</style>
+<body>
+
+<div class="container ">
+    <div class="col-md-6 col-sm-offset-3 login_div">
+        <h2 class="text-center Welcome_text text-info">Welcome to Ebay</h2>
+        <p class="text-center"><span class="glyphicon glyphicon-user"></span></p> 
+        <hr>   
+        <form >
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" class="form-control" placeholder="Enter Email"  id="email">
+            </div>
+            <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" placeholder="Enter Password"  id="pwd">
+            </div>
+            <div class="checkbox">
+                <label><input type="checkbox"> Remember me</label>
+            </div>
+            <center><button type="submit" class="btn btn-success" >LOGIN</button></center>
+            <br><br>
+            <div class="form-group ">
+                <p class="text-center">Dont have an account?<span> <b>Signup</b></span></p>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

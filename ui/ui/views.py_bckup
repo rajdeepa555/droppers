@@ -1,0 +1,344 @@
+from django.views.generic import TemplateView
+from django.views.generic.edit import CreateView,UpdateView
+from django.http import HttpResponseRedirect,HttpResponse
+from .tasks import put_ebay_products_to_db,start_ebay_seller_search
+# from .models import EbayAmazonPriceFormula,Proxy,EbayProductsCsvData,EbayRunDetails,AmazonRun,AmazonRunDetails,ProxyLog,EbaySellerSearch,EbaySellerItems
+from .models import *
+from rest_framework import views
+from rest_framework.response import Response
+import csv
+import re
+from .utils import normalize_amazon_url
+import os
+import time
+from ui.cron import scrape_amazon_urls,start_ebay_process
+from .ebay import *
+import datetime
+import json
+
+
+class HomeView(TemplateView):
+    template_name = "index.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(HomeView, self).get_context_data(**kwargs)
+        dashboard_values = {}
+        proxy_count = Proxy.objects.filter(is_active=1).count()
+        no_of_products = EbayProductsCsvData.objects.count()
+        dashboard_values["proxy_count"] = proxy_count
+        dashboard_values["no_of_products"] = no_of_products
+        context['dashboard_values'] = dashboard_values
+        return context
+
+class EbaySellerKeysetView(TemplateView):
+    template_name = "add_keyset.html"
+
+class AddEbaySellerKeysetView(views.APIView):
+    def post(self, request, *args, **kwargs):
+      data = {}
+      data = request.data
+      sellername=data.get("sellername","")
+      appid=data.get("appid","")
+      devid=data.get("devid","")
+      certid=data.get("certid","")
+      token=data.get("token","")
+      
+      db=AddEbaySellerKeyset(sellername=sellername,appid=appid,devid=devid,certid=certid,token=token)
+      db.save()
+      print("database")
+
+      
+      return HttpResponseRedirect('/')
+
+class GetEbaySellerKeysetView(views.APIView):
+  def get(self,request):
+    items_list = []
+    keyset=AddEbaySellerKeyset.objects.all()
+    if keyset and len(keyset)>0:
+      for key in keyset:
+        item={}
+        item["sellername"]=key.sellername
+        item["appid"]=key.appid
+        item["devid"]=key.devid
+        item["certid"]=key.certid
+        item["token"]=key.token
+        items_list.append(item)
+
+    return Response(items_list)
+
+class EbayFileUploadView(TemplateView):
+    template_name = "csv_upload.html"
+
+    def handle_uploaded_file(self,f):
+      with open('name.csv', 'wb+') as destination:
+        for chunk in f.chunks():
+            destination.write(chunk)
+
+    def post(self, request, *args, **kwargs):
+      f = request.FILES.getlist('files')[0]
+      self.handle_uploaded_file(f)
+      put_ebay_products_to_db.delay("name.csv")
+      return HttpResponseRedirect('/')
+
+class SearchSellerView(TemplateView):
+  template_name = "search_seller.html"
+
+class SearchSellerItemView(TemplateView):
+  template_name = "search_seller_item.html"
+
+class SearchSellerNameView(views.APIView):
+  def get(self,request):
+    items_list = []
+    ebay_sellers = EbaySellerSearch.objects.all()
+    if ebay_sellers and len(ebay_sellers)>0:
+      for es in ebay_sellers:
+        current_item = {}
+        current_item["ebay_url"] = es.ebay_url
+        current_item["title"] = es.title
+        current_item["price"] = es.price_str
+        current_item["item_sold"] = es.item_sold
+        items_list.append(current_item)
+    return Response(items_list)
+
+class SearchSellerItemNameView(views.APIView):
+  def get(self,request):
+    items_list = []
+    ebay_items = EbaySellerItems.objects.all()
+    if ebay_items and len(ebay_items)>0:
+      l = 0
+      for es in ebay_items:
+        if l == 51:
+          break
+        current_item = {}
+        current_item["ebay_id"] = es.ebay_id
+        current_item["photo"] = es.photo
+        current_item["custom_label"] = es.custom_label
+        current_item["product_name"] = es.product_name
+        current_item["price"] = es.price
+        current_item["quantity"] = es.quantity
+        current_item["no_of_times_sold"] = es.no_of_times_sold
+        current_item["date_of_listing"] = es.date_of_listing
+        items_list.append(current_item)
+        l += 1
+    return Response(items_list)
+
+class InsertEbaySellerItems(views.APIView):
+  def get(self,request):
+    ebay_obj = EbayHandler()
+
+    o = ebay_obj.get_all_items()
+    has_more_items = o.get("HasMoreItems")
+    no_of_pages = 1
+    if 1 == 1:
+      no_of_pages = o.get("ActiveList").get("PaginationResult").get("TotalNumberOfPages")
+      no_of_pages = int(no_of_pages)
+      for page_number in range(1,no_of_pages):
+        # if page_number == 5:
+        #   break
+        print("current_page:",page_number)
+        current_result = ebay_obj.get_all_items(page_number=page_number)
+        for i in range(len(current_result["ActiveList"]["ItemArray"]["Item"])):
+          current_ebay_item = current_result["ActiveList"]["ItemArray"]["Item"]
+          photo = current_ebay_item[i]["PictureDetails"]["GalleryURL"]
+          try:
+            custom_label=current_ebay_item[i]["SKU"]
+          except:
+            custom_label=""
+          item_id=current_ebay_item[i]["ItemID"]
+          print("item_id:",item_id)
+          title=current_ebay_item[i]["Title"]
+          try:
+            quantity=current_ebay_item[i]["Quantity"]
+          except:
+            quantity = -1
+          listingdate=current_ebay_item[i]["ListingDetails"]["StartTime"]
+          listingdate = str(listingdate)
+          price=current_ebay_item[i]["BuyItNowPrice"]["value"]
+          try:
+            quantitysold=current_ebay_item[i]["SellingStatus"]["QuantitySold"]
+          except:
+            quantitysold= -1
+          print("quantitysold",quantitysold)
+          listingdate = listingdate.split("T")[0].strip() # this is the final string to save to databse , model automatically convert this string to date.
+          # dt=datetime.datetime.strptime(listingdate,"%Y-%m-%d")
+          # try:
+          item=EbaySellerItems(photo=photo,custom_label=custom_label,ebay_id=item_id,product_name=title,price=price,quantity=quantity,no_of_times_sold=quantitysold,date_of_listing=listingdate)
+          item.save()
+          print("writing a row")
+
+          # except Exception as e:
+          #   print("db write error",e)
+
+
+    return Response("ok")
+
+    
+
+    #       response = {}
+        
+    # # item, created = EbaySellerItems.objects.get_or_create()
+    # print(model_to_dict(item))
+    # item.ebay_id=ebay_id
+    # item.product_name = product_name
+    # item.custom_label=custom_label
+    # item.price=price
+    # item.quantity=quantity
+    # item.no_of_times_sold=no_of_times_sold
+    # item.date_of_listing=date_of_listing
+    #  
+
+class DashboardValuesView(views.APIView):
+    def get(self,request):
+      dashboard_values = {}
+      proxy_count = Proxy.objects.filter(is_active=1).count()
+      dashboard_values["proxy_count"] = proxy_count
+      return Response(dashboard_values)
+
+class StartSellerSearch(views.APIView):
+  def get(self,request,seller_id):
+    print("seller_id:",seller_id)
+    os.system("nohup celery -A ui worker -c 1 > cc.out 2> cc.err &")
+    start_ebay_seller_search(seller_id)
+    return Response({"message":"searching for sellers item"})
+
+class DownloadEbayCsv(views.APIView):
+    def get(self,request):
+      response = HttpResponse(content_type='text/csv')
+      response['Content-Disposition'] = 'attachment; filename="ebay.csv"'
+      latest_run_id = AmazonRun.objects.latest('run_start_time')
+      if latest_run_id:
+        print("latest_run_id:",latest_run_id.run_id)
+        # ebay_list = EbayRunDetails.objects.filter(run_id=latest_run_id.run_id)
+        ebay_list = EbayRunDetails.objects.all()
+        if ebay_list:
+          writer = csv.writer(response)
+          writer.writerow(['Run Id','Group Id','Amazon Url','Amazon Price','Amazon Stock','Ebay Price','Ebay Update','Cause If Fail','Ebay Url','Ebay Id'])
+          for e in ebay_list:
+            run_id = e.run_id
+            group_id = e.group_id
+            amazon_url = e.amazon_url
+            price_str = e.price_str
+            clear_price = re.findall("[0-9.]+",price_str)
+            if len(clear_price)>0:
+              try:
+                price_str = str(float("".join(clear_price)))
+              except:
+                pass
+            in_stock_str = e.in_stock_str
+            ebay_price = e.ebay_price
+            is_ebay_updated = e.is_ebay_updated
+            cause_if_fail = e.cause_if_fail
+            ebay_url = e.ebay_url
+            ebay_id = e.ebay_id
+            writer.writerow([run_id,group_id,amazon_url,price_str,in_stock_str,ebay_price,is_ebay_updated,cause_if_fail,ebay_url,ebay_id])
+      return response
+
+
+
+def scrape_amazon(request):
+    html = "<html><body>It is now %s.</body></html>" % now
+    return HttpResponse(html)
+
+class InitRunDetails(views.APIView):
+  def get(self,request):
+      AmazonRunDetails.objects.all().delete()
+      amazon_url_list = EbayProductsCsvData.objects.all()
+      for row in amazon_url_list:
+        new_amazon_details_object = AmazonRunDetails()
+        new_amazon_details_object.amazon_url = normalize_amazon_url(row.vendor_url)
+        new_amazon_details_object.ebay_id = row.reference.split("hydra")[1].strip()
+        new_amazon_details_object.save()
+      return Response({"message":"init started"})
+
+class ResetForNewRun(views.APIView):
+  def get(self,request):
+      # AmazonRunDetails.objects.all().delete()
+      EbayRunDetails.objects.all().delete()
+      ProxyLog.objects.all().delete()
+      return Response({"message":"all tables are reset"})
+
+class StartProcess(views.APIView):
+  #check amazon instance running or not
+  def get(self,request):  
+      all_updated_instances1 = AmazonRunDetails.objects.exclude(run_id="").count()
+      print("all_updated_instances1:",all_updated_instances1)
+      all_ebay_updated_instances1 = EbayRunDetails.objects.all().count()
+      print("all_ebay_updated_instances1:",all_ebay_updated_instances1)
+      time.sleep(30)
+      all_updated_instances2 = AmazonRunDetails.objects.exclude(run_id="").count()
+      print("all_updated_instances2:",all_updated_instances2)
+      all_ebay_updated_instances2 = EbayRunDetails.objects.all().count()
+      print("all_ebay_updated_instances2:",all_ebay_updated_instances2)
+      if all_updated_instances1 == all_updated_instances2:
+        # scrape_amazon_urls()
+        print("started amazon scraper")
+      if all_updated_instances1 == all_updated_instances2:
+        start_ebay_process()
+        print("started ebay process")
+      return Response({"message":"process started"})
+
+class ShutdownCeleryInstance(views.APIView):
+  def get(self,request):
+    os.system("ps -ef | grep 'celery' | grep -v grep | awk '{print $2}' | xargs kill -9")
+    return Response({"message":"all celery instance killed"})
+
+class StartCeleryInstance(views.APIView):
+  def get(self,request,process):
+    print("no of process:",process)
+    os.system("ps -ef | grep 'celery' | grep -v grep | awk '{print $2}' | xargs kill -9")
+    os.system("nohup celery -A ui worker -c "+str(process)+" > cc.out 2> cc.err &")
+    return Response({"message":"all celery instance started"})
+      
+class AmazonEbayFormula(CreateView):
+    template_name = "form_price_formula.html"
+    model = EbayAmazonPriceFormula
+    success_url = '/'
+    fields = ['minimum_range','maximum_range','vendor_tax','margin','fixed_margin','minimum_margin','paypal_fees_perc','paypal_fees_fixed','ebay_fees','manual_override']
+
+    # def get_context_data(self, **kwargs):
+    #     context = super(AmazonEbayFormula, self).get_context_data(**kwargs)
+    #     price_formula = EbayAmazonPriceFormula.objects.filter(pk=1).first()
+    #     context['price_formula'] = price_formula
+    #     return context
+
+class AddEbaySellerItems(CreateView):
+
+  def get(self, request, *args, **kwargs):
+    ebay_id = request.query_params.get("ebay_id","")
+    product_name = request.query_params.get("product_name","")
+    custom_label = request.query_params.get("custom_label","")
+    price = request.query_params.get("price","")
+    quantity = request.query_params.get("quantity","")
+    no_of_times_sold = request.query_params.get("no_of_times_sold","")
+    date_of_listing = request.query_params.get("date_of_listing","")
+    response = {}
+    item, created = EbaySellerItems.objects.get_or_create()
+    print(model_to_dict(item))
+    item.ebay_id=ebay_id
+    item.product_name = product_name
+    item.custom_label=custom_label
+    item.price=price
+    item.quantity=quantity
+    item.no_of_times_sold=no_of_times_sold
+    item.date_of_listing=date_of_listing
+    if created:
+      response["message"] = "item created successfully"
+    else:
+      response["message"] = "not successful"    
+
+
+class ProxyLoaderView(TemplateView):
+    template_name = "proxy_loader.html"
+
+    def post(self, request, *args, **kwargs):
+      # proxies = request.FILES.getlist('proxies')
+      proxies = request.POST['proxies']
+      if proxies and len(proxies)>0:
+        proxy_list = proxies.split("\n")
+        proxy_list = [p.strip() for p in proxy_list if len(p.strip())>0]
+        if len(proxy_list)>0:
+          for prx in proxy_list:
+            prxy = Proxy()
+            prxy.proxy = prx
+            prxy.save()
+      return HttpResponseRedirect('/')

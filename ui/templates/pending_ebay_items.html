@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block body %}
+<!-- start: BREADCRUMB -->
+<div class="breadcrumb-wrapper">
+	<h4 class="mainTitle no-margin">Pending Items</h4>
+	<ul class="pull-right breadcrumb">
+		<li>
+			<a href="/"><i class="fa fa-home margin-right-5 text-large text-dark"></i>Home</a>
+		</li>
+		<li>
+			Forms
+		</li>
+		<li>
+			Pending Items
+		</li>
+	</ul>
+</div>
+<!-- end: BREADCRUMB -->
+<!-- start: FILE UPLOAD -->
+<div class="container-fluid container-fullw" ng-app="pendingItemsApp" ng-controller="pendingItemsCtrl">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-white">
+				<div class="panel-body">
+					<form role="search" class="navbar-form">
+						<div class="form-group">
+							<input type="text" class="form-control input-lg" ng-model="keyword" placeholder="Enter search text here...">
+							<button class="btn search-button" ng-click="refresh_seller_list(1)">
+								<i class="ti-search"></i>
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-white">
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-md-1">
+							<button class="btn btn-primary" ng-click="select_all()" ng-model="is_select">
+								Select All
+							</button>				
+						</div>
+						<!-- <div class="col-md-2">
+							<button class="btn btn-primary" ng-click="refresh_seller_list(1)">
+								Refresh Results
+							</button>				
+						</div> -->
+						<div class="col-md-2">
+							<button class="btn btn-primary" style="margin-left: 600%" ng-click="delete()">
+								Delete
+							</button>				
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="form-field-select-1"> Sort By </label>
+		<select id="form-field-select-1" ng-change="refresh_seller_list(1)"  ng-model="selected_sorting_option" class="form-control">
+			<option value="">select</option>
+			<option value="lowestprice">Lowest to highest price</option>
+			<option value="highestprice">Highest to lowest price</option>
+			<option value="title">Title</option>
+		</select>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-white">
+				<div class="panel-body">
+					<table class="table table-stylish" id="sample-table-2">
+						<thead>
+							<tr>
+								<th class="center no-border">#</th>
+								<th class="no-border">Item name</th>
+								<th class="hidden-xs no-border">Ebay Price</th>
+								<th class="no-border">Items Sold</th>
+								<th class="hidden-xs no-border">Amazon Url</th>
+								<th class="no-border">Amazon Price</th>
+								<!-- <th class="hidden-xs no-border"></th> -->
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="item in items">
+								<td><div class="checkbox clip-check check-primary checkbox-inline">
+									<input type="checkbox" id="checkbox{[{$index+1}]}" value="{[{$index+1}]}" ng-model=item.is_checked>
+									<!-- <input type="checkbox" id="checkbox{[{$index+1}]}" value="{[{$index+1}]}" ng-checked="item.is_checked==true"> -->
+									<label for="checkbox{[{$index+1}]}">{[{$index+1}]}</label>
+								</div></td>
+								<!-- <td class="center"></td> -->
+								<td class="hidden-xs" style="max-width:250px;font-size:medium;"><a href="{[{item.ebay_url}]}" rel="nofollow" target="_blank"> {[{item.title}]} </a></td>
+								<td><strong>${[{item.price}]}</strong></td>
+								<td class="hidden-xs">{[{item.item_sold}]}</td>
+								<td class="hidden-xs"><a href="{[{item.amazon_url}]}" rel="nofollow" target="_blank" style="color:#5B9BD1;font-weight:bold;">Click here</a></td>
+								<td><strong>
+								{% if item.amazon_price_str %}
+								${% endif %}{[{item.amazon_price_str}]}</strong></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+						<ul class="pagination margin-bottom-10" id="pending_ebay_items_pagination">
+			<li ng-if="pagination.has_previous==true">
+				<a  ng-click="refresh_seller_list(pagination.previous_page_number)"> <i class="ti-arrow-left"></i> </a>
+			</li>
+			<li ng-repeat="n in [] | range:pagination.total_pages">
+				<a ng-click="refresh_seller_list($index+1)"> {[{$index+1}]} </a>
+			</li>
+			<li ng-if="pagination.has_next===true">
+				<a ng-click="refresh_seller_list(pagination.next_page_number)"> <i class="ti-arrow-right"></i> </a>
+			</li>
+		</ul>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
+<!-- end: FILE UPLOAD -->
+{% endblock %}

@@ -1,0 +1,77 @@
+<table class="table no-margin" id="{{id}}" class="tablesorter">
+	<thead>
+		<tr>
+			<th class="width-40 hidden-xs hidden-sm"></th> 
+			<th class="width-40 hidden-xs hidden-sm"></th> 
+			<th class="hidden-xs hidden-sm">Title</th>
+			<th class="hidden-xs hidden-sm">Ebay ID</th>
+			<th class="hidden-xs hidden-sm">Custom Label</th>
+			<th class="hidden-xs hidden-sm">Price </th>
+			<th class="hidden-xs hidden-sm">Quantity</th>
+			<th class="hidden-xs hidden-sm">Last Update</th>
+			<th class="hidden-xs hidden-sm">Enable updates</th>
+			<th class="hidden-xs hidden-sm">Custom Margin</th>
+			<th class="hidden-xs hidden-sm">Custom Stock Level</th>
+			<th class="hidden-xs hidden-sm">Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="item in ignored_items" ng-class="item.flag==true?'active':'primary'">
+			<td>
+			<div class="checkbox clip-check check-primary checkbox-inline">
+				<input ng-if="item.flag" type="checkbox" id="checkbox{[{$index+1}]}" value="{[{item.item_id}]}" disabled="True">
+				<input ng-if="!item.flag" type="checkbox" id="checkbox{[{$index+1}]}" value="{[{item.item_id}]}" ng-model=item.is_checked >
+
+				<label for="checkbox{[{$index+1}]}">{[{item.item_id}]}</label>
+			</div></td>
+
+			
+			<td class="hidden-xs hidden-sm"><img alt="image" class="img" style="width:40px;height:40px;" src="{[{item.photo}]}">
+		</td>
+		<td><a href="{[{item.ebay_url}]}" target="_blank"><span class="text-bold">{[{item.product_name}]}</span></a></td>
+		<td>{[{item.ebay_id}]}</td>
+		
+		<td><a href="{[{item.amazon_url}]}" target="_blank">{[{item.custom_label}]}</a></td>
+			<td>${[{item.price}]}</td>
+			<td class="hidden-xs hidden-sm">{[{item.quantity}]}</td>
+			<td class="hidden-xs hidden-sm">{[{item.last_updated}]}</td>
+			<td>
+				
+				<div class="checkbox" style="margin-top:10px;">
+                    <switch ng-model="item.flag" class="green"><small></small></switch>
+                </div>
+			</td>
+
+			<td class="hidden-xs hidden-sm">{[{item.minimun_margin}]}
+				<button ng-if="item.minimum_margin || item.margin_perc" ng-click="open_marginModel(item.ebay_id)" class="btn btn-xs btn-outline blue add_custom_margin_button" ><i class="fa fa-plus" aria-hidden="true"></i>{[{item.minimum_margin}]} - {[{item.margin_perc}]}%</button>
+
+				<button ng-if="!item.minimum_margin || !item.margin_perc" ng-click="open_marginModel(item.ebay_id)" class="btn btn-xs btn-outline blue add_custom_margin_button" ><i class="fa fa-plus" aria-hidden="true"></i> Add</button>
+			</td>
+
+			<td class="hidden-xs hidden-sm">
+				<button ng-if="item.stock_level" ng-click="open_stockModel(item.ebay_id)" class="btn btn-xs btn-outline blue add_custom_margin_button" ><i class="fa fa-plus" aria-hidden="true"></i>{[{item.stock_level}]}</button>
+
+				<button ng-if="!item.stock_level" ng-click="open_stockModel(item.ebay_id)" class="btn btn-xs btn-outline blue add_custom_margin_button" ><i class="fa fa-plus" aria-hidden="true"></i> Add</button>
+			</td>
+			<td>
+			<div class="dropdown">
+				<a class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> <i class="fa fa-caret-down"></i> </a>
+				<ul class="dropdown-menu pull-right animated fadeInRight">
+					<!-- <li>
+						<a href="#" ng-click="edit_ebay_item(item.ebay_id)"> Edit </a>
+					</li> -->
+					<li ng-if="!item.flag">
+						<a id = "update-btn" ng-click="update_ebay_info($index,item.ebay_id,item.custom_label)">Update</a>
+					</li>
+					<!-- <li>
+						<a ng-click="open_marginModel(item.ebay_id)"> Add Custom Margins </a>
+					</li>
+					<li class="divider"></li>
+					<li>
+						<a ng-click="open_stockModel(item.ebay_id)"> Add Custom Stock Level</a>
+					</li> -->
+				</ul>
+			</div></td>
+		</tr>
+	</tbody>
+</table>

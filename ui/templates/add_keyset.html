@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block body %}
+<!-- start: BREADCRUMB -->
+<div class="breadcrumb-wrapper">
+	<h4 class="mainTitle no-margin">Add Keyset</h4>
+	<ul class="pull-right breadcrumb">
+		<li>
+			<a href="/"><i class="fa fa-home margin-right-5 text-large text-dark"></i>Home</a>
+		</li>
+		<li>
+			Forms
+		</li>
+		<li>
+			Search Seller
+		</li>
+	</ul>
+</div>
+<!-- end: BREADCRUMB -->
+<!-- start: FILE UPLOAD -->
+<div class="container-fluid container-fullw" ng-app="addEbaySellerKeysetApp" ng-controller="addEbaySellerKeysetCtrl">
+
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-white">
+				<div class="panel-body" bgcolor="grey">
+					<div class="row">
+								<!-- <input type="text" name="sellername" ng-model="sellername">
+								<textarea rows=10 name = "appid" ng-model="appid"></textarea>
+								<textarea rows=10 name = "devid" ng-model="devid"></textarea>
+								<textarea rows=10 name = "certid" ng-model="certid"></textarea>
+								<textarea rows=10 name = "token" ng-model="token"></textarea> -->
+									
+								<label class="col-sm-2 control-label"> Seller Name </label>
+							<div class="col-sm-4">
+								<input type="text" name="sellername" ng-model="sellername">
+							</div>
+							<br><br>
+
+								<label class="col-sm-2 control-label"> AppID </label>
+							<div class="col-sm-4">
+								<textarea rows=5 name="appid" class="form-control" ng-model="appid"></textarea>
+							</div>
+							<label class="col-sm-2 control-label"> DevID </label>
+							<div class="col-sm-4">
+								<textarea rows=5 name="devid" ng-model="devid" class="form-control"></textarea>
+							</div>
+							
+							<label class="col-sm-2 control-label">  CertID </label>
+							<div class="col-sm-4">
+								<textarea rows=5 name="certid" ng-model="certid" class="form-control" style="height: 200px,margin-top:100px"></textarea>
+							</div>
+							<label class="col-sm-2 control-label"> Token </label>
+							<div class="col-sm-4">
+								<textarea rows=5 name="token" ng-model = "token" class="form-control" style="height: 200px,margin-top:100px"></textarea>
+							</div>
+
+						<div class="col-md-1">
+							<button class="btn btn-primary" ng-click="add()">
+								Add
+							</button>				
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-white">
+				<div class="panel-body">
+					<div class="row">
+						
+						<div class="col-md-2">
+							<button class="btn btn-primary" ng-click="refresh_seller_list()">
+								Refresh Results
+							</button>				
+						</div>
+						<div class="col-md-2">
+							<button class="btn btn-primary" style="margin-left: 475%" ng-click="submit()">
+								Submit
+							</button>				
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-white">
+				<div class="panel-body">
+					<table class="table table-stylish" id="sample-table-2">
+						<thead>
+							<tr>
+								<th class="center no-border">#</th>
+								<th class="no-border">Seller name</th>
+								<th class="hidden-xs no-border">App ID</th>
+								<th class="no-border">Dev ID</th>
+								<th class="hidden-xs no-border">Cert ID</th>
+								<th class="no-border">Token</th>
+								<!-- <th class="hidden-xs no-border"></th> -->
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="item in items">
+								<td><div class="checkbox clip-check check-primary checkbox-inline">
+									<input type="checkbox" id="checkbox{[{$index+1}]}" value="{[{$index+1}]}" ng-model=item.is_checked>
+									<!-- <input type="checkbox" id="checkbox{[{$index+1}]}" value="{[{$index+1}]}" ng-checked="item.is_checked==true"> -->
+									<label for="checkbox{[{$index+1}]}">{[{$index+1}]}</label>
+								</div></td>
+								<!-- <td class="center"></td> -->
+								<td class="hidden-xs" style="max-width:250px;"> {[{item.sellername}]}</td>
+								<td>{[{item.appid}]}</td>
+								<td class="hidden-xs">{[{item.devid}]}</td>
+								<td>{[{item.certid}]}</td>
+								<td class="hidden-xs">{[{item.token}]}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

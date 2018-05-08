@@ -1,0 +1,269 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block body %}
+<!-- start: BREADCRUMB -->
+<div class="breadcrumb-wrapper">
+	<h4 class="mainTitle no-margin">Search Items</h4>
+	<ul class="pull-right breadcrumb">
+		<li>
+			<a href="/"><i class="fa fa-home margin-right-5 text-large text-dark"></i>Home</a>
+		</li>
+		<li>
+			Forms
+		</li>
+		<li>
+			Search Item
+		</li>
+	</ul>
+</div>
+<!-- end: BREADCRUMB -->
+<!-- start: FILE UPLOAD -->
+<div class="container-fluid container-fullw" ng-app="searchSellerItemApp" ng-controller="searchSellerItemCtrl">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-white">
+				<div class="panel-body">
+					<form role="search" class="navbar-form">
+						<a class="s-remove" href="#" target=".navbar-form"> <i class="ti-close"></i> </a>
+						<div class="form-group">
+							<input type="text" class="form-control input-lg" ng-model="keyword" placeholder="Enter search text here...">
+							<input type="hidden" id="csrf_token" value={{csrf_token}}>
+							<button class="btn search-button" ng-click="search()">
+								<i class="ti-search"></i>
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-white">
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-md-12" style="padding-left:35px;">
+							<div class="btn-group" role="group" aria-label="Basic example">
+							  <button class="btn btn-o btn-wide btn-primary" ng-click="select_all()" ng-model="is_select">Select All</button>
+							  <button class="btn btn-o btn-wide btn-primary" ng-click="refresh_seller_list(1)">Refresh Results</button>
+							  <button class="btn btn-o btn-wide btn-primary" ng-click="edit_bulk()">Edit</button>
+							  <button class="btn btn-o btn-wide btn-primary" ng-click="update_bulk_ebay_info()">Update</button>
+							  <button class="btn btn-o btn-wide btn-primary" ng-click="refresh_db()">Refresh Database</button>
+							  <button class="btn btn-o btn-wide btn-primary" ng-click="is_flag()">Save Disable updates </button>
+							  <button class="btn btn-o btn-wide btn-primary" ng-click="update_all()">Update All</button>
+								<a href="{% url 'export-csv-seller-items' %}"><button class="btn btn-o btn-primary">
+									Export Csv
+								</button>	
+								 </a>	
+								</div>
+						</div>
+						<div class="row">
+						<div class="col-md-10">{% csrf_token %}
+							<a><select id="form-field-select-1" ng-change="all_lists(1)"  ng-model="selected_sorting_option" style="margin-left: 720px;margin-top: 10px"><span class="caret"></span>
+								<option value="">Sort By</option>
+								<option value="lowestprice">Lowest to highest price</option>
+								<option value="highestprice">Highest to lowest price</option>
+								<option value="title">Title</option>
+							</select>
+							</a>
+						</div>
+						<div class="col-md-2">
+							<a><select id="form-field-select-2" ng-change="all_lists(1)"  ng-model="selected_pagination_option" style="margin-left: 50px;margin-top: 10px"><span class="caret"></span>
+								<option value="50">50</option>
+								<option value="100">100</option>
+								<option value="500">500</option>
+								<option value="1000">1000</option>
+							</select>
+							</a>
+						</div>
+						</div>
+						
+						<!-- <div class="col-md-2">
+							<button class="btn btn-primary" ng-click="submit()">
+								Submit
+							</button>				
+						</div> -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tabbable">
+		<ul id="myTab1" class="nav nav-tabs bg-default" >
+			<li class="active" ng-click="formonitored()">
+				<a href="#tabMonitored" data-toggle="tab"><b> Monitored Items </b>&nbsp;&nbsp;&nbsp;<span class="badge badge-info" ng-cloak>{[{count_monitored}]}</span></a>
+			</li>
+			<li ng-click="forunmonitored()">
+				<a href="#tabUnmonitored" data-toggle="tab"> <b>Unmonitored Items</b>&nbsp;&nbsp;&nbsp;<span class="badge badge-info" ng-cloak>{[{count_unmonitored}]}</span> </a>
+			</li>
+			<li ng-click="forignored()">
+				<a href="#tabIgnored" data-toggle="tab"><b> Ignored Items</b>&nbsp;&nbsp;&nbsp;<span class="badge badge-info" ng-cloak>{[{count_ignored}]}</span></a>
+			</li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane fade in active" id="tabMonitored">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="panel panel-white">
+							<div class="panel-body">
+								{% include "customized_dom/items_table.html" with id="myTable1" %}
+							</div>
+						</div>
+					</div>
+				</div>
+				<div>
+					<ul class="pagination margin-bottom-10">
+						<li ng-if="pagination.has_previous==true">
+							<a  ng-click="refresh_seller_list(pagination.previous_page_number)"> <i class="ti-arrow-left"></i> </a>
+						</li>
+						<li ng-repeat="n in [] | range:pagination.total_pages">
+							<a ng-click="refresh_seller_list($index+1)" ng-cloak> {[{$index+1}]} </a>
+						</li>
+						<li ng-if="pagination.has_next===true">
+							<a ng-click="refresh_seller_list(pagination.next_page_number)"> <i class="ti-arrow-right"></i> </a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="tab-pane fade" id="tabUnmonitored">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="panel panel-white">
+							<div class="panel-body">
+								{% include "customized_dom/unmonitored.html" with id="myTable2" %}
+							</div>
+						</div>
+					</div>
+				</div>
+				<div>
+					<ul class="pagination margin-bottom-10">
+						<li ng-if="unmonitored_pagination.has_previous==true">
+							<a  ng-click="refresh_unmonitored_list(unmonitored_pagination.previous_page_number)"> <i class="ti-arrow-left"></i> </a>
+						</li>
+						<li ng-repeat="n in [] | range:unmonitored_pagination.total_pages">
+							<a ng-click="refresh_unmonitored_list($index+1)" ng-cloak> {[{$index+1}]} </a>
+						</li>
+						<li ng-if="unmonitored_pagination.has_next===true">
+							<a ng-click="refresh_unmonitored_list(unmonitored_pagination.next_page_number)"> <i class="ti-arrow-right"></i> </a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="tab-pane fade" id="tabIgnored">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="panel panel-white">
+							<div class="panel-body">
+								{% include "customized_dom/ignored.html" with id="myTable3" %}
+							</div>
+						</div>
+					</div>
+				</div>
+				<div>
+					<ul class="pagination margin-bottom-10">
+						<li ng-if="ignored_pagination.has_previous==true">
+							<a  ng-click="refresh_ignored_list(ignored_pagination.previous_page_number)"> <i class="ti-arrow-left"></i> </a>
+						</li>
+						<li ng-repeat="n in [] | range:ignored_pagination.total_pages">
+							<a ng-click="refresh_ignored_list($index+1)"> {[{$index+1}]} </a>
+						</li>
+						<li ng-if="unmonitored_pagination.has_next===true">
+							<a ng-click="refresh_ignored_list(ignored_pagination.next_page_number)"> <i class="ti-arrow-right"></i> </a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Model  -->
+<div class="modal fade" id="marginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <form action = "{% url 'set-item-margin' %}" method="POST" class="form-horizontal" style="padding-top: 10px;">{% csrf_token %}
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Custom Profit Margin Settings</h4>
+            </div>
+            <div class="modal-body">
+            	<div class="col-md-12">
+					<div class="errorHandler alert alert-danger no-display">
+						<i class="fa fa-times-sign"></i> You have some form errors. Please check below.
+					</div>
+					<div class="successHandler alert alert-success no-display">
+						<i class="fa fa-ok"></i> Your form validation is successful!
+					</div>
+				</div>
+                <p>Use this form to override your default profit margins for this item.</p>
+
+                    <input type="hidden" name="sku"/>
+                    <div class="form-group">
+                        <label for="margin_percent" class="col-sm-4">Margin %
+                            &nbsp;&nbsp;
+                            <span class="glyphicon glyphicon-info-sign" aria-hidden="true" data-toggle="tooltip" title="" data-original-title="This is the profit percentage you would like to earn after all fees are taken into account."></span>
+                        </label>
+                        <div class="col-sm-3">
+                            <input id="margin_percent" class="form-control" name="margin_percent" placeholder="e.g. 5">
+                            <input type="hidden"  id="ebay-id" name="ebay_id" value="" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="margin_value" class="col-sm-4">Minimum Profit
+                            &nbsp;&nbsp;
+                            <span class="glyphicon glyphicon-info-sign" aria-hidden="true" data-toggle="tooltip" title="" data-original-title="This is the minimum amount you will earn after all fees are taken into account."></span>
+                        </label>
+                        <div class="col-sm-3">
+                            <input id="margin_value" class="form-control" name="margin_value" placeholder="e.g. 2">
+                        </div>
+                    </div>
+                <p class="modal-info">
+                    Saving these changes will automatically update the listing in eBay after the next scheduled
+                    monitoring run (every 45 min.) To make sure the changes are also updated by eBay, allow for around 1.5
+                    hours for the full update.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary" data-save-margin>Save changes</button>
+            </div>
+          </form>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="stockModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form action = "{% url 'set-item-stock-level' %}" method="POST" class="form-horizontal" style="padding-top: 10px;">{% csrf_token %}
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Custom Stock Level</h4>
+            </div>
+            <div class="modal-body">
+                <p>Use this form to override your default stock level for this item.</p>
+
+                    <input type="hidden" name="ebay_item_id"/>
+                    <div class="form-group">
+                        <label for="stock_level" class="col-sm-4">Stock Level
+                        </label>
+                        <div class="col-sm-3">
+                            <input id="stock_level" class="form-control" name="stock_level" type="number" placeholder="e.g. 5">
+                            <input id="ebay_id_stock" name="ebay_id_stock" placeholder="e.g. 5" type="hidden">
+                        </div>
+                    </div>
+                <p class="modal-info">
+                    Saving these changes will automatically update the listing in eBay after the next scheduled
+                    monitoring run (every 45 min.) To make sure the changes are also updated by eBay, allow for around 1.5
+                    hours for the full update.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary btn-wide pull-right" data-save-stock>Save changes</button>
+            </div>
+        	    </form>
+        </div>
+    </div>
+</div>
+<!-- end: FILE UPLOAD -->
+{% endblock %}

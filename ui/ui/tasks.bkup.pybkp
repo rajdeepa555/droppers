@@ -1,0 +1,126 @@
+# Create your tasks here
+from __future__ import absolute_import, unicode_literals
+import string
+
+from django.contrib.auth.models import User
+from django.utils.crypto import get_random_string
+import csv
+from celery import shared_task
+from .models import *
+import json
+from .log import log_amazon_url,log_proxy
+from .utils import normalize_amazon_url
+from .proxy import CProxy
+from .amazon import CAmazon
+import datetime
+from .amazonapi import AmazonScraper
+
+
+# @shared_task
+# def create_random_user_accounts(total):
+#     for i in range(total):
+#         username = 'user_{}'.format(get_random_string(10, string.ascii_letters))
+#         email = '{}@example.com'.format(username)
+#         password = get_random_string(50)
+#         User.objects.create_user(username=username, email=email, password=password)
+#     return '{} random users created with success!'.format(total)
+
+# aso = AmazonScraper(locale="UK")
+
+@shared_task
+def put_ebay_products_to_db(file_name):
+	csv_file = csv.reader(open(file_name,"r"))
+	print("file_name: ",file_name)
+	is_header = False
+	headers = ["local_id","vendor_url","vendor_variant","vendor_stock","vendor_price","vendor_shipping","reference","compare_url","compare_variant","compare_stock","compare_price","compare_shipping","profit_formula","selling_formula","reprice_store","reprice_sku","reprice_pause","sales_price","estimated_profit","autoCompare"]
+	total = 0
+	for row in csv_file:
+		if is_header == False:
+			is_header = True
+			continue
+		product = EbayProductsCsvData()
+		product.local_id = row[headers.index("local_id")]
+		product.vendor_url = row[headers.index("vendor_url")]
+		product.vendor_variant = row[headers.index("vendor_variant")]
+		product.vendor_stock = row[headers.index("vendor_stock")]
+		product.vendor_price = row[headers.index("vendor_price")]
+		product.vendor_shipping = row[headers.index("vendor_shipping")]
+		product.reference = row[headers.index("reference")]
+		product.compare_url = row[headers.index("compare_url")]
+		product.compare_variant = row[headers.index("compare_variant")]
+		product.compare_stock = row[headers.index("compare_stock")]
+		product.compare_price = row[headers.index("compare_price")]
+		product.compare_shipping = row[headers.index("compare_shipping")]
+		product.profit_formula = row[headers.index("profit_formula")]
+		product.selling_formula = row[headers.index("selling_formula")]
+		product.reprice_store = row[headers.index("reprice_store")]
+		product.reprice_sku = row[headers.index("reprice_sku")]
+		product.reprice_pause = row[headers.index("reprice_pause")]
+		product.sales_price = row[headers.index("sales_price")]
+		product.estimated_profit = row[headers.index("estimated_profit")]
+		product.autoCompare = row[headers.index("autoCompare")]
+		product.save()
+		total += 1
+	return '{} record inserted in ebay products!'.format(total)
+
+
+def get_current_time():
+	return datetime.datetime.now()
+
+def get_time_diff_from_now(old_time):
+	now = datetime.datetime.now()
+	previous = old_time
+	time_delta = now - previous
+	exact_diff = divmod(time_delta.days*86400+time_delta.seconds,60)
+	second_diff = exact_diff[1]
+	return second_diff
+
+@shared_task
+def scrape_amazon(run_id,group_id,no_of_threads):
+	print("run_id: ",run_id," group_id: ",group_id,"no_of_threads: ",no_of_threads)
+	aso = AmazonScraper(locale="UK")
+	proxy_handler = CProxy(no_of_threads,group_id)
+	amazon_handler = CAmazon(no_of_threads=no_of_threads, group_index=group_id)
+	print("no of products:",len(amazon_handler.amazon_url_list))
+	current_proxy = proxy_handler.get_proxy()
+	aso.proxies.update({"http":current_proxy})
+	counter = 0
+	while amazon_handler.get_amazon_url():
+		if counter >=10:
+			break
+		current_url = amazon_handler.current_url
+		 
+		current_url = "https://www.amazon.co.uk/dp/B01MYXTKND@332148092608"
+		ebay_id = current_url.split("@")[1].strip()
+		current_url = current_url.split("@")[0].strip()
+		res = None
+		while res is None or aso.is_captcha_in_response:
+			print("inside while")
+			start_time = get_current_time()
+			print("scraping: ",current_url)
+			res = aso.scrape(current_url)
+			time_diff = get_time_diff_from_now(start_time) 
+			if aso.is_captcha_in_response:
+				log_proxy(run_id,group_id,current_url,current_proxy,"captcha")
+				current_proxy = proxy_handler.get_proxy()
+				aso.proxies.update({"http":current_proxy})
+				continue
+			if time_diff>2:
+				log_proxy(run_id,group_id,current_url,current_proxy,"slow proxy")
+				current_proxy = proxy_handler.get_proxy()
+				aso.proxies.update({"http":current_proxy})
+		log_amazon_url(run_id,group_id,current_url,ebay_id,0,res,proxy_used=current_proxy)
+		break
+	return "run_id: "+str(run_id)+" group_id: "+str(group_id)+"no_of_threads: "+str(no_of_threads)+" running"
+
+
+
+
+# @shared_task
+# def create_random_user_accounts(total):
+#     for i in range(total):
+#         username = 'user_{}'.format(get_random_string(10, string.ascii_letters))
+#         email = '{}@example.com'.format(username)
+#         password = get_random_string(50)
+#         User.objects.create_user(username=username, email=email, password=password)
+#     return '{} random users created with success!'.format(total)

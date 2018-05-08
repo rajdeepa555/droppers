@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block body %}
+<!-- start: BREADCRUMB -->
+<div class="breadcrumb-wrapper">
+	<h4 class="mainTitle no-margin">Ebay Sale Price Calculator</h4>
+	<ul class="pull-right breadcrumb">
+		<li>
+			<a href="index.html"><i class="fa fa-home margin-right-5 text-large text-dark"></i>Home</a>
+		</li>
+		<li>
+			Forms
+		</li>
+		<li>
+			Ebay Sale Price Calculator
+		</li>
+	</ul>
+</div>
+<!-- end: BREADCRUMB -->
+<!-- start: FILE UPLOAD -->
+<div class="container-fluid container-fullw" style="align-self: center" ng-app="profitCalculatorApp" ng-controller="profitCalculatorCtrl">
+	<div class="row">
+		<div class="col-lg-6 col-md-6">
+			<div class="panel panel-white">
+				<div class="panel-heading">
+					<h5 class="panel-title">Enter Values</h5>
+				</div>
+				
+				<div class="panel-body">
+					<form action="" method="post" role="form" class="form-horizontal">{% csrf_token %}
+					<!-- <form action="{% url 'update-price-formula' 1%}" method="post" role="form" class="form-horizontal">{% csrf_token %} -->
+						
+						
+						<div class="form-group">
+							<label class="col-sm-3 control-label" for="source_price" > Source Price</label>
+							<div class="col-sm-8">
+								<input name="source_price"  id="source_price" value="{{price_formula.source_price}}" class="form-control" ng-model="source_price">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label" for="maximum_range">Ebay final value fee(%)</label>
+							<div class="col-sm-8">
+								<input name="ebay_final_value_fee" value="{{price_formula.ebay_final_value_fee}}" id="ebay_final_value_fee"  class="form-control" ng-model="ebay_fvf">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label" for="perc_margin"> Margin(%) </label>
+							<div class="col-sm-8">
+								<input name="perc_margin"  id="perc_margin" value="{{price_formula.perc_margin}}" class="form-control" ng-model="perc_margin">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label" for="minimum_margin" ng-model="fixed_margin"> Minimum Margin</label>
+							<div class="col-sm-8">
+								<input name="fixed_margin"  id="fixed_margin" value="{{price_formula.fixed_margin}}" class="form-control">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-20">
+								<center><button class="btn btn-danger" type="reset" value="Update"><i class="fa fa-trash"></i>Reset</button>
+									<!-- <a class="btn red"><i class="fa fa-trash"></i> Reset</a> -->
+										<!-- <button class="btn btn-primary" type="submit" value="Update" ng-click = ""><i class="fa fa-calculator"></i>Calculate</button> -->
+										<a ng-click="calculateProfit();" class="btn btn-primary" id="monthly_profit_calculator"><i class="fa fa-calculator"></i> Calculate</a>
+								</center>
+							</div>
+						</div>
+						<!-- <div class="form-group">
+							<label class="col-sm-2 control-label"> Calculated value </label>
+							<div class="col-sm-6">
+								<input type="number" placeholder="Calculated Value" name="calculated_value"  class="form-control">
+							</div>
+						</div> -->
+						
+					</form>
+				</div>
+			</div>
+		</div>
+				<div class="col-lg-6 col-md-6">
+			<div class="panel panel-white">
+				<div class="panel-heading">
+					<h5 class="panel-title">Enter Values</h5>
+				</div>
+				
+				<div class="panel-body">
+					<form action="" method="post" role="form" class="form-horizontal">{% csrf_token %}
+					<!-- <form action="{% url 'update-price-formula' 1%}" method="post" role="form" class="form-horizontal">{% csrf_token %} -->
+						
+						<div class="form-group">
+							<label class="col-sm-3 control-label" for="cost_after_profit"> Item Selling Price</label>
+							<div class="col-sm-8">
+								<label class="col-sm-3 control-label" for="cost_after_profit">${{cost_after_profit}}</label>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-sm-3 control-label" for="source_price"> Source Price</label>
+							<div class="col-sm-8">
+								<label class="col-sm-3 control-label" style = "color:red" for="source_price">${{source_price}}</label>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label" for="ebay_listing_fee">Ebay Listing Fee</label>
+							<div class="col-sm-8">
+								<label class="col-sm-3 control-label" style = "color:red" for="ebay_listing_fee">${{ebay_listing_fee}}</label>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label" for="perc_margin"> Ebay FVF </label>
+							<div class="col-sm-8">
+								<label class="col-sm-3 control-label" for="perc_margin" style = "color:red" >${{perc_margin}}</label>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label" for="paypal_fees_perc"> Paypall Fees</label>
+							<div class="col-sm-8">
+								<label class="col-sm-3 control-label" style = "color:red" for="paypal_fees_perc">${{paypal_fees_perc}}</label>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label" for="expected_profit"> Expected Profit</label>
+							<div class="col-sm-8">
+								<label class="col-sm-3 control-label" style = "color:green" for="expected_profit">${{expected_profit}}</label>
+							</div>
+						</div>
+						
+						<!-- <div class="form-group">
+							<label class="col-sm-2 control-label"> Calculated value </label>
+							<div class="col-sm-6">
+								<input type="number" placeholder="Calculated Value" name="calculated_value"  class="form-control">
+							</div>
+						</div> -->
+						
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end: FILE UPLOAD -->
+{% endblock %}

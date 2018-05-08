@@ -1,0 +1,27 @@
+name: ebay_api_config
+
+# Trading API Sandbox - https://www.x.com/developers/ebay/products/trading-api
+api.sandbox.ebay.com:
+    compatability: 719
+    appid: ENTER_YOUR_APPID_HERE
+    certid: ENTER_YOUR_CERTID_HERE
+    devid: ENTER_YOUR_DEVID_HERE
+    token: ENTER_YOUR_TOKEN_HERE
+
+# Trading API - https://www.x.com/developers/ebay/products/trading-api
+api.ebay.com:
+    compatability: 719
+    appid: DeanKu-GDOshipp-PRD-1bff3fe44-2e7fc394
+    certid: PRD-bff3fe44b828-879f-4d30-92b9-5a76
+    devid: 7f481d51-b44a-4af8-9764-6e4090cbcd41
+    token: AgAAAA**AQAAAA**aAAAAA**iMiLWg**nY+sHZ2PrBmdj6wVnY+sEZ2PrA2dj6wNmIqhCZmKowWdj6x9nY+seQ**M30DAA**AAMAAA**xmIRNGY2AS6Tca6Jh8VHjly5PEwgzdQNkUoL/N1P5CvdCNFRaLRUHhjrOZrebBuxm2Ubjd7Up68ZBQHUzZCRkrvK/mM+WIpQslSYyZh02jnctvHofYVM6BOGaR4/3vEYen3akuwiUjh8VfnkgJ0RdikMdga95dr8KNz4uAW88M3IC1WVMu9mD3zeVXw9GqcOdxPXRXOT1SXaEHnaRV6hdn6/etLIJYxaOinARLbKtO3Jikd2DCzaqkiQ94S3xhN3oDapjKHCT1cLmGM7DK/9G3r5xlrL/nt+lvZEIcAvs2r/FPb1kWtsy/Nbj1NoUQiDkQxk6lxH1nuHUOibDPBsVD8YRCayHpcy/hh0PqOteBxD81/CtNeE19YiAlNvJ9kvwkU6opNeKnss3Y5NoynQ/xRRaKggwjt8cYexVTHpsmbPRDdgxuMjmqjgmwxNnOnsJvK8ZwaUIQav0aVx35yNek2q5KHD2WTYR9OyhfOUEnFFSZGkttz6Arm4Fy4zHQVcDGWhmNqK5gPujn8W3K1uEMFQndmywLwkJAq3LWyKCT+hD9lNuqT4qXkmD2UpXrw1aHSX64M/QVs0KNcaRIde9Ip3EptVdPvixyi/4oLSGN6pFZlsRV4BO+fSOJlwGwJ8SojNUHfbZO5zgswfuGJpjTTaXHA/7A8/e0VCYkigKGLfTpCCQYgal2S16HoKva8LMPgBOOfe4/CLCHaKUsXOTnHigfLQZNxqIgGz5e2n8n1FpbItIVtdR3GlDiWEWXe6
+
+# Finding API - https://www.x.com/developers/ebay/products/finding-api
+svcs.ebay.com:
+    appid: ENTER_YOUR_APPID_HERE
+    version: 1.0.0
+
+# Shopping API - https://www.x.com/developers/ebay/products/shopping-api
+open.api.ebay.com:
+    appid: ENTER_YOUR_APPID_HERE
+    version: 671

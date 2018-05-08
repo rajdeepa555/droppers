@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+						{% block body %}
+						<!-- start: BREADCRUMB -->
+						<div class="breadcrumb-wrapper">
+							<h4 class="mainTitle no-margin">Welcome to Dashboard</h4>
+							<span class="mainDescription">overview &amp; stats </span>
+							<ul class="pull-right breadcrumb">
+								<li>
+									<a href="index.html"><i class="fa fa-home margin-right-5 text-large text-dark"></i>Home</a>
+								</li>
+								<li>
+									Dashboard
+								</li>
+							</ul>
+						</div>
+						<!-- end: BREADCRUMB -->
+						<!-- start: FIRST SECTION -->
+						<div class="container-fluid container-fullw padding-bottom-10">
+							<div class="row">
+								<div class="col-sm-6 col-lg-3">
+									<div class="panel panel-white no-border no-radius">
+										<div class="panel-tools">
+											<a data-original-title="Refresh" data-toggle="tooltip" data-placement="top" data-trigger="hover" class="btn btn-transparent btn-sm panel-refresh" href="#">
+												<!-- <i class="fa fa-circle-o"></i> -->
+											</a>
+										</div>
+										<div class="panel-body no-padding">
+											<div class="space10 padding-15">
+												<h5 class="text-bold text-extra-small text-dark-transparent text-uppercase no-margin">Total Active Proxies 
+													  <!-- <i class="fa fa-arrow-circle-o-right"></i>   -->
+												</h5>
+												<div class="block margin-top-15 margin-bottom-10 text-azure">
+													<span class="counter" data-count-to="{{ dashboard_values.proxy_count }}" data-duration="2000" data-delimiter=",">0</span>
+												</div>
+											</div>
+											<div class="padding-bottom-20">
+												
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-6 col-lg-3">
+									<div class="panel panel-white no-border no-radius">
+										<div class="panel-tools">
+											<a data-original-title="Refresh" data-toggle="tooltip" data-placement="top" data-trigger="hover" class="btn btn-transparent btn-sm panel-refresh" href="#">
+												<!-- <i class="fa fa-circle-o"></i> -->
+											</a>
+										</div>
+										<div class="panel-body no-padding">
+											<div class="space10 padding-15">
+												<h5 class="text-bold text-extra-small text-dark-transparent text-uppercase no-margin">Total Products  
+													 <!-- <i class="fa fa-arrow-circle-o-right"></i>  -->
+												</h5>
+												<div class="block margin-top-15 margin-bottom-10 text-azure">
+													<span class="counter" data-count-to="{{ dashboard_values.no_of_products }}" data-duration="2000" data-delimiter=",">0</span>
+												</div>
+											</div>
+											<div class="padding-bottom-20">
+												
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- end: FIRST SECTION -->
+						<!-- data-count-to="{{ dashboard_values.no_of_products }}"  -->
+{% endblock %}

@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block body %}
+<!-- start: BREADCRUMB -->
+<div class="breadcrumb-wrapper">
+	<h4 class="mainTitle no-margin">Search Items</h4>
+	<ul class="pull-right breadcrumb">
+		<li>
+			<a href="/"><i class="fa fa-home margin-right-5 text-large text-dark"></i>Home</a>
+		</li>
+		<li>
+			Forms
+		</li>
+		<li>
+			Search Item
+		</li>
+	</ul>
+</div>
+<!-- end: BREADCRUMB -->
+<!-- start: FILE UPLOAD -->
+<div class="container-fluid container-fullw" ng-app="searchSellerItemApp" ng-controller="searchSellerItemCtrl">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-white">
+				<div class="panel-body">
+					<form role="search" class="navbar-form">
+						<!-- <a class="s-remove" href="#" target=".navbar-form"> <i class="ti-close"></i> </a> -->
+						<div class="form-group">
+							<input type="text" class="form-control input-lg" ng-model="keyword" placeholder="Enter search text here...">
+							<button class="btn search-button" ng-click="start_search()">
+								<i class="ti-search"></i>
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-white">
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-md-1">
+							<button class="btn btn-primary" ng-click="select_all()">
+								Select All
+							</button>				
+						</div>
+						<div class="col-md-2">
+							<button class="btn btn-primary" ng-click="refresh_seller_list()">
+								Refresh Results
+							</button>				
+						</div>
+						<div class="col-md-2">
+							<button class="btn btn-primary" style="margin-left: 475%" ng-click="submit()">
+								Submit
+							</button>				
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-white">
+				<div class="panel-body">
+					<table class="table table-stylish" id="sample-table-2">
+						<thead>
+							<tr>
+								<th class="center no-border">#</th>
+								<th class="no-border">Ebay Id</th>
+								<th class="hidden-xs no-border">Product Name</th>
+								<th class="no-border">Price</th>
+								<th class="hidden-xs no-border">Quantity</th>
+								<th class="no-border">Number of times sold</th>
+								<th class="hidden-xs no-border">Date of listing</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="item in items">
+								<td><div class="checkbox clip-check check-primary checkbox-inline">
+									<input type="checkbox" id="checkbox{[{$index+1}]}" value="{[{$index+1}]}" ng-model=item.is_checked>
+									<!-- <input type="checkbox" id="checkbox{[{$index+1}]}" value="{[{$index+1}]}" ng-checked="item.is_checked==true"> -->
+									<label for="checkbox{[{$index+1}]}">{[{$index+1}]}</label>
+								</div></td>
+								<!-- <td class="center"></td> -->
+								<td></td>
+								<td class="hidden-xs" style="max-width:250px;"><a href="{[{item.ebay_url}]}" rel="nofollow" target="_blank"> {[{item.ebay_id}]} </a></td>
+								<td class="hidden-xs">{[{item.custom_label}]}</td>
+
+								<td>{[{item.product_name}]}</td>
+								<td class="hidden-xs">{[{item.price}]}</td>
+								<td>{[{item.quantity}]}</td>
+								<td class="hidden-xs">{[{item.no_of_times_sold}]}</td>
+								<td>{[{item.date_of_listing}]}</td>
+
+								<!-- <td class="center">
+								<div class="visible-md visible-lg hidden-sm hidden-xs">
+									<a href="#" class="btn btn-transparent btn-xs"  data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil"></i></a>
+									<a href="#" class="btn btn-transparent btn-xs tooltips"  data-toggle="tooltip" data-placement="top" title="Share"><i class="fa fa-share"></i></a>
+									<a href="#" class="btn btn-transparent btn-xs tooltips"  data-toggle="tooltip" data-placement="top" title="Remove"><i class="fa fa-times fa fa-white"></i></a>
+								</div></td> -->
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end: FILE UPLOAD -->
+{% endblock %}

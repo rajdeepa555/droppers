@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block body %}
+<!-- start: BREADCRUMB -->
+<div class="breadcrumb-wrapper">
+	<h4 class="mainTitle no-margin">Proxy Loader Form</h4>
+	<ul class="pull-right breadcrumb">
+		<li>
+			<a href="/"><i class="fa fa-home margin-right-5 text-large text-dark"></i>Home</a>
+		</li>
+		<li>
+			Forms
+		</li>
+		<li>
+			Proxy Loader
+		</li>
+	</ul>
+</div>
+<!-- end: BREADCRUMB -->
+<!-- start: FILE UPLOAD -->
+<div class="container-fluid container-fullw">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-white">
+				<div class="panel-body">
+					<div class="alert alert-success">
+						<p>
+							Upload your proxies here.
+						</p>
+					</div>
+					<form id="proxyupload" action="" method="POST" enctype="multipart/form-data"  role="form" class="form-horizontal">
+						{% csrf_token %}
+						<!-- Redirect browsers with JavaScript disabled to the origin page -->
+					
+						<!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
+						<div class="form-group">
+							<label class="col-sm-2 control-label"> Paste Proxies </label>
+							<div class="col-sm-4">
+								<textarea rows=10 type="number" placeholder="Paste your proxies here" name="proxies" class="form-control"></textarea>
+							</div>
+						</div>
+						<div class="form-group margin-bottom-0">
+							<div class="col-sm-offset-2 col-sm-20" id="upload_proxy_button">
+								<button class="btn btn-o btn-primary" type="submit">
+									Upload
+								</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end: FILE UPLOAD -->
+{% endblock %}

@@ -1,0 +1,205 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block body %}
+<!-- start: BREADCRUMB -->
+<div class="breadcrumb-wrapper">
+	<h4 class="mainTitle no-margin">Search Items</h4>
+	<ul class="pull-right breadcrumb">
+		<li>
+			<a href="/"><i class="fa fa-home margin-right-5 text-large text-dark"></i>Home</a>
+		</li>
+		<li>
+			Forms
+		</li>
+		<li>
+			Search Item
+		</li>
+	</ul>
+</div>
+<!-- end: BREADCRUMB -->
+<!-- start: FILE UPLOAD -->
+<div class="container-fluid container-fullw" ng-app="searchSellerItemApp" ng-controller="searchSellerItemCtrl">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-white">
+				<div class="panel-body">
+					<form role="search" class="navbar-form">
+						<a class="s-remove" href="#" target=".navbar-form"> <i class="ti-close"></i> </a>
+						<div class="form-group">
+							<input type="text" class="form-control input-lg" ng-model="keyword" placeholder="Enter search text here...">
+							<input type="hidden" id="csrf_token" value={{csrf_token}}>
+							<button class="btn search-button" ng-click="refresh_seller_list(1)">
+								<i class="ti-search"></i>
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-white">
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-md-8">
+							<div class="btn-group" role="group" aria-label="Basic example">
+							  <button class="btn btn-wide btn-primary" ng-click="select_all()" ng-model="is_select">
+									Select All
+								</button>
+							  <button class="btn btn-wide btn-primary" ng-click="refresh_seller_list(1)">
+									Refresh Results
+								</button>
+							  <button class="btn btn-wide btn-primary" ng-click="edit_bulk()">
+									Edit
+								</button>
+							  <button class="btn btn-wide btn-primary" ng-click="update_bulk_ebay_info()">
+									Update
+								</button>
+							  <button class="btn btn-wide btn-primary" ng-click="refresh_db()">
+									Refresh Database
+								</button>
+							</div>
+						</div>
+						
+						<div class="col-md-2">
+							<a><select id="form-field-select-1" ng-change="refresh_seller_list(1)"  ng-model="selected_sorting_option" style="margin-left: 100px"><span class="caret"></span></a>
+								<option value="">Sort By</option>
+								<option value="lowestprice">Lowest to highest price</option>
+								<option value="highestprice">Highest to lowest price</option>
+								<option value="title">Title</option>
+							</select>
+						</div>
+						<!-- <div class="col-md-2">
+							<button class="btn btn-primary" ng-click="submit()">
+								Submit
+							</button>				
+						</div> -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- <div class="form-group">
+		<label for="form-field-select-1"> Sort By </label>
+		<select id="form-field-select-1" ng-change="refresh_seller_list(1)"  ng-model="selected_sorting_option" class="form-control">
+			<option value="">--select--</option>
+			<option value="lowestprice">Lowest to highest price</option>
+			<option value="highestprice">Highest to lowest price</option>
+			<option value="title">Title</option>
+		</select>
+	</div> -->
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-white">
+				<div class="panel-body">
+					<table class="table no-margin" id="myTable" class="tablesorter">
+						<thead>
+							<tr>
+								<th class="width-50 hidden-xs hidden-sm"></th>
+								
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="p in products">
+								<td>
+								<div class="checkbox clip-check check-primary checkbox-inline">
+									<input type="checkbox" id="ch{[{$index+1}]}" value="{[{$index+1}]}" ng-model="p.is_checked">
+									<label for="ch{[{$index+1}]}">{[{$index+1}]}</label>
+								</div></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-white">
+				<div class="panel-body">
+					<table class="table no-margin" id="myTable" class="tablesorter">
+						<thead>
+							<tr>
+								<th class="width-50 hidden-xs hidden-sm"></th>
+								<th class="width-50 hidden-xs hidden-sm"></th>
+								<th class="hidden-xs hidden-sm">Title</th>
+								<th class="hidden-xs hidden-sm">Ebay ID</th>
+								<th class="hidden-xs hidden-sm">Custom Label</th>
+								<th class="hidden-xs hidden-sm">Price </th>
+								<th class="hidden-xs hidden-sm">Qunatity</th>
+								
+								<th class="hidden-xs hidden-sm">Actions</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+								<div class="checkbox clip-check check-primary checkbox-inline">
+									<input type="checkbox" id="checkbox222" value="222">
+									<label for="checkbox222">222</label>
+								</div></td>
+							</tr>
+							<tr ng-repeat="item in items">
+								<td>
+								<div class="checkbox clip-check check-primary checkbox-inline">
+									<input type="checkbox" id="checkbox{[{$index+1}]}" value="{[{$index+1}]}">
+									<label for="checkbox{[{$index+1}]}">{[{$index+1}]}</label>
+								</div></td>
+
+								
+								<td class="hidden-xs hidden-sm"><img alt="image" class="img" style="width:50px;height:50px;" src="{[{item.photo}]}">
+							</td>
+							<td><a href="{[{item.ebay_url}]}"><span class="text-bold">{[{item.product_name}]}</span></a></td>
+							<td>{[{item.ebay_id}]}</td>
+							
+							<td><a href="{[{item.amazon_url}]}">{[{item.custom_label}]}</a></td>
+								<td>${[{item.price}]}</td>
+								<td class="hidden-xs hidden-sm">{[{item.quantity}]}</td>
+								<td>
+								<div class="dropdown">
+									<a class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> <i class="fa fa-caret-down"></i> </a>
+									<ul class="dropdown-menu pull-right animated fadeInRight">
+										<!-- <li>
+											<a href="#" ng-click="edit_ebay_item(item.ebay_id)"> Edit </a>
+										</li> -->
+										<li>
+											<a id = "update-btn" ng-click="update_ebay_info($index,item.ebay_id,item.custom_label)">Update</a>
+										</li>
+										<!-- <li>
+											<a href="#"> Disable all campaigns </a>
+										</li>
+										<li class="divider"></li>
+										<li>
+											<a href="#"> Settings </a>
+										</li> -->
+									</ul>
+								</div></td>
+								
+							</tr>
+							
+						</tbody>
+					</table>
+														
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<div>
+		<ul class="pagination margin-bottom-10">
+			<li ng-if="pagination.has_previous==true">
+				<a  ng-click="refresh_seller_list(pagination.previous_page_number)"> <i class="ti-arrow-left"></i> </a>
+			</li>
+			<li ng-repeat="n in [] | range:pagination.total_pages">
+				<a ng-click="refresh_seller_list($index+1)"> {[{$index+1}]} </a>
+			</li>
+			<li ng-if="pagination.has_next===true">
+				<a ng-click="refresh_seller_list(pagination.next_page_number)"> <i class="ti-arrow-right"></i> </a>
+			</li>
+		</ul>
+	</div>
+</div>
+<!-- end: FILE UPLOAD -->
+{% endblock %}

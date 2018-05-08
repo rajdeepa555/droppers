@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block body %}
+<!-- start: BREADCRUMB -->
+<div class="breadcrumb-wrapper">
+	<h4 class="mainTitle no-margin">Ebay Sale Price Calculator</h4>
+	<ul class="pull-right breadcrumb">
+		<li>
+			<a href="index.html"><i class="fa fa-home margin-right-5 text-large text-dark"></i>Home</a>
+		</li>
+		<li>
+			Forms
+		</li>
+		<li>
+			Ebay Sale Price Calculator
+		</li>
+	</ul>
+</div>
+<!-- end: BREADCRUMB -->
+<!-- start: FILE UPLOAD -->
+<div class="container-fluid container-fullw" style="align-self: center">
+	<div class="row">
+		<div class="col-lg-8 col-md-12">
+			<div class="panel panel-white">
+				<div class="panel-heading">
+					<h5 class="panel-title">Enter Values</h5>
+				</div>
+				
+				<div class="panel-body">
+					<form action="" method="post" role="form" class="form-horizontal">{% csrf_token %}
+						<div class="form-group">
+							<label class="col-sm-2 control-label" for="maximum_range">Ebay final value fee(%)</label>
+							<div class="col-sm-10">
+								<input name="ebay_final_value_fee" value="{{price_formula.ebay_final_value_fee}}" id="ebay_final_value_fee"  class="form-control">
+								<input name="pk" value="{{price_formula.pk}}" id="pk" hidden="true">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label" for="ebay_lsiting_fee">Ebay listing fee</label>
+							<div class="col-sm-10">
+								<input placeholder="Ebay lsiting fee" name="ebay_listing_fee" value="{{price_formula.ebay_listing_fee}}" id="ebay_lsiting_fee" class="form-control">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label" for="paypal_fees_perc"> Paypal Fee(%) </label>
+							<div class="col-sm-10">
+								<input name="paypal_fees_perc"  id="paypal_fees_perc" value="{{price_formula.paypal_fees_perc}}" class="form-control">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label" for="paypal_fees_fixed"> Paypal Fee Fixed </label>
+							<div class="col-sm-10">
+								<input name="paypal_fees_fixed"  id="paypal_fees_fixed" value="{{price_formula.paypal_fees_fixed}}" class="form-control">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label" for="perc_margin"> Margin(%) </label>
+							<div class="col-sm-10">
+								<input name="perc_margin"  id="perc_margin" value="{{price_formula.perc_margin}}" class="form-control">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label" for="fixed_margin"> Fixed Margin </label>
+							<div class="col-sm-10">
+								<input name="fixed_margin"  id="fixed_margin" value="{{price_formula.fixed_margin}}" class="form-control">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-20">
+								<center><button class="btn btn-primary" type="submit" value="Update">Save</button></center>
+							</div>
+						</div>
+						<!-- <div class="form-group">
+							<label class="col-sm-2 control-label"> Calculated value </label>
+							<div class="col-sm-10">
+								<input type="number" placeholder="Calculated Value" name="calculated_value"  class="form-control">
+							</div>
+						</div> -->
+						
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end: FILE UPLOAD -->
+{% endblock %}
