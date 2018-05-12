@@ -5,6 +5,14 @@ import re
 import math
 from .models import EbaySellerItems
 
+def get_simple_list_from_list_dict(list_of_dict,key_to_use):
+	simple_list = []
+	if list_of_dict:
+		for item in list_of_dict:
+			if key_to_use and key_to_use in item:
+				simple_list.append(item.get(key_to_use))
+	return simple_list
+
 def normalize_amazon_url(url):
 	amazon_url = url
 	#remove everything after hash

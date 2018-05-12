@@ -1,0 +1,209 @@
+fetching records for seller_id: 401-tech
+Fetching Product... 1
+Fetching Product... 2
+Fetching Product... 3
+Fetching Product... 4
+Fetching Product... 5
+Fetching Product... 6
+Fetching Product... 7
+Fetching Product... 8
+Fetching Product... 9
+Fetching Product... 10
+Fetching Product... 11
+Fetching Product... 12
+Fetching Product... 13
+Fetching Product... 14
+Fetching Product... 15
+Fetching Product... 16
+Fetching Product... 17
+Fetching Product... 18
+Fetching Product... 19
+Fetching Product... 20
+Fetching Product... 21
+Fetching Product... 22
+Fetching Product... 23
+Fetching Product... 24
+Fetching Product... 25
+Fetching Product... 26
+Fetching Product... 27
+Fetching Product... 28
+Fetching Product... 29
+Fetching Product... 30
+Fetching Product... 31
+Fetching Product... 32
+Fetching Product... 33
+Fetching Product... 34
+Fetching Product... 35
+Fetching Product... 36
+Fetching Product... 37
+Fetching Product... 38
+Fetching Product... 39
+Fetching Product... 40
+Fetching Product... 41
+Fetching Product... 42
+Fetching Product... 43
+Fetching Product... 44
+Fetching Product... 45
+Fetching Product... 46
+Fetching Product... 47
+Fetching Product... 48
+Fetching Product... 49
+Fetching Product... 50
+current proxy https://192.126.202.127:3128
+error list index out of range
+price expath //span[@id="priceblock_ourprice"]/text()
+price ['$6.29']
+price $6.29
+is prime True //span[@id = 'merchant-info']//a[contains(text(),'Fulfilled by Amazon')]
+in stock........... True //div[@id="availability-brief"]//*[contains(text(),"In Stock.")]
+inside try................
+current proxy https://192.126.202.127:3128
+error list index out of range
+price expath //span[@id="priceblock_ourprice"]/text()
+price ['$15.89']
+price $15.89
+in stock........... True //div[@id="availability-brief"]//*[contains(text(),"In Stock.")]
+inside try................
+current proxy https://192.126.202.127:3128
+error list index out of range
+price expath //span[@id="priceblock_ourprice"]/text()
+price ['$29.97']
+price $29.97
+is prime True //div[@id='shipsFromSoldBy_feature_div']//*[contains(text(),'Ships from and sold by Amazon.com')]
+in stock........... True //div[@id="availability"]//*[contains(text(),"In Stock.")]
+inside try................
+current proxy https://192.126.202.127:3128
+error list index out of range
+price expath //span[@id="priceblock_ourprice"]/text()
+price ['$7.99']
+price $7.99
+in stock........... True //div[@id="availability"]//*[contains(text(),"In Stock.")]
+inside try................
+current proxy https://192.126.202.127:3128
+price expath //span[@id="priceblock_ourprice"]/text()
+price ['$19.35']
+price $19.35
+in stock........... True //div[@id="availability-brief"]//*[contains(text(),"In Stock.")]
+inside try................
+current proxy https://192.126.202.127:3128
+error list index out of range
+price not found and so we are not scraping prime
+inside try................
+current proxy https://192.126.202.127:3128
+price expath //span[@id="priceblock_ourprice"]/text()
+price ['$19.99']
+price $19.99
+is prime True //div[@id='merchant-info']//a[contains(text(),'Fulfilled by Amazon')]
+in stock........... True //div[@id="availability"]//*[contains(text(),"In Stock.")]
+inside try................
+current proxy https://192.126.202.127:3128
+price expath //span[@class="a-size-medium a-color-price offer-price a-text-normal"]/text()
+price ['$10.69']
+price $10.69
+in stock........... True //div[@id="availability"]//*[contains(text(),"In Stock.")]
+inside try................
+current proxy https://192.126.202.127:3128
+error list index out of range
+price expath //span[@id="priceblock_ourprice"]/text()
+price ['$7.40']
+price $7.40
+is prime True //div[@id='shipsFromSoldBy_feature_div']//*[contains(text(),'Ships from and sold by Amazon.com')]
+in stock........... True //div[@id="availability"]//*[contains(text(),"In Stock.")]
+inside try................
+current proxy https://192.126.202.127:3128
+price expath //span[@id="priceblock_ourprice"]/text()
+price ['$21.00']
+price $21.00
+is prime True //div[@id='shipsFromSoldBy_feature_div']//*[contains(text(),'Ships from and sold by Amazon.com')]
+in stock........... True //div[@id="availability"]//*[contains(text(),"In Stock.")]
+inside try................
+current proxy https://192.126.202.127:3128
+error list index out of range
+price expath //span[@id="priceblock_ourprice"]/text()
+price ['$85.93']
+price $85.93
+is prime True //div[@id='shipsFromSoldBy_feature_div']//*[contains(text(),'Ships from and sold by Amazon.com')]
+in stock........... True //div[@id="availability"]//*[contains(text(),"In Stock.")]
+inside try................
+current proxy https://192.126.202.127:3128
+error list index out of range
+price expath //span[@id="priceblock_ourprice"]/text()
+price ['$14.99']
+price $14.99
+is prime True //span[@id = 'merchant-info']//a[contains(text(),'Fulfilled by Amazon')]
+in stock........... True //div[@id="availability-brief"]//*[contains(text(),"In Stock.")]
+inside try................
+current proxy https://192.126.202.127:3128
+error list index out of range
+price expath //span[@id="priceblock_ourprice"]/text()
+price ['$6.00']
+price $6.00
+is prime True //div[@id='shipsFromSoldBy_feature_div']//*[contains(text(),'Ships from and sold by Amazon.com')]
+in stock........... True //div[@id="availability"]//*[contains(text(),"left in stock")]
+inside try................
+current proxy https://192.126.202.127:3128
+error list index out of range
+price expath //span[@id="priceblock_ourprice"]/text()
+price ['$26.99']
+price $26.99
+in stock........... True //div[@id="availability-brief"]//*[contains(text(),"In Stock.")]
+inside try................
+current proxy https://192.126.202.127:3128
+price expath //span[@id="priceblock_ourprice"]/text()
+price ['$29.70']
+price $29.70
+in stock........... True //div[@id="availability"]//*[contains(text(),"left in stock")]
+inside try................
+current proxy https://192.126.202.127:3128
+error list index out of range
+price expath //span[@id="priceblock_ourprice"]/text()
+price ['$29.99']
+price $29.99
+is prime True //span[@id = 'merchant-info']//a[contains(text(),'Fulfilled by Amazon')]
+in stock........... True //div[@id="availability-brief"]//*[contains(text(),"left in stock")]
+inside try................
+current proxy https://192.126.202.127:3128
+price expath //span[@class="a-size-medium a-color-price offer-price a-text-normal"]/text()
+price ['$13.99']
+price $13.99
+in stock........... True //div[@id="availability"]//*[contains(text(),"In Stock.")]
+inside try................
+current proxy https://192.126.202.127:3128
+error list index out of range
+price expath //span[@id="priceblock_ourprice"]/text()
+price ['$29.20']
+price $29.20
+is prime True //div[@id='shipsFromSoldBy_feature_div']//*[contains(text(),'Ships from and sold by Amazon.com')]
+in stock........... True //div[@id="availability"]//*[contains(text(),"In Stock.")]
+inside try................
+current proxy https://192.126.202.127:3128
+error list index out of range
+price expath //span[@id="priceblock_ourprice"]/text()
+price ['$18.65']
+price $18.65
+in stock........... True //div[@id="availability-brief"]//*[contains(text(),"In Stock.")]
+inside try................
+current proxy https://192.126.202.127:3128
+error list index out of range
+price expath //span[@id="priceblock_ourprice"]/text()
+price ['$15.21']
+price $15.21
+is prime True //span[@id = 'merchant-info']//a[contains(text(),'Fulfilled by Amazon')]
+inside try................
+current proxy https://192.126.202.127:3128
+error list index out of range
+price expath //span[@id="priceblock_ourprice"]/text()
+price ['$11.34']
+price $11.34
+is prime True //div[@id='shipsFromSoldBy_feature_div']//*[contains(text(),'Ships from and sold by Amazon.com')]
+in stock........... True //div[@id="availability"]//*[contains(text(),"In Stock.")]
+inside try................
+current proxy https://192.126.202.127:3128
+price expath //span[@id="priceblock_ourprice"]/text()
+price ['$5.76']
+price $5.76
+is prime True //div[@id='shipsFromSoldBy_feature_div']//*[contains(text(),'Ships from and sold by Amazon.com')]
+in stock........... True //div[@id="availability"]//*[contains(text(),"In Stock.")]
+inside try................
+current proxy https://192.126.202.127:3128
+price expath //span[@id="priceblock_ourprice"]/text()

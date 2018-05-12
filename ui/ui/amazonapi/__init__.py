@@ -75,6 +75,7 @@ class AmazonScraper(object):
         print("captcha found waiting for 10 sec")
         time.sleep(10)
         self.proxies.update({"https":proxy})
+        print("updated proxy",self.proxies)
 
 
     def _execute(self, url):
@@ -87,7 +88,7 @@ class AmazonScraper(object):
         try:
             self.response = urllib2.urlopen(url,timeout=5)
         except Exception as e:
-            print(e)
+            print("error in execute method",e)
             return {}
         self.process_response()
 

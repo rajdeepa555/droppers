@@ -76,7 +76,9 @@ class TestRqView(views.APIView):
 
 def get_seller_name(request):
 	user = request.user.pk
+	print("userrrrrrrr",user)
 	seller_pk = SellerTokens.objects.get(user_id = user,is_active = True).pk
+	print("seller ....",seller_pk)
 	return seller_pk
 
 class EbayProfitCalculator(LoginRequiredMixin,views.APIView):
@@ -933,9 +935,12 @@ class AmazonEbayFormula(LoginRequiredMixin,TemplateView):
 				context = {}
 				price_formula = {}
 				# context = super(AmazonEbayFormula, self).get_context_data(**kwargs)
-				obj = EbayPriceFormula.objects.get(seller_id = seller_id)
-				# print("objjjjjjjjjjj",obj.pk,obj.ebay_listing_fee)
-				context['price_formula'] = obj
+				print("user insfof",request.user)
+				try:
+					obj = EbayPriceFormula.objects.get(seller_id = seller_id)
+					context['price_formula'] = obj
+				except:
+					pass
 				# print("contect...",context)
 				# price_formula["ebay_final_value_fee"] = obj.ebay_final_value_fee
 				return render(request,"form_price_formula.html",context)

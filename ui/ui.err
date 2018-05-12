@@ -1,0 +1,2683 @@
+nohup: ignoring input
+System check identified some issues:
+
+WARNINGS:
+?: (1_8.W001) The standalone TEMPLATE_* settings were deprecated in Django 1.8 and the TEMPLATES dictionary takes precedence. You must put the values of the following settings into your default TEMPLATES dict: TEMPLATE_DEBUG.
+
+System check identified 1 issue (0 silenced).
+[08/May/2018 19:56:02] "GET /search-seller-reports/ HTTP/1.1" 200 51698
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/logging/__init__.py", line 980, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 830, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 567, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.5/logging/__init__.py", line 330, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3.5/threading.py", line 882, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.5/threading.py", line 914, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.5/threading.py", line 862, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.5/socketserver.py", line 625, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.5/socketserver.py", line 354, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.5/socketserver.py", line 681, in __init__
+    self.handle()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/servers/basehttp.py", line 155, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python3.5/wsgiref/handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/contrib/staticfiles/handlers.py", line 63, in __call__
+    return self.application(environ, start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/wsgi.py", line 157, in __call__
+    response = self.get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in get_response
+    response = self._middleware_chain(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/braces/views/_access.py", line 102, in dispatch
+    request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/ui/ui/views.py", line 1329, in get
+    logger.info("self.request.user.pk",self.request.user.pk)
+Message: 'self.request.user.pk'
+Arguments: (1,)
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/logging/__init__.py", line 980, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 830, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 567, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.5/logging/__init__.py", line 330, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3.5/threading.py", line 882, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.5/threading.py", line 914, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.5/threading.py", line 862, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.5/socketserver.py", line 625, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.5/socketserver.py", line 354, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.5/socketserver.py", line 681, in __init__
+    self.handle()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/servers/basehttp.py", line 155, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python3.5/wsgiref/handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/contrib/staticfiles/handlers.py", line 63, in __call__
+    return self.application(environ, start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/wsgi.py", line 157, in __call__
+    response = self.get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in get_response
+    response = self._middleware_chain(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/braces/views/_access.py", line 102, in dispatch
+    request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/ui/ui/views.py", line 1329, in get
+    logger.info("self.request.user.pk",self.request.user.pk)
+Message: 'self.request.user.pk'
+Arguments: (1,)
+[08/May/2018 19:56:04] "GET /search-seller-reports-data/ HTTP/1.1" 200 390
+[08/May/2018 20:05:42] "GET /search-seller-reports/ HTTP/1.1" 302 0
+[08/May/2018 20:05:42] "GET /login/?next=/search-seller-reports/ HTTP/1.1" 200 2145
+[08/May/2018 20:05:42] "GET /static/assets/css/signin2.css HTTP/1.1" 200 3679
+[08/May/2018 20:13:41] "GET /search-seller-reports/ HTTP/1.1" 200 51698
+[08/May/2018 20:13:41] "GET /static/bower_components/bootstrap/dist/css/bootstrap.min.css HTTP/1.1" 304 0
+[08/May/2018 20:13:41] "GET /static/bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min.css HTTP/1.1" 304 0
+[08/May/2018 20:13:41] "GET /static/bower_components/ladda/dist/ladda-themeless.min.css HTTP/1.1" 304 0
+[08/May/2018 20:13:42] "GET /static/bower_components/jquery/dist/jquery.min.js HTTP/1.1" 304 0
+[08/May/2018 20:13:42] "GET /static/bower_components/bootstrap/dist/js/bootstrap.min.js HTTP/1.1" 304 0
+[08/May/2018 20:13:42] "GET /static/bower_components/jquery.knobe/dist/jquery.knob.min.js HTTP/1.1" 304 0
+[08/May/2018 20:13:42] "GET /static/bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js HTTP/1.1" 304 0
+[08/May/2018 20:13:42] "GET /static/bower_components/ladda/dist/spin.min.js HTTP/1.1" 304 0
+[08/May/2018 20:13:42] "GET /static/bower_components/ladda/dist/ladda.min.js HTTP/1.1" 304 0
+[08/May/2018 20:13:42] "GET /static/bower_components/ladda/dist/ladda.jquery.min.js HTTP/1.1" 304 0
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/logging/__init__.py", line 980, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 830, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 567, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.5/logging/__init__.py", line 330, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3.5/threading.py", line 882, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.5/threading.py", line 914, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.5/threading.py", line 862, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.5/socketserver.py", line 625, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.5/socketserver.py", line 354, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.5/socketserver.py", line 681, in __init__
+    self.handle()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/servers/basehttp.py", line 155, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python3.5/wsgiref/handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/contrib/staticfiles/handlers.py", line 63, in __call__
+    return self.application(environ, start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/wsgi.py", line 157, in __call__
+    response = self.get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in get_response
+    response = self._middleware_chain(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/braces/views/_access.py", line 102, in dispatch
+    request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/ui/ui/views.py", line 1329, in get
+    logger.info("self.request.user.pk",self.request.user.pk)
+Message: 'self.request.user.pk'
+Arguments: (1,)
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/logging/__init__.py", line 980, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 830, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 567, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.5/logging/__init__.py", line 330, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3.5/threading.py", line 882, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.5/threading.py", line 914, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.5/threading.py", line 862, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.5/socketserver.py", line 625, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.5/socketserver.py", line 354, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.5/socketserver.py", line 681, in __init__
+    self.handle()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/servers/basehttp.py", line 155, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python3.5/wsgiref/handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/contrib/staticfiles/handlers.py", line 63, in __call__
+    return self.application(environ, start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/wsgi.py", line 157, in __call__
+    response = self.get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in get_response
+    response = self._middleware_chain(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/braces/views/_access.py", line 102, in dispatch
+    request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/ui/ui/views.py", line 1329, in get
+    logger.info("self.request.user.pk",self.request.user.pk)
+Message: 'self.request.user.pk'
+Arguments: (1,)
+[08/May/2018 20:13:43] "GET /search-seller-reports-data/ HTTP/1.1" 200 390
+[08/May/2018 20:14:35] "GET /start-seller-search/401-tech HTTP/1.1" 301 0
+[08/May/2018 20:14:36] "GET /start-seller-search/401-tech/ HTTP/1.1" 200 104
+[08/May/2018 20:14:41] "GET /search-seller-reports/ HTTP/1.1" 200 51698
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/logging/__init__.py", line 980, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 830, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 567, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.5/logging/__init__.py", line 330, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3.5/threading.py", line 882, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.5/threading.py", line 914, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.5/threading.py", line 862, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.5/socketserver.py", line 625, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.5/socketserver.py", line 354, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.5/socketserver.py", line 681, in __init__
+    self.handle()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/servers/basehttp.py", line 155, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python3.5/wsgiref/handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/contrib/staticfiles/handlers.py", line 63, in __call__
+    return self.application(environ, start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/wsgi.py", line 157, in __call__
+    response = self.get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in get_response
+    response = self._middleware_chain(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/braces/views/_access.py", line 102, in dispatch
+    request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/ui/ui/views.py", line 1329, in get
+    logger.info("self.request.user.pk",self.request.user.pk)
+Message: 'self.request.user.pk'
+Arguments: (1,)
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/logging/__init__.py", line 980, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 830, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 567, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.5/logging/__init__.py", line 330, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3.5/threading.py", line 882, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.5/threading.py", line 914, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.5/threading.py", line 862, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.5/socketserver.py", line 625, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.5/socketserver.py", line 354, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.5/socketserver.py", line 681, in __init__
+    self.handle()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/servers/basehttp.py", line 155, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python3.5/wsgiref/handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/contrib/staticfiles/handlers.py", line 63, in __call__
+    return self.application(environ, start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/wsgi.py", line 157, in __call__
+    response = self.get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in get_response
+    response = self._middleware_chain(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/braces/views/_access.py", line 102, in dispatch
+    request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/ui/ui/views.py", line 1329, in get
+    logger.info("self.request.user.pk",self.request.user.pk)
+Message: 'self.request.user.pk'
+Arguments: (1,)
+[08/May/2018 20:14:42] "GET /search-seller-reports-data/ HTTP/1.1" 200 507
+[08/May/2018 20:14:47] "GET /search-seller-reports/ HTTP/1.1" 200 51698
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/logging/__init__.py", line 980, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 830, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 567, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.5/logging/__init__.py", line 330, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3.5/threading.py", line 882, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.5/threading.py", line 914, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.5/threading.py", line 862, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.5/socketserver.py", line 625, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.5/socketserver.py", line 354, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.5/socketserver.py", line 681, in __init__
+    self.handle()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/servers/basehttp.py", line 155, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python3.5/wsgiref/handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/contrib/staticfiles/handlers.py", line 63, in __call__
+    return self.application(environ, start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/wsgi.py", line 157, in __call__
+    response = self.get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in get_response
+    response = self._middleware_chain(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/braces/views/_access.py", line 102, in dispatch
+    request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/ui/ui/views.py", line 1329, in get
+    logger.info("self.request.user.pk",self.request.user.pk)
+Message: 'self.request.user.pk'
+Arguments: (1,)
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/logging/__init__.py", line 980, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 830, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 567, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.5/logging/__init__.py", line 330, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3.5/threading.py", line 882, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.5/threading.py", line 914, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.5/threading.py", line 862, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.5/socketserver.py", line 625, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.5/socketserver.py", line 354, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.5/socketserver.py", line 681, in __init__
+    self.handle()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/servers/basehttp.py", line 155, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python3.5/wsgiref/handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/contrib/staticfiles/handlers.py", line 63, in __call__
+    return self.application(environ, start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/wsgi.py", line 157, in __call__
+    response = self.get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in get_response
+    response = self._middleware_chain(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/braces/views/_access.py", line 102, in dispatch
+    request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/ui/ui/views.py", line 1329, in get
+    logger.info("self.request.user.pk",self.request.user.pk)
+Message: 'self.request.user.pk'
+Arguments: (1,)
+[08/May/2018 20:14:48] "GET /search-seller-reports-data/ HTTP/1.1" 200 507
+[08/May/2018 20:14:51] "GET /search-seller-reports/ HTTP/1.1" 200 51698
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/logging/__init__.py", line 980, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 830, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 567, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.5/logging/__init__.py", line 330, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3.5/threading.py", line 882, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.5/threading.py", line 914, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.5/threading.py", line 862, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.5/socketserver.py", line 625, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.5/socketserver.py", line 354, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.5/socketserver.py", line 681, in __init__
+    self.handle()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/servers/basehttp.py", line 155, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python3.5/wsgiref/handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/contrib/staticfiles/handlers.py", line 63, in __call__
+    return self.application(environ, start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/wsgi.py", line 157, in __call__
+    response = self.get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in get_response
+    response = self._middleware_chain(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/braces/views/_access.py", line 102, in dispatch
+    request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/ui/ui/views.py", line 1329, in get
+    logger.info("self.request.user.pk",self.request.user.pk)
+Message: 'self.request.user.pk'
+Arguments: (1,)
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/logging/__init__.py", line 980, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 830, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 567, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.5/logging/__init__.py", line 330, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3.5/threading.py", line 882, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.5/threading.py", line 914, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.5/threading.py", line 862, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.5/socketserver.py", line 625, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.5/socketserver.py", line 354, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.5/socketserver.py", line 681, in __init__
+    self.handle()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/servers/basehttp.py", line 155, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python3.5/wsgiref/handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/contrib/staticfiles/handlers.py", line 63, in __call__
+    return self.application(environ, start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/wsgi.py", line 157, in __call__
+    response = self.get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in get_response
+    response = self._middleware_chain(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/braces/views/_access.py", line 102, in dispatch
+    request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/ui/ui/views.py", line 1329, in get
+    logger.info("self.request.user.pk",self.request.user.pk)
+Message: 'self.request.user.pk'
+Arguments: (1,)
+[08/May/2018 20:14:52] "GET /search-seller-reports-data/ HTTP/1.1" 200 507
+[08/May/2018 20:14:54] "GET /search-seller-reports/ HTTP/1.1" 200 51698
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/logging/__init__.py", line 980, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 830, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 567, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.5/logging/__init__.py", line 330, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3.5/threading.py", line 882, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.5/threading.py", line 914, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.5/threading.py", line 862, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.5/socketserver.py", line 625, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.5/socketserver.py", line 354, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.5/socketserver.py", line 681, in __init__
+    self.handle()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/servers/basehttp.py", line 155, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python3.5/wsgiref/handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/contrib/staticfiles/handlers.py", line 63, in __call__
+    return self.application(environ, start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/wsgi.py", line 157, in __call__
+    response = self.get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in get_response
+    response = self._middleware_chain(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/braces/views/_access.py", line 102, in dispatch
+    request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/ui/ui/views.py", line 1329, in get
+    logger.info("self.request.user.pk",self.request.user.pk)
+Message: 'self.request.user.pk'
+Arguments: (1,)
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/logging/__init__.py", line 980, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 830, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 567, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.5/logging/__init__.py", line 330, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3.5/threading.py", line 882, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.5/threading.py", line 914, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.5/threading.py", line 862, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.5/socketserver.py", line 625, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.5/socketserver.py", line 354, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.5/socketserver.py", line 681, in __init__
+    self.handle()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/servers/basehttp.py", line 155, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python3.5/wsgiref/handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/contrib/staticfiles/handlers.py", line 63, in __call__
+    return self.application(environ, start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/wsgi.py", line 157, in __call__
+    response = self.get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in get_response
+    response = self._middleware_chain(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/braces/views/_access.py", line 102, in dispatch
+    request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/ui/ui/views.py", line 1329, in get
+    logger.info("self.request.user.pk",self.request.user.pk)
+Message: 'self.request.user.pk'
+Arguments: (1,)
+[08/May/2018 20:14:55] "GET /search-seller-reports-data/ HTTP/1.1" 200 507
+[08/May/2018 20:14:57] "GET /search-seller-reports/ HTTP/1.1" 200 51698
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/logging/__init__.py", line 980, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 830, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 567, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.5/logging/__init__.py", line 330, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3.5/threading.py", line 882, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.5/threading.py", line 914, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.5/threading.py", line 862, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.5/socketserver.py", line 625, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.5/socketserver.py", line 354, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.5/socketserver.py", line 681, in __init__
+    self.handle()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/servers/basehttp.py", line 155, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python3.5/wsgiref/handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/contrib/staticfiles/handlers.py", line 63, in __call__
+    return self.application(environ, start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/wsgi.py", line 157, in __call__
+    response = self.get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in get_response
+    response = self._middleware_chain(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/braces/views/_access.py", line 102, in dispatch
+    request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/ui/ui/views.py", line 1329, in get
+    logger.info("self.request.user.pk",self.request.user.pk)
+Message: 'self.request.user.pk'
+Arguments: (1,)
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/logging/__init__.py", line 980, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 830, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 567, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.5/logging/__init__.py", line 330, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3.5/threading.py", line 882, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.5/threading.py", line 914, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.5/threading.py", line 862, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.5/socketserver.py", line 625, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.5/socketserver.py", line 354, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.5/socketserver.py", line 681, in __init__
+    self.handle()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/servers/basehttp.py", line 155, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python3.5/wsgiref/handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/contrib/staticfiles/handlers.py", line 63, in __call__
+    return self.application(environ, start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/wsgi.py", line 157, in __call__
+    response = self.get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in get_response
+    response = self._middleware_chain(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/braces/views/_access.py", line 102, in dispatch
+    request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/ui/ui/views.py", line 1329, in get
+    logger.info("self.request.user.pk",self.request.user.pk)
+Message: 'self.request.user.pk'
+Arguments: (1,)
+[08/May/2018 20:14:58] "GET /search-seller-reports-data/ HTTP/1.1" 200 507
+[08/May/2018 20:15:00] "GET /search-seller-reports/ HTTP/1.1" 200 51698
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/logging/__init__.py", line 980, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 830, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 567, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.5/logging/__init__.py", line 330, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3.5/threading.py", line 882, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.5/threading.py", line 914, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.5/threading.py", line 862, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.5/socketserver.py", line 625, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.5/socketserver.py", line 354, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.5/socketserver.py", line 681, in __init__
+    self.handle()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/servers/basehttp.py", line 155, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python3.5/wsgiref/handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/contrib/staticfiles/handlers.py", line 63, in __call__
+    return self.application(environ, start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/wsgi.py", line 157, in __call__
+    response = self.get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in get_response
+    response = self._middleware_chain(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/braces/views/_access.py", line 102, in dispatch
+    request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/ui/ui/views.py", line 1329, in get
+    logger.info("self.request.user.pk",self.request.user.pk)
+Message: 'self.request.user.pk'
+Arguments: (1,)
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/logging/__init__.py", line 980, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 830, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 567, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.5/logging/__init__.py", line 330, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3.5/threading.py", line 882, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.5/threading.py", line 914, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.5/threading.py", line 862, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.5/socketserver.py", line 625, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.5/socketserver.py", line 354, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.5/socketserver.py", line 681, in __init__
+    self.handle()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/servers/basehttp.py", line 155, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python3.5/wsgiref/handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/contrib/staticfiles/handlers.py", line 63, in __call__
+    return self.application(environ, start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/wsgi.py", line 157, in __call__
+    response = self.get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in get_response
+    response = self._middleware_chain(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/braces/views/_access.py", line 102, in dispatch
+    request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/ui/ui/views.py", line 1329, in get
+    logger.info("self.request.user.pk",self.request.user.pk)
+Message: 'self.request.user.pk'
+Arguments: (1,)
+[08/May/2018 20:15:01] "GET /search-seller-reports-data/ HTTP/1.1" 200 507
+[08/May/2018 20:15:14] "GET /search-seller-reports/ HTTP/1.1" 200 51698
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/logging/__init__.py", line 980, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 830, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 567, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.5/logging/__init__.py", line 330, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3.5/threading.py", line 882, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.5/threading.py", line 914, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.5/threading.py", line 862, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.5/socketserver.py", line 625, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.5/socketserver.py", line 354, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.5/socketserver.py", line 681, in __init__
+    self.handle()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/servers/basehttp.py", line 155, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python3.5/wsgiref/handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/contrib/staticfiles/handlers.py", line 63, in __call__
+    return self.application(environ, start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/wsgi.py", line 157, in __call__
+    response = self.get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in get_response
+    response = self._middleware_chain(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/braces/views/_access.py", line 102, in dispatch
+    request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/ui/ui/views.py", line 1329, in get
+    logger.info("self.request.user.pk",self.request.user.pk)
+Message: 'self.request.user.pk'
+Arguments: (1,)
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/logging/__init__.py", line 980, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 830, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 567, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.5/logging/__init__.py", line 330, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3.5/threading.py", line 882, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.5/threading.py", line 914, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.5/threading.py", line 862, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.5/socketserver.py", line 625, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.5/socketserver.py", line 354, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.5/socketserver.py", line 681, in __init__
+    self.handle()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/servers/basehttp.py", line 155, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python3.5/wsgiref/handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/contrib/staticfiles/handlers.py", line 63, in __call__
+    return self.application(environ, start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/wsgi.py", line 157, in __call__
+    response = self.get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in get_response
+    response = self._middleware_chain(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/braces/views/_access.py", line 102, in dispatch
+    request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/ui/ui/views.py", line 1329, in get
+    logger.info("self.request.user.pk",self.request.user.pk)
+Message: 'self.request.user.pk'
+Arguments: (1,)
+[08/May/2018 20:15:15] "GET /search-seller-reports-data/ HTTP/1.1" 200 507
+[08/May/2018 20:20:01] "GET /search-seller-reports/ HTTP/1.1" 200 51698
+[08/May/2018 20:20:01] "GET /static/bower_components/themify-icons/themify-icons.css HTTP/1.1" 200 17516
+[08/May/2018 20:20:01] "GET /static/bower_components/font-awesome/css/font-awesome.min.css HTTP/1.1" 200 27470
+[08/May/2018 20:20:01] "GET /static/bower_components/flag-icon-css/css/flag-icon.min.css HTTP/1.1" 200 32637
+[08/May/2018 20:20:01] "GET /static/bower_components/animate.css/animate.min.css HTTP/1.1" 200 53598
+[08/May/2018 20:20:02] "GET /static/bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min.css HTTP/1.1" 200 7430
+[08/May/2018 20:20:02] "GET /static/bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css HTTP/1.1" 200 3289
+[08/May/2018 20:20:02] "GET /static/bower_components/ladda/dist/ladda-themeless.min.css HTTP/1.1" 200 7717
+[08/May/2018 20:20:02] "GET /static/bower_components/slick.js/slick/slick.css HTTP/1.1" 200 1885
+[08/May/2018 20:20:02] "GET /static/bower_components/angular-ui-switch/angular-ui-switch.min.css HTTP/1.1" 200 1020
+[08/May/2018 20:20:02] "GET /static/bower_components/slick.js/slick/slick-theme.css HTTP/1.1" 200 3359
+[08/May/2018 20:20:02] "GET /static/assets/css/themes/lyt3-theme-1.css HTTP/1.1" 200 15054
+[08/May/2018 20:20:02] "GET /static/bower_components/bootstrap/dist/css/bootstrap.min.css HTTP/1.1" 200 121260
+[08/May/2018 20:20:03] "GET /static/assets/css/plugins.css HTTP/1.1" 200 46971
+[08/May/2018 20:20:03] "GET /static/bower_components/jquery/dist/jquery.min.js HTTP/1.1" 200 84380
+[08/May/2018 20:20:06] "GET /static/assets/images/logo-collapsed2.png HTTP/1.1" 200 428
+[08/May/2018 20:20:06] "GET /static/bower_components/angular/angular.min.js HTTP/1.1" 200 159443
+[08/May/2018 20:20:08] "GET /static/bower_components/bootstrap/dist/js/bootstrap.min.js HTTP/1.1" 200 36868
+[08/May/2018 20:20:09] "GET /static/assets/css/styles.css HTTP/1.1" 200 394910
+[08/May/2018 20:20:09] "GET /static/bower_components/components-modernizr/modernizr.js HTTP/1.1" 200 52757
+[08/May/2018 20:20:10] "GET /static/bower_components/js-cookie/src/js.cookie.js HTTP/1.1" 200 3677
+[08/May/2018 20:20:10] "GET /static/assets/images/avatar-6.jpg HTTP/1.1" 200 1442
+[08/May/2018 20:20:10] "GET /static/assets/images/avatar-4.jpg HTTP/1.1" 200 1873
+[08/May/2018 20:20:10] "GET /static/assets/images/avatar-9.jpg HTTP/1.1" 200 1480
+[08/May/2018 20:20:10] "GET /static/assets/images/avatar-8.jpg HTTP/1.1" 200 1707
+[08/May/2018 20:20:10] "GET /static/assets/images/avatar-3.jpg HTTP/1.1" 200 1864
+[08/May/2018 20:20:10] "GET /static/assets/images/avatar-2.jpg HTTP/1.1" 200 1511
+[08/May/2018 20:20:10] "GET /static/assets/images/avatar-5.jpg HTTP/1.1" 200 1979
+[08/May/2018 20:20:11] "GET /static/bower_components/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js HTTP/1.1" 200 25813
+[08/May/2018 20:20:11] "GET /static/assets/images/avatar-7.jpg HTTP/1.1" 200 1572
+[08/May/2018 20:20:11] "GET /static/bower_components/jquery-fullscreen/jquery.fullscreen-min.js HTTP/1.1" 200 1318
+[08/May/2018 20:20:11] "GET /static/bower_components/jquery.knobe/dist/jquery.knob.min.js HTTP/1.1" 200 10804
+[08/May/2018 20:20:11] "GET /static/bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js HTTP/1.1" 200 30431
+[08/May/2018 20:20:11] "GET /static/bower_components/slick.js/slick/slick.min.js HTTP/1.1" 200 40478
+[08/May/2018 20:20:11] "GET /static/bower_components/jquery-numerator/jquery-numerator.js HTTP/1.1" 200 3791
+[08/May/2018 20:20:11] "GET /static/bower_components/ladda/dist/spin.min.js HTTP/1.1" 200 4107
+[08/May/2018 20:20:11] "GET /static/bower_components/ladda/dist/ladda.min.js HTTP/1.1" 200 3842
+[08/May/2018 20:20:11] "GET /static/bower_components/ladda/dist/ladda.jquery.min.js HTTP/1.1" 200 583
+[08/May/2018 20:20:12] "GET /static/bower_components/angular-ui-switch/angular-ui-switch.min.js HTTP/1.1" 200 737
+[08/May/2018 20:20:12] "GET /static/assets/js/letter-icons.js HTTP/1.1" 200 4497
+[08/May/2018 20:20:12] "GET /static/assets/js/main.js?v=11 HTTP/1.1" 200 17044
+[08/May/2018 20:20:12] "GET /static/assets/js/index.js HTTP/1.1" 200 16332
+[08/May/2018 20:20:12] "GET /static/js/main.js HTTP/1.1" 200 3641
+[08/May/2018 20:20:12] "GET /static/js/search_seller_item.js?v=606 HTTP/1.1" 200 17279
+[08/May/2018 20:20:12] "GET /static/bower_components/Chart-js/Chart.min.js HTTP/1.1" 200 52101
+[08/May/2018 20:20:12] "GET /static/js/add_seller_keyset.js HTTP/1.1" 200 1933
+[08/May/2018 20:20:13] "GET /static/js/pending_items.js HTTP/1.1" 200 3748
+[08/May/2018 20:20:13] "GET /static/js/manual_pending_item_add.js HTTP/1.1" 200 4273
+[08/May/2018 20:20:13] "GET /static/js/profit_calculator.js HTTP/1.1" 200 4304
+[08/May/2018 20:20:13] "GET /static/js/search_seller_report.js HTTP/1.1" 200 2324
+[08/May/2018 20:20:13] "GET /static/js/multi_ebay_account.js HTTP/1.1" 200 2235
+[08/May/2018 20:20:13] "GET /static/assets/images/avatar-10.jpg HTTP/1.1" 200 1544
+[08/May/2018 20:20:13] "GET /static/assets/images/avatar-1.jpg HTTP/1.1" 200 1355
+[08/May/2018 20:20:13] "GET /static/assets/images/user-background.png HTTP/1.1" 200 3786
+[08/May/2018 20:20:14] "GET /static/bower_components/themify-icons/fonts/themify.woff?-fvbane HTTP/1.1" 200 56108
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/logging/__init__.py", line 980, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 830, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 567, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.5/logging/__init__.py", line 330, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3.5/threading.py", line 882, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.5/threading.py", line 914, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.5/threading.py", line 862, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.5/socketserver.py", line 625, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.5/socketserver.py", line 354, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.5/socketserver.py", line 681, in __init__
+    self.handle()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/servers/basehttp.py", line 155, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python3.5/wsgiref/handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/contrib/staticfiles/handlers.py", line 63, in __call__
+    return self.application(environ, start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/wsgi.py", line 157, in __call__
+    response = self.get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in get_response
+    response = self._middleware_chain(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/braces/views/_access.py", line 102, in dispatch
+    request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/ui/ui/views.py", line 1329, in get
+    logger.info("self.request.user.pk",self.request.user.pk)
+Message: 'self.request.user.pk'
+Arguments: (1,)
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/logging/__init__.py", line 980, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 830, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 567, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.5/logging/__init__.py", line 330, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3.5/threading.py", line 882, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.5/threading.py", line 914, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.5/threading.py", line 862, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.5/socketserver.py", line 625, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.5/socketserver.py", line 354, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.5/socketserver.py", line 681, in __init__
+    self.handle()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/servers/basehttp.py", line 155, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python3.5/wsgiref/handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/contrib/staticfiles/handlers.py", line 63, in __call__
+    return self.application(environ, start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/wsgi.py", line 157, in __call__
+    response = self.get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in get_response
+    response = self._middleware_chain(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/braces/views/_access.py", line 102, in dispatch
+    request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/ui/ui/views.py", line 1329, in get
+    logger.info("self.request.user.pk",self.request.user.pk)
+Message: 'self.request.user.pk'
+Arguments: (1,)
+[08/May/2018 20:20:14] "GET /search-seller-reports-data/ HTTP/1.1" 200 390
+[08/May/2018 20:20:14] "GET /static/bower_components/font-awesome/fonts/fontawesome-webfont.woff2?v=4.5.0 HTTP/1.1" 200 66624
+Not Found: /search-seller-reports/favicon.ico
+[08/May/2018 20:20:15] "GET /search-seller-reports/favicon.ico HTTP/1.1" 404 8900
+[08/May/2018 20:20:35] "GET /start-seller-search/401-tech/ HTTP/1.1" 200 104
+[08/May/2018 20:22:08] "GET /search-seller-reports/ HTTP/1.1" 302 0
+[08/May/2018 20:22:09] "GET /login/?next=/search-seller-reports/ HTTP/1.1" 200 2145
+[08/May/2018 20:22:22] "POST /login/?next=/search-seller-reports/ HTTP/1.1" 302 0
+[08/May/2018 20:22:23] "GET /search-seller-reports/ HTTP/1.1" 200 51698
+[08/May/2018 20:22:23] "GET /static/bower_components/font-awesome/css/font-awesome.min.css HTTP/1.1" 200 27470
+[08/May/2018 20:22:23] "GET /static/bower_components/themify-icons/themify-icons.css HTTP/1.1" 200 17516
+[08/May/2018 20:22:23] "GET /static/bower_components/flag-icon-css/css/flag-icon.min.css HTTP/1.1" 200 32637
+[08/May/2018 20:22:23] "GET /static/bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css HTTP/1.1" 200 3289
+[08/May/2018 20:22:23] "GET /static/bower_components/animate.css/animate.min.css HTTP/1.1" 200 53598
+[08/May/2018 20:22:23] "GET /static/bower_components/ladda/dist/ladda-themeless.min.css HTTP/1.1" 200 7717
+[08/May/2018 20:22:23] "GET /static/bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min.css HTTP/1.1" 200 7430
+[08/May/2018 20:22:23] "GET /static/bower_components/slick.js/slick/slick.css HTTP/1.1" 200 1885
+[08/May/2018 20:22:24] "GET /static/bower_components/slick.js/slick/slick-theme.css HTTP/1.1" 200 3359
+[08/May/2018 20:22:24] "GET /static/bower_components/angular-ui-switch/angular-ui-switch.min.css HTTP/1.1" 200 1020
+[08/May/2018 20:22:24] "GET /static/assets/css/plugins.css HTTP/1.1" 200 46971
+[08/May/2018 20:22:24] "GET /static/assets/css/themes/lyt3-theme-1.css HTTP/1.1" 200 15054
+[08/May/2018 20:22:24] "GET /static/bower_components/bootstrap/dist/css/bootstrap.min.css HTTP/1.1" 200 121260
+[08/May/2018 20:22:25] "GET /static/bower_components/jquery/dist/jquery.min.js HTTP/1.1" 200 84380
+[08/May/2018 20:22:27] "GET /static/bower_components/angular/angular.min.js HTTP/1.1" 200 159443
+[08/May/2018 20:22:27] "GET /static/assets/css/styles.css HTTP/1.1" 200 394910
+[08/May/2018 20:22:28] "GET /static/bower_components/bootstrap/dist/js/bootstrap.min.js HTTP/1.1" 200 36868
+[08/May/2018 20:22:28] "GET /static/bower_components/js-cookie/src/js.cookie.js HTTP/1.1" 200 3677
+[08/May/2018 20:22:28] "GET /static/bower_components/jquery-fullscreen/jquery.fullscreen-min.js HTTP/1.1" 200 1318
+[08/May/2018 20:22:28] "GET /static/bower_components/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js HTTP/1.1" 200 25813
+[08/May/2018 20:22:28] "GET /static/bower_components/jquery.knobe/dist/jquery.knob.min.js HTTP/1.1" 200 10804
+[08/May/2018 20:22:28] "GET /static/bower_components/components-modernizr/modernizr.js HTTP/1.1" 200 52757
+[08/May/2018 20:22:28] "GET /static/assets/images/avatar-5.jpg HTTP/1.1" 200 1979
+[08/May/2018 20:22:28] "GET /static/assets/images/avatar-9.jpg HTTP/1.1" 200 1480
+[08/May/2018 20:22:28] "GET /static/assets/images/avatar-10.jpg HTTP/1.1" 200 1544
+[08/May/2018 20:22:28] "GET /static/assets/images/avatar-4.jpg HTTP/1.1" 200 1873
+[08/May/2018 20:22:28] "GET /static/bower_components/font-awesome/fonts/fontawesome-webfont.woff2?v=4.5.0 HTTP/1.1" 200 66624
+[08/May/2018 20:22:29] "GET /static/assets/images/avatar-6.jpg HTTP/1.1" 200 1442
+[08/May/2018 20:22:29] "GET /static/assets/images/avatar-8.jpg HTTP/1.1" 200 1707
+[08/May/2018 20:22:29] "GET /static/assets/images/avatar-3.jpg HTTP/1.1" 200 1864
+[08/May/2018 20:22:29] "GET /static/assets/images/avatar-7.jpg HTTP/1.1" 200 1572
+[08/May/2018 20:22:29] "GET /static/assets/images/avatar-2.jpg HTTP/1.1" 200 1511
+[08/May/2018 20:22:29] "GET /static/bower_components/themify-icons/fonts/themify.woff?-fvbane HTTP/1.1" 200 56108
+[08/May/2018 20:22:29] "GET /static/bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js HTTP/1.1" 200 30431
+[08/May/2018 20:22:29] "GET /static/bower_components/slick.js/slick/slick.min.js HTTP/1.1" 200 40478
+[08/May/2018 20:22:29] "GET /static/bower_components/jquery-numerator/jquery-numerator.js HTTP/1.1" 200 3791
+[08/May/2018 20:22:29] "GET /static/bower_components/ladda/dist/spin.min.js HTTP/1.1" 200 4107
+[08/May/2018 20:22:29] "GET /static/bower_components/ladda/dist/ladda.min.js HTTP/1.1" 200 3842
+[08/May/2018 20:22:29] "GET /static/bower_components/ladda/dist/ladda.jquery.min.js HTTP/1.1" 200 583
+[08/May/2018 20:22:29] "GET /static/bower_components/angular-ui-switch/angular-ui-switch.min.js HTTP/1.1" 200 737
+[08/May/2018 20:22:29] "GET /static/assets/js/letter-icons.js HTTP/1.1" 200 4497
+[08/May/2018 20:22:29] "GET /static/assets/js/main.js?v=11 HTTP/1.1" 200 17044
+[08/May/2018 20:22:29] "GET /static/assets/js/index.js HTTP/1.1" 200 16332
+[08/May/2018 20:22:29] "GET /static/js/main.js HTTP/1.1" 200 3641
+[08/May/2018 20:22:30] "GET /static/js/search_seller_item.js?v=606 HTTP/1.1" 200 17279
+[08/May/2018 20:22:30] "GET /static/js/add_seller_keyset.js HTTP/1.1" 200 1933
+[08/May/2018 20:22:30] "GET /static/bower_components/Chart-js/Chart.min.js HTTP/1.1" 200 52101
+[08/May/2018 20:22:30] "GET /static/js/pending_items.js HTTP/1.1" 200 3748
+[08/May/2018 20:22:30] "GET /static/js/manual_pending_item_add.js HTTP/1.1" 200 4273
+[08/May/2018 20:22:30] "GET /static/js/profit_calculator.js HTTP/1.1" 200 4304
+[08/May/2018 20:22:30] "GET /static/js/search_seller_report.js HTTP/1.1" 200 2324
+[08/May/2018 20:22:30] "GET /static/js/multi_ebay_account.js HTTP/1.1" 200 2235
+[08/May/2018 20:22:30] "GET /static/assets/images/logo-collapsed2.png HTTP/1.1" 200 428
+[08/May/2018 20:22:30] "GET /static/assets/images/user-background.png HTTP/1.1" 200 3786
+[08/May/2018 20:22:30] "GET /static/assets/images/avatar-1.jpg HTTP/1.1" 200 1355
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/logging/__init__.py", line 980, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 830, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 567, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.5/logging/__init__.py", line 330, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3.5/threading.py", line 882, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.5/threading.py", line 914, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.5/threading.py", line 862, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.5/socketserver.py", line 625, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.5/socketserver.py", line 354, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.5/socketserver.py", line 681, in __init__
+    self.handle()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/servers/basehttp.py", line 155, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python3.5/wsgiref/handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/contrib/staticfiles/handlers.py", line 63, in __call__
+    return self.application(environ, start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/wsgi.py", line 157, in __call__
+    response = self.get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in get_response
+    response = self._middleware_chain(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/braces/views/_access.py", line 102, in dispatch
+    request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/ui/ui/views.py", line 1329, in get
+    logger.info("self.request.user.pk",self.request.user.pk)
+Message: 'self.request.user.pk'
+Arguments: (1,)
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/logging/__init__.py", line 980, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 830, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 567, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.5/logging/__init__.py", line 330, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3.5/threading.py", line 882, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.5/threading.py", line 914, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.5/threading.py", line 862, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.5/socketserver.py", line 625, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.5/socketserver.py", line 354, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.5/socketserver.py", line 681, in __init__
+    self.handle()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/servers/basehttp.py", line 155, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python3.5/wsgiref/handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/contrib/staticfiles/handlers.py", line 63, in __call__
+    return self.application(environ, start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/wsgi.py", line 157, in __call__
+    response = self.get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in get_response
+    response = self._middleware_chain(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/braces/views/_access.py", line 102, in dispatch
+    request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/ui/ui/views.py", line 1329, in get
+    logger.info("self.request.user.pk",self.request.user.pk)
+Message: 'self.request.user.pk'
+Arguments: (1,)
+[08/May/2018 20:22:31] "GET /search-seller-reports-data/ HTTP/1.1" 200 507
+[08/May/2018 20:22:39] "GET /search-seller/4 HTTP/1.1" 301 0
+[08/May/2018 20:22:40] "GET /search-seller/4/ HTTP/1.1" 200 51323
+/home/ubuntu/projects/droppers/ui/ui/views.py:562: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'ui.models.EbaySellerSearch'> QuerySet.
+  paginator = Paginator(ebay_sellers, page_by)
+[08/May/2018 20:22:41] "GET /get-sellers-item/?format=json&page=1&report_id=4&order_by= HTTP/1.1" 200 18637
+[08/May/2018 20:23:24] "GET /search-seller/4/ HTTP/1.1" 200 51323
+[08/May/2018 20:23:25] "GET /get-sellers-item/?format=json&page=1&report_id=4&order_by= HTTP/1.1" 200 18637
+[08/May/2018 20:23:35] "GET /search-seller-reports/ HTTP/1.1" 200 51698
+[08/May/2018 20:23:35] "GET /search-seller/4/ HTTP/1.1" 200 51323
+[08/May/2018 20:23:35] "GET /get-sellers-item/?format=json&page=1&report_id=4&order_by= HTTP/1.1" 200 18637
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/logging/__init__.py", line 980, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 830, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 567, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.5/logging/__init__.py", line 330, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3.5/threading.py", line 882, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.5/threading.py", line 914, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.5/threading.py", line 862, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.5/socketserver.py", line 625, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.5/socketserver.py", line 354, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.5/socketserver.py", line 681, in __init__
+    self.handle()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/servers/basehttp.py", line 155, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python3.5/wsgiref/handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/contrib/staticfiles/handlers.py", line 63, in __call__
+    return self.application(environ, start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/wsgi.py", line 157, in __call__
+    response = self.get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in get_response
+    response = self._middleware_chain(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/braces/views/_access.py", line 102, in dispatch
+    request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/ui/ui/views.py", line 1329, in get
+    logger.info("self.request.user.pk",self.request.user.pk)
+Message: 'self.request.user.pk'
+Arguments: (1,)
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/logging/__init__.py", line 980, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 830, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 567, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.5/logging/__init__.py", line 330, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3.5/threading.py", line 882, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.5/threading.py", line 914, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.5/threading.py", line 862, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.5/socketserver.py", line 625, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.5/socketserver.py", line 354, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.5/socketserver.py", line 681, in __init__
+    self.handle()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/servers/basehttp.py", line 155, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python3.5/wsgiref/handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/contrib/staticfiles/handlers.py", line 63, in __call__
+    return self.application(environ, start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/wsgi.py", line 157, in __call__
+    response = self.get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in get_response
+    response = self._middleware_chain(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/braces/views/_access.py", line 102, in dispatch
+    request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/ui/ui/views.py", line 1329, in get
+    logger.info("self.request.user.pk",self.request.user.pk)
+Message: 'self.request.user.pk'
+Arguments: (1,)
+[08/May/2018 20:23:36] "GET /search-seller-reports-data/ HTTP/1.1" 200 507
+[08/May/2018 20:23:39] "GET /search-seller/4/ HTTP/1.1" 200 51323
+[08/May/2018 20:23:40] "GET /get-sellers-item/?format=json&page=1&report_id=4&order_by= HTTP/1.1" 200 18637
+[08/May/2018 20:23:43] "GET /search-seller/4/ HTTP/1.1" 200 51323
+[08/May/2018 20:23:43] "GET /get-sellers-item/?format=json&page=1&report_id=4&order_by= HTTP/1.1" 200 18637
+[08/May/2018 20:24:22] "GET /search-seller-reports/ HTTP/1.1" 200 51698
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/logging/__init__.py", line 980, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 830, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 567, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.5/logging/__init__.py", line 330, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3.5/threading.py", line 882, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.5/threading.py", line 914, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.5/threading.py", line 862, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.5/socketserver.py", line 625, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.5/socketserver.py", line 354, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.5/socketserver.py", line 681, in __init__
+    self.handle()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/servers/basehttp.py", line 155, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python3.5/wsgiref/handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/contrib/staticfiles/handlers.py", line 63, in __call__
+    return self.application(environ, start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/wsgi.py", line 157, in __call__
+    response = self.get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in get_response
+    response = self._middleware_chain(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/braces/views/_access.py", line 102, in dispatch
+    request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/ui/ui/views.py", line 1329, in get
+    logger.info("self.request.user.pk",self.request.user.pk)
+Message: 'self.request.user.pk'
+Arguments: (1,)
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/logging/__init__.py", line 980, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 830, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 567, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.5/logging/__init__.py", line 330, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3.5/threading.py", line 882, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.5/threading.py", line 914, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.5/threading.py", line 862, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.5/socketserver.py", line 625, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.5/socketserver.py", line 354, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.5/socketserver.py", line 681, in __init__
+    self.handle()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/servers/basehttp.py", line 155, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python3.5/wsgiref/handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/contrib/staticfiles/handlers.py", line 63, in __call__
+    return self.application(environ, start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/wsgi.py", line 157, in __call__
+    response = self.get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in get_response
+    response = self._middleware_chain(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/braces/views/_access.py", line 102, in dispatch
+    request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/ui/ui/views.py", line 1329, in get
+    logger.info("self.request.user.pk",self.request.user.pk)
+Message: 'self.request.user.pk'
+Arguments: (1,)
+[08/May/2018 20:24:23] "GET /search-seller-reports-data/ HTTP/1.1" 200 507
+[08/May/2018 20:24:26] "GET /search-seller/11 HTTP/1.1" 301 0
+[08/May/2018 20:24:27] "GET /search-seller/11/ HTTP/1.1" 200 51323
+[08/May/2018 20:24:29] "GET /get-sellers-item/?format=json&page=1&report_id=11&order_by= HTTP/1.1" 200 28252
+Not Found: /search-seller/11/favicon.ico
+[08/May/2018 20:24:29] "GET /search-seller/11/favicon.ico HTTP/1.1" 404 8885
+[08/May/2018 22:08:01] "GET /search-seller-reports/ HTTP/1.1" 200 51698
+[08/May/2018 22:08:02] "GET /static/bower_components/font-awesome/css/font-awesome.min.css HTTP/1.1" 200 27470
+[08/May/2018 22:08:02] "GET /static/bower_components/flag-icon-css/css/flag-icon.min.css HTTP/1.1" 200 32637
+[08/May/2018 22:08:02] "GET /static/bower_components/themify-icons/themify-icons.css HTTP/1.1" 200 17516
+[08/May/2018 22:08:02] "GET /static/bower_components/bootstrap/dist/css/bootstrap.min.css HTTP/1.1" 304 0
+[08/May/2018 22:08:02] "GET /static/bower_components/animate.css/animate.min.css HTTP/1.1" 200 53598
+[08/May/2018 22:08:02] "GET /static/bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min.css HTTP/1.1" 200 7430
+[08/May/2018 22:08:02] "GET /static/bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css HTTP/1.1" 304 0
+[08/May/2018 22:08:02] "GET /static/bower_components/ladda/dist/ladda-themeless.min.css HTTP/1.1" 200 7717
+[08/May/2018 22:08:02] "GET /static/bower_components/slick.js/slick/slick-theme.css HTTP/1.1" 200 3359
+[08/May/2018 22:08:02] "GET /static/bower_components/slick.js/slick/slick.css HTTP/1.1" 200 1885
+[08/May/2018 22:08:03] "GET /static/bower_components/angular-ui-switch/angular-ui-switch.min.css HTTP/1.1" 200 1020
+[08/May/2018 22:08:03] "GET /static/assets/css/styles.css HTTP/1.1" 304 0
+[08/May/2018 22:08:03] "GET /static/assets/css/plugins.css HTTP/1.1" 304 0
+[08/May/2018 22:08:03] "GET /static/assets/css/themes/lyt3-theme-1.css HTTP/1.1" 304 0
+[08/May/2018 22:08:03] "GET /static/assets/images/logo-collapsed2.png HTTP/1.1" 200 428
+[08/May/2018 22:08:03] "GET /static/bower_components/jquery/dist/jquery.min.js HTTP/1.1" 304 0
+[08/May/2018 22:08:04] "GET /static/assets/images/avatar-8.jpg HTTP/1.1" 200 1707
+[08/May/2018 22:08:04] "GET /static/assets/images/avatar-6.jpg HTTP/1.1" 200 1442
+[08/May/2018 22:08:04] "GET /static/assets/images/avatar-3.jpg HTTP/1.1" 200 1864
+[08/May/2018 22:08:04] "GET /static/assets/images/avatar-5.jpg HTTP/1.1" 200 1979
+[08/May/2018 22:08:04] "GET /static/assets/images/avatar-4.jpg HTTP/1.1" 200 1873
+[08/May/2018 22:08:04] "GET /static/assets/images/avatar-7.jpg HTTP/1.1" 200 1572
+[08/May/2018 22:08:05] "GET /static/assets/images/avatar-9.jpg HTTP/1.1" 200 1480
+[08/May/2018 22:08:05] "GET /static/bower_components/components-modernizr/modernizr.js HTTP/1.1" 304 0
+[08/May/2018 22:08:05] "GET /static/assets/images/avatar-2.jpg HTTP/1.1" 200 1511
+[08/May/2018 22:08:05] "GET /static/bower_components/js-cookie/src/js.cookie.js HTTP/1.1" 304 0
+[08/May/2018 22:08:05] "GET /static/bower_components/bootstrap/dist/js/bootstrap.min.js HTTP/1.1" 304 0
+[08/May/2018 22:08:05] "GET /static/bower_components/angular/angular.min.js HTTP/1.1" 304 0
+[08/May/2018 22:08:05] "GET /static/bower_components/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js HTTP/1.1" 304 0
+[08/May/2018 22:08:05] "GET /static/bower_components/jquery-fullscreen/jquery.fullscreen-min.js HTTP/1.1" 304 0
+[08/May/2018 22:08:05] "GET /static/bower_components/jquery.knobe/dist/jquery.knob.min.js HTTP/1.1" 304 0
+[08/May/2018 22:08:06] "GET /static/bower_components/slick.js/slick/slick.min.js HTTP/1.1" 304 0
+[08/May/2018 22:08:06] "GET /static/bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js HTTP/1.1" 304 0
+[08/May/2018 22:08:06] "GET /static/bower_components/jquery-numerator/jquery-numerator.js HTTP/1.1" 304 0
+[08/May/2018 22:08:06] "GET /static/bower_components/ladda/dist/spin.min.js HTTP/1.1" 304 0
+[08/May/2018 22:08:06] "GET /static/bower_components/ladda/dist/ladda.min.js HTTP/1.1" 304 0
+[08/May/2018 22:08:06] "GET /static/bower_components/ladda/dist/ladda.jquery.min.js HTTP/1.1" 200 583
+[08/May/2018 22:08:06] "GET /static/bower_components/angular-ui-switch/angular-ui-switch.min.js HTTP/1.1" 200 737
+[08/May/2018 22:08:06] "GET /static/bower_components/Chart-js/Chart.min.js HTTP/1.1" 304 0
+[08/May/2018 22:08:06] "GET /static/assets/js/letter-icons.js HTTP/1.1" 304 0
+[08/May/2018 22:08:06] "GET /static/assets/js/main.js?v=11 HTTP/1.1" 304 0
+[08/May/2018 22:08:06] "GET /static/assets/js/index.js HTTP/1.1" 304 0
+[08/May/2018 22:08:07] "GET /static/js/main.js HTTP/1.1" 304 0
+[08/May/2018 22:08:07] "GET /static/js/search_seller_item.js?v=606 HTTP/1.1" 304 0
+[08/May/2018 22:08:07] "GET /static/js/pending_items.js HTTP/1.1" 304 0
+[08/May/2018 22:08:07] "GET /static/js/add_seller_keyset.js HTTP/1.1" 304 0
+[08/May/2018 22:08:07] "GET /static/js/manual_pending_item_add.js HTTP/1.1" 304 0
+[08/May/2018 22:08:07] "GET /static/js/profit_calculator.js HTTP/1.1" 304 0
+[08/May/2018 22:08:07] "GET /static/js/search_seller_report.js HTTP/1.1" 304 0
+[08/May/2018 22:08:07] "GET /static/js/multi_ebay_account.js HTTP/1.1" 304 0
+[08/May/2018 22:08:07] "GET /static/assets/images/avatar-10.jpg HTTP/1.1" 200 1544
+[08/May/2018 22:08:07] "GET /static/assets/images/avatar-1.jpg HTTP/1.1" 200 1355
+[08/May/2018 22:08:08] "GET /static/assets/images/user-background.png HTTP/1.1" 200 3786
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/logging/__init__.py", line 980, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 830, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 567, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.5/logging/__init__.py", line 330, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3.5/threading.py", line 882, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.5/threading.py", line 914, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.5/threading.py", line 862, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.5/socketserver.py", line 625, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.5/socketserver.py", line 354, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.5/socketserver.py", line 681, in __init__
+    self.handle()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/servers/basehttp.py", line 155, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python3.5/wsgiref/handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/contrib/staticfiles/handlers.py", line 63, in __call__
+    return self.application(environ, start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/wsgi.py", line 157, in __call__
+    response = self.get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in get_response
+    response = self._middleware_chain(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/braces/views/_access.py", line 102, in dispatch
+    request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/ui/ui/views.py", line 1329, in get
+    logger.info("self.request.user.pk",self.request.user.pk)
+Message: 'self.request.user.pk'
+Arguments: (1,)
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/logging/__init__.py", line 980, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 830, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 567, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.5/logging/__init__.py", line 330, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3.5/threading.py", line 882, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.5/threading.py", line 914, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.5/threading.py", line 862, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.5/socketserver.py", line 625, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.5/socketserver.py", line 354, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.5/socketserver.py", line 681, in __init__
+    self.handle()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/servers/basehttp.py", line 155, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python3.5/wsgiref/handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/contrib/staticfiles/handlers.py", line 63, in __call__
+    return self.application(environ, start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/wsgi.py", line 157, in __call__
+    response = self.get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in get_response
+    response = self._middleware_chain(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/braces/views/_access.py", line 102, in dispatch
+    request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/ui/ui/views.py", line 1329, in get
+    logger.info("self.request.user.pk",self.request.user.pk)
+Message: 'self.request.user.pk'
+Arguments: (1,)
+[08/May/2018 22:08:08] "GET /search-seller-reports-data/ HTTP/1.1" 200 507
+[08/May/2018 22:08:08] "GET /static/bower_components/font-awesome/fonts/fontawesome-webfont.woff2?v=4.5.0 HTTP/1.1" 200 66624
+[08/May/2018 22:08:08] "GET /static/bower_components/themify-icons/fonts/themify.woff?-fvbane HTTP/1.1" 200 56108
+[09/May/2018 10:03:36] "GET /search-seller-reports/ HTTP/1.1" 200 51698
+[09/May/2018 10:03:36] "GET /static/bower_components/font-awesome/css/font-awesome.min.css HTTP/1.1" 200 27470
+[09/May/2018 10:03:36] "GET /static/bower_components/themify-icons/themify-icons.css HTTP/1.1" 200 17516
+[09/May/2018 10:03:36] "GET /static/bower_components/flag-icon-css/css/flag-icon.min.css HTTP/1.1" 200 32637
+[09/May/2018 10:03:36] "GET /static/bower_components/animate.css/animate.min.css HTTP/1.1" 200 53598
+[09/May/2018 10:03:37] "GET /static/bower_components/bootstrap/dist/css/bootstrap.min.css HTTP/1.1" 200 121260
+[09/May/2018 10:03:37] "GET /static/bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css HTTP/1.1" 200 3289
+[09/May/2018 10:03:38] "GET /static/bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min.css HTTP/1.1" 200 7430
+[09/May/2018 10:03:38] "GET /static/bower_components/ladda/dist/ladda-themeless.min.css HTTP/1.1" 200 7717
+[09/May/2018 10:03:38] "GET /static/bower_components/slick.js/slick/slick.css HTTP/1.1" 200 1885
+[09/May/2018 10:03:38] "GET /static/bower_components/slick.js/slick/slick-theme.css HTTP/1.1" 200 3359
+[09/May/2018 10:03:39] "GET /static/bower_components/angular-ui-switch/angular-ui-switch.min.css HTTP/1.1" 200 1020
+[09/May/2018 10:03:39] "GET /static/assets/css/plugins.css HTTP/1.1" 200 46971
+[09/May/2018 10:03:39] "GET /static/assets/css/themes/lyt3-theme-1.css HTTP/1.1" 200 15054
+[09/May/2018 10:03:41] "GET /static/assets/css/styles.css HTTP/1.1" 200 394910
+[09/May/2018 10:03:43] "GET /static/bower_components/jquery/dist/jquery.min.js HTTP/1.1" 200 84380
+[09/May/2018 10:03:44] "GET /static/assets/images/avatar-4.jpg HTTP/1.1" 200 1873
+[09/May/2018 10:03:44] "GET /static/assets/images/avatar-9.jpg HTTP/1.1" 200 1480
+[09/May/2018 10:03:44] "GET /static/assets/images/avatar-2.jpg HTTP/1.1" 200 1511
+[09/May/2018 10:03:44] "GET /static/assets/images/avatar-5.jpg HTTP/1.1" 200 1979
+[09/May/2018 10:03:44] "GET /static/assets/images/avatar-7.jpg HTTP/1.1" 200 1572
+[09/May/2018 10:03:45] "GET /static/assets/images/avatar-8.jpg HTTP/1.1" 200 1707
+[09/May/2018 10:03:45] "GET /static/assets/images/avatar-3.jpg HTTP/1.1" 200 1864
+[09/May/2018 10:03:45] "GET /static/bower_components/bootstrap/dist/js/bootstrap.min.js HTTP/1.1" 200 36868
+[09/May/2018 10:03:45] "GET /static/bower_components/components-modernizr/modernizr.js HTTP/1.1" 200 52757
+[09/May/2018 10:03:46] "GET /static/bower_components/js-cookie/src/js.cookie.js HTTP/1.1" 200 3677
+[09/May/2018 10:03:46] "GET /static/assets/images/avatar-6.jpg HTTP/1.1" 200 1442
+[09/May/2018 10:03:46] "GET /static/bower_components/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js HTTP/1.1" 200 25813
+[09/May/2018 10:03:47] "GET /static/bower_components/jquery.knobe/dist/jquery.knob.min.js HTTP/1.1" 200 10804
+[09/May/2018 10:03:47] "GET /static/bower_components/angular/angular.min.js HTTP/1.1" 200 159443
+[09/May/2018 10:03:47] "GET /static/bower_components/jquery-fullscreen/jquery.fullscreen-min.js HTTP/1.1" 200 1318
+[09/May/2018 10:03:48] "GET /static/bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js HTTP/1.1" 200 30431
+[09/May/2018 10:03:48] "GET /static/bower_components/slick.js/slick/slick.min.js HTTP/1.1" 200 40478
+[09/May/2018 10:03:48] "GET /static/bower_components/jquery-numerator/jquery-numerator.js HTTP/1.1" 200 3791
+[09/May/2018 10:03:49] "GET /static/bower_components/ladda/dist/spin.min.js HTTP/1.1" 200 4107
+[09/May/2018 10:03:49] "GET /static/bower_components/ladda/dist/ladda.min.js HTTP/1.1" 200 3842
+[09/May/2018 10:03:50] "GET /static/bower_components/ladda/dist/ladda.jquery.min.js HTTP/1.1" 200 583
+[09/May/2018 10:03:50] "GET /static/bower_components/angular-ui-switch/angular-ui-switch.min.js HTTP/1.1" 200 737
+[09/May/2018 10:03:50] "GET /static/bower_components/Chart-js/Chart.min.js HTTP/1.1" 200 52101
+[09/May/2018 10:03:50] "GET /static/assets/js/letter-icons.js HTTP/1.1" 200 4497
+[09/May/2018 10:03:51] "GET /static/assets/js/main.js?v=11 HTTP/1.1" 200 17044
+[09/May/2018 10:03:51] "GET /static/assets/js/index.js HTTP/1.1" 200 16332
+[09/May/2018 10:03:53] "GET /static/js/main.js HTTP/1.1" 200 3641
+[09/May/2018 10:03:53] "GET /static/js/search_seller_item.js?v=606 HTTP/1.1" 200 17279
+[09/May/2018 10:03:54] "GET /static/js/add_seller_keyset.js HTTP/1.1" 200 1933
+[09/May/2018 10:03:55] "GET /static/js/pending_items.js HTTP/1.1" 200 3748
+[09/May/2018 10:03:55] "GET /static/js/manual_pending_item_add.js HTTP/1.1" 200 4273
+[09/May/2018 10:03:55] "GET /static/js/profit_calculator.js HTTP/1.1" 200 4304
+[09/May/2018 10:03:55] "GET /static/js/search_seller_report.js HTTP/1.1" 200 2324
+[09/May/2018 10:03:55] "GET /static/js/multi_ebay_account.js HTTP/1.1" 200 2235
+[09/May/2018 10:03:55] "GET /static/assets/images/logo-collapsed2.png HTTP/1.1" 200 428
+[09/May/2018 10:03:55] "GET /static/assets/images/avatar-10.jpg HTTP/1.1" 200 1544
+[09/May/2018 10:03:56] "GET /static/assets/images/avatar-1.jpg HTTP/1.1" 200 1355
+[09/May/2018 10:03:56] "GET /static/assets/images/user-background.png HTTP/1.1" 200 3786
+[09/May/2018 10:03:56] "GET /static/bower_components/font-awesome/fonts/fontawesome-webfont.woff2?v=4.5.0 HTTP/1.1" 200 66624
+[09/May/2018 10:03:56] "GET /static/bower_components/themify-icons/fonts/themify.woff?-fvbane HTTP/1.1" 200 56108
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/logging/__init__.py", line 980, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 830, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 567, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.5/logging/__init__.py", line 330, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3.5/threading.py", line 882, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.5/threading.py", line 914, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.5/threading.py", line 862, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.5/socketserver.py", line 625, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.5/socketserver.py", line 354, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.5/socketserver.py", line 681, in __init__
+    self.handle()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/servers/basehttp.py", line 155, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python3.5/wsgiref/handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/contrib/staticfiles/handlers.py", line 63, in __call__
+    return self.application(environ, start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/wsgi.py", line 157, in __call__
+    response = self.get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in get_response
+    response = self._middleware_chain(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/braces/views/_access.py", line 102, in dispatch
+    request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/ui/ui/views.py", line 1329, in get
+    logger.info("self.request.user.pk",self.request.user.pk)
+Message: 'self.request.user.pk'
+Arguments: (1,)
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/logging/__init__.py", line 980, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 830, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 567, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.5/logging/__init__.py", line 330, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3.5/threading.py", line 882, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.5/threading.py", line 914, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.5/threading.py", line 862, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.5/socketserver.py", line 625, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.5/socketserver.py", line 354, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.5/socketserver.py", line 681, in __init__
+    self.handle()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/servers/basehttp.py", line 155, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python3.5/wsgiref/handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/contrib/staticfiles/handlers.py", line 63, in __call__
+    return self.application(environ, start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/wsgi.py", line 157, in __call__
+    response = self.get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in get_response
+    response = self._middleware_chain(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/braces/views/_access.py", line 102, in dispatch
+    request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/ui/ui/views.py", line 1329, in get
+    logger.info("self.request.user.pk",self.request.user.pk)
+Message: 'self.request.user.pk'
+Arguments: (1,)
+[09/May/2018 10:04:43] "GET /search-seller-reports-data/ HTTP/1.1" 200 507
+Not Found: /search-seller-reports/favicon.ico
+[09/May/2018 10:04:43] "GET /search-seller-reports/favicon.ico HTTP/1.1" 404 8900
+[09/May/2018 11:58:27] "GET /search-seller-reports/ HTTP/1.1" 200 51698
+[09/May/2018 11:58:31] "GET /static/bower_components/bootstrap/dist/css/bootstrap.min.css HTTP/1.1" 304 0
+[09/May/2018 11:58:32] "GET /static/bower_components/themify-icons/themify-icons.css HTTP/1.1" 304 0
+[09/May/2018 11:58:32] "GET /static/bower_components/font-awesome/css/font-awesome.min.css HTTP/1.1" 304 0
+[09/May/2018 11:58:32] "GET /static/bower_components/flag-icon-css/css/flag-icon.min.css HTTP/1.1" 304 0
+[09/May/2018 11:58:32] "GET /static/bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css HTTP/1.1" 304 0
+[09/May/2018 11:58:32] "GET /static/bower_components/animate.css/animate.min.css HTTP/1.1" 304 0
+[09/May/2018 11:58:32] "GET /static/bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min.css HTTP/1.1" 304 0
+[09/May/2018 11:58:32] "GET /static/bower_components/ladda/dist/ladda-themeless.min.css HTTP/1.1" 304 0
+[09/May/2018 11:58:32] "GET /static/bower_components/slick.js/slick/slick.css HTTP/1.1" 304 0
+[09/May/2018 11:58:32] "GET /static/bower_components/slick.js/slick/slick-theme.css HTTP/1.1" 304 0
+[09/May/2018 11:58:32] "GET /static/bower_components/angular-ui-switch/angular-ui-switch.min.css HTTP/1.1" 304 0
+[09/May/2018 11:58:32] "GET /static/assets/css/styles.css HTTP/1.1" 304 0
+[09/May/2018 11:58:33] "GET /static/assets/css/plugins.css HTTP/1.1" 304 0
+[09/May/2018 11:58:33] "GET /static/assets/css/themes/lyt3-theme-1.css HTTP/1.1" 304 0
+[09/May/2018 11:58:33] "GET /static/bower_components/jquery/dist/jquery.min.js HTTP/1.1" 304 0
+[09/May/2018 11:58:34] "GET /static/bower_components/js-cookie/src/js.cookie.js HTTP/1.1" 304 0
+[09/May/2018 11:58:34] "GET /static/bower_components/bootstrap/dist/js/bootstrap.min.js HTTP/1.1" 304 0
+[09/May/2018 11:58:34] "GET /static/bower_components/angular/angular.min.js HTTP/1.1" 304 0
+[09/May/2018 11:58:34] "GET /static/bower_components/components-modernizr/modernizr.js HTTP/1.1" 304 0
+[09/May/2018 11:58:34] "GET /static/bower_components/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js HTTP/1.1" 304 0
+[09/May/2018 11:58:34] "GET /static/bower_components/jquery-fullscreen/jquery.fullscreen-min.js HTTP/1.1" 304 0
+[09/May/2018 11:58:34] "GET /static/bower_components/jquery.knobe/dist/jquery.knob.min.js HTTP/1.1" 304 0
+[09/May/2018 11:58:34] "GET /static/bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js HTTP/1.1" 304 0
+[09/May/2018 11:58:34] "GET /static/bower_components/slick.js/slick/slick.min.js HTTP/1.1" 304 0
+[09/May/2018 11:58:34] "GET /static/bower_components/jquery-numerator/jquery-numerator.js HTTP/1.1" 304 0
+[09/May/2018 11:58:34] "GET /static/bower_components/ladda/dist/ladda.min.js HTTP/1.1" 304 0
+[09/May/2018 11:58:34] "GET /static/bower_components/ladda/dist/spin.min.js HTTP/1.1" 304 0
+[09/May/2018 11:58:35] "GET /static/bower_components/ladda/dist/ladda.jquery.min.js HTTP/1.1" 304 0
+[09/May/2018 11:58:35] "GET /static/bower_components/angular-ui-switch/angular-ui-switch.min.js HTTP/1.1" 304 0
+[09/May/2018 11:58:35] "GET /static/bower_components/Chart-js/Chart.min.js HTTP/1.1" 304 0
+[09/May/2018 11:58:35] "GET /static/assets/js/letter-icons.js HTTP/1.1" 304 0
+[09/May/2018 11:58:35] "GET /static/assets/js/main.js?v=11 HTTP/1.1" 304 0
+[09/May/2018 11:58:35] "GET /static/assets/js/index.js HTTP/1.1" 304 0
+[09/May/2018 11:58:36] "GET /static/js/main.js HTTP/1.1" 304 0
+[09/May/2018 11:58:36] "GET /static/js/search_seller_item.js?v=606 HTTP/1.1" 304 0
+[09/May/2018 11:58:36] "GET /static/js/add_seller_keyset.js HTTP/1.1" 304 0
+[09/May/2018 11:58:36] "GET /static/js/profit_calculator.js HTTP/1.1" 304 0
+[09/May/2018 11:58:36] "GET /static/js/manual_pending_item_add.js HTTP/1.1" 304 0
+[09/May/2018 11:58:36] "GET /static/js/pending_items.js HTTP/1.1" 304 0
+[09/May/2018 11:58:36] "GET /static/assets/images/avatar-6.jpg HTTP/1.1" 304 0
+[09/May/2018 11:58:36] "GET /static/assets/images/avatar-10.jpg HTTP/1.1" 304 0
+[09/May/2018 11:58:37] "GET /static/assets/images/avatar-9.jpg HTTP/1.1" 304 0
+[09/May/2018 11:58:37] "GET /static/assets/images/avatar-4.jpg HTTP/1.1" 304 0
+[09/May/2018 11:58:37] "GET /static/assets/images/avatar-3.jpg HTTP/1.1" 304 0
+[09/May/2018 11:58:37] "GET /static/assets/images/avatar-8.jpg HTTP/1.1" 304 0
+[09/May/2018 11:58:37] "GET /static/assets/images/avatar-7.jpg HTTP/1.1" 304 0
+[09/May/2018 11:58:37] "GET /static/assets/images/avatar-2.jpg HTTP/1.1" 304 0
+[09/May/2018 11:58:37] "GET /static/assets/images/avatar-5.jpg HTTP/1.1" 304 0
+[09/May/2018 11:58:37] "GET /static/js/search_seller_report.js HTTP/1.1" 304 0
+[09/May/2018 11:58:37] "GET /static/js/multi_ebay_account.js HTTP/1.1" 304 0
+[09/May/2018 11:58:37] "GET /static/assets/images/logo-collapsed2.png HTTP/1.1" 304 0
+[09/May/2018 11:58:38] "GET /static/assets/images/avatar-1.jpg HTTP/1.1" 304 0
+[09/May/2018 11:58:38] "GET /static/assets/images/user-background.png HTTP/1.1" 304 0
+[09/May/2018 11:58:38] "GET /static/bower_components/font-awesome/fonts/fontawesome-webfont.woff2?v=4.5.0 HTTP/1.1" 304 0
+[09/May/2018 11:58:38] "GET /static/bower_components/themify-icons/fonts/themify.woff?-fvbane HTTP/1.1" 304 0
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/logging/__init__.py", line 980, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 830, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 567, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.5/logging/__init__.py", line 330, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3.5/threading.py", line 882, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.5/threading.py", line 914, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.5/threading.py", line 862, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.5/socketserver.py", line 625, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.5/socketserver.py", line 354, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.5/socketserver.py", line 681, in __init__
+    self.handle()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/servers/basehttp.py", line 155, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python3.5/wsgiref/handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/contrib/staticfiles/handlers.py", line 63, in __call__
+    return self.application(environ, start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/wsgi.py", line 157, in __call__
+    response = self.get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in get_response
+    response = self._middleware_chain(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/braces/views/_access.py", line 102, in dispatch
+    request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/ui/ui/views.py", line 1329, in get
+    logger.info("self.request.user.pk",self.request.user.pk)
+Message: 'self.request.user.pk'
+Arguments: (1,)
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/logging/__init__.py", line 980, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 830, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 567, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.5/logging/__init__.py", line 330, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3.5/threading.py", line 882, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.5/threading.py", line 914, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.5/threading.py", line 862, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.5/socketserver.py", line 625, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.5/socketserver.py", line 354, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.5/socketserver.py", line 681, in __init__
+    self.handle()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/servers/basehttp.py", line 155, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python3.5/wsgiref/handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/contrib/staticfiles/handlers.py", line 63, in __call__
+    return self.application(environ, start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/wsgi.py", line 157, in __call__
+    response = self.get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in get_response
+    response = self._middleware_chain(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/braces/views/_access.py", line 102, in dispatch
+    request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/ui/ui/views.py", line 1329, in get
+    logger.info("self.request.user.pk",self.request.user.pk)
+Message: 'self.request.user.pk'
+Arguments: (1,)
+[09/May/2018 11:58:40] "GET /search-seller-reports-data/ HTTP/1.1" 200 507
+[09/May/2018 11:58:47] "GET /search-seller-item/ HTTP/1.1" 200 70176
+Not Found: /search-seller-item/{[{item.photo}]}
+[09/May/2018 11:58:47] "GET /search-seller-item/%7B[%7Bitem.photo%7D]%7D HTTP/1.1" 404 8918
+/home/ubuntu/projects/droppers/ui/ui/views.py:675: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'ui.models.EbaySellerItems'> QuerySet.
+  paginator = Paginator(result_set, items_per_page)
+[09/May/2018 11:59:00] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=&order_by=&page_by=50&status=unmonitored HTTP/1.1" 200 178
+[09/May/2018 11:59:01] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=&page_by=50&order_by=&status=ignored HTTP/1.1" 200 178
+[09/May/2018 11:59:01] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=&order_by=&page_by=50&status=monitored HTTP/1.1" 200 25426
+[09/May/2018 11:59:16] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=B000ZZWNYG&order_by=&page_by=50&status=monitored HTTP/1.1" 200 699
+[09/May/2018 11:59:16] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=B000ZZWNYG&page_by=50&order_by=&status=ignored HTTP/1.1" 200 176
+[09/May/2018 11:59:16] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=B000ZZWNYG&order_by=&page_by=50&status=unmonitored HTTP/1.1" 200 176
+[09/May/2018 15:01:38] "GET /search-seller-reports/ HTTP/1.1" 200 51698
+[09/May/2018 15:01:39] "GET /static/bower_components/font-awesome/css/font-awesome.min.css HTTP/1.1" 304 0
+[09/May/2018 15:01:39] "GET /static/bower_components/themify-icons/themify-icons.css HTTP/1.1" 304 0
+[09/May/2018 15:01:39] "GET /static/bower_components/bootstrap/dist/css/bootstrap.min.css HTTP/1.1" 304 0
+[09/May/2018 15:01:40] "GET /static/bower_components/flag-icon-css/css/flag-icon.min.css HTTP/1.1" 304 0
+[09/May/2018 15:01:40] "GET /static/bower_components/animate.css/animate.min.css HTTP/1.1" 304 0
+[09/May/2018 15:01:40] "GET /static/bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css HTTP/1.1" 304 0
+[09/May/2018 15:01:41] "GET /static/bower_components/ladda/dist/ladda-themeless.min.css HTTP/1.1" 304 0
+[09/May/2018 15:01:41] "GET /static/bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min.css HTTP/1.1" 304 0
+[09/May/2018 15:01:42] "GET /static/bower_components/slick.js/slick/slick.css HTTP/1.1" 304 0
+[09/May/2018 15:01:42] "GET /static/bower_components/slick.js/slick/slick-theme.css HTTP/1.1" 304 0
+[09/May/2018 15:01:52] "GET /static/bower_components/angular-ui-switch/angular-ui-switch.min.css HTTP/1.1" 304 0
+[09/May/2018 15:02:01] "GET /static/assets/images/logo-collapsed2.png HTTP/1.1" 304 0
+[09/May/2018 15:02:02] "GET /static/bower_components/bootstrap/dist/js/bootstrap.min.js HTTP/1.1" 304 0
+[09/May/2018 15:02:23] "GET /search-seller-reports/ HTTP/1.1" 200 51698
+[09/May/2018 15:02:23] "GET /static/assets/css/plugins.css HTTP/1.1" 304 0
+[09/May/2018 15:02:23] "GET /static/assets/css/styles.css HTTP/1.1" 304 0
+[09/May/2018 15:02:24] "GET /static/assets/images/avatar-8.jpg HTTP/1.1" 304 0
+[09/May/2018 15:02:24] "GET /static/bower_components/jquery/dist/jquery.min.js HTTP/1.1" 304 0
+[09/May/2018 15:02:24] "GET /static/assets/images/avatar-9.jpg HTTP/1.1" 304 0
+[09/May/2018 15:02:24] "GET /static/assets/images/avatar-2.jpg HTTP/1.1" 304 0
+[09/May/2018 15:02:25] "GET /static/assets/images/avatar-3.jpg HTTP/1.1" 304 0
+[09/May/2018 15:02:25] "GET /static/bower_components/angular/angular.min.js HTTP/1.1" 304 0
+[09/May/2018 15:02:25] "GET /static/assets/images/avatar-4.jpg HTTP/1.1" 304 0
+[09/May/2018 15:02:25] "GET /static/assets/images/avatar-5.jpg HTTP/1.1" 304 0
+[09/May/2018 15:02:26] "GET /static/bower_components/components-modernizr/modernizr.js HTTP/1.1" 200 52757
+[09/May/2018 15:02:27] "GET /static/bower_components/js-cookie/src/js.cookie.js HTTP/1.1" 200 3677
+[09/May/2018 15:02:28] "GET /static/bower_components/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js HTTP/1.1" 200 25813
+[09/May/2018 15:02:44] "GET /static/bower_components/jquery.knobe/dist/jquery.knob.min.js HTTP/1.1" 200 10804
+[09/May/2018 15:02:45] "GET /static/bower_components/slick.js/slick/slick.min.js HTTP/1.1" 200 40478
+[09/May/2018 15:02:46] "GET /static/bower_components/jquery-numerator/jquery-numerator.js HTTP/1.1" 304 0
+[09/May/2018 15:02:47] "GET /static/bower_components/angular-ui-switch/angular-ui-switch.min.js HTTP/1.1" 304 0
+[09/May/2018 15:02:47] "GET /static/bower_components/Chart-js/Chart.min.js HTTP/1.1" 304 0
+[09/May/2018 15:02:50] "GET /static/assets/js/main.js?v=11 HTTP/1.1" 304 0
+[09/May/2018 15:02:50] "GET /static/assets/js/index.js HTTP/1.1" 304 0
+[09/May/2018 15:02:51] "GET /static/js/main.js HTTP/1.1" 304 0
+[09/May/2018 15:02:51] "GET /static/js/search_seller_item.js?v=606 HTTP/1.1" 304 0
+[09/May/2018 15:03:07] "GET /static/js/profit_calculator.js HTTP/1.1" 304 0
+[09/May/2018 15:03:07] "GET /static/js/search_seller_report.js HTTP/1.1" 304 0
+[09/May/2018 15:03:09] "GET /static/assets/images/avatar-7.jpg HTTP/1.1" 304 0
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/logging/__init__.py", line 980, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 830, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 567, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.5/logging/__init__.py", line 330, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3.5/threading.py", line 882, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.5/threading.py", line 914, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.5/threading.py", line 862, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.5/socketserver.py", line 625, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.5/socketserver.py", line 354, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.5/socketserver.py", line 681, in __init__
+    self.handle()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/servers/basehttp.py", line 155, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python3.5/wsgiref/handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/contrib/staticfiles/handlers.py", line 63, in __call__
+    return self.application(environ, start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/wsgi.py", line 157, in __call__
+    response = self.get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in get_response
+    response = self._middleware_chain(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/braces/views/_access.py", line 102, in dispatch
+    request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/ui/ui/views.py", line 1329, in get
+    logger.info("self.request.user.pk",self.request.user.pk)
+Message: 'self.request.user.pk'
+Arguments: (1,)
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/logging/__init__.py", line 980, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 830, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 567, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.5/logging/__init__.py", line 330, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3.5/threading.py", line 882, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.5/threading.py", line 914, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.5/threading.py", line 862, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.5/socketserver.py", line 625, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.5/socketserver.py", line 354, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.5/socketserver.py", line 681, in __init__
+    self.handle()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/servers/basehttp.py", line 155, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python3.5/wsgiref/handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/contrib/staticfiles/handlers.py", line 63, in __call__
+    return self.application(environ, start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/wsgi.py", line 157, in __call__
+    response = self.get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in get_response
+    response = self._middleware_chain(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/braces/views/_access.py", line 102, in dispatch
+    request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/ui/ui/views.py", line 1329, in get
+    logger.info("self.request.user.pk",self.request.user.pk)
+Message: 'self.request.user.pk'
+Arguments: (1,)
+[09/May/2018 15:03:09] "GET /search-seller-reports-data/ HTTP/1.1" 200 507
+[09/May/2018 15:03:09] "GET /static/assets/images/avatar-10.jpg HTTP/1.1" 304 0
+[09/May/2018 15:03:29] "GET /static/bower_components/font-awesome/fonts/fontawesome-webfont.woff?v=4.5.0 HTTP/1.1" 200 83588
+[09/May/2018 15:03:29] "GET /static/bower_components/themify-icons/fonts/themify.ttf?-fvbane HTTP/1.1" 200 78584
+Not Found: /search-seller-reports/favicon.ico
+[09/May/2018 15:03:31] "GET /search-seller-reports/favicon.ico HTTP/1.1" 404 8900
+[09/May/2018 15:03:36] "GET /search-seller-reports/ HTTP/1.1" 200 51698
+[09/May/2018 15:03:36] "GET /static/bower_components/font-awesome/css/font-awesome.min.css HTTP/1.1" 200 27470
+[09/May/2018 15:03:36] "GET /static/bower_components/bootstrap/dist/css/bootstrap.min.css HTTP/1.1" 200 121260
+[09/May/2018 15:03:37] "GET /static/bower_components/themify-icons/themify-icons.css HTTP/1.1" 200 17516
+[09/May/2018 15:03:43] "GET /search-seller-reports/ HTTP/1.1" 302 0
+[09/May/2018 15:03:43] "GET /login/?next=/search-seller-reports/ HTTP/1.1" 200 2145
+[09/May/2018 15:03:44] "GET /static/assets/css/signin2.css HTTP/1.1" 200 3679
+Not Found: /favicon.ico
+[09/May/2018 15:03:45] "GET /favicon.ico HTTP/1.1" 404 8834
+[09/May/2018 15:03:52] "GET /static/bower_components/animate.css/animate.min.css HTTP/1.1" 200 53598
+[09/May/2018 15:03:53] "GET /static/bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css HTTP/1.1" 200 3289
+[09/May/2018 15:03:56] "GET /static/bower_components/slick.js/slick/slick.css HTTP/1.1" 200 1885
+[09/May/2018 15:03:57] "GET /static/bower_components/slick.js/slick/slick-theme.css HTTP/1.1" 200 3359
+[09/May/2018 15:04:02] "POST /login/?next=/search-seller-reports/ HTTP/1.1" 302 0
+[09/May/2018 15:04:02] "GET /search-seller-reports/ HTTP/1.1" 200 51698
+[09/May/2018 15:04:02] "GET /static/bower_components/themify-icons/themify-icons.css HTTP/1.1" 200 17516
+[09/May/2018 15:04:02] "GET /static/bower_components/font-awesome/css/font-awesome.min.css HTTP/1.1" 200 27470
+[09/May/2018 15:04:02] "GET /static/bower_components/flag-icon-css/css/flag-icon.min.css HTTP/1.1" 200 32637
+[09/May/2018 15:04:02] "GET /static/bower_components/animate.css/animate.min.css HTTP/1.1" 200 53598
+[09/May/2018 15:04:02] "GET /static/bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css HTTP/1.1" 200 3289
+[09/May/2018 15:04:02] "GET /static/bower_components/bootstrap/dist/css/bootstrap.min.css HTTP/1.1" 200 121260
+[09/May/2018 15:04:02] "GET /static/bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min.css HTTP/1.1" 200 7430
+[09/May/2018 15:04:02] "GET /static/bower_components/ladda/dist/ladda-themeless.min.css HTTP/1.1" 200 7717
+[09/May/2018 15:04:02] "GET /static/bower_components/slick.js/slick/slick.css HTTP/1.1" 200 1885
+[09/May/2018 15:04:02] "GET /static/bower_components/slick.js/slick/slick-theme.css HTTP/1.1" 200 3359
+[09/May/2018 15:04:02] "GET /static/bower_components/angular-ui-switch/angular-ui-switch.min.css HTTP/1.1" 200 1020
+[09/May/2018 15:04:02] "GET /static/assets/css/themes/lyt3-theme-1.css HTTP/1.1" 200 15054
+[09/May/2018 15:04:02] "GET /static/assets/css/styles.css HTTP/1.1" 200 394910
+[09/May/2018 15:04:02] "GET /static/assets/css/plugins.css HTTP/1.1" 200 46971
+[09/May/2018 15:04:02] "GET /static/bower_components/jquery/dist/jquery.min.js HTTP/1.1" 200 84380
+[09/May/2018 15:04:02] "GET /static/bower_components/components-modernizr/modernizr.js HTTP/1.1" 200 52757
+[09/May/2018 15:04:02] "GET /static/bower_components/bootstrap/dist/js/bootstrap.min.js HTTP/1.1" 200 36868
+[09/May/2018 15:04:02] "GET /static/bower_components/angular/angular.min.js HTTP/1.1" 200 159443
+[09/May/2018 15:04:02] "GET /static/bower_components/js-cookie/src/js.cookie.js HTTP/1.1" 200 3677
+[09/May/2018 15:04:02] "GET /static/bower_components/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js HTTP/1.1" 200 25813
+[09/May/2018 15:04:02] "GET /static/bower_components/jquery-fullscreen/jquery.fullscreen-min.js HTTP/1.1" 200 1318
+[09/May/2018 15:04:02] "GET /static/bower_components/jquery.knobe/dist/jquery.knob.min.js HTTP/1.1" 200 10804
+[09/May/2018 15:04:02] "GET /static/bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js HTTP/1.1" 200 30431
+[09/May/2018 15:04:02] "GET /static/bower_components/slick.js/slick/slick.min.js HTTP/1.1" 200 40478
+[09/May/2018 15:04:02] "GET /static/bower_components/ladda/dist/spin.min.js HTTP/1.1" 200 4107
+[09/May/2018 15:04:02] "GET /static/bower_components/ladda/dist/ladda.min.js HTTP/1.1" 200 3842
+[09/May/2018 15:04:02] "GET /static/bower_components/jquery-numerator/jquery-numerator.js HTTP/1.1" 200 3791
+[09/May/2018 15:04:02] "GET /static/bower_components/ladda/dist/ladda.jquery.min.js HTTP/1.1" 200 583
+[09/May/2018 15:04:02] "GET /static/bower_components/angular-ui-switch/angular-ui-switch.min.js HTTP/1.1" 200 737
+[09/May/2018 15:04:02] "GET /static/assets/js/letter-icons.js HTTP/1.1" 200 4497
+[09/May/2018 15:04:02] "GET /static/bower_components/Chart-js/Chart.min.js HTTP/1.1" 200 52101
+[09/May/2018 15:04:03] "GET /static/assets/js/main.js?v=11 HTTP/1.1" 200 17044
+[09/May/2018 15:04:03] "GET /static/assets/js/index.js HTTP/1.1" 200 16332
+[09/May/2018 15:04:03] "GET /static/js/search_seller_item.js?v=606 HTTP/1.1" 200 17279
+[09/May/2018 15:04:03] "GET /static/js/main.js HTTP/1.1" 200 3641
+[09/May/2018 15:04:03] "GET /static/js/add_seller_keyset.js HTTP/1.1" 200 1933
+[09/May/2018 15:04:03] "GET /static/js/pending_items.js HTTP/1.1" 200 3748
+[09/May/2018 15:04:03] "GET /static/js/manual_pending_item_add.js HTTP/1.1" 200 4273
+[09/May/2018 15:04:03] "GET /static/js/profit_calculator.js HTTP/1.1" 200 4304
+[09/May/2018 15:04:03] "GET /static/js/search_seller_report.js HTTP/1.1" 200 2324
+[09/May/2018 15:04:03] "GET /static/js/multi_ebay_account.js HTTP/1.1" 200 2235
+[09/May/2018 15:04:03] "GET /static/bower_components/font-awesome/fonts/fontawesome-webfont.woff2?v=4.5.0 HTTP/1.1" 200 66624
+[09/May/2018 15:04:03] "GET /static/bower_components/themify-icons/fonts/themify.woff?-fvbane HTTP/1.1" 200 56108
+[09/May/2018 15:04:03] "GET /static/assets/images/logo-collapsed2.png HTTP/1.1" 200 428
+[09/May/2018 15:04:03] "GET /static/assets/images/avatar-2.jpg HTTP/1.1" 200 1511
+[09/May/2018 15:04:03] "GET /static/assets/images/avatar-3.jpg HTTP/1.1" 200 1864
+[09/May/2018 15:04:03] "GET /static/assets/images/avatar-4.jpg HTTP/1.1" 200 1873
+[09/May/2018 15:04:03] "GET /static/assets/images/avatar-5.jpg HTTP/1.1" 200 1979
+[09/May/2018 15:04:03] "GET /static/assets/images/avatar-7.jpg HTTP/1.1" 200 1572
+[09/May/2018 15:04:03] "GET /static/assets/images/avatar-8.jpg HTTP/1.1" 200 1707
+[09/May/2018 15:04:03] "GET /static/assets/images/avatar-6.jpg HTTP/1.1" 200 1442
+[09/May/2018 15:04:03] "GET /static/assets/images/avatar-9.jpg HTTP/1.1" 200 1480
+[09/May/2018 15:04:03] "GET /static/assets/images/avatar-10.jpg HTTP/1.1" 200 1544
+[09/May/2018 15:04:03] "GET /static/assets/images/avatar-1.jpg HTTP/1.1" 200 1355
+[09/May/2018 15:04:03] "GET /static/assets/images/user-background.png HTTP/1.1" 200 3786
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/logging/__init__.py", line 980, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 830, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 567, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.5/logging/__init__.py", line 330, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3.5/threading.py", line 882, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.5/threading.py", line 914, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.5/threading.py", line 862, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.5/socketserver.py", line 625, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.5/socketserver.py", line 354, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.5/socketserver.py", line 681, in __init__
+    self.handle()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/servers/basehttp.py", line 155, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python3.5/wsgiref/handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/contrib/staticfiles/handlers.py", line 63, in __call__
+    return self.application(environ, start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/wsgi.py", line 157, in __call__
+    response = self.get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in get_response
+    response = self._middleware_chain(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/braces/views/_access.py", line 102, in dispatch
+    request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/ui/ui/views.py", line 1329, in get
+    logger.info("self.request.user.pk",self.request.user.pk)
+Message: 'self.request.user.pk'
+Arguments: (1,)
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/logging/__init__.py", line 980, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 830, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 567, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.5/logging/__init__.py", line 330, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3.5/threading.py", line 882, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.5/threading.py", line 914, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.5/threading.py", line 862, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.5/socketserver.py", line 625, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.5/socketserver.py", line 354, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.5/socketserver.py", line 681, in __init__
+    self.handle()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/servers/basehttp.py", line 155, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python3.5/wsgiref/handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/contrib/staticfiles/handlers.py", line 63, in __call__
+    return self.application(environ, start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/wsgi.py", line 157, in __call__
+    response = self.get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in get_response
+    response = self._middleware_chain(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/braces/views/_access.py", line 102, in dispatch
+    request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/ui/ui/views.py", line 1329, in get
+    logger.info("self.request.user.pk",self.request.user.pk)
+Message: 'self.request.user.pk'
+Arguments: (1,)
+[09/May/2018 15:04:04] "GET /search-seller-reports-data/ HTTP/1.1" 200 507
+Not Found: /search-seller-reports/favicon.ico
+[09/May/2018 15:04:04] "GET /search-seller-reports/favicon.ico HTTP/1.1" 404 8900
+[09/May/2018 15:04:06] "GET /static/assets/css/themes/lyt3-theme-1.css HTTP/1.1" 200 15054
+[09/May/2018 15:04:07] "GET /static/assets/images/logo-collapsed2.png HTTP/1.1" 200 428
+[09/May/2018 15:04:08] "GET /static/bower_components/jquery/dist/jquery.min.js HTTP/1.1" 200 84380
+[09/May/2018 15:04:08] "GET /static/bower_components/bootstrap/dist/js/bootstrap.min.js HTTP/1.1" 200 36868
+[09/May/2018 15:04:08] "GET /static/bower_components/angular/angular.min.js HTTP/1.1" 200 159443
+[09/May/2018 15:04:09] "GET /search-seller/11 HTTP/1.1" 301 0
+[09/May/2018 15:04:09] "GET /search-seller/11/ HTTP/1.1" 200 51323
+[09/May/2018 15:04:09] "GET /static/bower_components/js-cookie/src/js.cookie.js HTTP/1.1" 200 3677
+[09/May/2018 15:04:09] "GET /static/bower_components/components-modernizr/modernizr.js HTTP/1.1" 200 52757
+/home/ubuntu/projects/droppers/ui/ui/views.py:562: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'ui.models.EbaySellerSearch'> QuerySet.
+  paginator = Paginator(ebay_sellers, page_by)
+[09/May/2018 15:04:09] "GET /get-sellers-item/?format=json&page=1&report_id=11&order_by= HTTP/1.1" 200 28252
+[09/May/2018 15:04:10] "GET /static/bower_components/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js HTTP/1.1" 200 25813
+[09/May/2018 15:04:10] "GET /static/assets/images/avatar-4.jpg HTTP/1.1" 200 1873
+Not Found: /search-seller/11/favicon.ico
+[09/May/2018 15:04:10] "GET /search-seller/11/favicon.ico HTTP/1.1" 404 8885
+[09/May/2018 15:04:11] "GET /static/assets/images/avatar-2.jpg HTTP/1.1" 200 1511
+[09/May/2018 15:04:11] "GET /static/assets/images/avatar-3.jpg HTTP/1.1" 200 1864
+[09/May/2018 15:04:12] "GET /static/assets/images/avatar-6.jpg HTTP/1.1" 200 1442
+[09/May/2018 15:04:14] "GET /static/assets/images/avatar-9.jpg HTTP/1.1" 200 1480
+[09/May/2018 15:04:15] "GET /static/assets/images/avatar-7.jpg HTTP/1.1" 200 1572
+[09/May/2018 15:04:16] "GET /static/assets/images/avatar-5.jpg HTTP/1.1" 200 1979
+[09/May/2018 15:04:17] "GET /static/assets/images/avatar-1.jpg HTTP/1.1" 200 1355
+[09/May/2018 15:04:18] "GET /static/bower_components/jquery-fullscreen/jquery.fullscreen-min.js HTTP/1.1" 200 1318
+[09/May/2018 15:04:19] "GET /static/bower_components/jquery.knobe/dist/jquery.knob.min.js HTTP/1.1" 200 10804
+[09/May/2018 15:04:19] "GET /static/bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js HTTP/1.1" 200 30431
+[09/May/2018 15:04:29] "GET /static/bower_components/jquery-numerator/jquery-numerator.js HTTP/1.1" 200 3791
+[09/May/2018 15:04:29] "GET /static/bower_components/ladda/dist/spin.min.js HTTP/1.1" 200 4107
+[09/May/2018 15:04:31] "GET /static/bower_components/ladda/dist/ladda.jquery.min.js HTTP/1.1" 200 583
+[09/May/2018 15:04:32] "GET /static/assets/js/letter-icons.js HTTP/1.1" 200 4497
+[09/May/2018 15:04:32] "GET /static/bower_components/Chart-js/Chart.min.js HTTP/1.1" 200 52101
+[09/May/2018 15:04:33] "GET /static/assets/js/main.js?v=11 HTTP/1.1" 200 17044
+[09/May/2018 15:04:34] "GET /static/js/main.js HTTP/1.1" 200 3641
+[09/May/2018 15:04:34] "GET /static/js/search_seller_item.js?v=606 HTTP/1.1" 200 17279
+[09/May/2018 15:04:35] "GET /static/js/add_seller_keyset.js HTTP/1.1" 200 1933
+[09/May/2018 15:04:36] "GET /static/js/pending_items.js HTTP/1.1" 200 3748
+[09/May/2018 15:04:36] "GET /static/js/manual_pending_item_add.js HTTP/1.1" 200 4273
+[09/May/2018 15:04:56] "GET /static/bower_components/themify-icons/fonts/themify.woff?-fvbane HTTP/1.1" 200 56108
+[09/May/2018 15:05:00] "GET /static/bower_components/font-awesome/fonts/fontawesome-webfont.ttf?v=4.5.0 HTTP/1.1" 200 142072
+Not Found: /search-seller-reports/favicon.ico
+[09/May/2018 15:05:01] "GET /search-seller-reports/favicon.ico HTTP/1.1" 404 8900
+[09/May/2018 15:05:29] "GET /search-seller-reports/ HTTP/1.1" 200 51698
+[09/May/2018 15:05:29] "GET /static/bower_components/angular-ui-switch/angular-ui-switch.min.css HTTP/1.1" 200 1020
+[09/May/2018 15:05:29] "GET /static/bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min.css HTTP/1.1" 200 7430
+[09/May/2018 15:05:29] "GET /static/bower_components/flag-icon-css/css/flag-icon.min.css HTTP/1.1" 200 32637
+[09/May/2018 15:05:29] "GET /static/bower_components/ladda/dist/ladda-themeless.min.css HTTP/1.1" 200 7717
+[09/May/2018 15:05:31] "GET /static/assets/css/styles.css HTTP/1.1" 200 394910
+[09/May/2018 15:05:51] "GET /static/assets/images/avatar-8.jpg HTTP/1.1" 200 1707
+[09/May/2018 15:05:51] "GET /static/bower_components/slick.js/slick/slick.min.js HTTP/1.1" 200 40478
+[09/May/2018 15:05:51] "GET /static/bower_components/ladda/dist/ladda.min.js HTTP/1.1" 200 3842
+[09/May/2018 15:05:51] "GET /static/bower_components/angular-ui-switch/angular-ui-switch.min.js HTTP/1.1" 200 737
+[09/May/2018 15:05:51] "GET /static/assets/js/index.js HTTP/1.1" 200 16332
+[09/May/2018 15:05:52] "GET /static/js/profit_calculator.js HTTP/1.1" 200 4304
+[09/May/2018 15:05:52] "GET /static/js/search_seller_report.js HTTP/1.1" 200 2324
+[09/May/2018 15:05:52] "GET /static/js/multi_ebay_account.js HTTP/1.1" 200 2235
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/logging/__init__.py", line 980, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 830, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 567, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.5/logging/__init__.py", line 330, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3.5/threading.py", line 882, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.5/threading.py", line 914, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.5/threading.py", line 862, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.5/socketserver.py", line 625, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.5/socketserver.py", line 354, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.5/socketserver.py", line 681, in __init__
+    self.handle()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/servers/basehttp.py", line 155, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python3.5/wsgiref/handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/contrib/staticfiles/handlers.py", line 63, in __call__
+    return self.application(environ, start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/wsgi.py", line 157, in __call__
+    response = self.get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in get_response
+    response = self._middleware_chain(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/braces/views/_access.py", line 102, in dispatch
+    request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/ui/ui/views.py", line 1329, in get
+    logger.info("self.request.user.pk",self.request.user.pk)
+Message: 'self.request.user.pk'
+Arguments: (1,)
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/logging/__init__.py", line 980, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 830, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 567, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.5/logging/__init__.py", line 330, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3.5/threading.py", line 882, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.5/threading.py", line 914, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.5/threading.py", line 862, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.5/socketserver.py", line 625, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.5/socketserver.py", line 354, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.5/socketserver.py", line 681, in __init__
+    self.handle()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/servers/basehttp.py", line 155, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python3.5/wsgiref/handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/contrib/staticfiles/handlers.py", line 63, in __call__
+    return self.application(environ, start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/wsgi.py", line 157, in __call__
+    response = self.get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in get_response
+    response = self._middleware_chain(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/braces/views/_access.py", line 102, in dispatch
+    request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rest_framework/views.py", line 486, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/ui/ui/views.py", line 1329, in get
+    logger.info("self.request.user.pk",self.request.user.pk)
+Message: 'self.request.user.pk'
+Arguments: (1,)
+[09/May/2018 15:05:53] "GET /search-seller-reports-data/ HTTP/1.1" 200 507
+[09/May/2018 15:06:13] "GET /static/bower_components/font-awesome/fonts/fontawesome-webfont.woff?v=4.5.0 HTTP/1.1" 200 83588
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/logging/__init__.py", line 980, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 830, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 567, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.5/logging/__init__.py", line 330, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3.5/threading.py", line 882, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.5/threading.py", line 914, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.5/threading.py", line 862, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.5/socketserver.py", line 625, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.5/socketserver.py", line 354, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.5/socketserver.py", line 681, in __init__
+    self.handle()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/servers/basehttp.py", line 155, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python3.5/wsgiref/handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/contrib/staticfiles/handlers.py", line 63, in __call__
+    return self.application(environ, start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/wsgi.py", line 157, in __call__
+    response = self.get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in get_response
+    response = self._middleware_chain(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/braces/views/_access.py", line 102, in dispatch
+    request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/generic/base.py", line 155, in get
+    context = self.get_context_data(**kwargs)
+  File "/home/ubuntu/projects/droppers/ui/ui/views.py", line 49, in get_context_data
+    logger.info("self.request.user.pk",self.request.user.pk)
+Message: 'self.request.user.pk'
+Arguments: (1,)
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/logging/__init__.py", line 980, in emit
+    msg = self.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 830, in format
+    return fmt.format(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 567, in format
+    record.message = record.getMessage()
+  File "/usr/lib/python3.5/logging/__init__.py", line 330, in getMessage
+    msg = msg % self.args
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/usr/lib/python3.5/threading.py", line 882, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.5/threading.py", line 914, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.5/threading.py", line 862, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.5/socketserver.py", line 625, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.5/socketserver.py", line 354, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.5/socketserver.py", line 681, in __init__
+    self.handle()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/servers/basehttp.py", line 155, in handle
+    handler.run(self.server.get_app())
+  File "/usr/lib/python3.5/wsgiref/handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/contrib/staticfiles/handlers.py", line 63, in __call__
+    return self.application(environ, start_response)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/wsgi.py", line 157, in __call__
+    response = self.get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 124, in get_response
+    response = self._middleware_chain(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/braces/views/_access.py", line 102, in dispatch
+    request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/views/generic/base.py", line 155, in get
+    context = self.get_context_data(**kwargs)
+  File "/home/ubuntu/projects/droppers/ui/ui/views.py", line 49, in get_context_data
+    logger.info("self.request.user.pk",self.request.user.pk)
+Message: 'self.request.user.pk'
+Arguments: (1,)
+[10/May/2018 16:46:54] "GET / HTTP/1.1" 200 49175
+[10/May/2018 16:46:55] "GET /static/bower_components/font-awesome/css/font-awesome.min.css HTTP/1.1" 200 27470
+[10/May/2018 16:46:55] "GET /static/bower_components/flag-icon-css/css/flag-icon.min.css HTTP/1.1" 200 32637
+[10/May/2018 16:46:55] "GET /static/bower_components/themify-icons/themify-icons.css HTTP/1.1" 200 17516
+[10/May/2018 16:46:55] "GET /static/bower_components/animate.css/animate.min.css HTTP/1.1" 200 53598
+[10/May/2018 16:46:55] "GET /static/bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css HTTP/1.1" 200 3289
+[10/May/2018 16:46:55] "GET /static/bower_components/bootstrap/dist/css/bootstrap.min.css HTTP/1.1" 200 121260
+[10/May/2018 16:46:55] "GET /static/bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min.css HTTP/1.1" 200 7430
+[10/May/2018 16:46:55] "GET /static/bower_components/ladda/dist/ladda-themeless.min.css HTTP/1.1" 200 7717
+[10/May/2018 16:46:55] "GET /static/bower_components/slick.js/slick/slick.css HTTP/1.1" 200 1885
+[10/May/2018 16:46:55] "GET /static/bower_components/slick.js/slick/slick-theme.css HTTP/1.1" 200 3359
+[10/May/2018 16:46:55] "GET /static/bower_components/angular-ui-switch/angular-ui-switch.min.css HTTP/1.1" 200 1020
+[10/May/2018 16:46:55] "GET /static/assets/css/plugins.css HTTP/1.1" 200 46971
+[10/May/2018 16:46:55] "GET /static/assets/css/themes/lyt3-theme-1.css HTTP/1.1" 200 15054
+[10/May/2018 16:46:55] "GET /static/bower_components/jquery/dist/jquery.min.js HTTP/1.1" 200 84380
+[10/May/2018 16:46:55] "GET /static/assets/css/styles.css HTTP/1.1" 200 394910
+[10/May/2018 16:46:55] "GET /static/bower_components/angular/angular.min.js HTTP/1.1" 200 159443
+[10/May/2018 16:46:56] "GET /static/bower_components/bootstrap/dist/js/bootstrap.min.js HTTP/1.1" 200 36868
+[10/May/2018 16:46:56] "GET /static/bower_components/components-modernizr/modernizr.js HTTP/1.1" 200 52757
+[10/May/2018 16:46:56] "GET /static/bower_components/js-cookie/src/js.cookie.js HTTP/1.1" 200 3677
+[10/May/2018 16:46:56] "GET /static/bower_components/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js HTTP/1.1" 200 25813
+[10/May/2018 16:46:56] "GET /static/bower_components/jquery-fullscreen/jquery.fullscreen-min.js HTTP/1.1" 200 1318
+[10/May/2018 16:46:56] "GET /static/bower_components/jquery.knobe/dist/jquery.knob.min.js HTTP/1.1" 200 10804
+[10/May/2018 16:46:56] "GET /static/bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js HTTP/1.1" 200 30431
+[10/May/2018 16:46:56] "GET /static/bower_components/slick.js/slick/slick.min.js HTTP/1.1" 200 40478
+[10/May/2018 16:46:56] "GET /static/bower_components/ladda/dist/spin.min.js HTTP/1.1" 200 4107
+[10/May/2018 16:46:56] "GET /static/bower_components/jquery-numerator/jquery-numerator.js HTTP/1.1" 200 3791
+[10/May/2018 16:46:56] "GET /static/bower_components/ladda/dist/ladda.min.js HTTP/1.1" 200 3842
+[10/May/2018 16:46:56] "GET /static/bower_components/ladda/dist/ladda.jquery.min.js HTTP/1.1" 200 583
+[10/May/2018 16:46:56] "GET /static/bower_components/angular-ui-switch/angular-ui-switch.min.js HTTP/1.1" 200 737
+[10/May/2018 16:46:56] "GET /static/bower_components/Chart-js/Chart.min.js HTTP/1.1" 200 52101
+[10/May/2018 16:46:56] "GET /static/assets/js/letter-icons.js HTTP/1.1" 200 4497
+[10/May/2018 16:46:56] "GET /static/assets/js/main.js?v=11 HTTP/1.1" 200 17044
+[10/May/2018 16:46:56] "GET /static/assets/js/index.js HTTP/1.1" 200 16332
+[10/May/2018 16:46:56] "GET /static/js/main.js HTTP/1.1" 200 3641
+[10/May/2018 16:46:56] "GET /static/js/search_seller_item.js?v=606 HTTP/1.1" 200 17279
+[10/May/2018 16:46:56] "GET /static/js/add_seller_keyset.js HTTP/1.1" 200 1933
+[10/May/2018 16:46:56] "GET /static/js/pending_items.js HTTP/1.1" 200 3748
+[10/May/2018 16:46:56] "GET /static/js/manual_pending_item_add.js HTTP/1.1" 200 4273
+[10/May/2018 16:46:56] "GET /static/js/profit_calculator.js HTTP/1.1" 200 4304
+[10/May/2018 16:46:56] "GET /static/js/search_seller_report.js HTTP/1.1" 200 2324
+[10/May/2018 16:46:56] "GET /static/js/multi_ebay_account.js HTTP/1.1" 200 2235
+[10/May/2018 16:46:56] "GET /static/assets/images/logo-collapsed2.png HTTP/1.1" 200 428
+[10/May/2018 16:46:56] "GET /static/assets/images/avatar-2.jpg HTTP/1.1" 200 1511
+[10/May/2018 16:46:56] "GET /static/assets/images/avatar-3.jpg HTTP/1.1" 200 1864
+[10/May/2018 16:46:56] "GET /static/assets/images/avatar-4.jpg HTTP/1.1" 200 1873
+[10/May/2018 16:46:56] "GET /static/assets/images/avatar-5.jpg HTTP/1.1" 200 1979
+[10/May/2018 16:46:56] "GET /static/bower_components/font-awesome/fonts/fontawesome-webfont.woff2?v=4.5.0 HTTP/1.1" 200 66624
+[10/May/2018 16:46:56] "GET /static/bower_components/themify-icons/fonts/themify.woff?-fvbane HTTP/1.1" 200 56108
+[10/May/2018 16:46:56] "GET /static/assets/images/avatar-6.jpg HTTP/1.1" 200 1442
+[10/May/2018 16:46:56] "GET /static/assets/images/avatar-7.jpg HTTP/1.1" 200 1572
+[10/May/2018 16:46:56] "GET /static/assets/images/avatar-8.jpg HTTP/1.1" 200 1707
+[10/May/2018 16:46:56] "GET /static/assets/images/avatar-9.jpg HTTP/1.1" 200 1480
+[10/May/2018 16:46:56] "GET /static/assets/images/avatar-10.jpg HTTP/1.1" 200 1544
+[10/May/2018 16:46:56] "GET /static/assets/images/avatar-1.jpg HTTP/1.1" 200 1355
+[10/May/2018 16:46:56] "GET /static/assets/images/user-background.png HTTP/1.1" 200 3786
+[10/May/2018 16:46:58] "GET /ebay-profit-calculator/ HTTP/1.1" 200 53299
+[10/May/2018 16:46:59] "GET /get-ebay-profit/ HTTP/1.1" 200 54
+Not Found: /ebay-profit-calculator/favicon.ico
+[10/May/2018 16:47:00] "GET /ebay-profit-calculator/favicon.ico HTTP/1.1" 404 8903
+[10/May/2018 16:47:05] "POST /get-ebay-profit/ HTTP/1.1" 200 146
