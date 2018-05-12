@@ -1,9 +1,10 @@
 from .db import get_ebay_items, query_set_to_list, get_all_active_sellers_account, \
-				get_price_formula, get_existing_value
+				get_price_formula, get_existing_value, create_ebay_item
 from .utils import get_simple_list_from_list_dict, get_value_from_dict, \
 				 make_amazon_url, get_float
 from .factory import get_ebayhandler, get_amazonscraper, get_proxyhandler
 from .helpers import is_value_empty
+from .parsers import parse_ebay_item
 import re
 
 def get_active_seller_account(current_user,is_active):
@@ -119,10 +120,10 @@ def get_cost_components(amazon_info,price_formula_obj,existing_ebay_obj):
 	cost_components["ebay_final_value_fee"] = price_formula_obj.get("ebay_final_value_fee")
 	cost_components["paypal_fees_perc"] = price_formula_obj.get("paypal_fees_perc")
 	if existing_ebay_obj:
-		cost_components["margin_perc"] = existing_ebay_obj.margin_perc
-		cost_components["fixed_margin"] = existing_ebay_obj.minimum_margin
-	print("cost_components",cost_components)
-	input("cost_components")
+		if existing_ebay_obj.margin_perc:
+			cost_components["margin_perc"] = existing_ebay_obj.margin_perc
+		if existing_ebay_obj.minimum_margin:
+			cost_components["fixed_margin"] = existing_ebay_obj.minimum_margin
 	return cost_components
 
 
@@ -133,19 +134,39 @@ def get_ebay_obj_to_update(amazon_info,price_formula_obj,existing_ebay_info):
 	if is_out_of_stock:
 		ebay_obj["Quantity"] = "0"
 	else:
-		cost_components = get_cost_components(amazon_info,price_formula_obj,existing_ebay_info)
+		cost_components = get_cost_components(amazon_info,price_formula_obj,\
+						existing_ebay_info)
 		ebay_price = get_final_cost(cost_components)
-		ebay_obj["Quantity"] = existing_ebay_info.quantity
+		ebay_obj["Quantity"] = "2"
 		ebay_obj["StartPrice"] = ebay_price
 	return ebay_obj
 
-
+def process_ebay_item(ebay_item,amazon_handler, proxy_handler, \
+					ebay_handler, existing_ebay_items_list, current_seller_formula):
+	amazon_asin = get_amazon_asin_from_ebay_dict(ebay_item)
+	amazon_info = get_amazon_info(amazon_asin,amazon_handler,proxy_handler)	
+	print("amazon_info",amazon_info)
+	existing_ebay_item = get_existing_ebay_item(existing_ebay_items_list,ebay_item)
+	ebay_obj_to_update = get_ebay_obj_to_update(amazon_info,\
+					current_seller_formula,existing_ebay_item)
+	print("ebay_obj_to_update",ebay_obj_to_update)
+	if existing_ebay_item is None:
+		existing_ebay_item = create_ebay_item(parse_ebay_item(ebay_item))
+	ebay_price_obj = {"Item":ebay_obj_to_update}
+	is_updated = ebay_handler.set_item_price(item_price_dict = ebay_price_obj)
+	if is_updated and existing_ebay_item and ebay_price_obj.get("Quantity") != "0":
+		existing_ebay_item.status = "monitored"
+		existing_ebay_item.quantity = "2"
+	elif existing_ebay_item and ebay_price_obj.get("Quantity") == "0":
+		existing_ebay_item.status = "unmonitored"
+	if existing_ebay_item:
+		existing_ebay_item.save()
+	needed = is_needed_to_update_info_on_ebay(amazon_info,ebay_item)
 
 def testing_facade():
 	current_user = '1'
 	all_seller_account_of_current_user = get_active_seller_account(current_user,1)
 	print(all_seller_account_of_current_user)
-	input("all_seller_account_of_current_user")
 	if all_seller_account_of_current_user:
 		for seller_accounts in all_seller_account_of_current_user:
 			current_seller_id = seller_accounts.get("id")
@@ -165,16 +186,12 @@ def testing_facade():
 				continue
 			ignored_items_list = get_ignored_items_list(current_seller_id)
 			ebay_items_after_remove_ignored = remove_ignore_items(ebay_items,\
-											current_seller_id,ignored_items_list)
+											current_seller_id, ignored_items_list)
 			existing_ebay_items_list = get_ebay_items(seller_id=current_seller_id)
+			amazon_handler = get_amazonscraper()
+			proxy_handler = get_proxyhandler()
 			for ebay_item in ebay_items_after_remove_ignored:
-				amazon_asin = get_amazon_asin_from_ebay_dict(ebay_item)
-				amazon_handler = get_amazonscraper()
-				proxy_handler = get_proxyhandler()
-				amazon_info = get_amazon_info(amazon_asin,amazon_handler,proxy_handler)	
-				print("amazon_info",amazon_info)
-				existing_ebay_item = get_existing_ebay_item(existing_ebay_items_list,ebay_item)
-				ebay_obj_to_update = get_ebay_obj_to_update(amazon_info,current_seller_formula,existing_ebay_item)
-				print("ebay_obj_to_update",ebay_obj_to_update)
-				needed = is_needed_to_update_info_on_ebay(amazon_info,ebay_item)
+				process_ebay_item(ebay_item,amazon_handler, proxy_handler,\
+					 ebay_handler, existing_ebay_items_list, current_seller_formula)
+				
 testing_facade()

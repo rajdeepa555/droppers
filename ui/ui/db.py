@@ -30,3 +30,11 @@ def get_existing_value(query_set,**filters):
 	if value and len(value)>0:
 		value = value.first()
 	return value
+
+def create_ebay_item(**params):
+	ebay_obj = None
+	try:
+		ebay_obj = EbaySellerItems.objects.create(**params)
+	except:
+		pass
+	return ebay_obj
