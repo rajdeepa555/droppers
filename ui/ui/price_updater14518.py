@@ -1,13 +1,11 @@
 from .db import get_ebay_items, query_set_to_list, get_all_active_sellers_account, \
-				get_price_formula, get_existing_value, create_ebay_item,set_ebay_items_to_inactive, \
-				create_batchlog_item, create_run_item
+				get_price_formula, get_existing_value, create_ebay_item
 from .utils import get_simple_list_from_list_dict, get_value_from_dict, \
-				 make_amazon_url, get_float,get_run_id
+				 make_amazon_url, get_float
 from .factory import get_ebayhandler, get_amazonscraper, get_proxyhandler
 from .helpers import is_value_empty
 from .parsers import parse_ebay_item
 import re
-from django.forms.models import model_to_dict
 
 def get_active_seller_account(current_user,is_active):
 	seller_accounts = get_all_active_sellers_account(user_id=current_user,is_active=is_active)
@@ -21,10 +19,10 @@ def get_total_no_of_pages(ebay_handler):
 	return no_of_pages
 
 
-def get_ebay_item_list(ebay_handler,page = 1):
+def get_ebay_item_list(ebay_handler):
 	ebay_items_list = []
 	if ebay_handler:
-		ebay_items_list = ebay_handler.get_all_items(page_number=page)
+		ebay_items_list = ebay_handler.get_all_items()
 	return ebay_items_list
 
 def get_ignored_items_list(seller_id):
@@ -63,14 +61,11 @@ def assign_proxy(amazon_handler,proxy_handler):
 def get_amazon_info(amazon_asin,amazon_handler,proxy_handler):
 	assign_proxy(amazon_handler,proxy_handler)
 	amazon_url = make_amazon_url(amazon_asin)
-	print("amazon url ",amazon_url)
 	res = amazon_handler.scrape_with_error(amazon_url)
-	print("response from amazon scrape_with_error",res)
 	retry = 0
 	while res is None or "503" in res or amazon_handler.is_captcha_in_response:
 		if aso.is_captcha_in_response or "503" in res:
 			assign_proxy(amazon_handler,proxy_handler)
-			res = amazon_handler.scrape_with_error(amazon_url)
 			retry += 1
 		if retry == 5:
 			print("I think proxies are not working")
@@ -96,7 +91,6 @@ def get_final_cost(cost_components):
 
 def is_eligible_for_out_of_stock(item):
 	return_value = False
-	print('is_value_empty(item.get("price"))',is_value_empty(item.get("price")),'item.get("in_stock")',item.get("in_stock"),'item.get("is_prime")',item.get("is_prime"))
 	if is_value_empty(item.get("price")) or item.get("in_stock") == False or item.get("is_prime") == False:
 		return_value = True
 	return return_value
@@ -139,13 +133,11 @@ def get_cost_components(amazon_info,price_formula_obj,existing_ebay_obj):
 	return cost_components
 
 
-def get_ebay_obj_to_update(amazon_info,price_formula_obj,existing_ebay_info,ebay_id):
+def get_ebay_obj_to_update(amazon_info,price_formula_obj,existing_ebay_info):
 	ebay_obj = {}
-	ebay_obj["ItemID"] = ebay_id
+	ebay_obj["ItemID"] = existing_ebay_info.ebay_id
 	is_out_of_stock = is_eligible_for_out_of_stock(amazon_info)
-	print("is_out_of_stock",is_out_of_stock)
 	if is_out_of_stock:
-		print("is_out of stock yessss")
 		ebay_obj["Quantity"] = "0"
 	else:
 		cost_components = get_cost_components(amazon_info,price_formula_obj,\
@@ -156,55 +148,35 @@ def get_ebay_obj_to_update(amazon_info,price_formula_obj,existing_ebay_info,ebay
 	return ebay_obj
 
 def process_ebay_item(ebay_item,amazon_handler, proxy_handler, \
-					ebay_handler, existing_ebay_items_list, current_seller_formula,\
-					current_seller_id):
+					ebay_handler, existing_ebay_items_list, current_seller_formula):
 	amazon_asin = get_amazon_asin_from_ebay_dict(ebay_item)
 	amazon_info = get_amazon_info(amazon_asin,amazon_handler,proxy_handler)	
 	print("amazon_info",amazon_info)
 	existing_ebay_item = get_existing_ebay_item(existing_ebay_items_list,ebay_item)
-	ebay_id = ebay_item.get("ItemID")
 	ebay_obj_to_update = get_ebay_obj_to_update(amazon_info,\
-					current_seller_formula,existing_ebay_item,ebay_id)
+					current_seller_formula,existing_ebay_item)
 	print("ebay_obj_to_update",ebay_obj_to_update)
 	if existing_ebay_item is None:
-		print("existing_ebay_item is none...",existing_ebay_item,"seller_id",current_seller_id)
-		existing_ebay_item = create_ebay_item(**parse_ebay_item(ebay_item,current_seller_id))
-		print('create_ebay_item',existing_ebay_item)
+		existing_ebay_item = create_ebay_item(parse_ebay_item(ebay_item))
 	ebay_price_obj = {"Item":ebay_obj_to_update}
-	print('ebay_price_obj',ebay_price_obj)
 	is_updated = ebay_handler.set_item_price(item_price_dict = ebay_price_obj)
-	print('ebay_price_obj.get("Quantity")',ebay_obj_to_update.get("Quantity"),'existing_ebay_item',existing_ebay_item)
-	if is_updated and existing_ebay_item and ebay_obj_to_update.get("Quantity") != "0":
-		print("inserting monitored")
+	if is_updated and existing_ebay_item and ebay_price_obj.get("Quantity") != "0":
 		existing_ebay_item.status = "monitored"
 		existing_ebay_item.quantity = "2"
-	elif existing_ebay_item and ebay_obj_to_update.get("Quantity") == "0":
-		print("inserting unmonitored")
-
+	elif existing_ebay_item and ebay_price_obj.get("Quantity") == "0":
 		existing_ebay_item.status = "unmonitored"
 	if existing_ebay_item:
-		existing_ebay_item.is_active = True
 		existing_ebay_item.save()
-		print("item saved")
-	print("existing_ebay_item",model_to_dict(existing_ebay_item))
-	# input("existing_ebay_item")
 	needed = is_needed_to_update_info_on_ebay(amazon_info,ebay_item)
 
 def testing_facade():
 	current_user = '1'
 	all_seller_account_of_current_user = get_active_seller_account(current_user,1)
-	# print(all_seller_account_of_current_user)
-	run_id = get_run_id()
-	run = create_run_item(run_id=run_id)
+	print(all_seller_account_of_current_user)
 	if all_seller_account_of_current_user:
 		for seller_accounts in all_seller_account_of_current_user:
-
 			current_seller_id = seller_accounts.get("id")
-			is_set = set_ebay_items_to_inactive(current_seller_id)
-			if not is_set:
-				continue
 			current_seller_formula = get_price_formula(seller_id=current_seller_id)
-			
 			if not current_seller_formula:
 				print("formula for current seller not found skipping......")
 				continue 
@@ -213,33 +185,23 @@ def testing_facade():
 				print("seller_token not found for current seller account skipping...." )
 				continue
 			ebay_handler = get_ebayhandler(seller_token)
-			ignored_items_list = get_ignored_items_list(current_seller_id)
 			no_of_pages = get_total_no_of_pages(ebay_handler)
-			# print("original no of pages",no_of_pages)
-			# no_of_pages = 2
-			if no_of_pages and int(no_of_pages)>0:
-				no_of_pages = int(no_of_pages)
-				for page in range(1,no_of_pages+1):
-					print("page no:",page," of ",no_of_pages)
-					ebay_items_response = get_ebay_item_list(ebay_handler,page)
-					ebay_items = get_ebay_items_list_from_ebay_response(ebay_items_response)
-					if not ebay_items and isinstance(ebay_items,list):
-						print("invalid ebay_items list")
-						continue
-					ebay_items_after_remove_ignored = remove_ignore_items(ebay_items,\
-													current_seller_id, ignored_items_list)
-					existing_ebay_items_list = get_ebay_items(seller_id=current_seller_id)
-					amazon_handler = get_amazonscraper()
-					proxy_handler = get_proxyhandler()
-					for ebay_item in ebay_items_after_remove_ignored:
-						try:
-							# print("ebay item",ebay_item)
-							process_ebay_item(ebay_item,amazon_handler, proxy_handler,\
-								 ebay_handler, existing_ebay_items_list, current_seller_formula,\
-								 current_seller_id)
-						# input("press enter")
-						except Exception as e:
-							batch_log = create_batchlog_item(run_id = run_id,seller = current_seller_id,ebay_id=ebay_item["ItemID"],error_log = e)
-							print("error!!!",e)
+			ebay_items_response = get_ebay_item_list(ebay_handler)
+			ebay_items = get_ebay_items_list_from_ebay_response(ebay_items_response)
+			if not ebay_items and isinstance(ebay_items,list):
+				print("invalid ebay_items list")
+				continue
+			ignored_items_list = get_ignored_items_list(current_seller_id)
+			ebay_items_after_remove_ignored = remove_ignore_items(ebay_items,\
+											current_seller_id, ignored_items_list)
+			existing_ebay_items_list = get_ebay_items(seller_id=current_seller_id)
+			amazon_handler = get_amazonscraper()
+			proxy_handler = get_proxyhandler()
+			for ebay_item in ebay_items_after_remove_ignored:
+				print("ebay item",ebay_item)
+				process_ebay_item(ebay_item,amazon_handler, proxy_handler,\
+					 ebay_handler, existing_ebay_items_list, current_seller_formula)
+
+				raw_input("press enter")
 				
 testing_facade()

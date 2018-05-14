@@ -1,4 +1,4 @@
-
+from .utils import clean_latin1
 def parse_ebay_item(row,seller_id):
     data = {}
     photo = row.get("PictureDetails") or None
@@ -22,7 +22,7 @@ def parse_ebay_item(row,seller_id):
     data["photo"] = photo
     data["custom_label"] = row.get("SKU","") or None
     data["ebay_id"] = row.get("ItemID") or None
-    data["product_name"] = row.get("Title").encode('utf-8') or None
+    data["product_name"] =  clean_latin1(row.get("Title")) or None
     data["quantity"] = row.get("QuantityAvailable",0) or 0
     data["date_of_listing"] = str(listingdate).split("T")[0].strip()
     data["price"] = price

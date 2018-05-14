@@ -19,7 +19,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'u+4u@wnxpdo$b#1z61%2^gwd*8^91zmk4xli6f_)+hdw_j'
+SECRET_KEY = 'u+4u@wnxpdo$b#1z61%2^gwd*8^91zskjlmk4xli6f_)+hdw_jsss'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -44,10 +44,10 @@ INSTALLED_APPS = (
     'django_rq',
 )
 
-CRONJOBS = [
-    # ('*/2 * * * *', 'ui.cron.create_random_user_accounts'),
-    ('*/10 * * * *', 'ui.cron.scrape_amazon_urls', '>> /data/ubuntu/rajdeep/ebayamazon/ui/cron.log'),
-]
+# CRONJOBS = [
+#     # ('*/2 * * * *', 'ui.cron.create_random_user_accounts'),
+#     ('*/10 * * * *', 'ui.cron.scrape_amazon_urls', '>> /data/ubuntu/rajdeep/ebayamazon/ui/cron.log'),
+# ]
 
 # CELERY_BROKER_URL = 'amqp://localhost'
 # CELERY_ACCEPT_CONTENT = ['json']

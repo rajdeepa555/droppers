@@ -169,12 +169,19 @@ class EbaySellerItems(models.Model):
 
 class EbayPriceFormula(models.Model):
     seller = models.ForeignKey('SellerTokens')
-    ebay_final_value_fee = models.FloatField(default = 0.0)
-    ebay_listing_fee = models.FloatField(default = 0.0)
-    paypal_fees_perc = models.FloatField(default = 0.0)
-    paypal_fees_fixed = models.FloatField(default = 0.0)
-    perc_margin = models.FloatField(default = 0.0)
-    fixed_margin = models.FloatField(default = 0.0)
+    ebay_final_value_fee = models.FloatField(null = True)
+    ebay_listing_fee = models.FloatField(null = True)
+    paypal_fees_perc = models.FloatField(null = True)
+    paypal_fees_fixed = models.FloatField(null = True)
+    perc_margin = models.FloatField(null = True)
+    fixed_margin = models.FloatField(null = True)
+
+class BatchLogger(models.Model):
+    run_id = models.CharField(max_length=100)
+    seller = models.CharField(max_length=100)
+    ebay_id = models.CharField(max_length=100)
+    error_log = models.CharField(max_length=100)
+    timestamp = models.DateTimeField(auto_now=True)
 
 # class Person (models.Model):
    

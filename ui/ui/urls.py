@@ -10,7 +10,7 @@ urlpatterns = [
     # Examples:
     # url(r'^$', 'ui.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
-    # url(r'^admin/rq/', include('django_rq_dashboard.urls')),
+    url(r'^admin/rq/', include('django_rq.urls')),
 	
 	url(r'^$', HomeView.as_view(), name='home'),
 	url(r'^login/$', auth_views.login, name='login'),
@@ -20,7 +20,9 @@ urlpatterns = [
 	url(r'^upload-proxies/$', ProxyLoaderView.as_view(), name='upload-proxies'),
 	url(r'^dashboard-values/$', DashboardValuesView.as_view(), name='dashboard-values'),
 	# url(r'^update-price-formula/(?P<pk>[0-9]+)/$', UpdateAmazonEbayFormula.as_view(), name='update-price-formula'),
-	url(r'^price-formula/$', AmazonEbayFormula.as_view(), name='price-formula'),
+	# url(r'^price-formula/$', AmazonEbayFormula.as_view(), name='price-formula'),
+	# url(r'^price-formula/$', CreateEbayFormula.as_view(), name='price-formula'),
+	url(r'^price-formula/$', UpdateEbayFormula.as_view(), name='price-formula'),
 	url(r'^download-ebay-csv/$', DownloadEbayCsv.as_view(), name='download-ebay-csv'),
 	url(r'^init-run-details/$', InitRunDetails.as_view(), name='init-run-details'),
 	url(r'^reset-tables/$', ResetForNewRun.as_view(), name='reset-tables'),
@@ -53,7 +55,7 @@ urlpatterns = [
 	url(r'^set-item-stock-level/$', SetItemStockLevelView.as_view(),name='set-item-stock-level'),
 	url(r'^flag-seller-ebay-items/$', csrf_exempt(FlagSellerItems.as_view()),name='flag-seller-ebay-items'),
 	url(r'^adminer/$', AdminerView.as_view(),name='adminer'),
-	url(r'^test-rq/$', TestRqView.as_view(),name='test-rq'),
+	# url(r'^test-rq/$', TestRqView.as_view(),name='test-rq'),
 	url(r'^ebay-connect/$', EbayConnect.as_view(),name='ebay-connect'),
 	url(r'^login-page-to-ebay/$', LoginPageToEbay.as_view(),name='login-page-to-ebay'),
 	url(r'^multi-ebay-account/$', MultiEbayAccountSettingPage.as_view(),name='multi-ebay-account'),

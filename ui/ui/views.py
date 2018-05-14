@@ -84,7 +84,7 @@ def get_seller_name(request):
 class EbayProfitCalculator(LoginRequiredMixin,views.APIView):
 	def get(self, request, *args, **kwargs):
 		seller_pk = get_seller_name(request)
-		formula = EbayPriceFormula.objects.get(seller_id = seller_pk)
+		formula = EbayPriceFormula.objects.filter(seller_id = seller_pk).first()
 		price_formula = {}
 		context ={}
 		price_formula["ebay_fvf"] = formula.ebay_final_value_fee
@@ -642,7 +642,7 @@ class SearchSellerItemNameView2(LoginRequiredMixin,views.APIView):
 
 		print("items_per_page",items_per_page)
 
-		result_set = EbaySellerItems.objects.filter(pk__gt=0,seller_id = seller_id)
+		result_set = EbaySellerItems.objects.filter(pk__gt=0,seller_id = seller_id,is_active = True)
 		print("search_keyword",search_keyword)
 		if search_keyword:
 			result_set = result_set.filter(Q(ebay_id__icontains=search_keyword)|Q(custom_label__icontains=search_keyword)|Q(product_name__icontains=search_keyword))
@@ -928,31 +928,32 @@ class StartCeleryInstance(views.APIView):
 # 				context['price_formula'] = price_formula
 # 				return context
 
-class AmazonEbayFormula(LoginRequiredMixin,TemplateView):
-		template_name = "form_price_formula.html"
-		def get(self,request, **kwargs):
-				seller_id = get_seller_name(self.request)
-				context = {}
-				price_formula = {}
-				# context = super(AmazonEbayFormula, self).get_context_data(**kwargs)
-				print("user insfof",request.user)
-				try:
-					obj = EbayPriceFormula.objects.get(seller_id = seller_id)
-					context['price_formula'] = obj
-				except:
-					pass
-				# print("contect...",context)
-				# price_formula["ebay_final_value_fee"] = obj.ebay_final_value_fee
-				return render(request,"form_price_formula.html",context)
+# class AmazonEbayFormula(LoginRequiredMixin,TemplateView):
+# 		template_name = "form_price_formula.html"
+# 		def get(self,request, **kwargs):
+# 				seller_id = get_seller_name(self.request)
+# 				context = {}
+# 				price_formula = {}
+# 				# context = super(AmazonEbayFormula, self).get_context_data(**kwargs)
+# 				print("user insfof",request.user)
+# 				try:
+# 					obj = EbayPriceFormula.objects.get(seller_id = seller_id)
+# 					# context['price_formula'] = ''
+# 					context['price_formula'] = obj
+# 				except:
+# 					pass
+# 				# print("contect...",context)
+# 				# price_formula["ebay_final_value_fee"] = obj.ebay_final_value_fee
+# 				return render(request,"form_price_formula.html",context)
 
-		def post(self,request, **kwargs):
-			print("request",request.POST)
-			formula = request.POST.dict()
-			pk = formula.get("pk","")
-			formula.pop('pk', None)
-			formula.pop('csrfmiddlewaretoken', None)
-			EbayPriceFormula.objects.filter(pk = pk).update(**formula)
-			return redirect('price-formula')
+# 		def post(self,request, **kwargs):
+# 			print("request",request.POST)
+# 			formula = request.POST.dict()
+# 			pk = formula.get("pk","")
+# 			formula.pop('pk', None)
+# 			formula.pop('csrfmiddlewaretoken', None)
+# 			EbayPriceFormula.objects.filter(pk = pk).update(**formula)
+# 			return redirect('price-formula')
 
 
 
@@ -962,7 +963,22 @@ class AmazonEbayFormula(LoginRequiredMixin,TemplateView):
 # 		success_url = '/'
 # 		fields = ['seller','ebay_final_value_fee','ebay_listing_fee','paypal_fees_perc','paypal_fees_fixed','perc_margin','fixed_margin']
 
+# class CreateEbayFormula(LoginRequiredMixin,CreateView):
+	# template_name = "form_price_formula.html"
+	# model = EbayPriceFormula
+	# fields = ['seller','ebay_final_value_fee','ebay_listing_fee','paypal_fees_perc','paypal_fees_fixed','perc_margin','fixed_margin']
 
+class UpdateEbayFormula(LoginRequiredMixin,UpdateView):
+	template_name = "form_price_formula.html"
+	model = EbayPriceFormula
+	fields = ['seller','ebay_final_value_fee','ebay_listing_fee','paypal_fees_perc','paypal_fees_fixed','perc_margin','fixed_margin']
+	
+	def get_object(self):
+		# curent_user = self.request.user
+		seller_id = get_seller_name(self.request)
+		# current_seller = SellerTokens.objects.filter(user_id=curent_user,is_active=1).first()
+		current_formula = EbayPriceFormula.objects.filter(seller_id=seller_id).first().pk
+		return EbayPriceFormula.objects.get(pk=current_formula)
 
 
 		
@@ -1116,12 +1132,12 @@ class FlagSellerItems(LoginRequiredMixin,views.APIView):
 
 
 class UpdateAllEbayItems(LoginRequiredMixin,CsrfExemptMixin,views.APIView):
-  authentication_classes = (UnsafeSessionAuthentication,)
-  def get(self, request, *args, **kwargs):
-    ebay_price_updater.delay()
-    response = {}
-    response["message"] = "prices are being updated"
-    return Response(response)
+	authentication_classes = (UnsafeSessionAuthentication,)
+	def get(self, request, *args, **kwargs):
+		ebay_price_updater.delay()
+		response = {}
+		response["message"] = "prices are being updated"
+		return Response(response)
 
 
 class UpdateAllEbayItems2(LoginRequiredMixin,CsrfExemptMixin,views.APIView):
@@ -1239,8 +1255,9 @@ class UpdateAllEbayItems2(LoginRequiredMixin,CsrfExemptMixin,views.APIView):
 
 def create_default_price_formula(sellername):
 	seller_id = SellerTokens.objects.get(sellername = sellername).pk
-	ebay_formula = EbayPriceFormula(seller_id = seller_id)
-	ebay_formula.save()
+	ebay_formula, created = EbayPriceFormula.objects.get_or_create(seller_id = seller_id)
+	# ebay_formula.save()
+
 
 
 
@@ -1248,12 +1265,18 @@ def create_default_price_formula(sellername):
 class EbayConnect(LoginRequiredMixin,views.APIView):
 	def get(self,request,*args,**kwargs):
 		ebayhandler = EbayHandler()
-		sessionId = EbaySessionID.objects.get(pk = 1).session_id
+		sessionId = EbaySessionID.objects.filter(pk = 1)
+		if not sessionId:
+			return HttpResponse({"message":"Please provide session id"})
+		if len(sessionId)>0:
+			sessionId = sessionId.first().session_id
 		token = ebayhandler.get_token_id(sessionId)
+		print("token id ",token)
 		res = {}
 		sellername = request.query_params["username"]
 		res['username'] = sellername
 		res['sessionId'] = sessionId
+
 		st_obj = SellerTokens.objects.filter(sellername = sellername)
 		if st_obj:
 			st_obj.update(token = token)
@@ -1280,7 +1303,7 @@ class LoginPageToEbay(LoginRequiredMixin,views.APIView):
 			session.session_id = sessionId
 			session.save()
 
-		url = "https://signin.ebay.com/ws/eBayISAPI.dll?SignIn&runame=Dean_Ku-DeanKu-GDOshipp-xlffprczu&SessID="+sessionId
+		url = "https://signin.ebay.com/ws/eBayISAPI.dll?SignIn&runame=Dean_Ku-DeanKu-GDOshipp-yiqngira&SessID="+sessionId
 		return HttpResponseRedirect(url)
 
 

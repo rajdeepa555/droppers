@@ -16,7 +16,7 @@ class EbayHandler(object):
 		return is_success
 
 	def get_session_id(self):
-		ru_name = "Dean_Ku-DeanKu-GDOshipp-xlffprczu"
+		ru_name = "Dean_Ku-DeanKu-GDOshipp-yiqngira"
 		response = self.api.execute('GetSessionID',{'RuName':ru_name})
 		if response and self._is_success(response):
 			print("session id",response.dict())
