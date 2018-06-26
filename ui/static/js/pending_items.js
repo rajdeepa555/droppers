@@ -83,12 +83,18 @@ pendingItemsApp.controller('pendingItemsCtrl', function($scope,$http,$timeout) {
 
 			}
 		}
+
+	var csrftoken = getCookie('csrftoken');
+    var headers = {};
+    headers["X-CSRFToken"] = csrftoken;
+
 		console.log("pk",submit_items)
 		var request = $http({
                 method: "post",
                 url: "/delete-pending-ebay-items/",
                 data: submit_items,
-            }).then(function(response) {
+                headers:headers,
+            }).then(function(response,headers) {
 				$scope.refresh_seller_list(1);
 	});
 	}
@@ -119,3 +125,18 @@ pendingItemsApp.controller('pendingItemsCtrl', function($scope,$http,$timeout) {
 	$scope.refresh_seller_list(1);
 });
 
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}

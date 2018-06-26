@@ -1,10 +1,11 @@
-import datetime
+# import datetime
 from django.utils.crypto import get_random_string
 import string
 import re
 import math
 from .models import EbaySellerItems
 from datetime import datetime
+# import datetime
 
 LATIN_1_CHARS = (
     ('\xe2\x80\x99', "'"),
@@ -70,7 +71,7 @@ def make_amazon_url(asin):
 	return "https://amazon.com/dp/"+str(asin)
 
 def make_amazon_url_for_list_primes(asin):
-	return "https://www.amazon.com/gp/offer-listing/%s?f_primeEligible=true"+str(asin)
+	return "https://www.amazon.com/gp/offer-listing/%s/ref=olp_f_new?ie=UTF8&f_all=true&f_new=true&f_primeEligible=true"%(str(asin))
 
 def is_eligible_for_ebay_update(price,in_stock,is_prime,stock):
 	is_eligible = False
@@ -101,10 +102,10 @@ def get_float(num):
 	return return_value
 
 def get_current_time():
-	return datetime.datetime.now()
+	return datetime.now()
 
 def get_time_diff_from_now(old_time):
-	now = datetime.datetime.now()
+	now = datetime.now()
 	previous = old_time
 	time_delta = now - previous
 	exact_diff = divmod(time_delta.days*86400+time_delta.seconds,60)
@@ -127,3 +128,9 @@ def get_value_from_dict(dict_object,attrs_list):
 	else:
 		final_value = None
 	return final_value
+
+def get_boolean(val):
+	if val is not None and isinstance(val,bool):
+		return val 
+	else:
+		return False 

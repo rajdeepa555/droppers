@@ -63,3 +63,11 @@ def get_final_stock(custom_stock):
 	return final_stock
 
 
+def get_total_no_of_pages(no_of_pages):
+	# o = ebay_handler.get_all_items()
+	# no_of_pages = get_value_from_dict(o,["ActiveList","PaginationResult","TotalNumberOfPages"])
+	if no_of_pages and isinstance(no_of_pages,int)\
+	 or (isinstance(no_of_pages,str) and no_of_pages.isdigit())\
+	 or isinstance(no_of_pages,float):
+		no_of_pages = int(str(no_of_pages))
+	return no_of_pages

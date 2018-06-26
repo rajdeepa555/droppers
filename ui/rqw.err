@@ -1,0 +1,888 @@
+nohup: ignoring input
+System check identified some issues:
+
+WARNINGS:
+?: (1_8.W001) The standalone TEMPLATE_* settings were deprecated in Django 1.8 and the TEMPLATES dictionary takes precedence. You must put the values of the following settings into your default TEMPLATES dict: TEMPLATE_DEBUG.
+13:55:47 Registering birth of worker ip-172-31-36-26.19167
+13:55:47 RQ worker 'rq:worker:ip-172-31-36-26.19167' started, version 0.10.0
+13:55:47 *** Listening on default...
+13:55:47 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+13:55:47 Cleaning registries for queue: default
+13:55:47 *** Listening on default...
+13:55:47 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:01:47 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:07:48 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:13:48 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:19:48 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:25:48 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:31:48 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:37:48 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:43:48 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:49:48 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:55:48 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:01:48 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:05:55 default: ui.tasks.start_ebay_seller_search2('shopsy', 14) (76d743f5-3029-4469-b423-92d0ba83b916)
+15:05:55 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:05:55 Sent heartbeat to prevent worker timeout. Next one should arrive within 36060 seconds.
+/home/ubuntu/projects/droppers/ui/ui/amazonapi/__init__.py:305: FutureWarning: The behavior of this method will change in future versions. Use specific 'len(elem)' or 'elem is not None' test instead.
+  if doc:
+15:09:18 default: Job OK (76d743f5-3029-4469-b423-92d0ba83b916)
+15:09:18 Result: 'searching sellers item'
+15:09:18 Result is kept for 500 seconds
+15:09:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:09:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:09:18 Cleaning registries for queue: default
+15:09:18 *** Listening on default...
+15:09:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:15:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:21:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:27:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:33:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:38:55 default: ui.tasks.start_ebay_seller_search2('firstclasstvs', 15) (04b4bc85-10c0-45ec-a8a7-d2fc971ba5bf)
+15:38:55 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:38:55 Sent heartbeat to prevent worker timeout. Next one should arrive within 36060 seconds.
+/home/ubuntu/projects/droppers/ui/ui/amazonapi/__init__.py:305: FutureWarning: The behavior of this method will change in future versions. Use specific 'len(elem)' or 'elem is not None' test instead.
+  if doc:
+15:40:03 default: Job OK (04b4bc85-10c0-45ec-a8a7-d2fc971ba5bf)
+15:40:03 Result: 'searching sellers item'
+15:40:03 Result is kept for 500 seconds
+15:40:03 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:40:03 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:40:03 *** Listening on default...
+15:40:03 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:40:03 default: ui.tasks.start_ebay_seller_search2('firstclasstvs', 16) (9808b569-59e4-4383-8e19-0010b7da7b2e)
+15:40:03 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:40:03 Sent heartbeat to prevent worker timeout. Next one should arrive within 36060 seconds.
+/home/ubuntu/projects/droppers/ui/ui/amazonapi/__init__.py:305: FutureWarning: The behavior of this method will change in future versions. Use specific 'len(elem)' or 'elem is not None' test instead.
+  if doc:
+15:43:07 default: Job OK (9808b569-59e4-4383-8e19-0010b7da7b2e)
+15:43:07 Result: 'searching sellers item'
+15:43:07 Result is kept for 500 seconds
+15:43:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:43:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:43:07 *** Listening on default...
+15:43:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:49:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:55:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:01:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:07:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:13:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:19:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:25:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:31:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:37:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:43:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:49:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:55:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:01:08 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:07:08 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:13:08 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:19:08 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:25:08 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:31:08 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:37:08 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:43:08 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:49:08 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:55:08 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:01:08 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:07:09 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:13:09 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:19:09 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:25:09 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:31:09 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:37:09 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:43:09 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:49:09 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:55:09 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:01:09 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:07:09 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:13:09 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:19:09 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:25:10 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:31:10 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:37:10 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:43:10 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:49:10 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:55:10 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:01:10 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:07:10 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:13:10 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:19:10 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:25:10 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:31:10 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:37:11 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:43:11 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:49:11 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:55:11 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:01:11 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:07:11 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:13:11 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:19:11 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:25:11 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:31:11 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:37:11 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:43:11 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:49:11 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:55:11 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:01:11 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:07:11 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:13:11 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:19:11 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:25:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:31:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:37:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:43:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:49:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:55:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:01:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:07:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:13:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:19:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:25:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:31:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:37:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:43:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:49:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:55:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:01:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:07:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:13:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:19:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:25:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:31:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:37:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:43:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:49:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:55:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:01:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:07:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:13:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:19:14 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:25:14 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:31:14 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:37:14 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:43:14 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:49:14 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:55:14 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:01:14 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:07:14 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:13:14 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:19:14 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:25:14 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:31:14 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:37:14 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:43:15 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:49:15 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:55:15 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:01:15 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:07:15 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:13:15 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:19:15 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:25:15 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:31:15 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:37:15 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:43:15 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:49:15 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:55:15 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:01:15 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:07:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:13:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:19:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:25:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:31:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:37:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:43:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:49:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:55:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:01:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:07:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:13:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:19:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:25:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:31:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:37:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:43:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:49:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:55:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:01:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:07:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:13:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:19:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:25:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:31:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:37:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:43:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:49:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:55:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+07:01:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+07:07:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+07:13:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+07:19:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+07:25:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+07:31:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+07:37:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+07:43:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+07:49:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+07:55:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+08:01:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+08:07:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+08:13:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+08:19:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+08:25:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+08:31:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+08:37:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+08:43:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+08:49:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+08:55:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+09:01:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+09:07:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+09:13:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+09:19:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+09:25:19 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+09:31:19 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+09:37:19 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+09:43:19 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+09:49:19 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+09:55:19 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+10:01:19 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+10:07:19 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+10:13:19 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+10:19:19 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+10:25:19 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+10:31:19 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+10:37:19 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+10:43:19 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+10:49:19 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+10:55:19 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+11:01:19 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+11:07:20 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+11:13:20 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+11:19:20 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+11:25:20 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+11:31:20 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+11:37:20 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+11:43:20 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+11:49:20 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+11:55:20 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+12:01:20 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+12:07:20 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+12:13:20 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+12:19:20 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+12:25:20 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+12:31:20 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+12:37:21 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+12:43:21 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+12:49:21 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+12:55:21 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+13:01:21 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+13:07:21 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+13:13:21 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+13:19:21 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+13:25:21 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+13:31:21 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+13:37:21 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+13:43:21 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+13:49:21 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+13:55:21 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:01:21 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:07:21 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:13:21 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:19:21 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:25:22 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:31:22 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:37:22 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:43:22 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:49:22 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:55:22 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:01:22 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:07:22 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:13:22 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:19:22 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:25:22 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:31:22 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:37:22 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:43:22 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:49:22 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:55:22 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:01:23 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:07:23 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:13:23 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:19:23 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:25:23 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:31:23 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:37:23 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:43:23 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:49:23 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:55:23 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:01:23 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:07:23 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:13:23 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:19:23 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:25:23 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:31:23 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:37:24 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:43:24 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:49:24 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:55:24 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:01:24 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:07:24 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:13:24 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:19:24 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:25:24 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:31:24 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:37:24 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:43:24 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:49:24 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:55:24 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:58:47 default: ui.tasks.start_ebay_seller_search2('shopsy', 17) (9d4711d1-d22c-47aa-8712-0755cd4f4b8f)
+18:58:47 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:58:47 Sent heartbeat to prevent worker timeout. Next one should arrive within 36060 seconds.
+/home/ubuntu/projects/droppers/ui/ui/amazonapi/__init__.py:305: FutureWarning: The behavior of this method will change in future versions. Use specific 'len(elem)' or 'elem is not None' test instead.
+  if doc:
+19:02:12 default: Job OK (9d4711d1-d22c-47aa-8712-0755cd4f4b8f)
+19:02:12 Result: 'searching sellers item'
+19:02:12 Result is kept for 500 seconds
+19:02:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:02:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:02:12 Cleaning registries for queue: default
+19:02:12 *** Listening on default...
+19:02:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:08:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:14:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:20:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:26:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:32:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:38:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:44:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:50:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:56:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:02:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:06:43 default: ui.tasks.start_ebay_seller_search2('viewthegoods', 18) (4dab5453-340c-488a-baf6-34309dccb072)
+20:06:43 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:06:43 Sent heartbeat to prevent worker timeout. Next one should arrive within 36060 seconds.
+/home/ubuntu/projects/droppers/ui/ui/amazonapi/__init__.py:305: FutureWarning: The behavior of this method will change in future versions. Use specific 'len(elem)' or 'elem is not None' test instead.
+  if doc:
+20:09:43 default: Job OK (4dab5453-340c-488a-baf6-34309dccb072)
+20:09:43 Result: 'searching sellers item'
+20:09:43 Result is kept for 500 seconds
+20:09:43 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:09:43 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:09:43 Cleaning registries for queue: default
+20:09:43 *** Listening on default...
+20:09:43 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:09:43 default: ui.tasks.start_ebay_seller_search2('pricepounders', 19) (10d1baff-e4be-4b95-bb69-25c732cfd705)
+20:09:43 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:09:43 Sent heartbeat to prevent worker timeout. Next one should arrive within 36060 seconds.
+/home/ubuntu/projects/droppers/ui/ui/amazonapi/__init__.py:305: FutureWarning: The behavior of this method will change in future versions. Use specific 'len(elem)' or 'elem is not None' test instead.
+  if doc:
+20:14:11 default: Job OK (10d1baff-e4be-4b95-bb69-25c732cfd705)
+20:14:11 Result: 'searching sellers item'
+20:14:11 Result is kept for 500 seconds
+20:14:11 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:14:11 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:14:11 *** Listening on default...
+20:14:11 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:20:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:26:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:32:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:38:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:44:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:50:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:56:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:02:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:08:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:14:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:20:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:26:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:32:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:38:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:44:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:50:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:56:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:02:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:08:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:14:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:20:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:26:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:32:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:38:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:44:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:50:14 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:56:14 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:02:14 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:08:14 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:14:14 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:20:14 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:26:14 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:32:14 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:38:14 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:44:14 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:50:14 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:56:14 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:02:14 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:08:14 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:14:15 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:20:15 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:26:15 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:32:15 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:38:15 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:44:15 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:50:15 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:56:15 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:02:15 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:08:15 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:14:15 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:20:15 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:26:15 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:32:15 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:38:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:44:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:50:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:56:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:02:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:08:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:14:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:20:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:26:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:32:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:38:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:44:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:50:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:56:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:02:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:08:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:14:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:20:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:26:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:32:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:38:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:44:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:50:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:56:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:02:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:08:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:14:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:20:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:26:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:32:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:38:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:44:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:50:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:56:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:02:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:08:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:09:30 default: ui.tasks.start_ebay_seller_search2('thehoneyroastedpeanut', 20) (baebd6c4-5a05-466f-bab2-17d0afca1569)
+05:09:30 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:09:30 Sent heartbeat to prevent worker timeout. Next one should arrive within 36060 seconds.
+/home/ubuntu/projects/droppers/ui/ui/amazonapi/__init__.py:305: FutureWarning: The behavior of this method will change in future versions. Use specific 'len(elem)' or 'elem is not None' test instead.
+  if doc:
+05:12:52 default: Job OK (baebd6c4-5a05-466f-bab2-17d0afca1569)
+05:12:52 Result: 'searching sellers item'
+05:12:52 Result is kept for 500 seconds
+05:12:52 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:12:52 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:12:52 Cleaning registries for queue: default
+05:12:52 *** Listening on default...
+05:12:52 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:12:52 default: ui.tasks.start_ebay_seller_search2('ashley_outfitters', 21) (e471f706-ac0d-415c-831b-f45481866311)
+05:12:52 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:12:52 Sent heartbeat to prevent worker timeout. Next one should arrive within 36060 seconds.
+/home/ubuntu/projects/droppers/ui/ui/amazonapi/__init__.py:305: FutureWarning: The behavior of this method will change in future versions. Use specific 'len(elem)' or 'elem is not None' test instead.
+  if doc:
+05:17:24 default: Job OK (e471f706-ac0d-415c-831b-f45481866311)
+05:17:24 Result: 'searching sellers item'
+05:17:24 Result is kept for 500 seconds
+05:17:24 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:17:24 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:17:24 *** Listening on default...
+05:17:24 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:17:24 default: ui.tasks.start_ebay_seller_search2('drivencommerce', 22) (a562d8a3-9af4-44f9-b4ae-3e696c28d2b2)
+05:17:24 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:17:24 Sent heartbeat to prevent worker timeout. Next one should arrive within 36060 seconds.
+/home/ubuntu/projects/droppers/ui/ui/amazonapi/__init__.py:305: FutureWarning: The behavior of this method will change in future versions. Use specific 'len(elem)' or 'elem is not None' test instead.
+  if doc:
+05:20:45 default: Job OK (a562d8a3-9af4-44f9-b4ae-3e696c28d2b2)
+05:20:45 Result: 'searching sellers item'
+05:20:45 Result is kept for 500 seconds
+05:20:45 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:20:45 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:20:45 *** Listening on default...
+05:20:45 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:20:45 default: ui.tasks.start_ebay_seller_search2('exsellalways', 23) (a1e1b1fe-f04d-49e9-b5d7-fe4ced440b11)
+05:20:45 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:20:46 Sent heartbeat to prevent worker timeout. Next one should arrive within 36060 seconds.
+/home/ubuntu/projects/droppers/ui/ui/amazonapi/__init__.py:305: FutureWarning: The behavior of this method will change in future versions. Use specific 'len(elem)' or 'elem is not None' test instead.
+  if doc:
+05:23:56 default: Job OK (a1e1b1fe-f04d-49e9-b5d7-fe4ced440b11)
+05:23:56 Result: 'searching sellers item'
+05:23:56 Result is kept for 500 seconds
+05:23:56 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:23:56 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:23:56 *** Listening on default...
+05:23:56 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:23:56 default: ui.tasks.start_ebay_seller_search2('onlybargains2011', 24) (f4e8a0ac-f64c-4c82-a179-c6a3120cbc70)
+05:23:56 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:23:56 Sent heartbeat to prevent worker timeout. Next one should arrive within 36060 seconds.
+/home/ubuntu/projects/droppers/ui/ui/amazonapi/__init__.py:305: FutureWarning: The behavior of this method will change in future versions. Use specific 'len(elem)' or 'elem is not None' test instead.
+  if doc:
+06:03:04 default: Job OK (f4e8a0ac-f64c-4c82-a179-c6a3120cbc70)
+06:03:04 Result: 'searching sellers item'
+06:03:04 Result is kept for 500 seconds
+06:03:04 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:03:04 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:03:04 *** Listening on default...
+06:03:04 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:09:04 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:15:04 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:21:04 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:27:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:33:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:39:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:45:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:51:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:57:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+07:03:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+07:09:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+07:15:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+07:21:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+07:27:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+07:33:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+07:39:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+07:45:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+07:51:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+07:57:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+08:03:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+08:09:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+08:15:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+08:21:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+08:27:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+08:33:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+08:39:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+08:45:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+08:51:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+08:57:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+09:03:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+09:09:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+09:15:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+09:21:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+09:27:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+09:33:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+09:39:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+09:39:11 default: ui.tasks.ebay_price_updater() (c28293a8-5a69-4fb4-b56e-16c2e55d2cd9)
+09:39:11 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+09:39:11 Sent heartbeat to prevent worker timeout. Next one should arrive within 36060 seconds.
+09:59:05 http.client.IncompleteRead: IncompleteRead(1324285 bytes read)
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/http/client.py", line 541, in _get_chunk_left
+    chunk_left = self._read_next_chunk_size()
+  File "/usr/lib/python3.5/http/client.py", line 508, in _read_next_chunk_size
+    return int(line, 16)
+ValueError: invalid literal for int() with base 16: b''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/http/client.py", line 558, in _readall_chunked
+    chunk_left = self._get_chunk_left()
+  File "/usr/lib/python3.5/http/client.py", line 543, in _get_chunk_left
+    raise IncompleteRead(b'')
+http.client.IncompleteRead: IncompleteRead(0 bytes read)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rq/worker.py", line 789, in perform_job
+    rv = job.perform()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rq/job.py", line 573, in perform
+    self._result = self._execute()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rq/job.py", line 579, in _execute
+    return self.func(*self.args, **self.kwargs)
+  File "/home/ubuntu/projects/droppers/ui/ui/tasks.py", line 216, in ebay_price_updater
+    # 				# 	aso.get_prime_detail = True
+  File "/home/ubuntu/projects/droppers/ui/ui/amazonapi/__init__.py", line 54, in scrape_with_error
+    r = self._execute2(url)
+  File "/home/ubuntu/projects/droppers/ui/ui/amazonapi/__init__.py", line 110, in _execute2
+    self.process_response()
+  File "/home/ubuntu/projects/droppers/ui/ui/amazonapi/__init__.py", line 271, in process_response
+    self.response_html = self.response.read()
+  File "/usr/lib/python3.5/http/client.py", line 455, in read
+    return self._readall_chunked()
+  File "/usr/lib/python3.5/http/client.py", line 565, in _readall_chunked
+    raise IncompleteRead(b''.join(value))
+http.client.IncompleteRead: IncompleteRead(1324285 bytes read)
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/http/client.py", line 541, in _get_chunk_left
+    chunk_left = self._read_next_chunk_size()
+  File "/usr/lib/python3.5/http/client.py", line 508, in _read_next_chunk_size
+    return int(line, 16)
+ValueError: invalid literal for int() with base 16: b''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/http/client.py", line 558, in _readall_chunked
+    chunk_left = self._get_chunk_left()
+  File "/usr/lib/python3.5/http/client.py", line 543, in _get_chunk_left
+    raise IncompleteRead(b'')
+http.client.IncompleteRead: IncompleteRead(0 bytes read)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rq/worker.py", line 789, in perform_job
+    rv = job.perform()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rq/job.py", line 573, in perform
+    self._result = self._execute()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rq/job.py", line 579, in _execute
+    return self.func(*self.args, **self.kwargs)
+  File "/home/ubuntu/projects/droppers/ui/ui/tasks.py", line 216, in ebay_price_updater
+    # 				# 	aso.get_prime_detail = True
+  File "/home/ubuntu/projects/droppers/ui/ui/amazonapi/__init__.py", line 54, in scrape_with_error
+    r = self._execute2(url)
+  File "/home/ubuntu/projects/droppers/ui/ui/amazonapi/__init__.py", line 110, in _execute2
+    self.process_response()
+  File "/home/ubuntu/projects/droppers/ui/ui/amazonapi/__init__.py", line 271, in process_response
+    self.response_html = self.response.read()
+  File "/usr/lib/python3.5/http/client.py", line 455, in read
+    return self._readall_chunked()
+  File "/usr/lib/python3.5/http/client.py", line 565, in _readall_chunked
+    raise IncompleteRead(b''.join(value))
+http.client.IncompleteRead: IncompleteRead(1324285 bytes read)
+09:59:05 Invoking exception handler <bound method Worker.move_to_failed_queue of <rq.worker.Worker object at 0x7f9ce0180668>>
+09:59:05 Moving job to 'failed' queue
+09:59:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+09:59:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+09:59:05 Cleaning registries for queue: default
+09:59:05 *** Listening on default...
+09:59:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+10:05:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+10:11:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+10:17:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+10:23:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+10:29:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+10:35:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+10:41:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+10:47:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+10:53:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+10:59:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+11:05:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+11:11:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+11:17:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+11:23:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+11:29:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+11:35:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+11:41:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+11:47:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+11:53:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+11:59:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+12:05:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+12:11:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+12:17:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+12:23:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+12:29:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+12:35:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+12:41:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+12:47:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+12:53:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+12:59:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+13:05:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+13:11:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+13:17:08 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+13:23:08 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+13:29:08 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+13:35:08 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+13:41:08 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+13:47:08 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+13:53:08 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+13:59:08 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:05:08 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:11:08 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:17:09 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:23:09 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:29:09 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:35:09 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:41:09 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:47:09 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:53:09 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:59:09 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:05:09 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:11:09 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:17:10 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:23:10 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:29:10 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:35:10 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:41:10 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:47:10 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:53:10 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:59:10 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:05:10 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:11:10 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:17:10 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:23:10 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:29:10 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:35:10 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:41:11 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:47:11 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:53:11 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:59:11 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:05:11 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:11:11 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:17:11 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:23:11 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:29:11 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:35:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:41:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:47:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:53:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:59:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:05:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:11:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:17:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:23:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:29:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:35:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:41:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:47:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:53:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:59:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:05:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:11:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:17:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:23:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:29:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:35:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:41:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:47:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:53:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:59:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:05:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:11:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:17:14 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:23:14 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:29:14 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:35:14 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:41:14 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:47:14 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:53:14 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:59:14 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:05:14 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:11:14 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:17:15 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:23:15 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:29:15 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:35:15 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:41:15 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:47:15 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:53:15 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:59:15 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:05:15 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:11:15 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:17:15 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:23:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:29:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:35:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:41:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:47:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:53:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:59:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:05:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:11:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:17:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:23:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:29:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:35:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:41:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:47:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:53:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:59:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:05:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:11:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:17:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:23:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:29:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:35:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:41:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:47:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:53:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:59:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:05:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:11:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:17:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:23:19 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:29:19 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:35:19 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:41:19 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:47:19 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:53:19 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:59:19 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:05:19 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:11:19 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:17:19 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:23:19 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:29:19 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:35:20 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:41:20 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:47:20 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:53:20 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:59:20 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:05:20 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:11:20 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:17:20 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:23:20 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:29:20 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:35:20 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:41:20 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:47:20 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:53:20 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:59:20 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:05:20 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:11:20 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:17:21 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:23:21 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:29:21 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:35:21 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:41:21 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:47:21 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:53:21 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:59:21 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:05:21 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:11:21 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:17:21 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:23:21 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:29:21 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:35:21 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:41:21 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:47:21 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:53:21 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:59:21 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:05:22 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:11:22 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:17:22 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:23:22 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:29:22 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:35:22 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:41:22 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:47:22 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:53:22 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:59:22 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+07:05:22 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+07:11:22 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+07:17:22 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+07:23:22 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+07:29:22 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+07:35:22 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+07:41:22 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+07:47:22 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+07:53:22 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+07:59:22 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+08:05:22 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+08:11:22 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+08:17:22 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+08:23:22 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+08:29:22 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+08:35:23 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+08:41:23 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+08:47:23 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+08:53:23 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+08:59:23 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+09:05:23 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.

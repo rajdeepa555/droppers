@@ -46,10 +46,11 @@
 							<div class="btn-group" role="group" aria-label="Basic example">
 							  <button class="btn btn-o btn-wide btn-primary" ng-click="select_all()" ng-model="is_select">Select All</button>
 							  <button class="btn btn-o btn-wide btn-primary" ng-click="refresh_seller_list(1)">Refresh Results</button>
-							  <button class="btn btn-o btn-wide btn-primary" ng-click="edit_bulk()">Edit</button>
+							  <!-- <button class="btn btn-o btn-wide btn-primary" ng-click="edit_bulk()">Edit</button> -->
 							  <button class="btn btn-o btn-wide btn-primary" ng-click="update_bulk_ebay_info()">Update</button>
-							  <button class="btn btn-o btn-wide btn-primary" ng-click="refresh_db()">Refresh Database</button>
+							  <button class="btn btn-o btn-wide btn-primary" ng-click="refresh_db()">Sync Ebay</button>
 							  <button class="btn btn-o btn-wide btn-primary" ng-click="is_flag()">Save Disable updates </button>
+							  <!-- <button class="btn btn-o btn-wide btn-primary" ng-click="manual_update()">Sync</button> -->
 							  <button class="btn btn-o btn-wide btn-primary" ng-click="update_all()">Update All</button>
 								<a href="{% url 'export-csv-seller-items' %}"><button class="btn btn-o btn-primary">
 									Export Csv
@@ -112,12 +113,12 @@
 					</div>
 				</div>
 				<div>
-					<ul class="pagination margin-bottom-10">
+					<ul class="pagination margin-bottom-10" ng-cloak>
 						<li ng-if="pagination.has_previous==true">
 							<a  ng-click="refresh_seller_list(pagination.previous_page_number)"> <i class="ti-arrow-left"></i> </a>
 						</li>
 						<li ng-repeat="n in [] | range:pagination.total_pages">
-							<a ng-click="refresh_seller_list($index+1)" ng-cloak> {[{$index+1}]} </a>
+							<a ng-click="refresh_seller_list($index+1)" > {[{$index+1}]} </a>
 						</li>
 						<li ng-if="pagination.has_next===true">
 							<a ng-click="refresh_seller_list(pagination.next_page_number)"> <i class="ti-arrow-right"></i> </a>

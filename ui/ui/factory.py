@@ -11,6 +11,7 @@ def get_ebayhandler(seller_auth_token=None):
 
 def get_amazonscraper(locale="UK"):
 	obj = AmazonScraper(locale=locale)
+	# print("objjj amazonscraper",obj)
 	return obj
 
 def get_proxyhandler():

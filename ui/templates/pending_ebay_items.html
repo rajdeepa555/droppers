@@ -86,7 +86,7 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr ng-repeat="item in items">
+							<tr ng-repeat="item in items" ng-cloak>
 								<td><div class="checkbox clip-check check-primary checkbox-inline">
 									<input type="checkbox" id="checkbox{[{$index+1}]}" value="{[{$index+1}]}" ng-model=item.is_checked>
 									<!-- <input type="checkbox" id="checkbox{[{$index+1}]}" value="{[{$index+1}]}" ng-checked="item.is_checked==true"> -->
@@ -105,13 +105,13 @@
 					</table>
 				</div>
 						<ul class="pagination margin-bottom-10" id="pending_ebay_items_pagination">
-			<li ng-if="pagination.has_previous==true">
-				<a  ng-click="refresh_seller_list(pagination.previous_page_number)"> <i class="ti-arrow-left"></i> </a>
+			<li ng-if="pagination.has_previous==true" ng-cloak>
+				<a  ng-click="refresh_seller_list(pagination.previous_page_number)" > <i class="ti-arrow-left"></i> </a>
 			</li>
-			<li ng-repeat="n in [] | range:pagination.total_pages">
+			<li ng-repeat="n in [] | range:pagination.total_pages" ng-cloak>
 				<a ng-click="refresh_seller_list($index+1)"> {[{$index+1}]} </a>
 			</li>
-			<li ng-if="pagination.has_next===true">
+			<li ng-if="pagination.has_next===true" ng-cloak>
 				<a ng-click="refresh_seller_list(pagination.next_page_number)"> <i class="ti-arrow-right"></i> </a>
 			</li>
 		</ul>

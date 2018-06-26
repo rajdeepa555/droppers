@@ -93,7 +93,7 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr ng-repeat="item in items">
+							<tr ng-repeat="item in items" ng-cloak>
 								<td><div class="checkbox clip-check check-primary checkbox-inline">
 									<input type="checkbox" id="checkbox{[{$index+1}]}" value="{[{$index+1}]}" ng-model=item.is_checked>
 									<label for="checkbox{[{$index+1}]}">{[{$index+1}]}</label>
@@ -113,7 +113,7 @@
 		</div>
 	</div>
 	<div>
-		<ul class="pagination margin-bottom-10">
+		<ul class="pagination margin-bottom-10" ng-cloak>
 			<li ng-if="pagination.has_previous==true">
 				<a  ng-click="refresh_seller_list(pagination.previous_page_number)"> <i class="ti-arrow-left"></i> </a>
 			</li>

@@ -142,7 +142,7 @@ searchSellerItemApp.controller('searchSellerItemCtrl', function($scope,$http,$ti
 		$scope.update_ebay_info = function(index,ebay_id,amazon_sku)
 		{
 			var csrf_token = document.getElementById("csrf_token").value;
-			var form_data = {"csrfmiddlewaretoken":csrf_token,"values":[{"ebay_id":ebay_id,"amazon_sku":amazon_sku}]};
+			var form_data = {"csrfmiddlewaretoken":csrf_token,"values":[{"ItemID":ebay_id,"SKU":amazon_sku}]};
 			 var request = $http({
 	                    method: "post",
 	                    url: "/update-ebay-items/",
@@ -172,7 +172,7 @@ searchSellerItemApp.controller('searchSellerItemCtrl', function($scope,$http,$ti
 						var submit_data={};
 						ebay_id=$scope.items[i]["ebay_id"];
 						amazon_sku=$scope.items[i]["custom_label"];
-						submit_data = {"ebay_id":ebay_id,"amazon_sku":amazon_sku};
+						submit_data = {"ItemID":ebay_id,"SKU":amazon_sku};
 						list_of_ids.push(submit_data);
 					}
 			}
@@ -185,7 +185,7 @@ searchSellerItemApp.controller('searchSellerItemCtrl', function($scope,$http,$ti
 						var submit_data={};
 						ebay_id=$scope.unmonitored_items[i]["ebay_id"];
 						amazon_sku=$scope.unmonitored_items[i]["custom_label"];
-						submit_data = {"ebay_id":ebay_id,"amazon_sku":amazon_sku};
+						submit_data = {"ItemID":ebay_id,"SKU":amazon_sku};
 						list_of_ids.push(submit_data);
 					}
 			}
@@ -198,7 +198,7 @@ searchSellerItemApp.controller('searchSellerItemCtrl', function($scope,$http,$ti
 						var submit_data={};
 						ebay_id=$scope.ignored_items[i]["ebay_id"];
 						amazon_sku=$scope.ignored_items[i]["custom_label"];
-						submit_data = {"ebay_id":ebay_id,"amazon_sku":amazon_sku};
+						submit_data = {"ItemID":ebay_id,"SKU":amazon_sku};
 						list_of_ids.push(submit_data);
 					}
 			}
@@ -334,10 +334,20 @@ searchSellerItemApp.controller('searchSellerItemCtrl', function($scope,$http,$ti
 		
 	}
 
+	// $scope.manual_update = function()
+	// {
+	// 	var request = $http({
+	//                     method: "get",
+	//                     url: "/manual-update/",
+	//                 });	
+		
+	// }
+
+
 	$scope.update_all = function()
 	{
 		var request = $http({
-	                    method: "post",
+	                    method: "get",
 	                    url: "/update-all-ebay-items/",
 	                });	
 		

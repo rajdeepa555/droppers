@@ -1,13 +1,15 @@
+
 from .db import get_ebay_items, query_set_to_list, get_all_active_sellers_account, \
 				get_price_formula, get_existing_value, create_ebay_item,set_ebay_items_to_inactive, \
 				create_batchlog_item, create_run_item
 from .utils import get_simple_list_from_list_dict, get_value_from_dict, \
-				 make_amazon_url, get_float,get_run_id
+				 make_amazon_url, get_float,get_run_id,make_amazon_url_for_list_primes
 from .factory import get_ebayhandler, get_amazonscraper, get_proxyhandler
 from .helpers import is_value_empty
 from .parsers import parse_ebay_item
 import re
 from django.forms.models import model_to_dict
+import csv
 
 def get_active_seller_account(current_user,is_active):
 	seller_accounts = get_all_active_sellers_account(user_id=current_user,is_active=is_active)
@@ -18,6 +20,7 @@ def get_active_seller_account(current_user,is_active):
 def get_total_no_of_pages(ebay_handler):
 	o = ebay_handler.get_all_items()
 	no_of_pages = get_value_from_dict(o,["ActiveList","PaginationResult","TotalNumberOfPages"])
+	# print("no_of)pagesssssss",no_of_pages)
 	return no_of_pages
 
 
@@ -25,6 +28,7 @@ def get_ebay_item_list(ebay_handler,page = 1):
 	ebay_items_list = []
 	if ebay_handler:
 		ebay_items_list = ebay_handler.get_all_items(page_number=page)
+		print("eeeeeeebay itemmmmmmm listttttt",ebay_items_list)
 	return ebay_items_list
 
 def get_ignored_items_list(seller_id):
@@ -38,6 +42,7 @@ def remove_ignore_items(ebay_items_list,seller_id,ignored_items = None):
 	if ebay_items_list:
 		if not ignored_items:
 			ignored_items = get_ignored_items_list(seller_id)
+		print("ebay_items_list",ebay_items_list)
 		for ebay_item in ebay_items_list:
 			if "ItemID" in ebay_item and ebay_item["ItemID"] not in ignored_items:
 				ebay_list_after_remove_ignored.append(ebay_item)
@@ -58,26 +63,56 @@ def get_amazon_asin_from_ebay_dict(ebay_item):
 
 def assign_proxy(amazon_handler,proxy_handler):
 	current_proxy = proxy_handler.get_proxy()
+	print("current proxy",current_proxy)
 	amazon_handler.proxies.update({"https":current_proxy})
+
+def scrape_again(amazon_handler,amazon_asin):
+	print("scraping scrape_again")
+	print("amazon handlerrr",amazon_handler)
+	amazon_handler.get_prime_detail = True
+	amazon_url = make_amazon_url_for_list_primes(amazon_asin)
+	print("new url",amazon_url)
+	res = amazon_handler.scrape_with_error(amazon_url)
+	print("ressss",res)
+	res["price"] = amazon_handler.prime_price
+	res["is_prime"] = amazon_handler.is_prime
+	res["in_stock"] = amazon_handler.in_stock
+	print("RESSS",res)
+	return res
 
 def get_amazon_info(amazon_asin,amazon_handler,proxy_handler):
 	assign_proxy(amazon_handler,proxy_handler)
 	amazon_url = make_amazon_url(amazon_asin)
-	print("amazon url ",amazon_url)
+	amazon_handler.asin = amazon_asin
 	res = amazon_handler.scrape_with_error(amazon_url)
-	print("response from amazon scrape_with_error",res)
+	print("ressssssssssss on first scrape",res)
 	retry = 0
-	while res is None or "503" in res or amazon_handler.is_captcha_in_response:
-		if aso.is_captcha_in_response or "503" in res:
+	if res.get("is_prime") == False or res.get("in_stock") == False or res.get("price") == '':
+		res = scrape_again(amazon_handler,amazon_asin)
+
+	while res is None or "503" in res or amazon_handler.is_captcha_in_response or res == {}:
+		if amazon_handler.is_captcha_in_response or "503" in res:
 			assign_proxy(amazon_handler,proxy_handler)
+
 			res = amazon_handler.scrape_with_error(amazon_url)
+			print("res on first scrape",res)
+
+			if res.get("is_prime") == False or res.get("in_stock") == False or res.get("price") == '' or res == {}:
+				res = scrape_again(amazon_handler,amazon_asin)
+				print("response on again scrape",res)
 			retry += 1
 		if retry == 5:
 			print("I think proxies are not working")
 			break
 	if retry == 5:
 		exit(0)
+	# if len(prime_price)>0:
+		# print("prime_price",prime_price)
+		# res["price"] = prime_price
+		# res["is_prime"] = True
+
 	return res
+
 
 
 def get_final_cost(cost_components):
@@ -91,7 +126,7 @@ def get_final_cost(cost_components):
 		cost = cost + margin_perc
 	p = 1 - ((cost_components.get("ebay_final_value_fee") + cost_components.get("paypal_fees_perc"))/100)
 	cost_after_profit = get_float(cost / p)
-	print("price after formula",cost_after_profit)
+	# print(".............price after formula...........................................",cost_after_profit)
 	return cost_after_profit
 
 def is_eligible_for_out_of_stock(item):
@@ -103,8 +138,11 @@ def is_eligible_for_out_of_stock(item):
 
 
 def get_existing_ebay_item(existing_ebay_items_queryset, ebay_item_dict):
+	print("ebay_item_dict",ebay_item_dict)
 	ebay_id = ebay_item_dict.get("ItemID")
+	print("eeeeeeeeeeeeee_id",ebay_id)
 	existing_item = get_existing_value(existing_ebay_items_queryset, ebay_id=ebay_id)
+	print("existing eeeeeeeeeeeeeeeee",existing_item)
 	return existing_item
 
 def is_needed_to_update_info_on_ebay(amazon_info,ebay_info):
@@ -143,9 +181,7 @@ def get_ebay_obj_to_update(amazon_info,price_formula_obj,existing_ebay_info,ebay
 	ebay_obj = {}
 	ebay_obj["ItemID"] = ebay_id
 	is_out_of_stock = is_eligible_for_out_of_stock(amazon_info)
-	print("is_out_of_stock",is_out_of_stock)
 	if is_out_of_stock:
-		print("is_out of stock yessss")
 		ebay_obj["Quantity"] = "0"
 	else:
 		cost_components = get_cost_components(amazon_info,price_formula_obj,\
@@ -153,47 +189,49 @@ def get_ebay_obj_to_update(amazon_info,price_formula_obj,existing_ebay_info,ebay
 		ebay_price = get_final_cost(cost_components)
 		ebay_obj["Quantity"] = "2"
 		ebay_obj["StartPrice"] = ebay_price
+
 	return ebay_obj
 
 def process_ebay_item(ebay_item,amazon_handler, proxy_handler, \
 					ebay_handler, existing_ebay_items_list, current_seller_formula,\
-					current_seller_id):
+					current_seller_id,file,out):
 	amazon_asin = get_amazon_asin_from_ebay_dict(ebay_item)
-	amazon_info = get_amazon_info(amazon_asin,amazon_handler,proxy_handler)	
-	print("amazon_info",amazon_info)
+	print("amazon asin",amazon_asin)
+	# amazon_asin = "B00BN7TC8A"
+	amazon_info = get_amazon_info(amazon_asin,amazon_handler,proxy_handler)
+	print("amazon info.................................",amazon_info)
 	existing_ebay_item = get_existing_ebay_item(existing_ebay_items_list,ebay_item)
 	ebay_id = ebay_item.get("ItemID")
+	print("ebay_id",ebay_id)
 	ebay_obj_to_update = get_ebay_obj_to_update(amazon_info,\
 					current_seller_formula,existing_ebay_item,ebay_id)
-	print("ebay_obj_to_update",ebay_obj_to_update)
 	if existing_ebay_item is None:
-		print("existing_ebay_item is none...",existing_ebay_item,"seller_id",current_seller_id)
 		existing_ebay_item = create_ebay_item(**parse_ebay_item(ebay_item,current_seller_id))
-		print('create_ebay_item',existing_ebay_item)
+	print("ebay_obj_to_update",ebay_obj_to_update)
 	ebay_price_obj = {"Item":ebay_obj_to_update}
-	print('ebay_price_obj',ebay_price_obj)
-	is_updated = ebay_handler.set_item_price(item_price_dict = ebay_price_obj)
-	print('ebay_price_obj.get("Quantity")',ebay_obj_to_update.get("Quantity"),'existing_ebay_item',existing_ebay_item)
+	file.writerow([ebay_obj_to_update["ItemID"],ebay_obj_to_update["Quantity"],ebay_obj_to_update.get("StartPrice","")])
+	out.flush()
+
+	# input("press enter")
+	# is_updated = ebay_handler.set_item_price(item_price_dict = ebay_price_obj)
+	is_updated = True
 	if is_updated and existing_ebay_item and ebay_obj_to_update.get("Quantity") != "0":
-		print("inserting monitored")
 		existing_ebay_item.status = "monitored"
 		existing_ebay_item.quantity = "2"
 	elif existing_ebay_item and ebay_obj_to_update.get("Quantity") == "0":
-		print("inserting unmonitored")
+		# print("inserting unmonitored")
+		# input("press wnte")
 
 		existing_ebay_item.status = "unmonitored"
 	if existing_ebay_item:
 		existing_ebay_item.is_active = True
 		existing_ebay_item.save()
-		print("item saved")
-	print("existing_ebay_item",model_to_dict(existing_ebay_item))
-	# input("existing_ebay_item")
+		# print("item saved")
 	needed = is_needed_to_update_info_on_ebay(amazon_info,ebay_item)
 
 def testing_facade():
 	current_user = '1'
 	all_seller_account_of_current_user = get_active_seller_account(current_user,1)
-	# print(all_seller_account_of_current_user)
 	run_id = get_run_id()
 	run = create_run_item(run_id=run_id)
 	if all_seller_account_of_current_user:
@@ -215,9 +253,10 @@ def testing_facade():
 			ebay_handler = get_ebayhandler(seller_token)
 			ignored_items_list = get_ignored_items_list(current_seller_id)
 			no_of_pages = get_total_no_of_pages(ebay_handler)
-			# print("original no of pages",no_of_pages)
-			# no_of_pages = 2
 			if no_of_pages and int(no_of_pages)>0:
+				out = open("update1.csv","w")
+				file = csv.writer(out)
+				file.writerow(["ItemID","Quantity","StartPrice"])
 				no_of_pages = int(no_of_pages)
 				for page in range(1,no_of_pages+1):
 					print("page no:",page," of ",no_of_pages)
@@ -230,16 +269,66 @@ def testing_facade():
 													current_seller_id, ignored_items_list)
 					existing_ebay_items_list = get_ebay_items(seller_id=current_seller_id)
 					amazon_handler = get_amazonscraper()
+					print("amazon handler in testing",amazon_handler)
 					proxy_handler = get_proxyhandler()
 					for ebay_item in ebay_items_after_remove_ignored:
 						try:
-							# print("ebay item",ebay_item)
 							process_ebay_item(ebay_item,amazon_handler, proxy_handler,\
 								 ebay_handler, existing_ebay_items_list, current_seller_formula,\
-								 current_seller_id)
-						# input("press enter")
+								 current_seller_id,file,out)
 						except Exception as e:
 							batch_log = create_batchlog_item(run_id = run_id,seller = current_seller_id,ebay_id=ebay_item["ItemID"],error_log = e)
 							print("error!!!",e)
 				
-testing_facade()
+# testing_facade()
+def update_ebay_item(data,current_user):
+	for ebay_item in data:
+		all_seller_account_of_current_user = get_active_seller_account(current_user,1)
+		run_id = get_run_id()
+		run = create_run_item(run_id=run_id)
+		if all_seller_account_of_current_user:
+			for seller_accounts in all_seller_account_of_current_user:
+				current_seller_id = seller_accounts.get("id")
+				current_seller_formula = get_price_formula(seller_id=current_seller_id)
+				seller_token = seller_accounts.get("token")
+				ebay_handler = get_ebayhandler(seller_token)
+				existing_ebay_items_list = get_ebay_items(seller_id=current_seller_id)
+				amazon_handler = get_amazonscraper()
+				proxy_handler = get_proxyhandler()
+				process_ebay_item_new(ebay_item,amazon_handler, existing_ebay_items_list,proxy_handler,\
+									 ebay_handler, current_seller_formula,\
+									 current_seller_id)
+	return True
+def process_ebay_item_new(ebay_items,amazon_handler,existing_ebay_items_list,proxy_handler,ebay_handler,current_seller_formula,current_seller_id):
+	amazon_asin = ebay_items.get("SKU")
+	amazon_info = get_amazon_info(amazon_asin,amazon_handler,proxy_handler)
+	ebay_id = ebay_items.get("ebay_id")
+	existing_ebay_item = get_existing_ebay_item(existing_ebay_items_list,ebay_items)
+	ebay_obj_to_update = get_ebay_obj_to_update(amazon_info,\
+		current_seller_formula,existing_ebay_item,ebay_id)
+	ebay_price_obj = {"Item":ebay_obj_to_update}
+	# is_updated = ebay_handler.set_item_price(item_price_dict = ebay_price_obj)
+	is_updated = True
+	if is_updated and existing_ebay_item and ebay_obj_to_update.get("Quantity") != "0":
+		existing_ebay_item.status = "monitored"
+		existing_ebay_item.quantity = "2"
+		# print("in monitored")
+	elif existing_ebay_item and ebay_obj_to_update.get("Quantity") == "0":
+
+		existing_ebay_item.status = "unmonitored"
+	if existing_ebay_item:
+		existing_ebay_item.is_active = True
+		existing_ebay_item.save()
+		print("item saved")
+	# print("existing_ebay_item",model_to_dict(existing_ebay_item))
+	# needed = is_needed_to_update_info_on_ebay(amazon_info,ebay_items)
+
+
+
+
+
+
+
+
+
+# testing_facade_new(data)

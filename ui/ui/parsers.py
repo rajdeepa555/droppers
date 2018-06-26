@@ -1,21 +1,23 @@
 from .utils import clean_latin1
 def parse_ebay_item(row,seller_id):
     data = {}
+    rows = type(row)
+    # print("rows",rows)
     photo = row.get("PictureDetails") or None
     if photo:
-        photo = photo.get("GalleryURL","") or None
+        photo = photo.get("GalleryURL") or None
     
-    listingdate = row.get("ListingDetails","") or None
+    listingdate = row.get("ListingDetails") or None
     if listingdate:
-        listingdate = listingdate.get("StartTime","") or None
+        listingdate = listingdate.get("StartTime") or None
 
-    price = row.get("BuyItNowPrice","") or None
+    price = row.get("BuyItNowPrice") or None
     if price:
-        price = price.get("value","-1") or None
+        price = price.get("value") or None
 
-    quantitysold = row.get("SellingStatus","") or None
+    quantitysold = row.get("SellingStatus") or None
     if quantitysold:
-        quantitysold = quantitysold.get("QuantitySold",-1) or -1
+        quantitysold = quantitysold.get("QuantitySold") or -1
     else:
         quantitysold = -1
 

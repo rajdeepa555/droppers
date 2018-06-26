@@ -49,6 +49,8 @@
                                 <th class="center">#</th>
                                 <th>Sellers</th>
                                 <th class="hidden-xs">is_Active</th>
+                                <th class="hidden-xs">Action</th>
+                                <th class="hidden-xs">Is Eligible For Ebay Updates</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -56,7 +58,24 @@
                                 <td class="center" ng-cloak>  {[{ $index+1}]}</td>
                                 <td class="hidden-xs" ng-cloak="">{[{seller.sellername}]}</td>
                                 <td ng-cloak>
-                                        <input type="radio"  name="same" ng-model="value" value="{[{seller.pk}]}" ng-click="is_active_pk(value)" ng-checked="seller.is_active == true ">
+                                        <input type="radio"  name="same" ng-model="value" value="{[{seller.pk}]}" ng-click="is_active_pk(value,seller.is_eligible_for_ebay_update)" ng-checked="seller.is_active == true ">
+                                <td>
+									<a>
+										<button ng-click="delete_seller(seller.pk,seller.is_active)" type="button" class="btn btn-xs btn-o btn-warning" ng-cloak>Delete</button>
+									</a>
+								</td>
+								<td>
+								<!-- <a ng-if="seller.is_eligible_for_ebay_update == false" href="/price-formula/?pk={[{seller.pk}]}"> -->
+								<a ng-if="seller.is_eligible_for_ebay_update == false" href="/price-formula/?pk={[{seller.pk}]}">
+									<button type="button" class="btn btn-xs btn-o btn-success" ng-cloak><span style="color:black">Update Price formula</span></button>
+								</a>
+								<!-- <a ng-if="seller.is_eligible_for_ebay_update == true"> -->
+								<a ng-if="seller.is_eligible_for_ebay_update == true">
+									<button type="button" class="btn btn-xs btn-o btn-success" ng-cloak ng-cloak ng-disabled="seller.is_eligible_for_ebay_update == true">
+										<span style="color:black">True</span>
+									</button>
+								</a>
+								</td>
 								</td>
                             </tr>
                         </tbody>

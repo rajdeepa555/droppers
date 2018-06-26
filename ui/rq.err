@@ -1,0 +1,854 @@
+nohup: ignoring input
+System check identified some issues:
+
+WARNINGS:
+?: (1_8.W001) The standalone TEMPLATE_* settings were deprecated in Django 1.8 and the TEMPLATES dictionary takes precedence. You must put the values of the following settings into your default TEMPLATES dict: TEMPLATE_DEBUG.
+12:46:57 Registering birth of worker ip-172-31-36-26.12271
+12:46:57 RQ worker 'rq:worker:ip-172-31-36-26.12271' started, version 0.10.0
+12:46:57 *** Listening on default...
+12:46:57 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+12:46:57 Cleaning registries for queue: default
+12:46:57 *** Listening on default...
+12:46:57 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+12:52:57 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+12:58:58 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+13:04:58 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+13:10:58 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+13:16:58 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+13:22:58 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+13:28:58 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+13:34:58 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+13:40:59 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+13:46:59 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+13:52:59 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+13:58:59 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:04:59 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:10:59 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:16:59 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:23:00 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:29:00 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:35:00 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:41:00 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:47:00 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:53:00 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:59:01 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:05:01 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:11:01 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:17:01 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:23:01 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:29:01 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:35:01 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:41:01 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:47:01 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:53:01 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:59:01 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:05:02 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:11:02 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:17:02 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:23:02 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:29:02 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:35:02 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:41:02 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:47:02 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:53:02 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:59:02 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:05:02 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:11:02 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:17:02 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:23:02 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:29:02 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:35:02 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:41:03 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:47:03 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:53:03 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:59:03 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:05:03 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:11:03 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:17:03 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:23:03 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:29:03 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:30:39 default: ui.tasks.ebay_price_updater() (98cd8f8a-6087-407f-93fb-39166e5a887f)
+18:30:39 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:30:39 Sent heartbeat to prevent worker timeout. Next one should arrive within 36060 seconds.
+18:30:53 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:30:53 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:30:53 Cleaning registries for queue: default
+18:30:53 *** Listening on default...
+18:30:53 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:36:53 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:42:54 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:48:54 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:54:54 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:00:55 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:06:55 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:12:55 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:18:55 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:24:55 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:30:55 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:36:56 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:42:56 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:48:56 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:54:56 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:00:56 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:06:56 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:12:56 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:18:56 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:24:56 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:30:56 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:36:56 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:42:56 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:48:56 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:54:56 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:00:56 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:06:56 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:12:57 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:18:57 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:24:57 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:30:57 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:36:57 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:42:57 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:48:57 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:54:58 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:00:58 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:06:58 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:12:58 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:18:58 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:24:58 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:30:58 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:36:58 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:42:58 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:48:58 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:54:58 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:00:58 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:06:59 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:12:59 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:18:59 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:24:59 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:30:59 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:36:59 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:42:59 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:48:59 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:54:59 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:00:59 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:06:59 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:13:00 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:19:00 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:25:00 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:31:00 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:37:00 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:43:00 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:49:00 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:55:01 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:01:01 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:07:01 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:13:01 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:19:01 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:25:01 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:31:01 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:37:01 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:43:01 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:49:01 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:55:01 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:01:01 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:07:02 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:13:02 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:19:02 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:25:02 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:31:02 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:37:02 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:43:02 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:49:02 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:55:02 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:01:02 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:07:02 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:13:02 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:19:02 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:25:02 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:31:02 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:37:03 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:43:03 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:49:03 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:55:03 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:01:03 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:07:03 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:13:03 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:19:03 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:25:03 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:31:04 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:37:04 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:43:04 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:49:04 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:55:04 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:01:04 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:07:04 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:13:04 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:19:04 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:25:04 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:31:04 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:37:04 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:43:04 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:49:04 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:55:04 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:01:04 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:07:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:13:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:19:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:25:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:31:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:37:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:43:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:49:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:55:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+07:01:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+07:07:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+07:13:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+07:19:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+07:25:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+07:31:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+07:37:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+07:43:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+07:49:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+07:55:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+08:01:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+08:07:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+08:13:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+08:19:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+08:25:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+08:31:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+08:37:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+08:43:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+08:49:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+08:55:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+09:01:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+09:07:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+09:13:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+09:19:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+09:25:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+09:31:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+09:37:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+09:43:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+09:49:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+09:55:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+10:01:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+10:07:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+10:13:08 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+10:19:08 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+10:25:08 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+10:31:08 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+10:37:08 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+10:43:08 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+10:49:08 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+10:55:08 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+11:01:08 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+11:07:08 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+11:13:08 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+11:19:08 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+11:25:08 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+11:31:08 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+11:37:09 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+11:43:09 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+11:49:09 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+11:55:09 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+12:01:09 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+12:07:09 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+12:13:09 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+12:19:09 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+12:25:10 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+12:31:10 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+12:37:10 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+12:43:10 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+12:49:10 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+12:55:10 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+13:01:10 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+13:07:11 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+13:13:11 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+13:19:11 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+13:25:11 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+13:31:11 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+13:37:11 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+13:43:11 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+13:49:11 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+13:55:11 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:01:11 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:07:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:13:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:19:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:25:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:31:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:37:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:43:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:49:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+14:55:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:01:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:07:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:13:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:19:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:25:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:31:12 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:37:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:43:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:49:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+15:55:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:01:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:07:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:13:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:19:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:25:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:31:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:37:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:43:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:49:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+16:55:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:01:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:07:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:13:13 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:19:14 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:25:14 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:31:14 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:37:14 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:43:14 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:49:14 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+17:55:14 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:01:14 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:07:15 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:13:15 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:19:15 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:25:15 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:31:15 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:37:15 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:43:15 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:49:15 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+18:55:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:01:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:07:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:13:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:19:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:25:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:31:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:37:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:43:16 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:49:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+19:55:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:01:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:07:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:13:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:19:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:25:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:31:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:37:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:43:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:49:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+20:55:17 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:01:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:07:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:13:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:19:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:25:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:31:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:37:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:43:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:49:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+21:55:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:01:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:07:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:13:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:19:18 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:25:19 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:31:19 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:37:19 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:43:19 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:49:19 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+22:55:19 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:01:19 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:07:20 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:13:20 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:19:20 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:25:20 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:31:20 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:37:20 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:43:20 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:49:20 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+23:55:20 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:01:20 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:07:20 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:13:21 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:19:21 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:25:21 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:31:21 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:37:21 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:43:21 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:49:21 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:51:26 default: ui.tasks.sync_db_to_ebay(23, 'AgAAAA**AQAAAA**aAAAAA**JRkhWw**nY+sHZ2PrBmdj6wVnY+sEZ2PrA2dj6wNmIqhCZmKowWdj6x9nY+seQ**M30DAA**AAMAAA**xmIRNGY2AS6Tca6Jh8VHjly5PEwgzdQNkUoL/N1P5CvdCNFRaLRUHhjrOZrebBuxm2Ubjd7Up68ZBQHUzZCRkrvK/mM+WIpQslSYyZh02jnctvHofYVM6BOGaR4/3vEYen3akuwiUjh8VfnkgJ0RdikMdga95dr8KNz4uAW88M3IC1WVMu9mD3zeVXw9GqcOdxPXRXOT1SXaEHnaRV6hdn6/etLIJYxaOinARLbKtO3Jikd2DCzaqkiQ94S3xhN3oDapjKHCT1cLmGM7DK/9G3r5xlrL/nt+lvZEIcAvs2r/FPb1kWtsy/Nbj1NoUQiDkQxk6lxH1nuHUOibDPBsVD8YRCayHpcy/hh0PqOteBxD81/CtNeE19YiAlNvJ9kvwkU6opNeKnss3Y5NoynQ/xRRaKggwjt8cYexVTHpsmbPRDdgxuMjmqjgmwxNnOnsJvK8ZwaUIQav0aVx35yNek2q5KHD2WTYR9OyhfOUEnFFSZGkttz6Arm4Fy4zHQVcDGWhmNqK5gPujn8W3K1uEMFQndmywLwkJAq3LWyKCT+hD9lNuqT4qXkmD2UpXrw1aHSX64M/QVs0KNcaRIde9Ip3EptVdPvixyi/4oLSGN6pFZlsRV4BO+fSOJlwGwJ8SojNUHfbZO5zgswfuGJpjTTaXHA/7A8/e0VCYkigKGLfTpCCQYgal2S16HoKva8LMPgBOOfe4/CLCHaKUsXOTnHigfLQZNxqIgGz5e2n8n1FpbItIVtdR3GlDiWEWXe6') (be78924c-3157-459d-b7fd-dc71bb7fb130)
+00:51:26 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:51:26 Sent heartbeat to prevent worker timeout. Next one should arrive within 36060 seconds.
+00:52:03 default: Job OK (be78924c-3157-459d-b7fd-dc71bb7fb130)
+00:52:03 Result: 'DB sync completed'
+00:52:03 Result is kept for 500 seconds
+00:52:03 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:52:03 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:52:03 Cleaning registries for queue: default
+00:52:03 *** Listening on default...
+00:52:03 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+00:58:03 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:04:04 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:10:04 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:16:04 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:22:04 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:28:04 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:34:04 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:40:04 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:46:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:52:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+01:58:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:04:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:10:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:16:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:22:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:28:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:34:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:40:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:46:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:52:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+02:58:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:04:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:10:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:16:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:22:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:28:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:34:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:40:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:46:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:52:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+03:58:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:04:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:10:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:16:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:22:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:28:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:34:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:40:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:46:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:52:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+04:58:08 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:04:08 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:10:08 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:16:08 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:22:08 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:28:08 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:34:08 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:40:08 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:46:08 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:52:08 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:53:41 default: ui.tasks.ebay_price_updater() (b34ca88c-6209-47b1-a4d9-87861836beaf)
+05:53:41 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+05:53:41 Sent heartbeat to prevent worker timeout. Next one should arrive within 36060 seconds.
+06:46:05 django.db.utils.OperationalError: (2006, 'MySQL server has gone away')
+Traceback (most recent call last):
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/backends/mysql/base.py", line 101, in execute
+    return self.cursor.execute(query, args)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/cursors.py", line 250, in execute
+    self.errorhandler(self, exc, value)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/connections.py", line 50, in defaulterrorhandler
+    raise errorvalue
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/cursors.py", line 247, in execute
+    res = self._query(query)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/cursors.py", line 411, in _query
+    rowcount = self._do_query(q)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/cursors.py", line 374, in _do_query
+    db.query(q)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/connections.py", line 277, in query
+    _mysql.connection.query(self, query)
+_mysql_exceptions.OperationalError: (2006, 'MySQL server has gone away')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rq/worker.py", line 789, in perform_job
+    rv = job.perform()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rq/job.py", line 573, in perform
+    self._result = self._execute()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rq/job.py", line 579, in _execute
+    return self.func(*self.args, **self.kwargs)
+  File "/home/ubuntu/projects/droppers/ui/ui/tasks.py", line 192, in ebay_price_updater
+    testing_facade()
+  File "/home/ubuntu/projects/droppers/ui/ui/price_updater.py", line 269, in testing_facade
+    current_seller_id, ignored_items_list)
+  File "/home/ubuntu/projects/droppers/ui/ui/price_updater.py", line 44, in remove_ignore_items
+    ignored_items = get_ignored_items_list(seller_id)
+  File "/home/ubuntu/projects/droppers/ui/ui/price_updater.py", line 36, in get_ignored_items_list
+    ignored_items = query_set_to_list(ignored_items)
+  File "/home/ubuntu/projects/droppers/ui/ui/db.py", line 15, in query_set_to_list
+    if query_set:
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/models/query.py", line 254, in __bool__
+    self._fetch_all()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/models/query.py", line 1118, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/models/query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 894, in execute_sql
+    raise original_exception
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 884, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/backends/utils.py", line 80, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/backends/mysql/base.py", line 101, in execute
+    return self.cursor.execute(query, args)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/cursors.py", line 250, in execute
+    self.errorhandler(self, exc, value)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/connections.py", line 50, in defaulterrorhandler
+    raise errorvalue
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/cursors.py", line 247, in execute
+    res = self._query(query)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/cursors.py", line 411, in _query
+    rowcount = self._do_query(q)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/cursors.py", line 374, in _do_query
+    db.query(q)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/connections.py", li06:46:07 django.db.utils.OperationalError: (2006, 'MySQL server has gone away')
+Traceback (most recent call last):
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/backends/mysql/base.py", line 101, in execute
+    return self.cursor.execute(query, args)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/cursors.py", line 250, in execute
+    self.errorhandler(self, exc, value)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/connections.py", line 50, in defaulterrorhandler
+    raise errorvalue
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/cursors.py", line 247, in execute
+    res = self._query(query)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/cursors.py", line 411, in _query
+    rowcount = self._do_query(q)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/cursors.py", line 374, in _do_query
+    db.query(q)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/connections.py", line 277, in query
+    _mysql.connection.query(self, query)
+_mysql_exceptions.OperationalError: (2006, 'MySQL server has gone away')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rq/worker.py", line 789, in perform_job
+    rv = job.perform()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rq/job.py", line 573, in perform
+    self._result = self._execute()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rq/job.py", line 579, in _execute
+    return self.func(*self.args, **self.kwargs)
+  File "/home/ubuntu/projects/droppers/ui/ui/tasks.py", line 192, in ebay_price_updater
+    testing_facade()
+  File "/home/ubuntu/projects/droppers/ui/ui/price_updater.py", line 268, in testing_facade
+    ebay_items_after_remove_ignored = remove_ignore_items(ebay_items,\
+  File "/home/ubuntu/projects/droppers/ui/ui/price_updater.py", line 44, in remove_ignore_items
+    ignored_items = get_ignored_items_list(seller_id)
+  File "/home/ubuntu/projects/droppers/ui/ui/price_updater.py", line 36, in get_ignored_items_list
+    ignored_items = query_set_to_list(ignored_items)
+  File "/home/ubuntu/projects/droppers/ui/ui/db.py", line 15, in query_set_to_list
+    if query_set:
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/models/query.py", line 254, in __bool__
+    self._fetch_all()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/models/query.py", line 1118, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/models/query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 894, in execute_sql
+    raise original_exception
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 884, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/backends/utils.py", line 80, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/backends/mysql/base.py", line 101, in execute
+    return self.cursor.execute(query, args)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/cursors.py", line 250, in execute
+    self.errorhandler(self, exc, value)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/connections.py", line 50, in defaulterrorhandler
+    raise errorvalue
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/cursors.py", line 247, in execute
+    res = self._query(query)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/cursors.py", line 411, in _query
+    rowcount = self._do_query(q)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/cursors.py", line 374, in _do_query
+    db.query(q)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/connections.py", line 277, in query
+    _mysql.connection.query(self, query)
+django.db.utils.OperationalError: (2006, 'MySQL server has gone away')
+Traceback (most recent call last):
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/backends/mysql/base.py", line 101, in execute
+    return self.cursor.execute(query, args)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/cursors.py", line 250, in execute
+    self.errorhandler(self, exc, value)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/connections.py", line 50, in defaulterrorhandler
+    raise errorvalue
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/cursors.py", line 247, in execute
+    res = self._query(query)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/cursors.py", line 411, in _query
+    rowcount = self._do_query(q)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/cursors.py", line 374, in _do_query
+    db.query(q)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/connections.py", line 277, in query
+    _mysql.connection.query(self, query)
+_mysql_exceptions.OperationalError: (2006, 'MySQL server has gone away')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rq/worker.py", line 789, in perform_job
+    rv = job.perform()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rq/job.py", line 573, in perform
+    self._result = self._execute()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rq/job.py", line 579, in _execute
+    return self.func(*self.args, **self.kwargs)
+  File "/home/ubuntu/projects/droppers/ui/ui/tasks.py", line 192, in ebay_price_updater
+    testing_facade()
+  File "/home/ubuntu/projects/droppers/ui/ui/price_updater.py", line 268, in testing_facade
+    ebay_items_after_remove_ignored = remove_ignore_items(ebay_items,\
+  File "/home/ubuntu/projects/droppers/ui/ui/price_updater.py", line 44, in remove_ignore_items
+    ignored_items = get_ignored_items_list(seller_id)
+  File "/home/ubuntu/projects/droppers/ui/ui/price_updater.py", line 36, in get_ignored_items_list
+    ignored_items = query_set_to_list(ignored_items)
+  File "/home/ubuntu/projects/droppers/ui/ui/db.py", line 15, in query_set_to_list
+    if query_set:
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/models/query.py", line 254, in __bool__
+    self._fetch_all()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/models/query.py", line 1118, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/models/query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 894, in execute_sql
+    raise original_exception
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 884, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/backends/utils.py", line 80, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/backends/mysql/base.py", line 101, in execute
+    return self.cursor.execute(query, args)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/cursors.py", line 250, in execute
+    self.errorhandler(self, exc, value)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/connections.py", line 50, in defaulterrorhandler
+    raise errorvalue
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/cursors.py", line 247, in execute
+    res = self._query(query)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/cursors.py", line 411, in _query
+    rowcount = self._do_query(q)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/cursors.py", line 374, in _do_query
+    db.query(q)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/connections.py", line 277, in query
+    _mysql.connection.query(self, query)
+django.db.utils.OperationalError: (2006, 'MySQL server has gone away')
+ERROR:rq.worker:django.db.utils.OperationalError: (2006, 'MySQL server has gone away')
+Traceback (most recent call last):
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/backends/mysql/base.py", line 101, in execute
+    return self.cursor.execute(query, args)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/cursors.py", line 250, in execute
+    self.errorhandler(self, exc, value)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/connections.py", line 50, in defaulterrorhandler
+    raise errorvalue
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/cursors.py", line 247, in execute
+    res = self._query(query)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/cursors.py", line 411, in _query
+    rowcount = self._do_query(q)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/cursors.py", line 374, in _do_query
+    db.query(q)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/connections.py", line 277, in query
+    _mysql.connection.query(self, query)
+_mysql_exceptions.OperationalError: (2006, 'MySQL server has gone away')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rq/worker.py", line 789, in perform_job
+    rv = job.perform()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rq/job.py", line 573, in perform
+    self._result = self._execute()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rq/job.py", line 579, in _execute
+    return self.func(*self.args, **self.kwargs)
+  File "/home/ubuntu/projects/droppers/ui/ui/tasks.py", line 192, in ebay_price_updater
+    testing_facade()
+  File "/home/ubuntu/projects/droppers/ui/ui/price_updater.py", line 268, in testing_facade
+    ebay_items_after_remove_ignored = remove_ignore_items(ebay_items,\
+  File "/home/ubuntu/projects/droppers/ui/ui/price_updater.py", line 44, in remove_ignore_items
+    ignored_items = get_ignored_items_list(seller_id)
+  File "/home/ubuntu/projects/droppers/ui/ui/price_updater.py", line 36, in get_ignored_items_list
+    ignored_items = query_set_to_list(ignored_items)
+  File "/home/ubuntu/projects/droppers/ui/ui/db.py", line 15, in query_set_to_list
+    if query_set:
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/models/query.py", line 254, in __bool__
+    self._fetch_all()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/models/query.py", line 1118, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/models/query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 894, in execute_sql
+    raise original_exception
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 884, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/backends/utils.py", line 80, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/backends/mysql/base.py", line 101, in execute
+    return self.cursor.execute(query, args)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/cursors.py", line 250, in execute
+    self.errorhandler(self, exc, value)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/connections.py", line 50, in defaulterrorhandler
+    raise errorvalue
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/cursors.py", line 247, in execute
+    res = self._query(query)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/cursors.py", line 411, in _query
+    rowcount = self._do_query(q)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/cursors.py", line 374, in _do_query
+    db.query(q)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/connections.py", line 277, in query
+    _mysql.connection.query(self, query)
+django.db.utils.OperationalError: (2006, 'MySQL server has gone away')
+Traceback (most recent call last):
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/backends/mysql/base.py", line 101, in execute
+    return self.cursor.execute(query, args)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/cursors.py", line 250, in execute
+    self.errorhandler(self, exc, value)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/connections.py", line 50, in defaulterrorhandler
+    raise errorv06:52:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:58:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:59:10 default: ui.tasks.ebay_price_updater() (e6678136-fa63-4851-961c-f1f76f0fcdb9)
+06:59:10 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:59:10 Sent heartbeat to prevent worker timeout. Next one should arrive within 36060 seconds.
+rs/venv3/lib/python3.5/site-packages/MySQLdb/connections.py", line 277, in query
+    _mysql.connection.query(self, query)
+_mysql_exceptions.OperationalError: (2006, 'MySQL server has gone away')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rq/worker.py", line 789, in perform_job
+    rv = job.perform()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rq/job.py", line 573, in perform
+    self._result = self._execute()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/rq/job.py", line 579, in _execute
+    return self.func(*self.args, **self.kwargs)
+  File "/home/ubuntu/projects/droppers/ui/ui/tasks.py", line 192, in ebay_price_updater
+    testing_facade()
+  File "/home/ubuntu/projects/droppers/ui/ui/price_updater.py", line 268, in testing_facade
+    ebay_items_after_remove_ignored = remove_ignore_items(ebay_items,\
+  File "/home/ubuntu/projects/droppers/ui/ui/price_updater.py", line 44, in remove_ignore_items
+    ignored_items = get_ignored_items_list(seller_id)
+  File "/home/ubuntu/projects/droppers/ui/ui/price_updater.py", line 36, in get_ignored_items_list
+    ignored_items = query_set_to_list(ignored_items)
+  File "/home/ubuntu/projects/droppers/ui/ui/db.py", line 15, in query_set_to_list
+    if query_set:
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/models/query.py", line 254, in __bool__
+    self._fetch_all()
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/models/query.py", line 1118, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/models/query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 894, in execute_sql
+    raise original_exception
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 884, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/backends/utils.py", line 80, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/backends/mysql/base.py", line 101, in execute
+    return self.cursor.execute(query, args)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/cursors.py", line 250, in execute
+    self.errorhandler(self, exc, value)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/connections.py", line 50, in defaulterrorhandler
+    raise errorvalue
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/cursors.py", line 247, in execute
+    res = self._query(query)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/cursors.py", line 411, in _query
+    rowcount = self._do_query(q)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/cursors.py", line 374, in _do_query
+    db.query(q)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/connections.py", line 277, in query
+    _mysql.connection.query(self, query)
+django.db.utils.OperationalError: (2006, 'MySQL server has gone away')
+06:46:07 Invoking exception handler <bound method Worker.move_to_failed_queue of <rq.worker.Worker object at 0x7f614a73b3c8>>
+DEBUG:rq.worker:Invoking exception handler <bound method Worker.move_to_failed_queue of <rq.worker.Worker object at 0x7f614a73b3c8>>
+06:46:07 Moving job to 'failed' queue
+WARNING:rq.worker:Moving job to 'failed' queue
+06:46:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:46:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:46:07 Cleaning registries for queue: default
+06:46:07 *** Listening on default...
+06:46:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:52:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:58:07 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:59:29 default: ui.tasks.ebay_price_updater() (ed4089c8-b489-4307-936f-c10d989725b8)
+06:59:29 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:59:29 Sent heartbeat to prevent worker timeout. Next one should arrive within 36060 seconds.
+-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/db/backends/mysql/base.py", line 101, in execute
+    return self.cursor.execute(query, args)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/cursors.py", line 250, in execute
+    self.errorhandler(self, exc, value)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/connections.py", line 50, in defaulterrorhandler
+    raise errorvalue
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/cursors.py", line 247, in execute
+    res = self._query(query)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/cursors.py", line 411, in _query
+    rowcount = self._do_query(q)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/cursors.py", line 374, in _do_query
+    db.query(q)
+  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/MySQLdb/connections.py", line 277, in query
+    _mysql.connection.query(self, query)
+django.db.utils.OperationalError: (2006, 'MySQL server has gone away')
+06:46:05 Invoking exception handler <bound method Worker.move_to_failed_queue of <rq.worker.Worker object at 0x7f581a3cc3c8>>
+DEBUG:rq.worker:Invoking exception handler <bound method Worker.move_to_failed_queue of <rq.worker.Worker object at 0x7f581a3cc3c8>>
+06:46:05 Moving job to 'failed' queue
+WARNING:rq.worker:Moving job to 'failed' queue
+06:46:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:46:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:46:05 Cleaning registries for queue: default
+06:46:05 *** Listening on default...
+06:46:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:52:05 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:58:06 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:59:21 default: ui.tasks.ebay_price_updater() (66fb6406-cf43-4c48-9717-2860fb1b00aa)
+06:59:21 Sent heartbeat to prevent worker timeout. Next one should arrive within 420 seconds.
+06:59:21 Sent heartbeat to prevent worker timeout. Next one should arrive within 36060 seconds.

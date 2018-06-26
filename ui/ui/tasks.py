@@ -1,7 +1,7 @@
 # Create your tasks here
 from __future__ import absolute_import, unicode_literals
 import string
-
+from .sync_ebay import sync_ebay_item
 from django.contrib.auth.models import User
 from django.utils.crypto import get_random_string
 import csv
@@ -17,6 +17,7 @@ from .amazonapi import AmazonScraper
 import time
 import re
 from .ebay import EbayHandler
+
 import math
 from django.forms.models import model_to_dict
 import traceback
@@ -26,13 +27,13 @@ from .utils import *
 from .ebay import *
 from .helpers import *
 from .parsers import parse_ebay_item
-
-
+# from .price_updater import testing_facade
+from .csvfile import get_item_in_csv
+from .price_update import price_updater
 
 
 def get_seller_token(seller_id):
 	obj = SellerTokens.objects.get(pk = seller_id)
-	print("seller token....",obj.token)
 	return obj.token
 
 def get_ebay_handler(seller_id):
@@ -80,182 +81,183 @@ def start_ebay_seller_search2(seller_id,report_id):
 	report_obj = EbaySellerSearchReports.objects.get(pk = report_id)
 	reports = EbaySellerSearchReports.objects.filter(pk = report_id)
 	reports.update(status = "processing")
-	if seller_id is not None:
-		es = EbayScraper(locale="UK")
-		ebay_url = "https://www.ebay.com/sch/%s/m.html?_nkw=&_armrs=1&_ipg=50&_from=" % (seller_id)
-		while es.has_next:
-			es.get_details = False
-			es.response_list = []
-			es.scrape(ebay_url)
-			ebay_url = es.next_url
-			if len(es.response_list)>0:
-				try:
-					es.get_details = True
-					for item in es.response_list:
-						keywords = []
-						price = item.get("price","")
-						price = price.replace("$","")
-						price = price.replace(",","")
-						if price == "":
-							price = -1
-						current_es = EbaySellerSearch()
-						current_es.price_str = float(price)
-						current_es.seller_id = seller_id
-						current_es.title	= item.get("title","")
-						current_es.item_sold = item.get("item_sold","")
-						ebay_item_url = item.get("ebay_url","#")
-						current_es.ebay_url = ebay_item_url
-						upc = ''
-						isbn = ''
-						if len(ebay_item_url)>1:
-							es.scrape(ebay_item_url)
-							upc = str(es.upc)
-							isbn = str(es.isbn)
-							# keywords.append(es.upc)
+	try:
+		if seller_id is not None:
+			es = EbayScraper(locale="UK")
+			ebay_url = "https://www.ebay.com/sch/%s/m.html?_nkw=&_armrs=1&_ipg=50&_from=" % (seller_id)
+			while es.has_next:
+				es.get_details = False
+				es.response_list = []
+				es.scrape(ebay_url)
+				ebay_url = es.next_url
+				if len(es.response_list)>0:
+					try:
+						es.get_details = True
+						for item in es.response_list:
+							if 'watching' in item.get("item_sold","").lower():
+								print("watuchfsfsafa",item.get("item_sold","").lower())
+								continue
+							keywords = []
+							price = item.get("price","")
+							price = price.replace("$","")
+							price = price.replace(",","")
+							if price == "":
+								price = -1
+							current_es = EbaySellerSearch()
+							current_es.price_str = float(price)
+							current_es.seller_id = seller_id
+							current_es.title	= item.get("title","")
+							current_es.item_sold = item.get("item_sold","")
+							ebay_item_url = item.get("ebay_url","#")
+							current_es.ebay_url = ebay_item_url
+							upc = ''
+							isbn = ''
+							if len(ebay_item_url)>1:
+								es.scrape(ebay_item_url)
+								upc = str(es.upc)
+								isbn = str(es.isbn)
+								# keywords.append(es.upc)
 
-						aso = AmazonScraper(locale="UK")
-						proxy_handler = CProxy(1,0)
-						current_proxy = proxy_handler.get_proxy()
-						print("current proxy",current_proxy)
-						aso.proxies.update({"https":current_proxy})
-						res = None
-						retry = 0
-						proxies_not_working = False
-						current_url = ""
-						price_str = ""
-						try:
-							while res is None or aso.is_captcha_in_response:
-								if retry >= 5:
-									print("I think proxies are not working")
-									proxies_not_working = True
-									break
-								title1 = item.get("title","")
-								keywords = [upc,isbn,title1]
-								url = get_url(aso,keywords)
-								if url and len(url)>0:
-									current_url = url.strip()
-									if current_url.startswith('https://www.amazon.com') or current_url.startswith('www.amazon.com'):
-										# print("current_url",current_url)
-										pass
-									else:
-										current_url = "https://www.amazon.com"+current_url
-									res = aso.scrape(current_url)
-								if aso.is_captcha_in_response or res is None:
-									print("no response found. Trying again...")
-									time.sleep(5)
-									current_proxy = proxy_handler.get_proxy()
-									aso.proxies.update({"https":current_proxy})
-									aso.change_proxy(current_proxy)
-									retry += 1
-									continue
-							if proxies_not_working:
-								print("proxies are not working so exiting")
-							price_str = res.get("price","")
-							if len(price_str)>0:
-								price_str = float(price_str.replace("$","").replace(",",""))
+							aso = AmazonScraper(locale="UK")
+							proxy_handler = CProxy(1,0)
+							current_proxy = proxy_handler.get_proxy()
+							aso.proxies.update({"https":current_proxy})
+							res = None
+							retry = 0
+							proxies_not_working = False
+							current_url = ""
+							price_str = ""
+							try:
+								while res is None or aso.is_captcha_in_response:
+									if retry >= 5:
+										print("I think proxies are not working")
+										proxies_not_working = True
+										break
+									title1 = item.get("title","")
+									keywords = [upc,isbn,title1]
+									url = get_url(aso,keywords)
+									if url and len(url)>0:
+										current_url = url.strip()
+										if current_url.startswith('https://www.amazon.com') or current_url.startswith('www.amazon.com'):
+											# print("current_url",current_url)
+											pass
+										else:
+											current_url = "https://www.amazon.com"+current_url
+										res = aso.scrape(current_url)
+									if aso.is_captcha_in_response or res is None:
+										print("no response found. Trying again...")
+										time.sleep(5)
+										current_proxy = proxy_handler.get_proxy()
+										aso.proxies.update({"https":current_proxy})
+										aso.change_proxy(current_proxy)
+										retry += 1
+										continue
+								if proxies_not_working:
+									print("proxies are not working so exiting")
+								price_str = res.get("price","")
+								if len(price_str)>0:
+									price_str = float(price_str.replace("$","").replace(",",""))
 
-						except Exception as e:
-							print("error with amazon scraping",e)
-							pass
-						try:
-							print("inside try................")
-							current_es.amazon_price_str = price_str
-							current_es.amazon_url = current_url
-							current_es.search_report_id = report_obj.pk
-							current_es.save()
-						
-						except Exception as e:
-							print("error!!",e)
-							pass
-						# break
-						# input("press enter")
-						# input("scraped url here")
-				except Exception as e:
-					print("error!!",e)
-			break
-		
-			ebay_obj = EbaySellerSearch.objects.filter(seller_id = seller_id,search_report_id = report_id).count()
-			reports.update(item_found = ebay_obj)
-		ebay_obj = EbaySellerSearch.objects.filter(seller_id = seller_id,search_report_id = report_id).count()
-		reports.update(status = "completed",item_found = ebay_obj)
+							except Exception as e:
+								print("error with amazon scraping",e)
+								pass
+							try:
+								current_es.amazon_price_str = price_str
+								current_es.amazon_url = current_url
+								current_es.search_report_id = report_obj.pk
+								current_es.save()
+								ebay_obj = EbaySellerSearch.objects.filter(seller_id = seller_id,search_report_id = report_id).count()
+								reports.update(item_found = ebay_obj)						
+							except Exception as e:
+								print("error!!",e)
+								pass
+							# break
+							# input("press enter")
+							# input("scraped url here")
+					except Exception as e:
+						print("error!!",e)
+				break
+	except Exception as e:
+		print("exception 1 ",e)
+
+
+
+	ebay_obj = EbaySellerSearch.objects.filter(seller_id = seller_id,search_report_id = report_id).count()
+	reports.update(status = "completed",item_found = ebay_obj)
 	return "searching sellers item"
 
 
 @job
-def ebay_price_updater():
-	all_ebay_items = EbaySellerItems.objects.filter(status__in=["monitored","unmonitored"])
-	if len(all_ebay_items)>0:
-		aso = AmazonScraper(locale="UK")
-		proxy_handler = CProxy(1,0)
-		current_proxy = proxy_handler.get_proxy()
-		aso.proxies.update({"https":current_proxy})
-		# ebayhandler = EbayHandler()
-		seller_id = 1
-		ebayhandler = get_ebay_handler(seller_id)
+def ebay_price_updater(seller_id,token):
+	price_updater(seller_id,token)
+	# all_ebay_items = EbaySellerItems.objects.filter(status__in=["monitored","unmonitored"])
+	# if len(all_ebay_items)>0:
+	# 	aso = AmazonScraper(locale="UK")
+	# 	proxy_handler = CProxy(1,0)
+	# 	current_proxy = proxy_handler.get_proxy()
+	# 	aso.proxies.update({"https":current_proxy})
+	# 	seller_id = 1
+	# 	ebayhandler = get_ebay_handler(seller_id)
 
-		formula_obj=EbayPriceFormula.objects.all().first()
-		print("current_proxy",current_proxy)
-		count = 0
-		for ebay_item in all_ebay_items:
-			# ebay_item = EbaySellerItems.objects.get(custom_label = 'B000I2079E')
+	# 	formula_obj=EbayPriceFormula.objects.all().first()
+	# 	print("current_proxy",current_proxy)
+	# 	count = 0
+	# 	for ebay_item in all_ebay_items:
+	# 		count += 1
+	# 		print("item..",count)
+	# 		item_info_to_update_on_ebay = {}
+	# 		item_info_to_update_on_ebay["ItemID"] = ebay_item.ebay_id
+	# 		print("ebay url","https://www.ebay.com/itm/"+str(ebay_item.ebay_id))
+	# 		price_info = {"Item":item_info_to_update_on_ebay}
+	# 		if True:
+	# 			amazon_url = make_amazon_url(ebay_item.custom_label)
+	# 			retry = 0
+	# 			res = None
+	# 			prime_price = ''
+	# 			while res is None or "503" in res or aso.is_captcha_in_response:
+	# 				res = aso.scrape_with_error(amazon_url)
+	# 				# if res.get("is_prime") == False:
+	# 				# 	print("is prime false")
+	# 				# 	aso.get_prime_detail = True
+	# 				# 	amazon_url = make_amazon_url_for_list_primes(ebay_item.custom_label)
+	# 				# 	prime_price = aso.scrape_for_prime(amazon_url)
+	# 				# 	if len(prime_price)>0:
+	# 				# 		print("prime_price",prime_price)
+	# 				# 		res["price"] = prime_price
+	# 				# 		res["is_prime"] = True
 
-			count += 1
-			print("item..",count)
-			item_info_to_update_on_ebay = {}
-			item_info_to_update_on_ebay["ItemID"] = ebay_item.ebay_id
-			print("ebay url","https://www.ebay.com/itm/"+str(ebay_item.ebay_id))
-			price_info = {"Item":item_info_to_update_on_ebay}
-
-			# if len(ebay_item.custom_label)>0:
-			if True:
-				amazon_url = make_amazon_url(ebay_item.custom_label)
-				retry = 0
-				res = None
-				prime_price = ''
-				while res is None or "503" in res or aso.is_captcha_in_response:
-					res = aso.scrape_with_error(amazon_url)
-					# if res.get("is_prime") == False:
-					# 	print("is prime false")
-					# 	aso.get_prime_detail = True
-					# 	amazon_url = make_amazon_url_for_list_primes(ebay_item.custom_label)
-					# 	prime_price = aso.scrape_for_prime(amazon_url)
-					# 	if len(prime_price)>0:
-					# 		print("prime_price",prime_price)
-					# 		res["price"] = prime_price
-					# 		res["is_prime"] = True
-
-					if aso.is_captcha_in_response or "503" in res:
-						current_proxy = proxy_handler.get_proxy()
-						aso.change_proxy(current_proxy)
-						retry += 1
-					if retry == 5:
-						print("I think proxies are not working")
-						break
-				print("amazon url",amazon_url)
-				if is_eligible_for_out_of_stock(res):
-					print("item is eligible for out of stock",res)
-					item_info_to_update_on_ebay["Quantity"] = "0"
-					print("price_info")
-					# input("enter")
-					is_updated = ebayhandler.set_item_price(item_price_dict = price_info)
-					print("is updated,",is_updated)
-					ebay_item.status = "unmonitored"
-					ebay_item.quantity = 0
-					ebay_item.save()
-					continue
-				else:
-					print("inside else...............",res)
-					final_cost = get_final_cost(ebay_item,formula_obj,res)
-					final_stock = get_final_stock(ebay_item.stock_level)
-					print("final_cost",final_cost,"final_stock",final_stock)
-					item_info_to_update_on_ebay["Quantity"] = ebay_item.quantity = final_stock
-					item_info_to_update_on_ebay["StartPrice"] = ebay_item.price = final_cost
-					print("price_info",price_info)
-					# input("press enter")
-					is_updated = ebayhandler.set_item_price(item_price_dict = price_info)
-					ebay_item.status = "monitored"
-					ebay_item.save()
-			# break	
+	# 				if aso.is_captcha_in_response or "503" in res:
+	# 					current_proxy = proxy_handler.get_proxy()
+	# 					aso.change_proxy(current_proxy)
+	# 					retry += 1
+	# 				if retry == 5:
+	# 					print("I think proxies are not working")
+	# 					break
+	# 			print("amazon url",amazon_url)
+	# 			if is_eligible_for_out_of_stock(res):
+	# 				print("item is eligible for out of stock",res)
+	# 				item_info_to_update_on_ebay["Quantity"] = "0"
+	# 				print("price_info")
+	# 				# input("enter")
+	# 				is_updated = ebayhandler.set_item_price(item_price_dict = price_info)
+	# 				print("is updated,",is_updated)
+	# 				ebay_item.status = "unmonitored"
+	# 				ebay_item.quantity = 0
+	# 				ebay_item.save()
+	# 				continue
+	# 			else:
+	# 				print("inside else...............",res)
+	# 				final_cost = get_final_cost(ebay_item,formula_obj,res)
+	# 				final_stock = get_final_stock(ebay_item.stock_level)
+	# 				print("final_cost",final_cost,"final_stock",final_stock)
+	# 				item_info_to_update_on_ebay["Quantity"] = ebay_item.quantity = final_stock
+	# 				item_info_to_update_on_ebay["StartPrice"] = ebay_item.price = final_cost
+	# 				print("price_info",price_info)
+	# 				# input("press enter")
+	# 				is_updated = ebayhandler.set_item_price(item_price_dict = price_info)
+	# 				ebay_item.status = "monitored"
+	# 				ebay_item.save()
+	# 		# break	
 
 	return "process finished"
 
@@ -334,7 +336,7 @@ def scrape_amazon2(run_id,group_id,no_of_threads):
 @shared_task
 def start_ebay_seller_search(seller_id):
 	print("fetching records for seller_id:",seller_id)
-	EbaySellerSearch.objects.all().delete()
+	# EbaySellerSearch.objects.all().delete()
 	if seller_id is not None:
 		es = EbayScraper(locale="UK")
 		ebay_url = "https://www.ebay.com/sch/%s/m.html?_nkw=&_armrs=1&_ipg=&_from=" % (seller_id) 
@@ -616,65 +618,67 @@ def start_ebay_update(thread_id,total_threads):
 
 @job
 def sync_db_to_ebay(seller_id):
-	all_db_items_list = []
-	latest_items_list = []
-	ignored_list = []
-	exception_list = []
-	all_ebay = EbaySellerItems.objects.filter(seller_id = seller_id)
-	for item in all_ebay:
-		all_db_items_list.append(item.ebay_id)
-	ebay_obj = get_ebay_handler(seller_id)
-	o = ebay_obj.get_all_items()
-	no_of_pages = get_value_from_dict(o,["ActiveList","PaginationResult","TotalNumberOfPages"])
-	if no_of_pages:
-		no_of_pages = int(no_of_pages)
-		if no_of_pages>0:
-			# for page in range(1,no_of_pages+1):
-			for page in range(1,no_of_pages+1):
-				print("page no.",page,no_of_pages)
-				current_page_results = ebay_obj.get_all_items(page_number = page)
-				items = get_value_from_dict(current_page_results,["ActiveList","ItemArray","Item"])
-				if isinstance(items,dict):
-					items = [items]
-				for item in items:
-					parsed_data = parse_ebay_item(item,seller_id)
-					print("parsed data.................",parsed_data)
-					latest_items_list.append(parsed_data.get("ebay_id",""))
-					try:
-						ebay_item, created = EbaySellerItems.objects.get_or_create(**parsed_data)
-						EbaySellerItems.objects.filter(ebay_id = parsed_data.get("ebay_id","")).update(status="monitored")
-						obj = EbaySellerItems.objects.get(ebay_id = parsed_data.get("ebay_id",""))
-						print("ebay in db... status update quantity yes",obj.ebay_id,obj.price,obj.quantity,obj.status)
-						# input("press enter")
-						if not created:
-							if obj.quantity < 1:
-								ebay_item = EbaySellerItems.objects.filter(ebay_id = parsed_data.get("ebay_id","")).update(status = "unmonitored")
-								obj = EbaySellerItems.objects.get(ebay_id = parsed_data.get("ebay_id",""))
-								# input("press enter not created")
+	print("seller id in task",seller_id)
+	sync_ebay_item(seller_id)
+	# all_db_items_list = []
+	# latest_items_list = []
+	# ignored_list = []
+	# exception_list = []
+	# all_ebay = EbaySellerItems.objects.filter(seller_id = seller_id)
+	# for item in all_ebay:
+	# 	all_db_items_list.append(item.ebay_id)
+	# ebay_obj = get_ebay_handler(seller_id)
+	# o = ebay_obj.get_all_items()
+	# no_of_pages = get_value_from_dict(o,["ActiveList","PaginationResult","TotalNumberOfPages"])
+	# if no_of_pages:
+	# 	no_of_pages = int(no_of_pages)
+	# 	if no_of_pages>0:
+	# 		# for page in range(1,no_of_pages+1):
+	# 		for page in range(1,no_of_pages+1):
+	# 			print("page no.",page,no_of_pages)
+	# 			current_page_results = ebay_obj.get_all_items(page_number = page)
+	# 			items = get_value_from_dict(current_page_results,["ActiveList","ItemArray","Item"])
+	# 			if isinstance(items,dict):
+	# 				items = [items]
+	# 			for item in items:
+	# 				parsed_data = parse_ebay_item(item,seller_id)
+	# 				print("parsed data.................",parsed_data)
+	# 				latest_items_list.append(parsed_data.get("ebay_id",""))
+	# 				try:
+	# 					ebay_item, created = EbaySellerItems.objects.get_or_create(**parsed_data)
+	# 					EbaySellerItems.objects.filter(ebay_id = parsed_data.get("ebay_id","")).update(status="monitored")
+	# 					obj = EbaySellerItems.objects.get(ebay_id = parsed_data.get("ebay_id",""))
+	# 					print("ebay in db... status update quantity yes",obj.ebay_id,obj.price,obj.quantity,obj.status)
+	# 					# input("press enter")
+	# 					if not created:
+	# 						if obj.quantity < 1:
+	# 							ebay_item = EbaySellerItems.objects.filter(ebay_id = parsed_data.get("ebay_id","")).update(status = "unmonitored")
+	# 							obj = EbaySellerItems.objects.get(ebay_id = parsed_data.get("ebay_id",""))
+	# 							# input("press enter not created")
 
-					except Exception as ex:
-						# input("inside frst Exception")
-						try:
-							ebay_update_obj = EbaySellerItems.objects.filter(ebay_id = parsed_data.get("ebay_id","")) 
-							ebay_update_obj.update(quantity = parsed_data.get("quantity","0"),price = parsed_data.get("price"),status="monitored",no_of_times_sold=parsed_data.get("no_of_times_sold",""))
-							obj = EbaySellerItems.objects.get(ebay_id = parsed_data.get("ebay_id",""))
-							# input("inside try updated")
-							if obj.quantity < 1:
-								obb = EbaySellerItems.objects.filter(ebay_id = parsed_data.get("ebay_id","")).update(status = "unmonitored")
-								obj = EbaySellerItems.objects.get(ebay_id = parsed_data.get("ebay_id",""))
-						except Exception as e:
-							print("Exception error",e)
-							exception_list.append(parsed_data.get("ebay_id",""))
-							pass
-						print("error",ex)
-						# break
-	print("all_db_items_list",len(all_db_items_list))
-	# print("latest_items_list",len(latest_items_list),latest_items_list)
-	ignored_list = list(set(all_db_items_list) - set(latest_items_list))
-	print("ignored list length ",len(ignored_list))
-	print("exception_list",len(exception_list))
-	for item in ignored_list:
-		# break
-		EbaySellerItems.objects.filter(ebay_id = item).update(status = "ignored")
+	# 				except Exception as ex:
+	# 					# input("inside frst Exception")
+	# 					try:
+	# 						ebay_update_obj = EbaySellerItems.objects.filter(ebay_id = parsed_data.get("ebay_id","")) 
+	# 						ebay_update_obj.update(quantity = parsed_data.get("quantity","0"),price = parsed_data.get("price"),status="monitored",no_of_times_sold=parsed_data.get("no_of_times_sold",""))
+	# 						obj = EbaySellerItems.objects.get(ebay_id = parsed_data.get("ebay_id",""))
+	# 						# input("inside try updated")
+	# 						if obj.quantity < 1:
+	# 							obb = EbaySellerItems.objects.filter(ebay_id = parsed_data.get("ebay_id","")).update(status = "unmonitored")
+	# 							obj = EbaySellerItems.objects.get(ebay_id = parsed_data.get("ebay_id",""))
+	# 					except Exception as e:
+	# 						print("Exception error",e)
+	# 						exception_list.append(parsed_data.get("ebay_id",""))
+	# 						pass
+	# 					print("error",ex)
+	# 					# break
+	# print("all_db_items_list",len(all_db_items_list))
+	# # print("latest_items_list",len(latest_items_list),latest_items_list)
+	# ignored_list = list(set(all_db_items_list) - set(latest_items_list))
+	# print("ignored list length ",len(ignored_list))
+	# print("exception_list",len(exception_list))
+	# for item in ignored_list:
+	# 	# break
+	# 	EbaySellerItems.objects.filter(ebay_id = item).update(status = "ignored")
 
 	return "DB sync completed"

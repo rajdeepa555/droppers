@@ -108,7 +108,7 @@
 														</tr>
 													</thead>
 													<tbody>
-														<tr ng-repeat="report in reports">
+														<tr ng-repeat="report in reports" ng-cloak>
 															<!-- <td><div class="checkbox clip-check check-primary checkbox-inline"> -->
 																<!-- <input type="checkbox" id="checkbox{[{$index+1}]}" value="{[{$index+1}]}" ng-model=item.is_checked> -->
 																<!-- <label for="checkbox{[{$index+1}]}">{[{$index+1}]}</label> -->
@@ -120,8 +120,10 @@
 															<td>{[{report.status }]}</td>
 															<td><center>
 																<a href="/search-seller/{[{report.pk}]}"><button ng-if="report.status == 'completed'" type="button" class="btn btn-xs btn-o btn-info" >View</button></a>
+																<a><button ng-if="report.status == 'completed'" ng-click="delete_seller_reports(report.pk)" type="button" class="btn btn-xs btn-o btn-warning" >Delete</button></a>
 																<!-- <button type="button" class="btn btn-xs  btn-o btn-danger">Delete</button> -->
-																<!-- <button type="button" class="btn btn-xs btn-o btn-success">Repeat Search</button> -->
+																 <a href="/download-seller-report/{[{report.pk}]}"><button type="button" class="btn btn-xs btn-o btn-success" >Download</button> </a>
+																  <!-- ng-click="download_seller_reports(report.pk)" -->
 																</center>
 															</td>
 														</tr>

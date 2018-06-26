@@ -8,12 +8,13 @@ class SellerTokens(models.Model):
     sellername = models.CharField(max_length=255)
     token = models.CharField(max_length = 1000)
     is_active = models.BooleanField(default = False)
+    is_eligible_for_ebay_update = models.BooleanField(default = False)
 
     def __str__(self):
         return self.sellername
 
 class EbayProductsCsvData(models.Model):
-    seller_account = models.ForeignKey('SellerTokens')
+    seller_account = models.ForeignKey('SellerTokens',on_delete=models.CASCADE)
     local_id = models.CharField(max_length=255,default="")
     vendor_url  = models.CharField(max_length=255,default="")
     vendor_variant  = models.CharField(max_length=255,default="")
@@ -41,7 +42,7 @@ class EbaySessionID(models.Model):
     session_id = models.CharField(max_length = 255)
 
 class EbayAmazonPriceFormula(models.Model):
-    seller_account = models.ForeignKey('SellerTokens')
+    seller_account = models.ForeignKey('SellerTokens',on_delete=models.CASCADE)
     minimum_range = models.IntegerField()
     maximum_range = models.IntegerField()
     vendor_tax = models.IntegerField()
@@ -88,7 +89,7 @@ class AmazonRunDetails(models.Model):
     
 
 class EbayRunDetails(models.Model):
-    seller_account = models.ForeignKey('SellerTokens')
+    seller_account = models.ForeignKey('SellerTokens',on_delete=models.CASCADE)
     run_id = models.CharField(max_length=255,default="")
     group_id = models.CharField(max_length=255,default="")
     amazon_url = models.CharField(max_length=255,default="")
@@ -105,7 +106,7 @@ class EbayRunDetails(models.Model):
 
 
 class EbaySellerSearchReports(models.Model):
-    seller_account = models.ForeignKey('SellerTokens',null = True)
+    seller_account = models.ForeignKey('SellerTokens',null = True,on_delete=models.CASCADE)
     run_id = models.CharField(max_length=255,default="")
     seller_id = models.CharField(max_length=255,default="")
     item_found = models.IntegerField(default= 0)
@@ -115,7 +116,7 @@ class EbaySellerSearchReports(models.Model):
 
 class EbaySellerSearch(models.Model):
     # seller_account = models.ForeignKey('SellerTokens',null = True)
-    search_report = models.ForeignKey('EbaySellerSearchReports',null = True)
+    search_report = models.ForeignKey('EbaySellerSearchReports',null = True,on_delete=models.CASCADE)
     run_id = models.CharField(max_length=255,default="")
     seller_id = models.CharField(max_length=255,default="")
     title = models.CharField(max_length=255,default="")
@@ -129,7 +130,7 @@ class EbaySellerSearch(models.Model):
 
 
 class EbaySellerSearchPendingItems(models.Model):
-    seller_account = models.ForeignKey('SellerTokens')
+    seller_account = models.ForeignKey('SellerTokens',on_delete=models.CASCADE)
     run_id = models.CharField(max_length=255,default="")
     seller_id = models.CharField(max_length=255,default="")
     title = models.CharField(max_length=255,default="")
@@ -140,8 +141,8 @@ class EbaySellerSearchPendingItems(models.Model):
     amazon_price_str = models.CharField(max_length=255,default="")
 
 class EbaySellerItems(models.Model):
-    seller = models.ForeignKey('SellerTokens')
-    photo = models.CharField(max_length=255,default="")
+    seller = models.ForeignKey('SellerTokens',on_delete=models.CASCADE)
+    photo = models.CharField(max_length=255,null = True)
     product_name = models.CharField(max_length=255,default="")
     ebay_id = models.CharField(max_length=255,primary_key=True)
     custom_label = models.CharField(max_length=255,default="",null = True)
@@ -160,6 +161,38 @@ class EbaySellerItems(models.Model):
     def get_modified_date(self):
         return self.modified_at.strftime("%Y-%m-%d %H:%M")
      
+class EbaySellerItemsNew(models.Model):
+    seller = models.ForeignKey('SellerTokens',on_delete=models.CASCADE)
+    photo = models.CharField(max_length=255,null = True)
+    product_name = models.CharField(max_length=255,default="")
+    ebay_id = models.CharField(max_length=255,primary_key=True)
+    custom_label = models.CharField(max_length=255,default="",null = True)
+    price = models.FloatField(max_length=255,default="-1")
+    quantity = models.IntegerField(default= "-1")
+    no_of_times_sold = models.IntegerField(default="-1")
+    date_of_listing = models.DateField(auto_now=False)
+    margin_perc = models.FloatField(max_length=255,null=True)
+    minimum_margin = models.FloatField(max_length=255,null=True)
+    stock_level = models.IntegerField(null=True)
+    status = models.CharField(max_length=255,default="monitored")
+    flag = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=False)
+    modified_at = models.DateTimeField(auto_now=True)
+
+    def get_modified_date(self):
+        return self.modified_at.strftime("%Y-%m-%d %H:%M")
+
+class TempEbayItems(models.Model):
+    ebay_id = models.CharField(max_length=255,primary_key=True)
+    seller = models.ForeignKey('SellerTokens',on_delete=models.CASCADE,null=True)
+    photo = models.CharField(max_length=255,null = True)
+    product_name = models.CharField(max_length=255,default="")
+    custom_label = models.CharField(max_length=255,null = True)
+    price = models.FloatField(max_length=255,null=True)
+    quantity = models.IntegerField(null=True)
+    no_of_times_sold = models.IntegerField(null=True)
+    date_of_listing = models.DateField(null=True)
+
 # class AddEbaySellerKeyset(models.Model):
 #     sellername = models.CharField(max_length=255)
 #     appid = models.CharField(max_length=100)
@@ -168,7 +201,7 @@ class EbaySellerItems(models.Model):
 #     token = models.CharField(max_length=1000)
 
 class EbayPriceFormula(models.Model):
-    seller = models.ForeignKey('SellerTokens')
+    seller = models.ForeignKey('SellerTokens',on_delete=models.CASCADE)
     ebay_final_value_fee = models.FloatField(null = True)
     ebay_listing_fee = models.FloatField(null = True)
     paypal_fees_perc = models.FloatField(null = True)
