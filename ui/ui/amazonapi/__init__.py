@@ -57,13 +57,11 @@ class AmazonScraper(object):
         return self.response_dict
 
     def scrape_with_error(self,url):
-        # print("inside scrap with error")
+        print("inide scarpe woith error",self.response_dict)
         self._reset()
         r = self._execute2(url)
-        # print("insed scrape with errorrrrrrrrrrrrr",r)
         if r and "503" in r:
             self.response_dict["503"] = True
-        print("scrap errr dict",self.response_dict)
         return self.response_dict
 
 
@@ -85,9 +83,8 @@ class AmazonScraper(object):
         ua = self.ua_list[randint(0,70)]
         headers = {'Accept-Language': 'en', 'Accept-Encoding': 'gzip,deflate', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': ua}
         try:
-            print("mazon url",url)
             self.response = requests.get(url, headers=headers,proxies=self.proxies)
-            print("self.response",self.response)
+            # self.response = requests.get(url, headers=headers)
         except Exception as e:
             print("error in execute2 except",e)
             return {}
@@ -98,12 +95,19 @@ class AmazonScraper(object):
         headers = {'Accept-Language': 'en', 'Accept-Encoding': 'gzip,deflate', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'User-Agent': ua}
         try:
             self.response = requests.get(url, headers=headers,proxies=self.proxies)
-            print("self.response",self.response)
+            # print("response...",self.response)
+            res = {}
+            if self.response.status_code == 503:
+                time.sleep(5)
+                res["503"] = True
+                return res 
+            # self.response = requests.get(url, headers=headers,proxies=self.proxies)
         except Exception as e:
             print("error in execute2 except",e)
             res = {}
             if "503" in str(e) or "urlopen error timed out" in str(e) or "403" in str(e):
                 res["503"] = True
+                # print("res... 503",res)
             return res
         self.process_response()
 
@@ -158,11 +162,15 @@ class AmazonScraper(object):
         stock_strings = ["In stock","In Stock","In stock.","In Stock.","left in stock"]
         in_stock = False
         for stock_string in stock_strings:
-            xpaths = ['//div[@id="availability"]//*[contains(text(),"%s")]','//div[@id="availability-brief"]//*[contains(text(),"%s")]']
+            xpaths = ['//div[@id="availability"]//*[contains(text(),"%s")]/text()','//div[@id="availability-brief"]//*[contains(text(),"%s")]/text()']
             for path in xpaths:
                 path = path % (stock_string)
                 get_path = hxs.xpath(path)
+                # print("stock...",get_path)
                 if len(get_path)>0:
+                    if 'in stock on' in get_path[0].lower():
+                        # print("no stock now.......")
+                        break
                     in_stock = True
                     break
             if in_stock == True:
@@ -176,18 +184,18 @@ class AmazonScraper(object):
             # print("inside get price")
             price_xpaths = ['//*[@id="priceblock_dealprice"]/text()','//span[@id="priceblock_ourprice"]/text()','//span[@id="priceblock_saleprice"]/text()','//span[@class="a-size-medium a-color-price offer-price a-text-normal"]/text()']
             price_found = False
-            print("asin",self.asin)
+            # print("asin",self.asin)
             for xpath in price_xpaths:
-                print("scaraping for price",xpath)
+                # print("scaraping for price",xpath)
                 price = hxs.xpath(xpath)
-                print("xpath price",price)
+                # print("xpath price",price)
                 if len(price)>0:
                     price = price[0]
                     price_found = True
                     break
             if price_found == False:
                 price = ""
-            print("priceeeeeeeee",price)
+            # print("priceeeeeeeee",price)
             self.response_dict.update({"price":price})
         except:
             # print("inside except of get price")
@@ -218,29 +226,18 @@ class AmazonScraper(object):
                 for xpath in stock_xpaths:
                     # print("inside stock x path loop")
                     stock = hxs.xpath(xpath)
-                    # print("stock",stock)
-                    # print("stock xpath in else part",xpath,len(stock))
                     if len(stock)>0:
-                        # print("inside len stock")
                         stock = ''.join(stock)
-                        # print("stop by join",stock)
                         stock = stock.strip().replace("\n","").replace(" ","")
-                        # print("stop of stip",stock)
                         if "shippingratesandreturnpolicy" in stock.lower():
-                            # print("inside if of shipping and return policy")
                             self.in_stock = True
-                            # print("stock true",self.in_stock)
                             break
-            # print("prime price in update response",price)
             self.prime_price = price
         except:
-            # print("except part of get prime price")
             logging.debug("price not found")
 
     def _get_title(self,hxs):
-        # print("inside get title")
         try:
-            print("inside title try")
             price_xpaths = ['//span[@id="productTitle"]/text()','//span[@id="ebooksProductTitle"]/text()']
             title_found = False
             for xpath in price_xpaths:
@@ -258,12 +255,8 @@ class AmazonScraper(object):
             log.debug("title not found")
 
     def _parse_response(self):
-        # print("inside parse response")
         if "Robot Check" in self.response_html.decode('UTF-8'):
             print("captcha found")
-            # f = open("captcha.html","wb")
-            # f.write(self.response_html)
-            # f.close()
             self.is_captcha_in_response = True
         elif self.response_html:
             # print("inside response_html",type(self.response_html))
@@ -279,45 +272,35 @@ class AmazonScraper(object):
             doc = lxml.html.document_fromstring(self.response_html)
             self._get_price(doc)
             if "price" in  self.response_dict and len(self.response_dict["price"].strip())>0:
-                # print("inside if checking price")
                 self._is_prime(doc)
             else:
                 print("price not found and so we are not scraping prime")
             self._in_stock(doc)
-            print("responce dict after is stock func",self.response_dict)
             self._get_title(doc)
 
 
     def _update_response(self):
-        # print("inside update response")
         if "Robot Check" in self.response_html.decode('UTF-8'):
             print("captcha found")
-            # f = open("captcha.html","wb")
-            # f.write(self.response_html)
-            # f.close()
             self.is_captcha_in_response = True
         elif self.response_html:
-            # print("elif part of updateresponse")
             doc  = lxml.html.document_fromstring(self.response_html)
-            # print("else if path of update response",doc)
             self._get_prime_price(doc)
 
 
     def process_response(self):
-        # print("inside process response")
+        print("inside process response")
         self.response_code = self.response.status_code
         if self.response.status_code==200:
-            # self.response_html = self._unicode_text(self.response.read())
             self.response_html = self.response.content
             file = open("resp.html","wb")
             file.write(self.response.content)
             file.close()
-            print("get prime detail",self.get_prime_detail)
             if self.get_prime_detail == False:
-                # print("inside parse if")
                 self._parse_response()
             else:
                 self._update_response()
+
   
 
     def _get_domain(self,locale):
@@ -338,22 +321,15 @@ class AmazonScraper(object):
 
 
     def get_url_for_keyword(self,keyword):
-        # print("inside get_url+for_keyword")
         keyword = keyword.replace(" ","%20")
-        # print("keyword",keyword)
         url = "https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords="+keyword
-        # url = "https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=LG%20OLED55C7P%2055-Inch%204K%20Ultra%20HD%20Smart%20OLED%20TV"
-        # print("uuuuuurrrrrrrrllllllllllll",url)
         product_url = ""
         try:
             response = urllib2.urlopen(url,timeout=5)
             doc  = lxml.html.document_fromstring(response.read())
-            # file = open("url.txt","wb")
-            # file.write(doc)
             if doc:
                 product_url=doc.xpath("//li[1]//a[contains(@class,'a-link-normal s-access-detail-page')][contains(@class,'s-color-twister-title-link a-text-normal')][1]/@href")
                 product_url = product_url[0].strip()
-            # print("product url",product_url)
         except Exception as e:
             print("error",e)
             pass       

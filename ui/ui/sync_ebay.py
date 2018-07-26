@@ -1,6 +1,6 @@
 from .db import get_seller_token, create_temp_ebay_item, make_temp_table_empty, \
 				delete_items_not_available_on_ebay, get_ebay_objects_to_insert, create_ebay_obj
-from .utils import get_value_from_dict
+from .utils import get_value_from_dict,get_sellers_account
 from .factory import get_ebayhandler
 from .parsers import parse_ebay_item
 from .helpers_ebay import get_page_number, get_ebay_items_list_from_ebay_response
@@ -40,3 +40,22 @@ def sync_ebay_item(seller_id):
 	done = get_ebay_items_and_insert_to_temp_table(seller_id)
 	done = delete_items_not_available_on_ebay(seller_id)
 	done = insert_new_items_available_on_ebay(seller_id)
+
+def sync_all_ebay_item():
+	current_user = '1'
+	all_seller_account_of_current_user = get_sellers_account(current_user)
+	if all_seller_account_of_current_user:
+		for seller_accounts in all_seller_account_of_current_user:
+			current_seller_id = seller_accounts.get("id")
+			seller_token = seller_accounts.get("token")
+			print("seller",current_seller_id,seller_token)
+			is_update = seller_accounts.get("is_update")
+			if not seller_token:
+				print("seller_token not found for current seller account skipping...." )
+				continue
+			if is_update:
+				print("current seller id ",current_seller_id)
+				done = make_temp_table_empty()
+				done = get_ebay_items_and_insert_to_temp_table(current_seller_id)
+				done = delete_items_not_available_on_ebay(current_seller_id)
+				done = insert_new_items_available_on_ebay(current_seller_id)

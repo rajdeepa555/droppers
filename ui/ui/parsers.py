@@ -3,9 +3,9 @@ def parse_ebay_item(row,seller_id):
     data = {}
     rows = type(row)
     # print("rows",rows)
-    photo = row.get("PictureDetails") or None
+    photo = row.get("PictureDetails","") or None
     if photo:
-        photo = photo.get("GalleryURL") or None
+        photo = photo.get("GalleryURL","") or None
     
     listingdate = row.get("ListingDetails") or None
     if listingdate:

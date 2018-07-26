@@ -31,6 +31,7 @@ def get_price_formula(**filters):
 	if formula_obj is not None and len(formula_obj)>0:
 		formula_obj = formula_obj.first()
 		formula_dict = model_to_dict(formula_obj)
+	print("formula dict",formula_dict)
 	return formula_dict
 
 def get_existing_value(query_set,**filters):

@@ -5,529 +5,102 @@ WARNINGS:
 ?: (1_8.W001) The standalone TEMPLATE_* settings were deprecated in Django 1.8 and the TEMPLATES dictionary takes precedence. You must put the values of the following settings into your default TEMPLATES dict: TEMPLATE_DEBUG.
 
 System check identified 1 issue (0 silenced).
-[15/Jun/2018 15:16:34] "GET /search-seller-item/ HTTP/1.1" 200 70339
-Not Found: /search-seller-item/{[{item.photo}]}
-[15/Jun/2018 15:16:35] "GET /search-seller-item/%7B[%7Bitem.photo%7D]%7D HTTP/1.1" 404 9516
-/home/ubuntu/projects/droppers/ui/ui/views.py:596: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'ui.models.EbaySellerItems'> QuerySet.
-  paginator = Paginator(result_set, items_per_page)
-[15/Jun/2018 15:16:35] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=&order_by=&page_by=50&status=unmonitored HTTP/1.1" 200 25464
-[15/Jun/2018 15:16:35] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=&page_by=50&order_by=&status=ignored HTTP/1.1" 200 215
-[15/Jun/2018 15:16:35] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=&order_by=&page_by=50&status=monitored HTTP/1.1" 200 26528
-[15/Jun/2018 15:16:39] "GET /update-all-ebay-items/ HTTP/1.1" 200 38
-[15/Jun/2018 15:16:42] "GET /search-seller-item/ HTTP/1.1" 200 70339
-Not Found: /search-seller-item/{[{item.photo}]}
-[15/Jun/2018 15:16:42] "GET /search-seller-item/%7B[%7Bitem.photo%7D]%7D HTTP/1.1" 404 9516
-/home/ubuntu/projects/droppers/ui/ui/views.py:596: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'ui.models.EbaySellerItems'> QuerySet.
-  paginator = Paginator(result_set, items_per_page)
-[15/Jun/2018 15:16:43] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=&order_by=&page_by=50&status=monitored HTTP/1.1" 200 144
-[15/Jun/2018 15:16:43] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=&order_by=&page_by=50&status=unmonitored HTTP/1.1" 200 144
-[15/Jun/2018 15:16:43] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=&page_by=50&order_by=&status=ignored HTTP/1.1" 200 144
-[15/Jun/2018 15:16:47] "GET /search-seller-item/ HTTP/1.1" 200 70339
-Not Found: /search-seller-item/{[{item.photo}]}
-[15/Jun/2018 15:16:48] "GET /search-seller-item/%7B[%7Bitem.photo%7D]%7D HTTP/1.1" 404 9516
-/home/ubuntu/projects/droppers/ui/ui/views.py:596: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'ui.models.EbaySellerItems'> QuerySet.
-  paginator = Paginator(result_set, items_per_page)
-[15/Jun/2018 15:16:48] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=&order_by=&page_by=50&status=unmonitored HTTP/1.1" 200 176
-[15/Jun/2018 15:16:48] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=&order_by=&page_by=50&status=monitored HTTP/1.1" 200 730
-[15/Jun/2018 15:16:48] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=&page_by=50&order_by=&status=ignored HTTP/1.1" 200 176
-[15/Jun/2018 15:17:34] "GET /search-seller-item/ HTTP/1.1" 200 70339
-Not Found: /search-seller-item/{[{item.photo}]}
-[15/Jun/2018 15:17:34] "GET /search-seller-item/%7B[%7Bitem.photo%7D]%7D HTTP/1.1" 404 9516
-/home/ubuntu/projects/droppers/ui/ui/views.py:596: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'ui.models.EbaySellerItems'> QuerySet.
-  paginator = Paginator(result_set, items_per_page)
-[15/Jun/2018 15:17:35] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=&page_by=50&order_by=&status=ignored HTTP/1.1" 200 212
-[15/Jun/2018 15:17:35] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=&order_by=&page_by=50&status=monitored HTTP/1.1" 200 7076
-[15/Jun/2018 15:17:35] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=&order_by=&page_by=50&status=unmonitored HTTP/1.1" 200 1296
-[15/Jun/2018 15:17:43] "GET /search-seller-item/ HTTP/1.1" 200 70339
-Not Found: /search-seller-item/{[{item.photo}]}
-[15/Jun/2018 15:17:44] "GET /search-seller-item/%7B[%7Bitem.photo%7D]%7D HTTP/1.1" 404 9516
-/home/ubuntu/projects/droppers/ui/ui/views.py:596: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'ui.models.EbaySellerItems'> QuerySet.
-  paginator = Paginator(result_set, items_per_page)
-[15/Jun/2018 15:17:44] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=&order_by=&page_by=50&status=unmonitored HTTP/1.1" 200 1824
-[15/Jun/2018 15:17:44] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=&page_by=50&order_by=&status=ignored HTTP/1.1" 200 212
-[15/Jun/2018 15:17:44] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=&order_by=&page_by=50&status=monitored HTTP/1.1" 200 7602
-[15/Jun/2018 15:25:39] "GET /search-seller-item/ HTTP/1.1" 200 70339
-Not Found: /search-seller-item/{[{item.photo}]}
-[15/Jun/2018 15:25:40] "GET /search-seller-item/%7B[%7Bitem.photo%7D]%7D HTTP/1.1" 404 9516
-[15/Jun/2018 15:25:40] "GET /static/js/search_seller_item.js?v=606 HTTP/1.1" 304 0
-/home/ubuntu/projects/droppers/ui/ui/views.py:596: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'ui.models.EbaySellerItems'> QuerySet.
-  paginator = Paginator(result_set, items_per_page)
-[15/Jun/2018 15:25:41] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=&order_by=&page_by=50&status=monitored HTTP/1.1" 200 26561
-[15/Jun/2018 15:25:41] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=&page_by=50&order_by=&status=ignored HTTP/1.1" 200 214
-[15/Jun/2018 15:25:41] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=&order_by=&page_by=50&status=unmonitored HTTP/1.1" 200 9193
-[15/Jun/2018 15:35:07] "GET /search-seller-item/ HTTP/1.1" 200 70339
-Not Found: /search-seller-item/{[{item.photo}]}
-[15/Jun/2018 15:35:08] "GET /search-seller-item/%7B[%7Bitem.photo%7D]%7D HTTP/1.1" 404 9516
-/home/ubuntu/projects/droppers/ui/ui/views.py:596: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'ui.models.EbaySellerItems'> QuerySet.
-  paginator = Paginator(result_set, items_per_page)
-[15/Jun/2018 15:35:09] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=&order_by=&page_by=50&status=unmonitored HTTP/1.1" 200 25739
-[15/Jun/2018 15:35:09] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=&page_by=50&order_by=&status=ignored HTTP/1.1" 200 214
-[15/Jun/2018 15:35:09] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=&order_by=&page_by=50&status=monitored HTTP/1.1" 200 26561
-[15/Jun/2018 15:36:57] "GET /search-seller-item/ HTTP/1.1" 200 70339
-Not Found: /search-seller-item/{[{item.photo}]}
-[15/Jun/2018 15:36:57] "GET /search-seller-item/%7B[%7Bitem.photo%7D]%7D HTTP/1.1" 404 9516
-/home/ubuntu/projects/droppers/ui/ui/views.py:596: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'ui.models.EbaySellerItems'> QuerySet.
-  paginator = Paginator(result_set, items_per_page)
-[15/Jun/2018 15:36:58] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=&page_by=50&order_by=&status=ignored HTTP/1.1" 200 214
-[15/Jun/2018 15:36:58] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=&order_by=&page_by=50&status=monitored HTTP/1.1" 200 26561
-[15/Jun/2018 15:36:58] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=&order_by=&page_by=50&status=unmonitored HTTP/1.1" 200 25739
-[15/Jun/2018 15:49:53] "GET /search-seller-item/ HTTP/1.1" 200 70339
-[15/Jun/2018 15:49:54] "GET /static/assets/css/styles.css HTTP/1.1" 304 0
-Not Found: /search-seller-item/{[{item.photo}]}
-[15/Jun/2018 15:49:54] "GET /search-seller-item/%7B[%7Bitem.photo%7D]%7D HTTP/1.1" 404 9516
-[15/Jun/2018 15:49:54] "GET /static/js/main.js HTTP/1.1" 304 0
-/home/ubuntu/projects/droppers/ui/ui/views.py:596: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'ui.models.EbaySellerItems'> QuerySet.
-  paginator = Paginator(result_set, items_per_page)
-[15/Jun/2018 15:49:55] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=&page_by=50&order_by=&status=ignored HTTP/1.1" 200 215
-[15/Jun/2018 15:49:55] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=&order_by=&page_by=50&status=unmonitored HTTP/1.1" 200 25379
-[15/Jun/2018 15:49:55] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=&order_by=&page_by=50&status=monitored HTTP/1.1" 200 26562
-[15/Jun/2018 15:50:48] "GET /search-seller-item/ HTTP/1.1" 200 70339
-Not Found: /search-seller-item/{[{item.photo}]}
-[15/Jun/2018 15:50:48] "GET /search-seller-item/%7B[%7Bitem.photo%7D]%7D HTTP/1.1" 404 9516
-/home/ubuntu/projects/droppers/ui/ui/views.py:596: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'ui.models.EbaySellerItems'> QuerySet.
-  paginator = Paginator(result_set, items_per_page)
-[15/Jun/2018 15:50:49] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=&order_by=&page_by=50&status=unmonitored HTTP/1.1" 200 25379
-[15/Jun/2018 15:50:49] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=&page_by=50&order_by=&status=ignored HTTP/1.1" 200 215
-[15/Jun/2018 15:50:49] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=&order_by=&page_by=50&status=monitored HTTP/1.1" 200 26562
-[15/Jun/2018 16:05:01] "GET /search-seller-item/ HTTP/1.1" 200 70339
-Not Found: /search-seller-item/{[{item.photo}]}
-[15/Jun/2018 16:05:02] "GET /search-seller-item/%7B[%7Bitem.photo%7D]%7D HTTP/1.1" 404 9516
-/home/ubuntu/projects/droppers/ui/ui/views.py:596: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'ui.models.EbaySellerItems'> QuerySet.
-  paginator = Paginator(result_set, items_per_page)
-[15/Jun/2018 16:05:02] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=&order_by=&page_by=50&status=monitored HTTP/1.1" 200 26563
-[15/Jun/2018 16:05:02] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=&order_by=&page_by=50&status=unmonitored HTTP/1.1" 200 25379
-[15/Jun/2018 16:05:02] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=&page_by=50&order_by=&status=ignored HTTP/1.1" 200 215
-[15/Jun/2018 16:05:28] "GET /get-ebay-sellers-itemm/?format=json&page=6&keyword=&order_by=&page_by=50&status=unmonitored HTTP/1.1" 200 25338
-[15/Jun/2018 16:11:56] "GET /search-seller-item/ HTTP/1.1" 200 70339
-Not Found: /search-seller-item/{[{item.photo}]}
-[15/Jun/2018 16:11:57] "GET /search-seller-item/%7B[%7Bitem.photo%7D]%7D HTTP/1.1" 404 9516
-/home/ubuntu/projects/droppers/ui/ui/views.py:596: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'ui.models.EbaySellerItems'> QuerySet.
-  paginator = Paginator(result_set, items_per_page)
-[15/Jun/2018 16:11:58] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=&page_by=50&order_by=&status=ignored HTTP/1.1" 200 215
-[15/Jun/2018 16:11:58] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=&order_by=&page_by=50&status=unmonitored HTTP/1.1" 200 25379
-[15/Jun/2018 16:11:58] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=&order_by=&page_by=50&status=monitored HTTP/1.1" 200 26563
-[15/Jun/2018 16:24:19] "GET /search-seller-item/ HTTP/1.1" 200 70339
-Not Found: /search-seller-item/{[{item.photo}]}
-[15/Jun/2018 16:24:20] "GET /search-seller-item/%7B[%7Bitem.photo%7D]%7D HTTP/1.1" 404 9516
-[15/Jun/2018 16:24:20] "GET /static/js/search_seller_item.js?v=606 HTTP/1.1" 304 0
-/home/ubuntu/projects/droppers/ui/ui/views.py:596: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'ui.models.EbaySellerItems'> QuerySet.
-  paginator = Paginator(result_set, items_per_page)
-[15/Jun/2018 16:24:21] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=&order_by=&page_by=50&status=unmonitored HTTP/1.1" 200 25379
-[15/Jun/2018 16:24:21] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=&page_by=50&order_by=&status=ignored HTTP/1.1" 200 215
-[15/Jun/2018 16:24:21] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=&order_by=&page_by=50&status=monitored HTTP/1.1" 200 26563
-[16/Jun/2018 06:14:07] "GET / HTTP/1.1" 302 0
-[16/Jun/2018 06:14:08] "GET /login/?next=/ HTTP/1.1" 200 2145
-[16/Jun/2018 06:14:09] "GET /static/assets/css/signin2.css HTTP/1.1" 200 3679
-[16/Jun/2018 06:14:40] "GET /search-seller-item/ HTTP/1.1" 302 0
-[16/Jun/2018 06:14:40] "GET /login/?next=/search-seller-item/ HTTP/1.1" 200 2145
-Not Found: /favicon.ico
-[16/Jun/2018 06:14:41] "GET /favicon.ico HTTP/1.1" 404 9432
-System check identified some issues:
-
-WARNINGS:
-?: (1_8.W001) The standalone TEMPLATE_* settings were deprecated in Django 1.8 and the TEMPLATES dictionary takes precedence. You must put the values of the following settings into your default TEMPLATES dict: TEMPLATE_DEBUG.
-
-System check identified 1 issue (0 silenced).
-System check identified some issues:
-
-WARNINGS:
-?: (1_8.W001) The standalone TEMPLATE_* settings were deprecated in Django 1.8 and the TEMPLATES dictionary takes precedence. You must put the values of the following settings into your default TEMPLATES dict: TEMPLATE_DEBUG.
-
-System check identified 1 issue (0 silenced).
-System check identified some issues:
-
-WARNINGS:
-?: (1_8.W001) The standalone TEMPLATE_* settings were deprecated in Django 1.8 and the TEMPLATES dictionary takes precedence. You must put the values of the following settings into your default TEMPLATES dict: TEMPLATE_DEBUG.
-
-System check identified 1 issue (0 silenced).
-System check identified some issues:
-
-WARNINGS:
-?: (1_8.W001) The standalone TEMPLATE_* settings were deprecated in Django 1.8 and the TEMPLATES dictionary takes precedence. You must put the values of the following settings into your default TEMPLATES dict: TEMPLATE_DEBUG.
-
-System check identified 1 issue (0 silenced).
-System check identified some issues:
-
-WARNINGS:
-?: (1_8.W001) The standalone TEMPLATE_* settings were deprecated in Django 1.8 and the TEMPLATES dictionary takes precedence. You must put the values of the following settings into your default TEMPLATES dict: TEMPLATE_DEBUG.
-
-System check identified 1 issue (0 silenced).
-System check identified some issues:
-
-WARNINGS:
-?: (1_8.W001) The standalone TEMPLATE_* settings were deprecated in Django 1.8 and the TEMPLATES dictionary takes precedence. You must put the values of the following settings into your default TEMPLATES dict: TEMPLATE_DEBUG.
-
-System check identified 1 issue (0 silenced).
-System check identified some issues:
-
-WARNINGS:
-?: (1_8.W001) The standalone TEMPLATE_* settings were deprecated in Django 1.8 and the TEMPLATES dictionary takes precedence. You must put the values of the following settings into your default TEMPLATES dict: TEMPLATE_DEBUG.
-
-System check identified 1 issue (0 silenced).
-System check identified some issues:
-
-WARNINGS:
-?: (1_8.W001) The standalone TEMPLATE_* settings were deprecated in Django 1.8 and the TEMPLATES dictionary takes precedence. You must put the values of the following settings into your default TEMPLATES dict: TEMPLATE_DEBUG.
-
-System check identified 1 issue (0 silenced).
-Unhandled exception in thread started by <function check_errors.<locals>.wrapper at 0x7f67ede82840>
-Traceback (most recent call last):
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/utils/autoreload.py", line 228, in wrapper
-    fn(*args, **kwargs)
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/management/commands/runserver.py", line 125, in inner_run
-    self.check(display_num_errors=True)
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/management/base.py", line 359, in check
-    include_deployment_checks=include_deployment_checks,
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/management/base.py", line 346, in _run_checks
-    return checks.run_checks(**kwargs)
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/checks/registry.py", line 81, in run_checks
-    new_errors = check(app_configs=app_configs)
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/checks/urls.py", line 16, in check_url_config
-    return check_resolver(resolver)
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/checks/urls.py", line 26, in check_resolver
-    return check_method()
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/urls/resolvers.py", line 254, in check
-    for pattern in self.url_patterns:
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/utils/functional.py", line 35, in __get__
-    res = instance.__dict__[self.name] = self.func(instance)
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/urls/resolvers.py", line 405, in url_patterns
-    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/utils/functional.py", line 35, in __get__
-    res = instance.__dict__[self.name] = self.func(instance)
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/urls/resolvers.py", line 398, in urlconf_module
-    return import_module(self.urlconf_name)
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 665, in exec_module
-  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
-  File "/home/ubuntu/projects/droppers/ui/ui/urls.py", line 3, in <module>
-    from .views import *
-  File "/home/ubuntu/projects/droppers/ui/ui/views.py", line 10, in <module>
-    from .tasks import put_ebay_products_to_db,start_ebay_seller_search,print_time_5times,\
-  File "/home/ubuntu/projects/droppers/ui/ui/tasks.py", line 4, in <module>
-    from .sync_ebay import insert_data
-  File "/home/ubuntu/projects/droppers/ui/ui/sync_ebay.py", line 6, in <module>
-    from .factory import get_ebayhandler, get_amazonscraper, get_proxyhandler
-  File "/home/ubuntu/projects/droppers/ui/ui/factory.py", line 2, in <module>
-    from .amazonapi import AmazonScraper
-  File "/home/ubuntu/projects/droppers/ui/ui/amazonapi/AmazonScraper.py", line 1, in <module>
-    from amazonapi import log
-ImportError: No module named 'amazonapi'
-System check identified some issues:
-
-WARNINGS:
-?: (1_8.W001) The standalone TEMPLATE_* settings were deprecated in Django 1.8 and the TEMPLATES dictionary takes precedence. You must put the values of the following settings into your default TEMPLATES dict: TEMPLATE_DEBUG.
-
-System check identified 1 issue (0 silenced).
-System check identified some issues:
-
-WARNINGS:
-?: (1_8.W001) The standalone TEMPLATE_* settings were deprecated in Django 1.8 and the TEMPLATES dictionary takes precedence. You must put the values of the following settings into your default TEMPLATES dict: TEMPLATE_DEBUG.
-
-System check identified 1 issue (0 silenced).
-System check identified some issues:
-
-WARNINGS:
-?: (1_8.W001) The standalone TEMPLATE_* settings were deprecated in Django 1.8 and the TEMPLATES dictionary takes precedence. You must put the values of the following settings into your default TEMPLATES dict: TEMPLATE_DEBUG.
-
-System check identified 1 issue (0 silenced).
-System check identified some issues:
-
-WARNINGS:
-?: (1_8.W001) The standalone TEMPLATE_* settings were deprecated in Django 1.8 and the TEMPLATES dictionary takes precedence. You must put the values of the following settings into your default TEMPLATES dict: TEMPLATE_DEBUG.
-
-System check identified 1 issue (0 silenced).
-System check identified some issues:
-
-WARNINGS:
-?: (1_8.W001) The standalone TEMPLATE_* settings were deprecated in Django 1.8 and the TEMPLATES dictionary takes precedence. You must put the values of the following settings into your default TEMPLATES dict: TEMPLATE_DEBUG.
-
-System check identified 1 issue (0 silenced).
-System check identified some issues:
-
-WARNINGS:
-?: (1_8.W001) The standalone TEMPLATE_* settings were deprecated in Django 1.8 and the TEMPLATES dictionary takes precedence. You must put the values of the following settings into your default TEMPLATES dict: TEMPLATE_DEBUG.
-
-System check identified 1 issue (0 silenced).
-System check identified some issues:
-
-WARNINGS:
-?: (1_8.W001) The standalone TEMPLATE_* settings were deprecated in Django 1.8 and the TEMPLATES dictionary takes precedence. You must put the values of the following settings into your default TEMPLATES dict: TEMPLATE_DEBUG.
-
-System check identified 1 issue (0 silenced).
-Unhandled exception in thread started by <function check_errors.<locals>.wrapper at 0x7f09a73f5840>
-Traceback (most recent call last):
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/utils/autoreload.py", line 228, in wrapper
-    fn(*args, **kwargs)
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/management/commands/runserver.py", line 125, in inner_run
-    self.check(display_num_errors=True)
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/management/base.py", line 359, in check
-    include_deployment_checks=include_deployment_checks,
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/management/base.py", line 346, in _run_checks
-    return checks.run_checks(**kwargs)
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/checks/registry.py", line 81, in run_checks
-    new_errors = check(app_configs=app_configs)
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/checks/urls.py", line 16, in check_url_config
-    return check_resolver(resolver)
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/checks/urls.py", line 26, in check_resolver
-    return check_method()
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/urls/resolvers.py", line 254, in check
-    for pattern in self.url_patterns:
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/utils/functional.py", line 35, in __get__
-    res = instance.__dict__[self.name] = self.func(instance)
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/urls/resolvers.py", line 405, in url_patterns
-    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/utils/functional.py", line 35, in __get__
-    res = instance.__dict__[self.name] = self.func(instance)
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/urls/resolvers.py", line 398, in urlconf_module
-    return import_module(self.urlconf_name)
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 665, in exec_module
-  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
-  File "/home/ubuntu/projects/droppers/ui/ui/urls.py", line 3, in <module>
-    from .views import *
-  File "/home/ubuntu/projects/droppers/ui/ui/views.py", line 10, in <module>
-    from .tasks import put_ebay_products_to_db,start_ebay_seller_search,print_time_5times,\
-  File "/home/ubuntu/projects/droppers/ui/ui/tasks.py", line 4, in <module>
-    from .sync_ebay import insert_data
-  File "/home/ubuntu/projects/droppers/ui/ui/sync_ebay.py", line 6, in <module>
-    from .factory import get_ebayhandler, get_amazonscraper, get_proxyhandler
-  File "/home/ubuntu/projects/droppers/ui/ui/factory.py", line 2, in <module>
-    from .amazonapi import AmazonScraper
-  File "/home/ubuntu/projects/droppers/ui/ui/amazonapi/AmazonScraper.py", line 1, in <module>
-    from amazonapi import log
-ImportError: No module named 'amazonapi'
-System check identified some issues:
-
-WARNINGS:
-?: (1_8.W001) The standalone TEMPLATE_* settings were deprecated in Django 1.8 and the TEMPLATES dictionary takes precedence. You must put the values of the following settings into your default TEMPLATES dict: TEMPLATE_DEBUG.
-
-System check identified 1 issue (0 silenced).
-System check identified some issues:
-
-WARNINGS:
-?: (1_8.W001) The standalone TEMPLATE_* settings were deprecated in Django 1.8 and the TEMPLATES dictionary takes precedence. You must put the values of the following settings into your default TEMPLATES dict: TEMPLATE_DEBUG.
-
-System check identified 1 issue (0 silenced).
-System check identified some issues:
-
-WARNINGS:
-?: (1_8.W001) The standalone TEMPLATE_* settings were deprecated in Django 1.8 and the TEMPLATES dictionary takes precedence. You must put the values of the following settings into your default TEMPLATES dict: TEMPLATE_DEBUG.
-
-System check identified 1 issue (0 silenced).
-Unhandled exception in thread started by <function check_errors.<locals>.wrapper at 0x7fa38ad5e840>
-Traceback (most recent call last):
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/utils/autoreload.py", line 228, in wrapper
-    fn(*args, **kwargs)
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/management/commands/runserver.py", line 125, in inner_run
-    self.check(display_num_errors=True)
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/management/base.py", line 359, in check
-    include_deployment_checks=include_deployment_checks,
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/management/base.py", line 346, in _run_checks
-    return checks.run_checks(**kwargs)
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/checks/registry.py", line 81, in run_checks
-    new_errors = check(app_configs=app_configs)
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/checks/urls.py", line 16, in check_url_config
-    return check_resolver(resolver)
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/checks/urls.py", line 26, in check_resolver
-    return check_method()
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/urls/resolvers.py", line 254, in check
-    for pattern in self.url_patterns:
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/utils/functional.py", line 35, in __get__
-    res = instance.__dict__[self.name] = self.func(instance)
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/urls/resolvers.py", line 405, in url_patterns
-    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/utils/functional.py", line 35, in __get__
-    res = instance.__dict__[self.name] = self.func(instance)
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/urls/resolvers.py", line 398, in urlconf_module
-    return import_module(self.urlconf_name)
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 665, in exec_module
-  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
-  File "/home/ubuntu/projects/droppers/ui/ui/urls.py", line 3, in <module>
-    from .views import *
-  File "/home/ubuntu/projects/droppers/ui/ui/views.py", line 10, in <module>
-    from .tasks import put_ebay_products_to_db,start_ebay_seller_search,print_time_5times,\
-  File "/home/ubuntu/projects/droppers/ui/ui/tasks.py", line 30, in <module>
-    from .price_updater import testing_facade
-ImportError: cannot import name 'testing_facade'
-System check identified some issues:
-
-WARNINGS:
-?: (1_8.W001) The standalone TEMPLATE_* settings were deprecated in Django 1.8 and the TEMPLATES dictionary takes precedence. You must put the values of the following settings into your default TEMPLATES dict: TEMPLATE_DEBUG.
-
-System check identified 1 issue (0 silenced).
-System check identified some issues:
-
-WARNINGS:
-?: (1_8.W001) The standalone TEMPLATE_* settings were deprecated in Django 1.8 and the TEMPLATES dictionary takes precedence. You must put the values of the following settings into your default TEMPLATES dict: TEMPLATE_DEBUG.
-
-System check identified 1 issue (0 silenced).
-Unhandled exception in thread started by <function check_errors.<locals>.wrapper at 0x7f9d40c6f840>
-Traceback (most recent call last):
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/utils/autoreload.py", line 228, in wrapper
-    fn(*args, **kwargs)
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/management/commands/runserver.py", line 125, in inner_run
-    self.check(display_num_errors=True)
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/management/base.py", line 359, in check
-    include_deployment_checks=include_deployment_checks,
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/management/base.py", line 346, in _run_checks
-    return checks.run_checks(**kwargs)
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/checks/registry.py", line 81, in run_checks
-    new_errors = check(app_configs=app_configs)
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/checks/urls.py", line 16, in check_url_config
-    return check_resolver(resolver)
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/core/checks/urls.py", line 26, in check_resolver
-    return check_method()
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/urls/resolvers.py", line 254, in check
-    for pattern in self.url_patterns:
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/utils/functional.py", line 35, in __get__
-    res = instance.__dict__[self.name] = self.func(instance)
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/urls/resolvers.py", line 405, in url_patterns
-    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/utils/functional.py", line 35, in __get__
-    res = instance.__dict__[self.name] = self.func(instance)
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/site-packages/django/urls/resolvers.py", line 398, in urlconf_module
-    return import_module(self.urlconf_name)
-  File "/home/ubuntu/projects/droppers/venv3/lib/python3.5/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 986, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 969, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 958, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 673, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 665, in exec_module
-  File "<frozen importlib._bootstrap>", line 222, in _call_with_frames_removed
-  File "/home/ubuntu/projects/droppers/ui/ui/urls.py", line 3, in <module>
-    from .views import *
-  File "/home/ubuntu/projects/droppers/ui/ui/views.py", line 10, in <module>
-    from .tasks import put_ebay_products_to_db,start_ebay_seller_search,print_time_5times,\
-  File "/home/ubuntu/projects/droppers/ui/ui/tasks.py", line 30, in <module>
-    from .price_updater import testing_facade
-ImportError: cannot import name 'testing_facade'
-System check identified some issues:
-
-WARNINGS:
-?: (1_8.W001) The standalone TEMPLATE_* settings were deprecated in Django 1.8 and the TEMPLATES dictionary takes precedence. You must put the values of the following settings into your default TEMPLATES dict: TEMPLATE_DEBUG.
-
-System check identified 1 issue (0 silenced).
-[16/Jun/2018 18:24:41] "GET / HTTP/1.1" 200 50275
-[16/Jun/2018 18:24:44] "GET /static/js/main.js HTTP/1.1" 304 0
-[16/Jun/2018 18:24:44] "GET /static/js/pending_items.js HTTP/1.1" 304 0
-[16/Jun/2018 18:24:44] "GET /static/js/search_seller_item.js?v=606 HTTP/1.1" 304 0
-[16/Jun/2018 18:24:44] "GET /static/js/search_seller_report.js HTTP/1.1" 304 0
-[16/Jun/2018 18:24:44] "GET /static/js/multi_ebay_account.js HTTP/1.1" 304 0
-[17/Jun/2018 01:32:17] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00+&à\x00\x00\x00\x00\x00Cookie:')
-[17/Jun/2018 01:32:17] "  +&à     Cookie: mstshash=hello" 400 -
-[17/Jun/2018 11:56:44] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x02\x00\x01\x00\x01ü\x03\x03\x97ÝàØ\x84Û¹2+÷-Û5ï\x81\x8b±á')
-[17/Jun/2018 11:56:44] You're accessing the development server over HTTPS, but it only supports HTTP.
-
-[17/Jun/2018 11:56:44] "GET / HTTP/1.1" 302 0
-[18/Jun/2018 05:04:50] "GET / HTTP/1.1" 200 50275
-[18/Jun/2018 05:04:52] "GET /static/bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css HTTP/1.1" 304 0
-[18/Jun/2018 05:04:52] "GET /static/bower_components/themify-icons/themify-icons.css HTTP/1.1" 304 0
-[18/Jun/2018 05:04:52] "GET /static/bower_components/font-awesome/css/font-awesome.min.css HTTP/1.1" 304 0
-[18/Jun/2018 05:04:52] "GET /static/bower_components/flag-icon-css/css/flag-icon.min.css HTTP/1.1" 304 0
-[18/Jun/2018 05:04:52] "GET /static/bower_components/animate.css/animate.min.css HTTP/1.1" 304 0
-[18/Jun/2018 05:04:52] "GET /static/bower_components/bootstrap/dist/css/bootstrap.min.css HTTP/1.1" 304 0
-[18/Jun/2018 05:04:53] "GET /static/bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min.css HTTP/1.1" 304 0
-[18/Jun/2018 05:04:53] "GET /static/bower_components/ladda/dist/ladda-themeless.min.css HTTP/1.1" 304 0
-[18/Jun/2018 05:04:53] "GET /static/bower_components/slick.js/slick/slick.css HTTP/1.1" 304 0
-[18/Jun/2018 05:04:53] "GET /static/bower_components/slick.js/slick/slick-theme.css HTTP/1.1" 304 0
-[18/Jun/2018 05:04:53] "GET /static/bower_components/angular-ui-switch/angular-ui-switch.min.css HTTP/1.1" 304 0
-[18/Jun/2018 05:04:53] "GET /static/assets/css/themes/lyt3-theme-1.css HTTP/1.1" 304 0
-[18/Jun/2018 05:04:53] "GET /static/assets/css/plugins.css HTTP/1.1" 304 0
-[18/Jun/2018 05:04:53] "GET /static/bower_components/jquery/dist/jquery.min.js HTTP/1.1" 304 0
-[18/Jun/2018 05:04:53] "GET /static/bower_components/angular/angular.min.js HTTP/1.1" 304 0
-[18/Jun/2018 05:04:53] "GET /static/bower_components/bootstrap/dist/js/bootstrap.min.js HTTP/1.1" 304 0
-[18/Jun/2018 05:04:54] "GET /static/assets/css/styles.css HTTP/1.1" 200 394910
-[18/Jun/2018 05:04:54] "GET /static/bower_components/components-modernizr/modernizr.js HTTP/1.1" 304 0
-[18/Jun/2018 05:04:54] "GET /static/bower_components/js-cookie/src/js.cookie.js HTTP/1.1" 304 0
-[18/Jun/2018 05:04:54] "GET /static/bower_components/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js HTTP/1.1" 304 0
-[18/Jun/2018 05:04:54] "GET /static/bower_components/jquery-fullscreen/jquery.fullscreen-min.js HTTP/1.1" 304 0
-[18/Jun/2018 05:04:54] "GET /static/bower_components/jquery.knobe/dist/jquery.knob.min.js HTTP/1.1" 304 0
-[18/Jun/2018 05:04:55] "GET /static/bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js HTTP/1.1" 304 0
-[18/Jun/2018 05:04:55] "GET /static/bower_components/slick.js/slick/slick.min.js HTTP/1.1" 304 0
-[18/Jun/2018 05:04:55] "GET /static/bower_components/jquery-numerator/jquery-numerator.js HTTP/1.1" 304 0
-[18/Jun/2018 05:04:55] "GET /static/bower_components/ladda/dist/spin.min.js HTTP/1.1" 304 0
-[18/Jun/2018 05:04:55] "GET /static/bower_components/ladda/dist/ladda.min.js HTTP/1.1" 304 0
-[18/Jun/2018 05:04:55] "GET /static/bower_components/angular-ui-switch/angular-ui-switch.min.js HTTP/1.1" 304 0
-[18/Jun/2018 05:04:55] "GET /static/bower_components/ladda/dist/ladda.jquery.min.js HTTP/1.1" 304 0
-[18/Jun/2018 05:04:55] "GET /static/bower_components/Chart-js/Chart.min.js HTTP/1.1" 304 0
-[18/Jun/2018 05:04:55] "GET /static/assets/js/letter-icons.js HTTP/1.1" 304 0
-[18/Jun/2018 05:04:55] "GET /static/assets/js/index.js HTTP/1.1" 304 0
-[18/Jun/2018 05:04:55] "GET /static/assets/js/main.js?v=11 HTTP/1.1" 304 0
-[18/Jun/2018 05:04:56] "GET /static/js/main.js HTTP/1.1" 304 0
-[18/Jun/2018 05:04:56] "GET /static/js/search_seller_item.js?v=606 HTTP/1.1" 304 0
-[18/Jun/2018 05:04:56] "GET /static/bower_components/font-awesome/fonts/fontawesome-webfont.woff2?v=4.5.0 HTTP/1.1" 304 0
-[18/Jun/2018 05:04:56] "GET /static/bower_components/themify-icons/fonts/themify.woff?-fvbane HTTP/1.1" 304 0
-[18/Jun/2018 05:04:56] "GET /static/js/add_seller_keyset.js HTTP/1.1" 304 0
-[18/Jun/2018 05:04:56] "GET /static/js/manual_pending_item_add.js HTTP/1.1" 304 0
-[18/Jun/2018 05:04:56] "GET /static/js/profit_calculator.js HTTP/1.1" 304 0
-[18/Jun/2018 05:04:56] "GET /static/js/pending_items.js HTTP/1.1" 304 0
-[18/Jun/2018 05:04:57] "GET /static/js/multi_ebay_account.js HTTP/1.1" 304 0
-[18/Jun/2018 05:04:57] "GET /static/js/search_seller_report.js HTTP/1.1" 304 0
-[18/Jun/2018 05:04:57] "GET /static/assets/images/avatar-3.jpg HTTP/1.1" 304 0
-[18/Jun/2018 05:04:57] "GET /static/assets/images/logo-collapsed2.png HTTP/1.1" 304 0
-[18/Jun/2018 05:04:57] "GET /static/assets/images/avatar-2.jpg HTTP/1.1" 304 0
-[18/Jun/2018 05:04:57] "GET /static/assets/images/avatar-4.jpg HTTP/1.1" 304 0
-[18/Jun/2018 05:04:58] "GET /static/assets/images/avatar-5.jpg HTTP/1.1" 304 0
-[18/Jun/2018 05:04:58] "GET /static/assets/images/avatar-8.jpg HTTP/1.1" 304 0
-[18/Jun/2018 05:04:58] "GET /static/assets/images/avatar-9.jpg HTTP/1.1" 304 0
-[18/Jun/2018 05:04:58] "GET /static/assets/images/avatar-7.jpg HTTP/1.1" 304 0
-[18/Jun/2018 05:04:58] "GET /static/assets/images/avatar-6.jpg HTTP/1.1" 304 0
-[18/Jun/2018 05:04:58] "GET /static/assets/images/avatar-10.jpg HTTP/1.1" 304 0
-[18/Jun/2018 05:04:58] "GET /static/assets/images/avatar-1.jpg HTTP/1.1" 304 0
-[18/Jun/2018 05:04:58] "GET /static/assets/images/user-background.png HTTP/1.1" 304 0
-Not Found: /favicon.ico
-[18/Jun/2018 05:04:59] "GET /favicon.ico HTTP/1.1" 404 9432
-[18/Jun/2018 05:05:16] "GET /search-seller-item/ HTTP/1.1" 200 70339
-Not Found: /search-seller-item/{[{item.photo}]}
-[18/Jun/2018 05:05:17] "GET /search-seller-item/%7B[%7Bitem.photo%7D]%7D HTTP/1.1" 404 9516
-/home/ubuntu/projects/droppers/ui/ui/views.py:596: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'ui.models.EbaySellerItems'> QuerySet.
-  paginator = Paginator(result_set, items_per_page)
-[18/Jun/2018 05:05:18] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=&order_by=&page_by=50&status=unmonitored HTTP/1.1" 200 25509
-[18/Jun/2018 05:05:18] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=&page_by=50&order_by=&status=ignored HTTP/1.1" 200 216
-[18/Jun/2018 05:05:18] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=&order_by=&page_by=50&status=monitored HTTP/1.1" 200 25856
-Not Found: /search-seller-item/favicon.ico
-[18/Jun/2018 05:05:18] "GET /search-seller-item/favicon.ico HTTP/1.1" 404 9489
-[18/Jun/2018 05:05:24] "GET /search-seller-item/ HTTP/1.1" 200 70339
-Not Found: /search-seller-item/{[{item.photo}]}
-[18/Jun/2018 05:05:25] "GET /search-seller-item/%7B[%7Bitem.photo%7D]%7D HTTP/1.1" 404 9516
-/home/ubuntu/projects/droppers/ui/ui/views.py:596: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'ui.models.EbaySellerItems'> QuerySet.
-  paginator = Paginator(result_set, items_per_page)
-[18/Jun/2018 05:05:25] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=&page_by=50&order_by=&status=ignored HTTP/1.1" 200 216
-[18/Jun/2018 05:05:25] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=&order_by=&page_by=50&status=unmonitored HTTP/1.1" 200 25509
-[18/Jun/2018 05:05:25] "GET /get-ebay-sellers-itemm/?format=json&page=1&keyword=&order_by=&page_by=50&status=monitored HTTP/1.1" 200 25856
-System check identified some issues:
-
-WARNINGS:
-?: (1_8.W001) The standalone TEMPLATE_* settings were deprecated in Django 1.8 and the TEMPLATES dictionary takes precedence. You must put the values of the following settings into your default TEMPLATES dict: TEMPLATE_DEBUG.
-
-System check identified 1 issue (0 silenced).
-System check identified some issues:
-
-WARNINGS:
-?: (1_8.W001) The standalone TEMPLATE_* settings were deprecated in Django 1.8 and the TEMPLATES dictionary takes precedence. You must put the values of the following settings into your default TEMPLATES dict: TEMPLATE_DEBUG.
-
-System check identified 1 issue (0 silenced).
-System check identified some issues:
-
-WARNINGS:
-?: (1_8.W001) The standalone TEMPLATE_* settings were deprecated in Django 1.8 and the TEMPLATES dictionary takes precedence. You must put the values of the following settings into your default TEMPLATES dict: TEMPLATE_DEBUG.
-
-System check identified 1 issue (0 silenced).
-[18/Jun/2018 06:58:40] "GET / HTTP/1.1" 200 50275
+[19/Jul/2018 07:22:48] "GET / HTTP/1.1" 200 50701
+[19/Jul/2018 07:22:49] "GET /static/bower_components/bootstrap/dist/css/bootstrap.min.css HTTP/1.1" 304 0
+[19/Jul/2018 07:22:49] "GET /static/bower_components/font-awesome/css/font-awesome.min.css HTTP/1.1" 304 0
+[19/Jul/2018 07:22:49] "GET /static/bower_components/themify-icons/themify-icons.css HTTP/1.1" 304 0
+[19/Jul/2018 07:22:49] "GET /static/bower_components/flag-icon-css/css/flag-icon.min.css HTTP/1.1" 304 0
+[19/Jul/2018 07:22:49] "GET /static/bower_components/animate.css/animate.min.css HTTP/1.1" 304 0
+[19/Jul/2018 07:22:49] "GET /static/bower_components/perfect-scrollbar/css/perfect-scrollbar.min.css HTTP/1.1" 304 0
+[19/Jul/2018 07:22:49] "GET /static/bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min.css HTTP/1.1" 304 0
+[19/Jul/2018 07:22:49] "GET /static/bower_components/ladda/dist/ladda-themeless.min.css HTTP/1.1" 304 0
+[19/Jul/2018 07:22:50] "GET /static/bower_components/slick.js/slick/slick-theme.css HTTP/1.1" 304 0
+[19/Jul/2018 07:22:50] "GET /static/bower_components/angular-ui-switch/angular-ui-switch.min.css HTTP/1.1" 304 0
+[19/Jul/2018 07:22:50] "GET /static/bower_components/slick.js/slick/slick.css HTTP/1.1" 304 0
+[19/Jul/2018 07:22:50] "GET /static/assets/css/styles.css HTTP/1.1" 304 0
+[19/Jul/2018 07:22:50] "GET /static/assets/css/plugins.css HTTP/1.1" 304 0
+[19/Jul/2018 07:22:50] "GET /static/assets/css/themes/lyt3-theme-1.css HTTP/1.1" 304 0
+[19/Jul/2018 07:22:50] "GET /static/bower_components/jquery/dist/jquery.min.js HTTP/1.1" 304 0
+[19/Jul/2018 07:22:50] "GET /static/bower_components/angular/angular.min.js HTTP/1.1" 304 0
+[19/Jul/2018 07:22:50] "GET /static/bower_components/bootstrap/dist/js/bootstrap.min.js HTTP/1.1" 304 0
+[19/Jul/2018 07:22:51] "GET /static/bower_components/js-cookie/src/js.cookie.js HTTP/1.1" 304 0
+[19/Jul/2018 07:22:51] "GET /static/bower_components/jquery-fullscreen/jquery.fullscreen-min.js HTTP/1.1" 304 0
+[19/Jul/2018 07:22:51] "GET /static/bower_components/jquery.knobe/dist/jquery.knob.min.js HTTP/1.1" 304 0
+[19/Jul/2018 07:22:51] "GET /static/bower_components/components-modernizr/modernizr.js HTTP/1.1" 304 0
+[19/Jul/2018 07:22:51] "GET /static/bower_components/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js HTTP/1.1" 304 0
+[19/Jul/2018 07:22:51] "GET /static/bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js HTTP/1.1" 304 0
+[19/Jul/2018 07:22:52] "GET /static/assets/images/avatar-2.jpg HTTP/1.1" 200 1511
+[19/Jul/2018 07:22:52] "GET /static/assets/images/avatar-3.jpg HTTP/1.1" 200 1864
+[19/Jul/2018 07:22:52] "GET /static/assets/images/avatar-7.jpg HTTP/1.1" 200 1572
+[19/Jul/2018 07:22:52] "GET /static/assets/images/avatar-9.jpg HTTP/1.1" 200 1480
+[19/Jul/2018 07:22:52] "GET /static/bower_components/themify-icons/fonts/themify.woff?-fvbane HTTP/1.1" 200 56108
+[19/Jul/2018 07:22:52] "GET /static/bower_components/font-awesome/fonts/fontawesome-webfont.woff2?v=4.5.0 HTTP/1.1" 200 66624
+[19/Jul/2018 07:22:52] "GET /static/assets/images/avatar-8.jpg HTTP/1.1" 200 1707
+[19/Jul/2018 07:22:52] "GET /static/assets/images/avatar-10.jpg HTTP/1.1" 200 1544
+[19/Jul/2018 07:22:52] "GET /static/assets/images/avatar-6.jpg HTTP/1.1" 200 1442
+[19/Jul/2018 07:22:52] "GET /static/assets/images/avatar-4.jpg HTTP/1.1" 200 1873
+[19/Jul/2018 07:22:53] "GET /static/assets/images/avatar-5.jpg HTTP/1.1" 200 1979
+[19/Jul/2018 07:22:53] "GET /static/bower_components/slick.js/slick/slick.min.js HTTP/1.1" 304 0
+[19/Jul/2018 07:22:53] "GET /static/bower_components/ladda/dist/spin.min.js HTTP/1.1" 304 0
+[19/Jul/2018 07:22:53] "GET /static/bower_components/jquery-numerator/jquery-numerator.js HTTP/1.1" 304 0
+[19/Jul/2018 07:22:53] "GET /static/bower_components/ladda/dist/ladda.jquery.min.js HTTP/1.1" 200 583
+[19/Jul/2018 07:22:53] "GET /static/bower_components/ladda/dist/ladda.min.js HTTP/1.1" 304 0
+[19/Jul/2018 07:22:53] "GET /static/bower_components/angular-ui-switch/angular-ui-switch.min.js HTTP/1.1" 200 737
+[19/Jul/2018 07:22:54] "GET /static/bower_components/Chart-js/Chart.min.js HTTP/1.1" 304 0
+[19/Jul/2018 07:22:54] "GET /static/js/main.js HTTP/1.1" 304 0
+[19/Jul/2018 07:22:54] "GET /static/assets/js/letter-icons.js HTTP/1.1" 304 0
+[19/Jul/2018 07:22:54] "GET /static/assets/js/main.js?v=11 HTTP/1.1" 304 0
+[19/Jul/2018 07:22:54] "GET /static/assets/js/index.js HTTP/1.1" 304 0
+[19/Jul/2018 07:22:54] "GET /static/js/search_seller_item.js?v=606 HTTP/1.1" 304 0
+[19/Jul/2018 07:22:54] "GET /static/js/add_seller_keyset.js HTTP/1.1" 304 0
+[19/Jul/2018 07:22:54] "GET /static/js/pending_items.js HTTP/1.1" 304 0
+[19/Jul/2018 07:22:54] "GET /static/js/manual_pending_item_add.js HTTP/1.1" 304 0
+[19/Jul/2018 07:22:54] "GET /static/js/profit_calculator.js HTTP/1.1" 304 0
+[19/Jul/2018 07:22:54] "GET /static/js/search_seller_report.js HTTP/1.1" 304 0
+[19/Jul/2018 07:22:55] "GET /static/js/multi_ebay_account.js HTTP/1.1" 200 6531
+[19/Jul/2018 07:22:55] "GET /static/js/account-settings.js HTTP/1.1" 304 0
+[19/Jul/2018 07:22:55] "GET /static/assets/images/logo-collapsed2.png HTTP/1.1" 200 428
+[19/Jul/2018 07:22:55] "GET /static/assets/images/avatar-1.jpg HTTP/1.1" 200 1355
+[19/Jul/2018 07:22:55] "GET /static/assets/images/user-background.png HTTP/1.1" 200 3786
+[19/Jul/2018 12:00:02] "GET /add-ebay-all-sellers-items/ HTTP/1.1" 200 4
+[19/Jul/2018 12:00:02] "GET /update-all-seller-ebay-items/ HTTP/1.1" 200 38
+[19/Jul/2018 18:00:01] "GET /update-all-seller-ebay-items/ HTTP/1.1" 200 38
+[20/Jul/2018 00:00:01] "GET /update-all-seller-ebay-items/ HTTP/1.1" 200 38
+[20/Jul/2018 00:00:01] "GET /add-ebay-all-sellers-items/ HTTP/1.1" 200 4
+[20/Jul/2018 06:00:01] "GET /update-all-seller-ebay-items/ HTTP/1.1" 200 38
+[20/Jul/2018 12:00:01] "GET /add-ebay-all-sellers-items/ HTTP/1.1" 200 4
+[20/Jul/2018 12:00:01] "GET /update-all-seller-ebay-items/ HTTP/1.1" 200 38
+[20/Jul/2018 18:00:02] "GET /update-all-seller-ebay-items/ HTTP/1.1" 200 38
+[21/Jul/2018 00:00:01] "GET /add-ebay-all-sellers-items/ HTTP/1.1" 200 4
+[21/Jul/2018 00:00:01] "GET /update-all-seller-ebay-items/ HTTP/1.1" 200 38
+[21/Jul/2018 06:00:01] "GET /update-all-seller-ebay-items/ HTTP/1.1" 200 38
+[21/Jul/2018 12:00:02] "GET /add-ebay-all-sellers-items/ HTTP/1.1" 200 4
+[21/Jul/2018 12:00:02] "GET /update-all-seller-ebay-items/ HTTP/1.1" 200 38
+[21/Jul/2018 18:00:01] "GET /update-all-seller-ebay-items/ HTTP/1.1" 200 38
+[22/Jul/2018 00:00:01] "GET /update-all-seller-ebay-items/ HTTP/1.1" 200 38
+[22/Jul/2018 00:00:01] "GET /add-ebay-all-sellers-items/ HTTP/1.1" 200 4
+[22/Jul/2018 06:00:01] "GET /update-all-seller-ebay-items/ HTTP/1.1" 200 38
+[22/Jul/2018 12:00:02] "GET /add-ebay-all-sellers-items/ HTTP/1.1" 200 4
+[22/Jul/2018 12:00:02] "GET /update-all-seller-ebay-items/ HTTP/1.1" 200 38
+[22/Jul/2018 18:00:01] "GET /update-all-seller-ebay-items/ HTTP/1.1" 200 38
+[23/Jul/2018 00:00:01] "GET /add-ebay-all-sellers-items/ HTTP/1.1" 200 4
+[23/Jul/2018 00:00:01] "GET /update-all-seller-ebay-items/ HTTP/1.1" 200 38
+[23/Jul/2018 06:00:01] "GET /update-all-seller-ebay-items/ HTTP/1.1" 200 38
+[23/Jul/2018 12:00:01] "GET /update-all-seller-ebay-items/ HTTP/1.1" 200 38
+[23/Jul/2018 12:00:01] "GET /add-ebay-all-sellers-items/ HTTP/1.1" 200 4
+[23/Jul/2018 18:00:01] "GET /update-all-seller-ebay-items/ HTTP/1.1" 200 38
+[24/Jul/2018 00:00:01] "GET /update-all-seller-ebay-items/ HTTP/1.1" 200 38
+[24/Jul/2018 00:00:01] "GET /add-ebay-all-sellers-items/ HTTP/1.1" 200 4
+[24/Jul/2018 06:00:01] "GET /update-all-seller-ebay-items/ HTTP/1.1" 200 38
+[24/Jul/2018 12:00:02] "GET /update-all-seller-ebay-items/ HTTP/1.1" 200 38
+[24/Jul/2018 12:00:02] "GET /add-ebay-all-sellers-items/ HTTP/1.1" 200 4
+[24/Jul/2018 18:00:01] "GET /update-all-seller-ebay-items/ HTTP/1.1" 200 38
+[25/Jul/2018 00:00:01] "GET /update-all-seller-ebay-items/ HTTP/1.1" 200 38
+[25/Jul/2018 00:00:01] "GET /add-ebay-all-sellers-items/ HTTP/1.1" 200 4
+[25/Jul/2018 06:00:01] "GET /update-all-seller-ebay-items/ HTTP/1.1" 200 38
+[25/Jul/2018 12:00:01] "GET /update-all-seller-ebay-items/ HTTP/1.1" 200 38
+[25/Jul/2018 12:00:01] "GET /add-ebay-all-sellers-items/ HTTP/1.1" 200 4
+[25/Jul/2018 18:00:02] "GET /update-all-seller-ebay-items/ HTTP/1.1" 200 38
+[26/Jul/2018 00:00:01] "GET /update-all-seller-ebay-items/ HTTP/1.1" 200 38
+[26/Jul/2018 00:00:01] "GET /add-ebay-all-sellers-items/ HTTP/1.1" 200 4
+[26/Jul/2018 06:00:01] "GET /update-all-seller-ebay-items/ HTTP/1.1" 200 38

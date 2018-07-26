@@ -1,7 +1,7 @@
 # Create your tasks here
 from __future__ import absolute_import, unicode_literals
 import string
-from .sync_ebay import sync_ebay_item
+from .sync_ebay import sync_ebay_item,sync_all_ebay_item
 from django.contrib.auth.models import User
 from django.utils.crypto import get_random_string
 import csv
@@ -29,7 +29,7 @@ from .helpers import *
 from .parsers import parse_ebay_item
 # from .price_updater import testing_facade
 from .csvfile import get_item_in_csv
-from .price_update import price_updater
+from .price_update import price_updater,all_seller_price_updater
 
 
 def get_seller_token(seller_id):
@@ -78,18 +78,23 @@ def get_url(aso,keywords):
 @job
 def start_ebay_seller_search2(seller_id,report_id):
 	print("fetching records for seller_id:",seller_id)
-	report_obj = EbaySellerSearchReports.objects.get(pk = report_id)
+	report_obj = EbaySellerSearchReports.objects.filter(pk = report_id).first()
+	print("safasfdasfd")
 	reports = EbaySellerSearchReports.objects.filter(pk = report_id)
 	reports.update(status = "processing")
 	try:
+		print("1")
 		if seller_id is not None:
 			es = EbayScraper(locale="UK")
 			ebay_url = "https://www.ebay.com/sch/%s/m.html?_nkw=&_armrs=1&_ipg=50&_from=" % (seller_id)
+			print("2")
 			while es.has_next:
+				print("1")
 				es.get_details = False
 				es.response_list = []
 				es.scrape(ebay_url)
 				ebay_url = es.next_url
+				print("mmmmmmmmmmmmmmm")
 				if len(es.response_list)>0:
 					try:
 						es.get_details = True
@@ -101,6 +106,7 @@ def start_ebay_seller_search2(seller_id,report_id):
 							price = item.get("price","")
 							price = price.replace("$","")
 							price = price.replace(",","")
+							print("tttttttttttt")
 							if price == "":
 								price = -1
 							current_es = EbaySellerSearch()
@@ -127,6 +133,7 @@ def start_ebay_seller_search2(seller_id,report_id):
 							proxies_not_working = False
 							current_url = ""
 							price_str = ""
+							print("eeeeeeeeeeeeee")
 							try:
 								while res is None or aso.is_captcha_in_response:
 									if retry >= 5:
@@ -188,8 +195,14 @@ def start_ebay_seller_search2(seller_id,report_id):
 
 
 @job
-def ebay_price_updater(seller_id,token):
-	price_updater(seller_id,token)
+def ebay_price_updater_for_all_sellers():
+	all_seller_price_updater()
+	return "process finished"
+
+
+@job
+def ebay_price_updater(seller_id,token,default_stock,ebay_id_list):
+	price_updater(seller_id,token,default_stock,ebay_id_list)
 	# all_ebay_items = EbaySellerItems.objects.filter(status__in=["monitored","unmonitored"])
 	# if len(all_ebay_items)>0:
 	# 	aso = AmazonScraper(locale="UK")
@@ -615,6 +628,11 @@ def start_ebay_update(thread_id,total_threads):
 
 # 	return "DB sync completed"
 
+
+@job
+def sync_db_to_ebay_for_all_sellers():
+	sync_all_ebay_item()
+	return "Items sync completed"
 
 @job
 def sync_db_to_ebay(seller_id):

@@ -5,6 +5,7 @@ import re
 import math
 from .models import EbaySellerItems
 from datetime import datetime
+from .db import get_all_sellers_account,query_set_to_list
 # import datetime
 
 LATIN_1_CHARS = (
@@ -53,6 +54,13 @@ def get_simple_list_from_list_dict(list_of_dict,key_to_use):
 			if key_to_use and key_to_use in item:
 				simple_list.append(item.get(key_to_use))
 	return simple_list
+
+def get_sellers_account(current_user):
+	seller_accounts = get_all_sellers_account(user_id=current_user)
+	seller_accounts = query_set_to_list(seller_accounts)
+	return seller_accounts
+
+
 
 def normalize_amazon_url(url):
 	amazon_url = url

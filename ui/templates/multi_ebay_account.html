@@ -50,7 +50,8 @@
                                 <th>Sellers</th>
                                 <th class="hidden-xs">is_Active</th>
                                 <th class="hidden-xs">Action</th>
-                                <th class="hidden-xs">Is Eligible For Ebay Updates</th>
+								<th class="hidden-xs">Is Eligible For Ebay Updates</th>
+                                <th class="hidden-xs">Turn on for auto price update</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -76,7 +77,13 @@
 									</button>
 								</a>
 								</td>
-								</td>
+                                 <td ng-cloak>
+									<center>
+										<!-- <input type="checkbox" ng-model="update"  ng-click="is_update(seller.sellername,update)" ng-checked="seller.is_update == true "> -->
+										<a ng-if="seller.is_update == false"><button class="btn btn-danger btn-xs" ng-click="is_update_true(seller.sellername,true)">OFF</button></a>
+										<a ng-if="seller.is_update == true"<button class="btn btn-success btn-xs" ng-click="is_update_false(seller.sellername,false)">ON</button></a>
+									</center>
+                                <td> 
                             </tr>
                         </tbody>
                     </table>

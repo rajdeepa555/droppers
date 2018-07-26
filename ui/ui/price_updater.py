@@ -28,7 +28,6 @@ def get_ebay_item_list(ebay_handler,page = 1):
 	ebay_items_list = []
 	if ebay_handler:
 		ebay_items_list = ebay_handler.get_all_items(page_number=page)
-		print("eeeeeeebay itemmmmmmm listttttt",ebay_items_list)
 	return ebay_items_list
 
 def get_ignored_items_list(seller_id):

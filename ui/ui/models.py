@@ -9,6 +9,8 @@ class SellerTokens(models.Model):
     token = models.CharField(max_length = 1000)
     is_active = models.BooleanField(default = False)
     is_eligible_for_ebay_update = models.BooleanField(default = False)
+    is_update = models.BooleanField(default = False)
+    default_stock = models.IntegerField(default = 2)
 
     def __str__(self):
         return self.sellername

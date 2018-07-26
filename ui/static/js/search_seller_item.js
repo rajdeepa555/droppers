@@ -142,13 +142,13 @@ searchSellerItemApp.controller('searchSellerItemCtrl', function($scope,$http,$ti
 		$scope.update_ebay_info = function(index,ebay_id,amazon_sku)
 		{
 			var csrf_token = document.getElementById("csrf_token").value;
-			var form_data = {"csrfmiddlewaretoken":csrf_token,"values":[{"ItemID":ebay_id,"SKU":amazon_sku}]};
+			var form_data = {"csrfmiddlewaretoken":csrf_token,"values":[ebay_id]};
 			 var request = $http({
 	                    method: "post",
-	                    url: "/update-ebay-items/",
+	                    url: "/update-all-ebay-items/",
 	                    data: form_data,
 	                }).then(function(data){
-						 alert("Updated Successfully");
+						 alert("updates will take some time kindly refresh to see the changes");
 						 $window.location.reload();
 			 			 $scope.refresh_seller_list(1);
 	                });
@@ -171,9 +171,9 @@ searchSellerItemApp.controller('searchSellerItemCtrl', function($scope,$http,$ti
 						var csrf_token = document.getElementById("csrf_token").value;
 						var submit_data={};
 						ebay_id=$scope.items[i]["ebay_id"];
-						amazon_sku=$scope.items[i]["custom_label"];
-						submit_data = {"ItemID":ebay_id,"SKU":amazon_sku};
-						list_of_ids.push(submit_data);
+						// amazon_sku=$scope.items[i]["custom_label"];
+						// submit_data = {"ItemID":ebay_id,"SKU":amazon_sku};
+						list_of_ids.push(ebay_id);
 					}
 			}
 			for(var i in $scope.unmonitored_items)
@@ -184,9 +184,9 @@ searchSellerItemApp.controller('searchSellerItemCtrl', function($scope,$http,$ti
 						var csrf_token = document.getElementById("csrf_token").value;
 						var submit_data={};
 						ebay_id=$scope.unmonitored_items[i]["ebay_id"];
-						amazon_sku=$scope.unmonitored_items[i]["custom_label"];
-						submit_data = {"ItemID":ebay_id,"SKU":amazon_sku};
-						list_of_ids.push(submit_data);
+						// amazon_sku=$scope.unmonitored_items[i]["custom_label"];
+						// submit_data = {"ItemID":ebay_id,"SKU":amazon_sku};
+						list_of_ids.push(ebay_id);
 					}
 			}
 			for(var i in $scope.ignored_items)
@@ -197,22 +197,27 @@ searchSellerItemApp.controller('searchSellerItemCtrl', function($scope,$http,$ti
 						var csrf_token = document.getElementById("csrf_token").value;
 						var submit_data={};
 						ebay_id=$scope.ignored_items[i]["ebay_id"];
-						amazon_sku=$scope.ignored_items[i]["custom_label"];
-						submit_data = {"ItemID":ebay_id,"SKU":amazon_sku};
-						list_of_ids.push(submit_data);
+						// amazon_sku=$scope.ignored_items[i]["custom_label"];
+						// submit_data = {"ItemID":ebay_id,"SKU":amazon_sku};
+						list_of_ids.push(ebay_id);
 					}
 			}
-			form_data["values"] = list_of_ids;
+			var form_data = {"csrfmiddlewaretoken":csrf_token,"values":list_of_ids};
 			var request = $http({
 	                    method: "post",
-	                    url: "/update-ebay-items/",
+	                    url: "/update-all-ebay-items/",
 	                    data: form_data,
+	                }).then(function(data){
+						 alert("updates will take some time kindly refresh to see the changes");
+						 $window.location.reload();
+			 			 $scope.refresh_seller_list(1);
 	                });
-			alert("Updated Successfully");
-			$window.location.reload();
-			$scope.refresh_seller_list(1);
+
 		}
 	},1000);
+
+
+
 	$scope.is_flag = function()
 	{
 		var csrf_token = document.getElementById("csrf_token").value;

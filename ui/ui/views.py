@@ -8,7 +8,7 @@ from django.views.generic import TemplateView
 from django.views.generic.edit import CreateView,UpdateView
 from django.http import HttpResponseRedirect,HttpResponse
 from .tasks import put_ebay_products_to_db,start_ebay_seller_search,print_time_5times,\
-						 start_ebay_seller_search2,ebay_price_updater,sync_db_to_ebay
+						 start_ebay_seller_search2,ebay_price_updater,sync_db_to_ebay,ebay_price_updater_for_all_sellers,sync_db_to_ebay_for_all_sellers
 # from .models import EbayAmazonPriceFormula,Proxy,EbayProductsCsvData,EbayRunDetails,AmazonRun,AmazonRunDetails,ProxyLog,EbaySellerSearch,EbaySellerItems
 from django.shortcuts import render,redirect
 from .models import *
@@ -36,23 +36,19 @@ from django.db.models import Count
 from .proxy import CProxy
 from .helpers import *
 import django_rq
-from .price_updater import update_ebay_item
+from .update_selected_ebay_item import update_ebay_item
 from rest_framework.permissions import IsAuthenticated
 from .globals2 import current_user
 
 class AdminerView(TemplateView):
 		template_name = "adminer.php"
-		
+
 class HomeView(LoginRequiredMixin,TemplateView):
 		template_name = "index.html"
 
 		def get_context_data(self,**kwargs):
-				# logger.info("self.request.user.pk",self.request.user.pk)
 				current_user = self.request.user.pk
-				# print("current userrrrr",current_user)
 				seller_id = get_seller_name(self.request)
-				# print("seller_id",seller_id)
-				# print("monitoreddddd",monitored_item_count)
 				context = super(HomeView, self).get_context_data(**kwargs)
 				dashboard_values = {}
 				proxy_count = Proxy.objects.filter(is_active=1).count()
@@ -62,11 +58,13 @@ class HomeView(LoginRequiredMixin,TemplateView):
 				dashboard_values["no_of_products"] = no_of_products
 				dashboard_values["monitored_item_count"] = monitored_item_count
 				context['dashboard_values'] = dashboard_values
-
 				return context
 
 class EbayProfitCalculatorView(LoginRequiredMixin,TemplateView):
 	template_name = "ebay_profit_calculator.html"
+
+class AccountSettingsView(LoginRequiredMixin,TemplateView):
+	template_name = "account_settings.html"
 
 
 
@@ -90,7 +88,6 @@ def get_seller_name(request):
 class EbayProfitCalculator(LoginRequiredMixin,views.APIView):
 	def get(self, request, *args, **kwargs):
 		seller_id = get_seller_name(request)
-		print("seller_id",seller_id)
 		formula = EbayPriceFormula.objects.filter(seller_id = seller_id).first()
 		# print("formula",formula.perc_margin)
 		price_formula = {}
@@ -99,17 +96,15 @@ class EbayProfitCalculator(LoginRequiredMixin,views.APIView):
 		price_formula["perc_margin"] = formula.perc_margin
 		price_formula["fixed_margin"] = formula.fixed_margin
 		context['price_formula'] = formula
-		# print("context",context)
-		print ("pricefoooooooooooooo",price_formula)
 		return Response(price_formula)
 
 	def post(self, request, *args, **kwargs):
-		print("request",request.data)
 		source_price = request.data["source_price"]
 		ebay_fvf_perc = request.data["ebay_fvf"]
 		margin_perc = request.data["perc_margin"]
 		fixed_margin = float(request.data["fixed_margin"])
-		formula_obj=EbayPriceFormula.objects.get(pk=1)
+		seller_id = get_seller_name(request)
+		formula_obj=EbayPriceFormula.objects.filter(seller_id=seller_id).first()
 		cost = float(source_price)
 		margin_perc = float(margin_perc)
 		perc_margin_cost = cost*margin_perc/100
@@ -154,12 +149,12 @@ class AddEbaySellerKeysetView(LoginRequiredMixin,views.APIView):
 			devid=data.get("devid","")
 			certid=data.get("certid","")
 			token=data.get("token","")
-			
+
 			db=AddEbaySellerKeyset(sellername=sellername,appid=appid,devid=devid,certid=certid,token=token)
 			db.save()
 			print("database")
 
-			
+
 			return HttpResponseRedirect('/')
 
 class GetEbaySellerKeysetView(LoginRequiredMixin,views.APIView):
@@ -228,7 +223,7 @@ class SearchAmazonItem(LoginRequiredMixin,views.APIView):
 
 				res = aso.scrape(current_url)
 				print("inside while"," res: ",res," is_captcha_in_response:",aso.is_captcha_in_response)
-				time_diff = get_time_diff_from_now(start_time) 
+				time_diff = get_time_diff_from_now(start_time)
 				if aso.is_captcha_in_response:
 					print("response headers",aso.response.headers)
 					time.sleep(5)
@@ -238,13 +233,13 @@ class SearchAmazonItem(LoginRequiredMixin,views.APIView):
 					retry += 1
 					continue
 				if time_diff>3:
-					
+
 					current_proxy = proxy_handler.get_proxy()
 					# aso.proxies.update({"https":current_proxy})
 					aso.change_proxy(current_proxy)
 			if proxies_not_working:
 				print("proxies are not working so exiting")
-				
+
 			# res = aso.scrape(make_amazon_url(amazon_sku))
 			detail={}
 			detail["price"] = res.get("price","")
@@ -293,7 +288,7 @@ class InsertPendingEbayItems(LoginRequiredMixin,views.APIView):
 		# pend.delete()
 
 		res={"ok":"ok"}
-	
+
 		return Response(res)
 
 class GetPendingItemsView(LoginRequiredMixin,views.APIView):
@@ -366,10 +361,13 @@ class UpdateEbayItems(LoginRequiredMixin,CsrfExemptMixin,views.APIView):
 	def post(self, request, *args, **kwargs):
 		response_dict = {}
 		datas = request.data["values"]
-		current_user = self.request.user.pk
-		# print("datas",datas)
-		is_updated = update_ebay_item(datas,current_user)
+		print("datas",datas)
+		for item in datas:
+			ebay_id = item["ItemID"]
+			ebay_items = EbaySellerItems.objects.filter(ebay_id=item["ItemID"])
+			is_updated = update_ebay_item(ebay_items)
 		return Response(response_dict)
+
 
 
 
@@ -461,15 +459,13 @@ class SearchSellerNameView(LoginRequiredMixin,views.APIView):
 		page_by = int(page_by)
 		seller_account_id = get_seller_name(request)
 		if len(report_id)>0:
-			print("report id.............",report_id)
 			report_id = int(report_id)
 		ebay_search_obj = EbaySellerSearch.objects.filter(search_report_id = report_id,search_report__seller_account_id = seller_account_id)
 		if(keyword):
 			ebay_sellers = ebay_search_obj.filter(Q(seller_id__icontains=keyword)|Q(title__icontains=keyword))
 		else:
 			ebay_sellers = ebay_search_obj
-		print("ebayseeeeellllerrrrrr",ebay_sellers)
-		
+
 
 		if order_by is not None and len(order_by)>0:
 			order_by_value = ""
@@ -541,11 +537,11 @@ class ExportCsvSellerItems(LoginRequiredMixin,views.APIView):
 		for item in ebay_items:
 			each_item = {}
 			each_item["title"] = item.product_name
-			each_item["ebay_id"] = item.ebay_id	
-			each_item["price"] = item.price	
-			each_item["quantity"] = item.quantity	
-			each_item["custom_label"] = item.custom_label	
-			each_item["status"] = item.status	
+			each_item["ebay_id"] = item.ebay_id
+			each_item["price"] = item.price
+			each_item["quantity"] = item.quantity
+			each_item["custom_label"] = item.custom_label
+			each_item["status"] = item.status
 			writer.writerow([each_item["title"],each_item["ebay_id"],each_item["price"],each_item["quantity"],each_item["custom_label"],each_item["status"]])
 		return response
 
@@ -556,7 +552,7 @@ class SearchSellerItemNameView2(LoginRequiredMixin,views.APIView):
 		print("seller id",seller_id)
 		#input params
 		query_list = request.query_params
-		
+
 		search_keyword = query_list.get("keyword",None)
 		page = query_list.get("page",1)
 		order_by = query_list.get("order_by",None)
@@ -565,7 +561,7 @@ class SearchSellerItemNameView2(LoginRequiredMixin,views.APIView):
 
 		# print("items_per_page",items_per_page)
 
-		result_set = EbaySellerItems.objects.filter(pk__gt=0,seller_id = seller_id,is_active = True)
+		result_set = EbaySellerItems.objects.filter(pk__gt=0,seller_id = seller_id)
 		# print("search_keyword",search_keyword)
 		if search_keyword:
 			result_set = result_set.filter(Q(ebay_id__icontains=search_keyword)|Q(custom_label__icontains=search_keyword)|Q(product_name__icontains=search_keyword))
@@ -594,7 +590,7 @@ class SearchSellerItemNameView2(LoginRequiredMixin,views.APIView):
 			items_per_page = 20
 
 		paginator = Paginator(result_set, items_per_page)
-		
+
 		try:
 				page = int(page)
 				result_set = paginator.page(page)
@@ -607,7 +603,7 @@ class SearchSellerItemNameView2(LoginRequiredMixin,views.APIView):
 
 		response = {}
 		l = 1
-		
+
 		for es in result_set:
 			current_item = {}
 			current_item["item_id"] = (page-1)*items_per_page+l
@@ -632,7 +628,6 @@ class SearchSellerItemNameView2(LoginRequiredMixin,views.APIView):
 				response[es.status] = {"items_list":[current_item]}
 			# items_list.append(current_item)
 			l += 1
-
 		response["count_status"] = count_status
 		response["has_previous"] = result_set.has_previous()
 		response["has_next"] = result_set.has_next()
@@ -733,6 +728,11 @@ class InsertEbaySellerItems(LoginRequiredMixin,views.APIView):
 		sync_db_to_ebay.delay(seller_id)
 		return Response("ok")
 
+class InsertEbaySellerItemsAllSellers(views.APIView):
+	def get(self,request):
+		sync_db_to_ebay_for_all_sellers.delay()
+		return Response("ok")
+
 
 class DashboardValuesView(LoginRequiredMixin,views.APIView):
 		def get(self,request):
@@ -815,7 +815,7 @@ class ResetForNewRun(views.APIView):
 
 class StartProcess(views.APIView):
 	#check amazon instance running or not
-	def get(self,request):	
+	def get(self,request):
 			all_updated_instances1 = AmazonRunDetails.objects.exclude(run_id="").count()
 			print("all_updated_instances1:",all_updated_instances1)
 			all_ebay_updated_instances1 = EbayRunDetails.objects.all().count()
@@ -917,13 +917,38 @@ class UpdateEbayFormula(LoginRequiredMixin,UpdateView):
 	fields = ['ebay_final_value_fee','ebay_listing_fee',\
 	'paypal_fees_perc','paypal_fees_fixed','perc_margin','fixed_margin']
 	success_url = '/'
-	
+
 	def get_object(self):
 		seller_id = self.request.GET.get("pk",None)
 		if seller_id is None:
 			seller_id = get_seller_name(self.request)
 		current_formula = EbayPriceFormula.objects.filter(seller_id=seller_id).first().pk
 		return EbayPriceFormula.objects.get(pk=current_formula)
+
+
+class UpdateCustomStock(LoginRequiredMixin,views.APIView):
+	def get(self, request, *args, **kwargs):
+		sellers = SellerTokens.objects.filter(user_id = self.request.user.pk)
+		seller_list = []
+		for seller in sellers:
+			seller_dict = {}
+			seller_dict["sellername"] = seller.sellername
+			seller_dict["pk"] = seller.pk
+			seller_dict["default_stock"] = seller.default_stock
+			seller_list.append(seller_dict)
+		return Response(seller_list)
+	def post(self,request, *args,**kwargs):
+		data = self.request.data
+		SellerTokens.objects.filter(pk = data.get("pk")).update(default_stock = data.get("default_stock"))
+		return Response({"ok":"ok"})
+
+
+	# def get_object(self):
+	# 	seller_id = self.request.GET.get("pk",None)
+	# 	if seller_id is None:
+	# 		seller_id = get_seller_name(self.request)
+	# 	current_stock = SellerTokens.objects.filter(pk=seller_id).first().default_stock
+	# 	return SellerTokens.objects.get(pk=seller_id)
 
 class AddEbaySellerItems(LoginRequiredMixin,CreateView):
 
@@ -949,13 +974,15 @@ class AddEbaySellerItems(LoginRequiredMixin,CreateView):
 		if created:
 			response["message"] = "item created successfully"
 		else:
-			response["message"] = "not successful"		
+			response["message"] = "not successful"
 
 
 class ProxyLoaderView(LoginRequiredMixin,TemplateView):
 		template_name = "proxy_loader.html"
 
 		def post(self, request, *args, **kwargs):
+			# Proxy.objects.all().delete()
+			# print("proxy delreted")
 			# proxies = request.FILES.getlist('proxies')
 			proxies = request.POST['proxies']
 			if proxies and len(proxies)>0:
@@ -978,7 +1005,8 @@ class SetItemMarginView(LoginRequiredMixin,views.APIView):
 		if not min_margin:
 			min_margin = None
 		update_obj=EbaySellerItems.objects.filter(ebay_id=ebay_id).update(margin_perc=margin_perc,minimum_margin=min_margin)
-		return render(request,"search_seller_item.html",{"ok":"ok"})
+		return redirect('search-seller-item')
+		# return render(request,"search_seller_item.html",{"ok":"ok"})
 
 class SetItemStockLevelView(LoginRequiredMixin,views.APIView):
 	def post(self, request, *args, **kwargs):
@@ -990,7 +1018,8 @@ class SetItemStockLevelView(LoginRequiredMixin,views.APIView):
 		else:
 			update_obj=EbaySellerItems.objects.filter(ebay_id=ebay_id).update(stock_level=None)
 		print(EbaySellerItems.objects.get(ebay_id=ebay_id).stock_level)
-		return render(request,"search_seller_item.html",{"ok":"ok"})
+		# return render(request,"search_seller_item.html",{"ok":"ok"})
+		return redirect('search-seller-item')
 
 
 class FlagSellerItems(LoginRequiredMixin,views.APIView):
@@ -1005,7 +1034,7 @@ class FlagSellerItems(LoginRequiredMixin,views.APIView):
 				if status == "monitored":
 					flag_value = "ignored"
 				elif status == "unmonitored":
-					flag_value = "ignored"	
+					flag_value = "ignored"
 				if status == "ignored":
 					flag_value = "monitored"
 
@@ -1014,7 +1043,7 @@ class FlagSellerItems(LoginRequiredMixin,views.APIView):
 			pass
 		return Response({"ok":"ok"})
 # class SyncUpdateItem(LoginRequiredMixin,views.APIView):
-	
+
 
 
 
@@ -1078,7 +1107,7 @@ class FlagSellerItems(LoginRequiredMixin,views.APIView):
 #						 is_updated = ebayhandler.set_item_price(item_price_dict = price_info)
 #						 ebay_item.status = "monitored"
 #						 ebay_item.save()
-#				 # break		
+#				 # break
 
 #		 response["message"] = "process finished"
 #		 return Response(response)
@@ -1087,11 +1116,39 @@ class FlagSellerItems(LoginRequiredMixin,views.APIView):
 class UpdateAllEbayItems(LoginRequiredMixin,CsrfExemptMixin,views.APIView):
 	authentication_classes = (UnsafeSessionAuthentication,)
 	def get(self, request, *args, **kwargs):
+
 		user = request.user
 		seller_obj = SellerTokens.objects.get(user = user,is_active=True)
 		token = seller_obj.token
-		seller_id = seller_obj.pk	
-		ebay_price_updater.delay(seller_id,token)
+		seller_id = seller_obj.pk
+		ebay_price_updater.delay(seller_obj.pk,seller_obj.token,seller_obj.default_stock,[])
+		response = {}
+		response["message"] = "prices are being updated"
+		return Response(response)
+
+	def post(self, request, *args, **kwargs):
+		response_dict = {}
+		datas = request.data["values"]
+		print("data",datas)
+		ebay_items = EbaySellerItems.objects.filter(ebay_id=datas[0])
+		for i in ebay_items:
+			seller_id = i.seller_id
+			token = i.seller.token
+			default_stock = i.seller.default_stock
+		ebay_price_updater.delay(seller_id,token,default_stock,datas)
+		return Response(response_dict)
+
+
+
+class UpdateAllSellerEbayItems(CsrfExemptMixin,views.APIView):
+	authentication_classes = (UnsafeSessionAuthentication,)
+	def get(self, request, *args, **kwargs):
+		print("abcd")
+		# user = request.user
+		# seller_obj = SellerTokens.objects.get(user = user,is_active=True)
+		# token = seller_obj.token
+		# seller_id = seller_obj.pk
+		ebay_price_updater_for_all_sellers.delay()
 		response = {}
 		response["message"] = "prices are being updated"
 		return Response(response)
@@ -1136,7 +1193,7 @@ class UpdateAllEbayItems2(LoginRequiredMixin,CsrfExemptMixin,views.APIView):
 
 				res = aso.scrape(current_url)
 				print("inside while"," res: ",res," is_captcha_in_response:",aso.is_captcha_in_response)
-				time_diff = get_time_diff_from_now(start_time) 
+				time_diff = get_time_diff_from_now(start_time)
 				if aso.is_captcha_in_response:
 					print("response headers",aso.response.headers)
 					time.sleep(5)
@@ -1146,7 +1203,7 @@ class UpdateAllEbayItems2(LoginRequiredMixin,CsrfExemptMixin,views.APIView):
 					retry += 1
 					continue
 				if time_diff>3:
-					
+
 					current_proxy = proxy_handler.get_proxy()
 					# aso.proxies.update({"https":current_proxy})
 					aso.change_proxy(current_proxy)
@@ -1157,7 +1214,7 @@ class UpdateAllEbayItems2(LoginRequiredMixin,CsrfExemptMixin,views.APIView):
 			price_str = res.get("price","")
 			if price_str == "" or len(price_str)== 0:
 				update_obj=EbaySellerItems.objects.filter(ebay_id=ebay_id).update(status="unmonitored")
-				
+
 			in_stock_str = res.get("in_stock",True)
 			is_prime = res.get("is_prime",0)
 			is_eligible,price_str,stock_str = is_eligible_for_ebay_update(price_str,in_stock_str,is_prime,custom_stock)
@@ -1173,7 +1230,7 @@ class UpdateAllEbayItems2(LoginRequiredMixin,CsrfExemptMixin,views.APIView):
 						margin_perc = formula_obj.perc_margin * cost/100
 					if ebay_custom.minimum_margin:
 						fixed_margin = ebay_custom.minimum_margin
-					else:	
+					else:
 						fixed_margin = formula_obj.fixed_margin
 					if margin_perc<fixed_margin:
 						cost1 = cost+formula_obj.ebay_listing_fee+fixed_margin+ formula_obj.paypal_fees_fixed
@@ -1245,11 +1302,11 @@ class EbayConnect(LoginRequiredMixin,views.APIView):
 			st.user = request.user
 			st.is_eligible_for_ebay_update = False
 			st.save()
-		# seller_account = SellerTokens.objects.get(sellername = sellername)
-		# seller_id = seller_account.pk
+		seller_account = SellerTokens.objects.get(sellername = sellername)
+		seller_id = seller_account.pk
 		# token = seller_account.token
-		# seller_id = seller_account.pk
-		sync_db_to_ebay.delay()
+		seller_id = seller_account.pk
+		sync_db_to_ebay.delay(seller_id)
 		create_default_price_formula(seller_id)
 
 		return redirect('multi-ebay-account')
@@ -1289,9 +1346,10 @@ class ActivateSellerAccount(LoginRequiredMixin,views.APIView):
 			st_dict["pk"] = st.pk
 			st_dict["is_active"] = st.is_active
 			st_dict["is_eligible_for_ebay_update"] = st.is_eligible_for_ebay_update
+			st_dict["is_update"] = st.is_update
 			st_list.append(st_dict)
 		# token = seller_obj.token
-		# seller_id = seller_obj.pk	
+		# seller_id = seller_obj.pk
 		# sync_db_to_ebay.delay(seller_id,token)
 		return Response({'sellers':st_list})
 
@@ -1387,7 +1445,7 @@ def get_asin(url):
 		else:
 			print("none")
 	return asin
-	
+
 
 
 
@@ -1407,7 +1465,11 @@ class DownloadSellerReportCsv(LoginRequiredMixin,views.APIView):
 
 
 
-
+class SetUpdateStatus(LoginRequiredMixin,views.APIView):
+	def post(self, request, *args, **kwargs):
+		data = request.data
+		SellerTokens.objects.filter(sellername = data.get("seller_name","")).update(is_update = data.get("is_update",""))
+		return Response({"ok":"ok"})
 
 # class EbayOnButtonSync(LoginRequiredMixin,views.APIView):
 # 	def get(self,request,*args,**kwargs):
@@ -1451,4 +1513,3 @@ class DownloadSellerReportCsv(LoginRequiredMixin,views.APIView):
 		# # create_default_price_formula(seller_id)
 
 		# return redirect('multi-ebay-account')
- 			

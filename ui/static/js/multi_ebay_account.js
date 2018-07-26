@@ -54,7 +54,7 @@ $scope.delete_seller = function(seller_id,seller_status)
         }
         }//else of first if
     }
-    
+
 $scope.is_active_pk = function(value,is_eligible_for_ebay_updates){
     console.log(is_eligible_for_ebay_updates);
     if (is_eligible_for_ebay_updates == false)
@@ -98,6 +98,64 @@ $scope.is_active_pk = function(value,is_eligible_for_ebay_updates){
         });
 
     }
+
+
+    $scope.is_update = function(seller_name,update){
+        console.log(seller_name,update);
+
+        var this_data = {"seller_name":seller_name,"is_update":update};
+
+	    var csrftoken = getCookie('csrftoken');
+        var headers = {};
+        headers["X-CSRFToken"] = csrftoken;
+        $http({url: "/set-update-status/", method: "post",data:this_data,headers:headers})
+        .success(function (data, status,config,headers) {
+            console.log("data sumbitted successfull",this_data);
+            // $scope.get_active_seller();
+        })
+        .error(function (data, status,config,headers) {
+            console.log("error while submitting",this_data);
+        });
+
+
+    }
+
+    $scope.is_update_true = function(name,val_true){
+        var this_data = {"seller_name":name,"is_update":val_true};
+        console.log(this_data);
+	    var csrftoken = getCookie('csrftoken');
+        var headers = {};
+        headers["X-CSRFToken"] = csrftoken;
+        $http({url: "/set-update-status/", method: "post",data:this_data,headers:headers})
+        .success(function (data, status,config,headers) {
+            console.log("data sumbitted successfull",this_data);
+            alert("Automate Update has been Enabled for this seller!");
+            $scope.get_active_seller();
+        })
+        .error(function (data, status,config,headers) {
+            console.log("error while submitting",this_data);
+        });
+
+    }
+
+
+    $scope.is_update_false = function(name,val_false){
+        var this_data = {"seller_name":name,"is_update":val_false};
+        console.log(this_data);
+	    var csrftoken = getCookie('csrftoken');
+        var headers = {};
+        headers["X-CSRFToken"] = csrftoken;
+        $http({url: "/set-update-status/", method: "post",data:this_data,headers:headers})
+        .success(function (data, status,config,headers) {
+            console.log("data sumbitted successfull",this_data);
+            alert("Automate Update has been Disabled for this seller!");
+            $scope.get_active_seller();
+        })
+        .error(function (data, status,config,headers) {
+            console.log("error while submitting",this_data);
+        });
+    }
+
 
 });
 
