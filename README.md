@@ -220,19 +220,66 @@ Source code can be found in the [Github repository](https://github.com/Vectorsci
 ---
 ### to remove
 ```
-class ReplaceBooleanValueFilter(DataProcessor):
-    """Replace boolean columns values with 1 or 0."""
+config = {
+        'user_data': {
+            'csv_input': {
+                'source_type': 'csv',
+                'source_file': csv_file
+            }
+        },
 
-    def __init__(self, boolean_columns=None):
-        super().__init__()
-        self.boolean_columns = boolean_columns
+        'pipeline': [
+            {'drop_constants': {'name': 'ConstantFilter'}},
+            {'drop_columns': {
+                'name': 'ColumnNamesFilter',
+                'names': drop_columns or []
+            }},
+            {'fork': {
+                'name': 'FeatureCombinator',
+                'label': 'merge',
+                'method': 'union',
+                'transformers_spec': [
+                    {
+                        'name': 'FeatureCombinator',
+                        'label': 'numerical',
+                        'method': 'sequence',
+                        'transformers_spec': [
+                            {'name': 'NonNumericFilter'},
+                            {'name': 'MissingValuesFiller', 'method': 'zeros'},
+                            {'name': 'Standardizer', 'method': 'z-score'}
+                        ]
+                    },
+                    {
+                        'name': 'FeatureCombinator',
+                        'label': 'categorical',
+                        'method': 'sequence',
+                        'transformers_spec': [
+                            {'name': 'MissingValuesFiller',
+                             'method': 'value',
+                             'value': 'none'},
+                            {'name': 'AdaptiveEncoder',
+                             'drop_high_cardinality_columns': True,
+                             'encoder_ranges': True,
+                             'range_encoder_params': {'bandwidth': 1.0}}
+                        ]
+                    }
+                ]
+            }},
+            {'clustering': {
+                'name': 'PersonaClustering',
+                'personal_labels': labels,
+                'cluster_kwargs': {'n_clusters': n_clusters}
+            }}
+        ],
 
-    def transform(self, X, y=None):
-        if self.boolean_columns is None:
-            return X
-
-        for column in self.boolean_columns:
-            X[column] = X[column].replace("Yes",1).replace("No",0)
-        cleaned = X
-        return cleaned
+        'reporting': {
+            'mode': 'only',
+            'mask': {'clustering': True},
+            'contexts': [{
+                'class_name': 'ArchiveContext', 'params': {
+                    'filename': report_file + '.zip'
+                }
+            }]
+        }
+    }
 ```
