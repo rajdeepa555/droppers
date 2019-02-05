@@ -216,3 +216,23 @@ python main.py transform -db=clientdb
 ---
 ### Source Code
 Source code can be found in the [Github repository](https://github.com/Vectorscient/python).
+
+---
+### to remove
+```
+class ReplaceBooleanValueFilter(DataProcessor):
+    """Replace boolean columns values with 1 or 0."""
+
+    def __init__(self, boolean_columns=None):
+        super().__init__()
+        self.boolean_columns = boolean_columns
+
+    def transform(self, X, y=None):
+        if self.boolean_columns is None:
+            return X
+
+        for column in self.boolean_columns:
+            X[column] = X[column].replace("Yes",1).replace("No",0)
+        cleaned = X
+        return cleaned
+```
