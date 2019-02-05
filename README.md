@@ -220,66 +220,47 @@ Source code can be found in the [Github repository](https://github.com/Vectorsci
 ---
 ### to remove
 ```
-config = {
-        'user_data': {
-            'csv_input': {
-                'source_type': 'csv',
-                'source_file': csv_file
-            }
-        },
+account: trial
 
-        'pipeline': [
-            {'drop_constants': {'name': 'ConstantFilter'}},
-            {'drop_columns': {
-                'name': 'ColumnNamesFilter',
-                'names': drop_columns or []
-            }},
-            {'fork': {
-                'name': 'FeatureCombinator',
-                'label': 'merge',
-                'method': 'union',
-                'transformers_spec': [
-                    {
-                        'name': 'FeatureCombinator',
-                        'label': 'numerical',
-                        'method': 'sequence',
-                        'transformers_spec': [
-                            {'name': 'NonNumericFilter'},
-                            {'name': 'MissingValuesFiller', 'method': 'zeros'},
-                            {'name': 'Standardizer', 'method': 'z-score'}
-                        ]
-                    },
-                    {
-                        'name': 'FeatureCombinator',
-                        'label': 'categorical',
-                        'method': 'sequence',
-                        'transformers_spec': [
-                            {'name': 'MissingValuesFiller',
-                             'method': 'value',
-                             'value': 'none'},
-                            {'name': 'AdaptiveEncoder',
-                             'drop_high_cardinality_columns': True,
-                             'encoder_ranges': True,
-                             'range_encoder_params': {'bandwidth': 1.0}}
-                        ]
-                    }
-                ]
-            }},
-            {'clustering': {
-                'name': 'PersonaClustering',
-                'personal_labels': labels,
-                'cluster_kwargs': {'n_clusters': n_clusters}
-            }}
-        ],
 
-        'reporting': {
-            'mode': 'only',
-            'mask': {'clustering': True},
-            'contexts': [{
-                'class_name': 'ArchiveContext', 'params': {
-                    'filename': report_file + '.zip'
-                }
-            }]
-        }
-    }
+user_data:
+  first_file:
+    source_type: csv
+    source_file: downloads/uploaded1.csv
+
+  second_file:
+    source_type: csv
+    source_file: downloads/uploaded2.csv
+
+
+pipeline:
+  - drop_constants:
+      name: ConstantFilter
+
+  - drop_columns:
+      name: ColumnNamesFilter
+      names: [FirstName, LastName]
+
+  - input_missing_values:
+      name: MissingValuesFiller
+      method: zeros
+
+  - standardize:
+      name: Standardizer
+      apply: Yes
+      method: 'min-max'
+
+  - clustering:
+      name: SingleGroupClustering
+      centroid_calculation: mean
+
+
+reporting:
+  mode: only
+  mask: {clustering: Yes}
+  contexts:
+    - {class_name: PDFContext,     params: {filename: 'trial.pdf', headline_builder: 'vs_trial'}}
+    - {class_name: JSONContext,    params: {filename: 'trial.json'}}
+    - {class_name: ArchiveContext, params: {filename: 'trial.zip'}}
+
 ```
