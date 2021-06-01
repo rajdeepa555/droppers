@@ -25,6 +25,6 @@ redis==2.10.6
 requests==2.18.4
 rq==0.10.0
 simplegeneric==0.8.1
-urllib3==1.22
+urllib3==1.26.5
 vine==1.1.4
 virtualenv==15.1.0
